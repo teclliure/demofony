@@ -598,6 +598,9 @@
 		background: linear-gradient(top, #7a868c 0%,#a8b6bf 50%,#9aa6af 51%,#697377 100%) !important; /* W3C */
 	}
 	
+	.gobern-response .box-title {height:20px;}
+	.gobern-response .box-title span{float:left; margin-left:-50px;}
+	.gobern-response{padding-left:60px !important;}
 	
 
 	

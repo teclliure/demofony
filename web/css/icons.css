@@ -1,4 +1,5 @@
 @CHARSET "UTF-8";
+.icon-ayunt{width:39px; height:46px; background:url(../images/icons/ayunt.png) no-repeat; vertical-align:middle;}
 .icon-edit{width:16px; height:16px; background:url(../images/icons/edit.png) no-repeat; vertical-align:middle;}
 .icon-microphone{width:34px; height:42px; background:url(../images/icons/microphone.png) no-repeat; vertical-align:middle;}
 .icon-banned{width:16px; height:16px; background:url(../images/icons/banned.png) no-repeat; vertical-align:middle;}
