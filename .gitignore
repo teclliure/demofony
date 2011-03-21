@@ -1,0 +1,7 @@
+.project
+.buildpath
+.settings/
+config/databases.yml
+cache/*
+web/uploads/
+log/*

@@ -1,0 +1,107 @@
+Opinion:
+  actAs:
+    Timestampable: 
+  columns:
+    id:
+      primary: true
+    opinion:
+      type: string
+      notnull: true
+    opinion_possibility_id: 
+    object_class:
+      type: string(100)
+      notnull: true
+    object_id:
+      type: integer
+      notnull: true
+    innapropiate:
+      default: 0
+      type: boolean
+      notnull: true
+    selected:
+      type: boolean
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+  indexes:
+    IX_Opinion_1:
+      fields: [object_class, object_id]
+  relations:
+    OpinionPossibility:
+      local: opinion_possibility_id
+      foreign: id
+    sfGuardUser:
+      local: user_id
+      foreign: id
+OpinionPossibility:
+  columns:
+    id:
+      primary: true
+    name:
+      type: string(100)
+      notnull: true
+    opinion_possibility_group_id: 
+  relations:
+    OpinionPossibilityGroup:
+      local: opinion_possibility_group_id
+      foreign: id
+OpinionPossibilityGroup:
+  columns:
+    id:
+      primary: true
+    name:
+      type: string(100)
+      notnull: true
+    display_graph:
+      default: 0
+      type: boolean
+      notnull: true
+Comments:
+  actAs:
+    Timestampable: 
+  columns:
+    id:
+      primary: true
+    comment:
+      type: string
+      notnull: true
+    object_class:
+      type: string(100)
+      notnull: true
+    object_id:
+      type: integer
+      notnull: true
+    innapropiate:
+      default: 0
+      type: boolean
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+OpinionLike:
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    user_id:
+      type: integer
+      notnull: true
+    opinion_id:
+      notnull: true
+  indexes:
+    IX_OpinionLike_1:
+      fields: [user_id, opinion_id]
+      type: unique
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+    Opinion:
+      local: opinion_id
+      foreign: id

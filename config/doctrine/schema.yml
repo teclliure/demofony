@@ -1,0 +1,364 @@
+SfGuardUserProfile:
+  actAs:
+    Timestampable: 
+    Geographical: 
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+    user_id:
+      unique: true
+      type: integer
+      notnull: true
+    nickname:
+      type: string(255)
+    gender:
+      type: integer
+    telephone:
+      type: string(25)
+    address:
+      type: string(255)
+    postal_code:
+      type: string(10)
+    location:
+      type: string(150)
+    province:
+      type: string(150)
+    country:
+      type: string(150)
+    web:
+      type: string(255)
+    about:
+      type: clob
+    subscription_email:
+      default: 0
+      type: boolean
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+    categories:
+      class: Category
+      refClass: SubscriptionCategory
+      local: user_profile_id
+      foreign: category_id
+    regions:
+      class: Region
+      refClass: SubscriptionRegion
+      local: user_profile_id
+      foreign: region_id
+Category:
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+    name:
+      notnull: true
+    description:
+      type: string(255)
+  relations:
+    profiles:
+      class: SfGuardUserProfile
+      refClass: SubscriptionCategory
+      local: category_id
+      foreign: user_profile_id
+    Proposals:
+      class: Proposal
+      refClass: ProposalHasCategory
+      local: category_id
+      foreign: proposal_id
+    Actions:
+      class: Action
+      refClass: ActionHasCategory
+      local: category_id
+      foreign: action_id
+Proposal:
+  actAs:
+    Timestampable: 
+    Sluggable:
+      alias: slug
+      unique: true
+      fields: [publish_date,title]
+      uniqueBy: [publish_date,title]
+    Searchable:
+      fields: [type,title,body]
+    Geographical: 
+  columns:
+    id:
+      primary: true
+    type:
+      type: string
+      notnull: true
+    publish_date:
+      type: date
+      notnull: true
+    title:
+      type: string(255)
+      notnull: true
+    body:
+      type: clob
+      notnull: true
+    image:
+      type: string(255)
+    video:
+      type: string(255)
+    tip:
+      type: clob
+    user_id:
+      type: integer
+      notnull: true
+    active:
+      default: 1
+      type: boolean
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+    Categories:
+      class: Category
+      refClass: ProposalHasCategory
+      local: proposal_id
+      foreign: category_id
+    Regions:
+      class: Region
+      refClass: ProposalHasRegion
+      local: proposal_id
+      foreign: region_id
+Region:
+  actAs:
+    NestedSet: 
+  columns:
+    id:
+      primary: true
+    name:
+      type: string
+      notnull: true
+    description:
+      type: string(255)
+  relations:
+    profiles:
+      class: SfGuardUserProfile
+      refClass: SubscriptionRegion
+      local: region_id
+      foreign: user_profile_id
+    Proposals:
+      class: Proposal
+      refClass: ProposalHasRegion
+      local: region_id
+      foreign: proposal_id
+ProposalHasRegion:
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    proposal_id:
+      notnull: true
+    region_id:
+      notnull: true
+  relations:
+    Proposal:
+      local: proposal_id
+      foreign: id
+    Region:
+      local: region_id
+      foreign: id
+ProposalHasCategory:
+  columns:
+    proposal_id:
+      primary: true
+      notnull: true
+    category_id:
+      primary: true
+      notnull: true
+  relations:
+    Category:
+      local: category_id
+      foreign: id
+    Proposal:
+      local: proposal_id
+      foreign: id
+SubscriptionRegion:
+  columns:
+    user_profile_id:
+      primary: true
+      notnull: true
+    region_id:
+      primary: true
+      notnull: true
+  relations:
+    SfGuardUserProfile:
+      local: user_profile_id
+      foreign: id
+    Region:
+      local: region_id
+      foreign: id
+SubscriptionCategory:
+  columns:
+    user_profile_id:
+      primary: true
+      notnull: true
+    category_id:
+      primary: true
+      notnull: true
+  relations:
+    SfGuardUserProfile:
+      local: user_profile_id
+      foreign: id
+    Category:
+      local: category_id
+      foreign: id
+Response:
+  columns:
+    id:
+      primary: true
+    body:
+      type: clob
+      notnull: true
+    initiative_id: 
+  relations:
+    Proposal:
+      local: initiative_id
+      foreign: id
+Action:
+  actAs:
+    Timestampable: 
+    Sluggable:
+      alias: slug
+      unique: true
+      fields: [action_date,title]
+      uniqueBy: [title,action_date]
+    Searchable:
+      fields: [author,type,title,body]
+    Geographical: 
+  columns:
+    id:
+      primary: true
+    author:
+      type: string
+      notnull: true
+    type:
+      type: string(100)
+      notnull: true
+    title:
+      type: string(255)
+      notnull: true
+    body:
+      type: clob
+      notnull: true
+    action_date:
+      type: date
+    location:
+      type: string(255)
+    min_users_allowed:
+      type: integer
+      notnull: true
+    max_users_allowed:
+      type: integer
+    register_start_date:
+      type: date
+      notnull: true
+    register_end_date:
+      type: date
+    price:
+      type: decimal
+    active:
+      default: 1
+      type: boolean
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+    Categories:
+      class: Category
+      refClass: ActionHasCategory
+      local: action_id
+      foreign: category_id
+    Users:
+      class: sfGuardUser
+      refClass: ActionUser
+      local: action_id
+      foreign: action_user_id
+ActionHasCategory:
+  columns:
+    category_id:
+      primary: true
+      notnull: true
+    action_id:
+      primary: true
+      notnull: true
+  relations:
+    Category:
+      local: category_id
+      foreign: id
+    Action:
+      local: action_id
+      foreign: id
+VirtualMeeting:
+  columns:
+    id:
+      primary: true
+    title:
+      type: string(255)
+      notnull: true
+    body:
+      type: clob
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    answers_start_date:
+      type: date
+      notnull: true
+    answers_end_date:
+      type: date
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+VirtualMeetingAnswer:
+  columns:
+    id:
+      primary: true
+    answer:
+      type: clob
+      notnull: true
+    opinion_id:
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+  relations:
+    Opinion:
+      local: opinion_id
+      foreign: id
+    sfGuardUser:
+      local: user_id
+      foreign: id
+ActionUser:
+  columns:
+    action_id:
+      primary: true
+      notnull: true
+    action_user_id:
+      primary: true
+      type: integer
+      notnull: true
+  relations:
+    Action:
+      local: action_id
+      foreign: id
+    sfGuardUser:
+      local: action_user_id
+      foreign: id
+actAs:
+  Sluggable:
+    unique: true

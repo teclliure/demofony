@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<orm-designer version="1.4.3.457">
+
+  <module import-format="DoctrineYml" import-path="schema.yml" name="sfDoctrineGuardPlugin" visBkColor="16317694" visSizeX="0" visSizeX2="642" visSizeY="0" visSizeY2="564">
+    <table name="sfGuardGroup" visPositionX="46" visPositionY="40" visSizeX="0" visSizeX2="121" visSizeY="0" visSizeY2="59">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="name" size="255" type="string" unique="true"/>
+      <column name="description" size="1000" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardPermission" visPositionX="260" visPositionY="40" visSizeX="0" visSizeX2="121" visSizeY="0" visSizeY2="59">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="name" size="255" type="string" unique="true"/>
+      <column name="description" size="1000" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardGroupPermission" visPositionX="448" visPositionY="40" visSizeX="0" visSizeX2="174" visSizeY="0" visSizeY2="60">
+      <column name="group_id" primary="true" type="integer"/>
+      <column name="permission_id" primary="true" type="integer"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+        <attribute name="options">
+          <attribute name="symfony">
+            <attribute name="form">false</attribute>
+            <attribute name="filter">false</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardUser" visPositionX="42" visPositionY="251" visSizeX="0" visSizeX2="130" visSizeY="0" visSizeY2="171">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="first_name" size="255" type="string"/>
+      <column name="last_name" size="255" type="string"/>
+      <column name="email_address" required="true" size="255" type="string" unique="true"/>
+      <column name="username" required="true" size="128" type="string" unique="true"/>
+      <column default="sha1" name="algorithm" required="true" size="128" type="string"/>
+      <column name="salt" size="128" type="string"/>
+      <column name="password" size="128" type="string"/>
+      <column default="1" name="is_active" type="boolean"/>
+      <column default="false" name="is_super_admin" type="boolean"/>
+      <column name="last_login" type="timestamp"/>
+      <index name="is_active_idx" unique="false">
+        <index-column name="is_active"/>
+      </index>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardUserPermission" visPositionX="236" visPositionY="251" visSizeX="0" visSizeX2="170" visSizeY="0" visSizeY2="60">
+      <column name="user_id" primary="true" type="integer"/>
+      <column name="permission_id" primary="true" type="integer"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+        <attribute name="options">
+          <attribute name="symfony">
+            <attribute name="form">false</attribute>
+            <attribute name="filter">false</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardUserGroup" visPositionX="460" visPositionY="251" visSizeX="0" visSizeX2="150" visSizeY="0" visSizeY2="60">
+      <column name="user_id" primary="true" type="integer"/>
+      <column name="group_id" primary="true" type="integer"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+        <attribute name="options">
+          <attribute name="symfony">
+            <attribute name="form">false</attribute>
+            <attribute name="filter">false</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardRememberKey" visPositionX="42" visPositionY="462" visSizeX="0" visSizeX2="129" visSizeY="0" visSizeY2="73">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="user_id" type="integer"/>
+      <column name="remember_key" size="32" type="string"/>
+      <column name="ip_address" size="50" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+        <attribute name="options">
+          <attribute name="symfony">
+            <attribute name="form">false</attribute>
+            <attribute name="filter">false</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="sfGuardForgotPassword" visPositionX="261" visPositionY="462" visSizeX="0" visSizeX2="120" visSizeY="0" visSizeY2="73">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="user_id" required="true" type="integer"/>
+      <column name="unique_key" size="255" type="string"/>
+      <column name="expires_at" required="true" type="timestamp"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+        <attribute name="options">
+          <attribute name="symfony">
+            <attribute name="form">false</attribute>
+            <attribute name="filter">false</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <foreign-key from="sfGuardGroupPermission" inverse-alias="Group" name="FK_sfGuardGroupPermission_sfGuardGroup_id" to="sfGuardGroup">
+      <foreign-key-column from="group_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardGroupPermission" inverse-alias="Permission" name="FK_sfGuardGroupPermission_sfGuardPermission_id" to="sfGuardPermission">
+      <foreign-key-column from="permission_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardUserPermission" inverse-alias="Permission" name="FK_sfGuardUserPermission_sfGuardPermission_id" to="sfGuardPermission">
+      <foreign-key-column from="permission_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardUserPermission" inverse-alias="User" name="FK_sfGuardUserPermission_sfGuardUser_id" to="sfGuardUser">
+      <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardUserGroup" inverse-alias="Group" name="FK_sfGuardUserGroup_sfGuardGroup_id" to="sfGuardGroup">
+      <foreign-key-column from="group_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardUserGroup" inverse-alias="User" name="FK_sfGuardUserGroup_sfGuardUser_id" to="sfGuardUser">
+      <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardRememberKey" inverse-alias="User" name="FK_sfGuardRememberKey_sfGuardUser_id" owning-alias="RememberKeys" to="sfGuardUser">
+      <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="side-owning">
+          <attribute name="type">one</attribute>
+        </attribute>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="sfGuardForgotPassword" inverse-alias="User" name="FK_sfGuardForgotPassword_sfGuardUser_id" owning-alias="ForgotPassword" to="sfGuardUser">
+      <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="side-inverse">
+          <attribute name="type">one</attribute>
+        </attribute>
+        <attribute name="side-owning">
+          <attribute name="type">one</attribute>
+        </attribute>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <many-to-many-relation mn-table="sfGuardGroupPermission">
+      <many-to-many-foreign-key foreign-key="FK_sfGuardGroupPermission_sfGuardGroup_id" relation-alias="Groups"/>
+      <many-to-many-foreign-key foreign-key="FK_sfGuardGroupPermission_sfGuardPermission_id" relation-alias="Permissions"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="sfGuardUserGroup">
+      <many-to-many-foreign-key foreign-key="FK_sfGuardUserGroup_sfGuardGroup_id" relation-alias="Groups"/>
+      <many-to-many-foreign-key foreign-key="FK_sfGuardUserGroup_sfGuardUser_id" relation-alias="Users"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="sfGuardUserPermission">
+      <many-to-many-foreign-key foreign-key="FK_sfGuardUserPermission_sfGuardPermission_id" relation-alias="Permissions"/>
+      <many-to-many-foreign-key foreign-key="FK_sfGuardUserPermission_sfGuardUser_id" relation-alias="Users"/>
+    </many-to-many-relation>
+  </module>
+
+</orm-designer>
