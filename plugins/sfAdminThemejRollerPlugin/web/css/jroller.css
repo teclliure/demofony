@@ -1,0 +1,167 @@
+html { overflow: -moz-scrollbars-vertical !important; }
+
+.floatleft { float: left; }
+.floatright { float: right; }
+
+.fg-menu .fg-button { text-align: left; }
+.fg-menu .fg-button-icon-left { text-indent: 1.8em; }
+
+.sf_admin_actions { margin: 0; padding: 0; list-style-type: none; }
+  .sf_admin_actions li { display: inline; }
+
+/* flash messages */
+.sf_admin_flashes { margin: 10px 0; font-size: 1.15em; font-weight: bold; }
+.sf_admin_flashes div.ui-state-error, .sf_admin_flashes div.ui-state-highlight, .sf_admin_flashes div.ui-state-success {
+	padding: 10px;
+}
+
+#sf_admin_container { position: relative; padding-bottom: .5em; }
+  #sf_admin_container .ui-widget-header h1 {
+    font-size: 1.4em;
+    background: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    margin: 0;
+    padding: 2px 0 0 0;
+  }
+
+/*
+  List styling
+*/
+.sf_admin_actions_block { margin: 10px 0; }
+
+/* sf_admin_list */
+.sf_admin_list { margin: 10px 0; }
+  .sf_admin_list table { clear: both; width: 100%; border-collapse: collapse; }
+    .sf_admin_list table a { text-decoration: none; }
+
+    /* table caption */
+    .sf_admin_list table caption { padding: 4px; }
+      .sf_admin_list table caption .ui-icon { float: right; }
+      .sf_admin_list table caption h1 span.ui-icon.ui-icon-triangle-1-s { float: left; margin-right: 6px; }
+
+    /* table head */
+    .sf_admin_list table thead tr th { padding: 1px 5px; font-size: 1.1em; white-space: nowrap; }
+    .sf_admin_list table thead a { display: block; padding: 5px 0; }
+      .sf_admin_list table thead a .ui-icon { float: right; }
+
+    /* table foot */
+    .sf_admin_list table tfoot, 
+    .sf_admin_list table tfoot tr, 
+    .sf_admin_list table tfoot tr th { border: 0; margin: 0; padding: 0; background: 0; }
+      .sf_admin_list table tfoot div { padding: 5px; margin: 0; text-align: right; }
+
+    /* table content */
+    .sf_admin_list table tbody tr.sf_admin_row:hover { font-weight: normal; }
+      .sf_admin_list table tbody tr.sf_admin_row td {
+      	border-right-width: 1px;
+      	border-right-style: inherit;
+      	border-right-color: inherit;
+      	border-bottom-width: 1px;
+      	border-bottom-style: inherit;
+      	border-bottom-color: inherit;
+      	padding: 4px;
+      	margin: 0;
+      	text-align: left;
+      	overflow: hidden;
+      }
+
+      /* table actions */
+      .sf_admin_td_actions { list-style-type: none; white-space: nowrap; }
+        .sf_admin_td_actions li { display: block; float: left; }
+
+/* pagination */
+#sf_admin_pager { width: 99%; margin: 0 auto; }
+  #sf_admin_pager td { width: 33%; }
+  #sf_admin_pager td.right { text-align: right; }
+
+  #sf_admin_pager .sf_admin_pagination { width: auto; margin: 0 auto; }
+    #sf_admin_pager .sf_admin_pagination td { width: auto; white-space: nowrap; padding: 0 10px; }
+    #sf_admin_pager .sf_admin_pagination td.button { width: 30px; padding: 0; }
+      #sf_admin_pager .sf_admin_pagination td a { display: block; width: 18px; height: 18px; margin: 0 auto; }
+      #sf_admin_pager .sf_admin_pagination td input { border: 1px solid #bbb; padding: 2px 0; text-align: center; }
+
+/* list select menu */
+.sf_admin_batch_actions_choice .ui-selectmenu { float: left; margin-right: 5px; }
+
+
+/*
+  Filters box
+*/
+.sf_admin_filter { width: 50%; margin: 0 auto; }
+  .sf_admin_filter table { width: 100%; }
+    .sf_admin_filter td { padding-bottom: 10px; }
+  .sf_admin_filter br { display: none; }
+
+#sf_admin_filters_buttons { float: right; margin: 0 5px 0 0; border: 0; background: 0; }
+
+
+/*
+  sf_admin_form
+*/
+.sf_admin_edit { padding: .2em; }
+
+  /* actions (save, delete, etc.) */
+  .sf_admin_actions_form { float: right; margin-right: .2em !important; list-style-type: none; white-space: nowrap; }
+    .sf_admin_actions_form li { display: block; float: left; }
+      .sf_admin_actions_form li a,
+      .sf_admin_actions_form li button { margin: 0; }
+
+    /* return to list button */
+    .sf_admin_actions_form .sf_admin_action_list { position: absolute; left: .4em; }
+
+  /* fieldsets tab menu */
+  #sf_admin_form_tab_menu { margin: 10px 0; border: 0; }
+    #sf_admin_form_tab_menu .ui-tabs-panel { border-width: 1px; }
+
+  /* default inputs styles */
+  .sf_admin_text input, textarea, select { margin: 0.5em 0; border: 2px solid #bbb; }
+  .sf_admin_text input[type=text]:focus, .sf_admin_text input[type=password]:focus, textarea:focus, select:focus {
+    border-color: #333;
+  }
+  .sf_admin_text input[type=text], .sf_admin_text input[type=password], textarea { padding: 3px 5px; }
+  .sf_admin_filter input[type=text] { margin-right: 20px; }
+
+  /* form element */
+  .sf_admin_form_row { padding: 5px 9px; margin-bottom: 5px; }
+
+    /* form label */
+    .sf_admin_form_row .label label { float: left; font-size: 1.2em; font-weight: bold; margin-right: 15px; }
+
+      /* help message */
+      .help { color: #666; font-style: italic; line-height: 1.8em; padding-left: 5px; text-indent: 5px; }
+        .help .ui-icon { position: relative; margin-top: 1px; }
+
+    /* checkbox & radio list */
+    .checkbox_list, .radio_list { list-style: none; }
+      .checkbox_list label, .radio_list label { padding-left: 5px; font-weight: normal; }
+
+    /* dates styles */
+    .sf_admin_date select,
+    .sf_admin_form_field_date select,
+    .sf_admin_form_field_time select,
+    .sf_admin_form_field_daterange select { margin: 0 3px; }
+      .sf_admin_date option,
+      .sf_admin_form_field_date option,
+      .sf_admin_form_field_time option,
+      .sf_admin_form_field_daterange option { padding-right: 15px; }
+
+    /* errors messages */
+    .errors { padding-left: 5px; font-size: 1.05em; }
+      .error_list { list-style: none; font-weight: bold; text-indent: 5px; }
+
+  /* form element focused */
+  .focused { padding: 4px 8px; /*background: #FFF7C0; -moz-box-shadow:1px 1px 2px rgba(0, 0, 0, 0.15);*/ }
+
+
+/* Vertical Tabs
+----------------------------------*/
+.ui-tabs-vertical .ui-tabs-nav { position: relative; padding: .2em .1em .2em .2em; float: left; width: 25%; }
+  .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 99%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+    .ui-tabs-vertical .ui-tabs-nav li a { display: block; float: none; }
+
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { float: left; width: 70%; padding: 1em 1%; margin: 0 0 0 2%; }
