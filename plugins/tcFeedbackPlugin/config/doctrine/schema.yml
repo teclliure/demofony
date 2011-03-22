@@ -4,10 +4,12 @@ Opinion:
   columns:
     id:
       primary: true
+      type: integer
     opinion:
-      type: string
+      type: string(255)
       notnull: true
-    opinion_possibility_id: 
+    opinion_possibility_id:
+      type: integer
     object_class:
       type: string(100)
       notnull: true
@@ -38,10 +40,12 @@ OpinionPossibility:
   columns:
     id:
       primary: true
+      type: integer
     name:
       type: string(100)
       notnull: true
-    opinion_possibility_group_id: 
+    opinion_possibility_group_id:
+      type: integer
   relations:
     OpinionPossibilityGroup:
       local: opinion_possibility_group_id
@@ -50,6 +54,7 @@ OpinionPossibilityGroup:
   columns:
     id:
       primary: true
+      type: integer
     name:
       type: string(100)
       notnull: true
@@ -63,8 +68,9 @@ Comments:
   columns:
     id:
       primary: true
+      type: integer
     comment:
-      type: string
+      type: string(255)
       notnull: true
     object_class:
       type: string(100)
@@ -79,6 +85,9 @@ Comments:
     user_id:
       type: integer
       notnull: true
+  indexes:
+    IX_Comments_1:
+      fields: [object_class, object_id]
   relations:
     sfGuardUser:
       local: user_id
@@ -93,6 +102,7 @@ OpinionLike:
       type: integer
       notnull: true
     opinion_id:
+      type: integer
       notnull: true
   indexes:
     IX_OpinionLike_1:

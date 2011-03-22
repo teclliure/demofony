@@ -3,9 +3,9 @@
 
   <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="600" visSizeY="-163" visSizeY2="394">
     <table name="Opinion" visPositionX="-34" visPositionY="208" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="129">
-      <column name="id" primary="true"/>
-      <column name="opinion" required="true" type="string"/>
-      <column name="opinion_possibility_id"/>
+      <column name="id" primary="true" type="integer"/>
+      <column name="opinion" required="true" size="255" type="string"/>
+      <column name="opinion_possibility_id" type="integer"/>
       <column name="object_class" required="true" size="100" type="string"/>
       <column name="object_id" required="true" type="integer"/>
       <column default="0" name="innapropiate" required="true" type="boolean"/>
@@ -22,22 +22,26 @@
       </orm-properties>
     </table>
     <table name="OpinionPossibility" visPositionX="145" visPositionY="268" visSizeX="0" visSizeX2="133" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true"/>
+      <column name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
-      <column name="opinion_possibility_group_id"/>
+      <column name="opinion_possibility_group_id" type="integer"/>
     </table>
     <table name="OpinionPossibilityGroup" visPositionX="326" visPositionY="268" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true"/>
+      <column name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column default="0" name="display_graph" required="true" type="boolean"/>
     </table>
     <table name="Comments" visPositionX="457" visPositionY="241" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="101">
-      <column name="id" primary="true"/>
-      <column name="comment" required="true" type="string"/>
+      <column name="id" primary="true" type="integer"/>
+      <column name="comment" required="true" size="255" type="string"/>
       <column name="object_class" required="true" size="100" type="string"/>
       <column name="object_id" required="true" type="integer"/>
       <column default="0" name="innapropiate" required="true" type="boolean"/>
       <column name="user_id" required="true" type="integer"/>
+      <index name="IX_Comments_1" unique="false">
+        <index-column name="object_class"/>
+        <index-column name="object_id"/>
+      </index>
       <orm-properties>
         <attribute name="actAs">
           <attribute name="Timestampable"/>
@@ -47,7 +51,7 @@
     <table name="OpinionLike" visPositionX="120" visPositionY="173" visSizeX="0" visSizeX2="89" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="user_id" required="true" type="integer"/>
-      <column name="opinion_id" required="true"/>
+      <column name="opinion_id" required="true" type="integer"/>
       <index name="IX_OpinionLike_1" unique="true">
         <index-column name="user_id"/>
         <index-column name="opinion_id"/>

@@ -1,17 +1,10 @@
 name:     Admin menu
+attributes: {id: admin_menu, class: sf-menu}
 children:
-  signin:
-    label:   Sign in
-    route:   @sf_guard_signin
-    requires_no_auth: true
-    attributes: {class: signin }
-  signout:
-    label:   Sign out
-    route:   @sf_guard_signout
-    requires_auth: true
   user_admin:
     label:          User Admin
     requires_auth: true
+    route:   ''
     children:
       manage_users:
         label:   Manage Users
@@ -25,3 +18,12 @@ children:
         label:   Manage Permissions
         route:   @sf_guard_permission
         credentials: [Permission_admin]
+  signin:
+    label:   Sign in
+    route:   @sf_guard_signin
+    requires_no_auth: true
+    attributes: {class: signin}
+  signout:
+    label:   Sign out
+    route:   @sf_guard_signout
+    requires_auth: true

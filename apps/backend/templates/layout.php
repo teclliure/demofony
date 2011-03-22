@@ -14,10 +14,7 @@
      <div class="span-24 last"><h1>Cabecera</h1></div>
      <div class="span-24 last"><?php include_component('home', 'menu'); ?></div>
      <div class="span-24 last"><?php include_component('sfDoctrineBreadcrumbs', 'breadcrumbs'); ?></div>
-     <div class="span-5">
-        menu
-     </div>
-     <div class="span-19 last">
+     <div class="span-24 last">
      Contenido
      <?php echo $sf_content ?>
      </div>

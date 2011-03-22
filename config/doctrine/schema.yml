@@ -5,6 +5,7 @@ SfGuardUserProfile:
   columns:
     id:
       primary: true
+      type: integer
       autoincrement: true
     user_id:
       unique: true
@@ -51,8 +52,10 @@ Category:
   columns:
     id:
       primary: true
+      type: integer
       autoincrement: true
     name:
+      type: string(100)
       notnull: true
     description:
       type: string(255)
@@ -81,13 +84,14 @@ Proposal:
       fields: [publish_date,title]
       uniqueBy: [publish_date,title]
     Searchable:
-      fields: [type,title,body]
+      fields: [title,body]
     Geographical: 
   columns:
     id:
       primary: true
-    type:
-      type: string
+      type: integer
+    proposal_type:
+      type: string(100)
       notnull: true
     publish_date:
       type: date
@@ -131,8 +135,9 @@ Region:
   columns:
     id:
       primary: true
+      type: integer
     name:
-      type: string
+      type: string(100)
       notnull: true
     description:
       type: string(255)
@@ -156,8 +161,10 @@ ProposalHasRegion:
       notnull: true
       autoincrement: true
     proposal_id:
+      type: integer
       notnull: true
     region_id:
+      type: integer
       notnull: true
   relations:
     Proposal:
@@ -170,9 +177,11 @@ ProposalHasCategory:
   columns:
     proposal_id:
       primary: true
+      type: integer
       notnull: true
     category_id:
       primary: true
+      type: integer
       notnull: true
   relations:
     Category:
@@ -185,9 +194,11 @@ SubscriptionRegion:
   columns:
     user_profile_id:
       primary: true
+      type: integer
       notnull: true
     region_id:
       primary: true
+      type: integer
       notnull: true
   relations:
     SfGuardUserProfile:
@@ -200,9 +211,11 @@ SubscriptionCategory:
   columns:
     user_profile_id:
       primary: true
+      type: integer
       notnull: true
     category_id:
       primary: true
+      type: integer
       notnull: true
   relations:
     SfGuardUserProfile:
@@ -215,10 +228,12 @@ Response:
   columns:
     id:
       primary: true
+      type: integer
     body:
       type: clob
       notnull: true
-    initiative_id: 
+    initiative_id:
+      type: integer
   relations:
     Proposal:
       local: initiative_id
@@ -232,15 +247,16 @@ Action:
       fields: [action_date,title]
       uniqueBy: [title,action_date]
     Searchable:
-      fields: [author,type,title,body]
+      fields: [author,title,body]
     Geographical: 
   columns:
     id:
       primary: true
+      type: integer
     author:
-      type: string
+      type: string(150)
       notnull: true
-    type:
+    action_type:
       type: string(100)
       notnull: true
     title:
@@ -254,6 +270,7 @@ Action:
     location:
       type: string(255)
     min_users_allowed:
+      unique: true
       type: integer
       notnull: true
     max_users_allowed:
@@ -290,9 +307,11 @@ ActionHasCategory:
   columns:
     category_id:
       primary: true
+      type: integer
       notnull: true
     action_id:
       primary: true
+      type: integer
       notnull: true
   relations:
     Category:
@@ -305,6 +324,7 @@ VirtualMeeting:
   columns:
     id:
       primary: true
+      type: integer
     title:
       type: string(255)
       notnull: true
@@ -328,10 +348,12 @@ VirtualMeetingAnswer:
   columns:
     id:
       primary: true
+      type: integer
     answer:
       type: clob
       notnull: true
     opinion_id:
+      type: integer
       notnull: true
     user_id:
       type: integer
@@ -347,6 +369,7 @@ ActionUser:
   columns:
     action_id:
       primary: true
+      type: integer
       notnull: true
     action_user_id:
       primary: true

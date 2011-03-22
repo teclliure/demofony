@@ -3,16 +3,14 @@
 
   <include name="config\doctrine\schema.module.xml"/>
 
-  <include name="plugins\sfDoctrineGuardPlugin\config\doctrine\schema2.module.xml"/>
+  <include name="plugins\sfDoctrineGuardPlugin\config\doctrine\schema.module.xml"/>
 
   <include name="plugins\tcFeedbackPlugin\config\doctrine\schema.module.xml"/>
 
-  <include name="plugins\sfDoctrineGuardPlugin\config\doctrine\schema.module.xml"/>
-
   <project code-name="Demofony" framework="Symfony" name="demofony" orm="Doctrine" visSizeX="85" visSizeX2="2080" visSizeY="27" visSizeY2="1509">
     <module-position name="demofony" visPositionX="15" visPositionY="22"/>
-    <module-position name="tcFeedbackPlugin" visPositionX="875" visPositionY="502"/>
     <module-position name="sfDoctrineGuardPlugin" visPositionX="824" visPositionY="22"/>
+    <module-position name="tcFeedbackPlugin" visPositionX="875" visPositionY="502"/>
   </project>
 
 </orm-designer>

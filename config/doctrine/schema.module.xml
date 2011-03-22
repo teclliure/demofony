@@ -3,7 +3,7 @@
 
   <module import-format="DoctrineYml" import-path="schema.yml" name="demofony" visBkColor="16643574" visSizeX="50" visSizeX2="792" visSizeY="0" visSizeY2="874">
     <table name="SfGuardUserProfile" visPositionX="615" visPositionY="650" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="199">
-      <column auto-increment="true" name="id" primary="true"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="user_id" required="true" type="integer" unique="true"/>
       <column name="nickname" size="255" type="string"/>
       <column name="gender" type="integer"/>
@@ -24,13 +24,13 @@
       </orm-properties>
     </table>
     <table name="Category" visPositionX="200" visPositionY="351" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="59">
-      <column auto-increment="true" name="id" primary="true"/>
-      <column name="name" required="true"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="name" required="true" size="100" type="string"/>
       <column name="description" size="255" type="string"/>
     </table>
     <table name="Proposal" visPositionX="97" visPositionY="40" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="157">
-      <column name="id" primary="true"/>
-      <column name="type" required="true" type="string"/>
+      <column name="id" primary="true" type="integer"/>
+      <column name="proposal_type" required="true" size="100" type="string"/>
       <column name="publish_date" required="true" type="date"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
@@ -49,15 +49,15 @@
             <attribute name="uniqueBy">[publish_date,title]</attribute>
           </attribute>
           <attribute name="Searchable">
-            <attribute name="fields">[type,title,body]</attribute>
+            <attribute name="fields">[title,body]</attribute>
           </attribute>
           <attribute name="Geographical"/>
         </attribute>
       </orm-properties>
     </table>
     <table name="Region" visPositionX="60" visPositionY="350" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true"/>
-      <column name="name" required="true" type="string"/>
+      <column name="id" primary="true" type="integer"/>
+      <column name="name" required="true" size="100" type="string"/>
       <column name="description" size="255" type="string"/>
       <orm-properties>
         <attribute name="actAs">
@@ -67,35 +67,35 @@
     </table>
     <table name="ProposalHasRegion" visPositionX="-26" visPositionY="256" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="74">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
-      <column name="proposal_id" required="true"/>
-      <column name="region_id" required="true"/>
+      <column name="proposal_id" required="true" type="integer"/>
+      <column name="region_id" required="true" type="integer"/>
     </table>
     <table name="ProposalHasCategory" visPositionX="292" visPositionY="212" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="60">
-      <column name="proposal_id" primary="true" required="true"/>
-      <column name="category_id" primary="true" required="true"/>
+      <column name="proposal_id" primary="true" required="true" type="integer"/>
+      <column name="category_id" primary="true" required="true" type="integer"/>
     </table>
     <table name="SubscriptionRegion" visPositionX="149" visPositionY="639" visSizeX="0" visSizeX2="149" visSizeY="0" visSizeY2="60">
-      <column name="user_profile_id" primary="true" required="true"/>
-      <column name="region_id" primary="true" required="true"/>
+      <column name="user_profile_id" primary="true" required="true" type="integer"/>
+      <column name="region_id" primary="true" required="true" type="integer"/>
     </table>
     <table name="SubscriptionCategory" visPositionX="358" visPositionY="639" visSizeX="0" visSizeX2="158" visSizeY="0" visSizeY2="60">
-      <column name="user_profile_id" primary="true" required="true"/>
-      <column name="category_id" primary="true" required="true"/>
+      <column name="user_profile_id" primary="true" required="true" type="integer"/>
+      <column name="category_id" primary="true" required="true" type="integer"/>
     </table>
     <table name="Response" visPositionX="339" visPositionY="16" visSizeX="0" visSizeX2="70" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true"/>
+      <column name="id" primary="true" type="integer"/>
       <column name="body" required="true" type="clob"/>
-      <column name="initiative_id"/>
+      <column name="initiative_id" type="integer"/>
     </table>
-    <table name="Action" visPositionX="505" visPositionY="25" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="213">
-      <column name="id" primary="true"/>
-      <column name="author" required="true" type="string"/>
-      <column name="type" required="true" size="100" type="string"/>
+    <table name="Action" visPositionX="504" visPositionY="25" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="213">
+      <column name="id" primary="true" type="integer"/>
+      <column name="author" required="true" size="150" type="string"/>
+      <column name="action_type" required="true" size="100" type="string"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
       <column name="action_date" type="date"/>
       <column name="location" size="255" type="string"/>
-      <column name="min_users_allowed" required="true" type="integer"/>
+      <column name="min_users_allowed" required="true" type="integer" unique="true"/>
       <column name="max_users_allowed" type="integer"/>
       <column name="register_start_date" required="true" type="date"/>
       <column name="register_end_date" type="date"/>
@@ -112,18 +112,18 @@
             <attribute name="uniqueBy">[title,action_date]</attribute>
           </attribute>
           <attribute name="Searchable">
-            <attribute name="fields">[author,type,title,body]</attribute>
+            <attribute name="fields">[author,title,body]</attribute>
           </attribute>
           <attribute name="Geographical"/>
         </attribute>
       </orm-properties>
     </table>
     <table name="ActionHasCategory" visPositionX="364" visPositionY="406" visSizeX="0" visSizeX2="107" visSizeY="0" visSizeY2="60">
-      <column name="category_id" primary="true" required="true"/>
-      <column name="action_id" primary="true" required="true"/>
+      <column name="category_id" primary="true" required="true" type="integer"/>
+      <column name="action_id" primary="true" required="true" type="integer"/>
     </table>
     <table name="VirtualMeeting" visPositionX="498" visPositionY="272" visSizeX="0" visSizeX2="126" visSizeY="0" visSizeY2="101">
-      <column name="id" primary="true"/>
+      <column name="id" primary="true" type="integer"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
       <column name="user_id" required="true" type="integer"/>
@@ -131,13 +131,13 @@
       <column name="answers_end_date" required="true" type="date"/>
     </table>
     <table name="VirtualMeetingAnswer" visPositionX="505" visPositionY="497" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="73">
-      <column name="id" primary="true"/>
+      <column name="id" primary="true" type="integer"/>
       <column name="answer" required="true" type="clob"/>
-      <column name="opinion_id" required="true"/>
+      <column name="opinion_id" required="true" type="integer"/>
       <column name="user_id" required="true" type="integer"/>
     </table>
     <table name="ActionUser" visPositionX="665" visPositionY="40" visSizeX="0" visSizeX2="120" visSizeY="0" visSizeY2="60">
-      <column name="action_id" primary="true" required="true"/>
+      <column name="action_id" primary="true" required="true" type="integer"/>
       <column name="action_user_id" primary="true" required="true" type="integer"/>
     </table>
     <orm-properties>
