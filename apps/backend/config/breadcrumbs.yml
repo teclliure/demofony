@@ -1,0 +1,7 @@
+# breadcrumbs.yml example config file
+#
+sf_orm_breadcrumbs:
+  _root: { name: Home, route: homepage }     
+  _separator: '>'
+  _lost: 'somewhere...'
+  _default_case: 'ucfirst'

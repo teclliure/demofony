@@ -1,0 +1,3 @@
+[submodule "plugins/ioMenuPlugin"]
+	path = plugins/ioMenuPlugin
+	url = git://github.com/weaverryan/ioMenuPlugin.git

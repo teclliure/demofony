@@ -1,0 +1,18 @@
+# breadcrumbs.yml example config file
+#
+#sf_orm_breadcrumbs:
+#  _root: { name: Homepage }     
+#  _separator: '>'
+#  _lost: 'somewhere...'
+#  _default_case: 'ucfirst'
+#
+#  main:
+#    index: [{ name: Home, route: homepage }]
+#  blog:
+#    index: [{ name: 'Blog', route: blog }]
+#    showPost:
+#      - { name: Blog, route: blog }
+#      - { name: %title%, route: post_show, model: true }
+#    permalink:
+#      - { name: 'Archive', case: ucwords }
+#      - { name: %Post%, route: post_show, model: true, subobject: Post }

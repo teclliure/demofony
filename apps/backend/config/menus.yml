@@ -1,0 +1,27 @@
+name:     Admin menu
+children:
+  signin:
+    label:   Sign in
+    route:   @sf_guard_signin
+    requires_no_auth: true
+    attributes: {class: signin }
+  signout:
+    label:   Sign out
+    route:   @sf_guard_signout
+    requires_auth: true
+  user_admin:
+    label:          User Admin
+    requires_auth: true
+    children:
+      manage_users:
+        label:   Manage Users
+        route:   @sf_guard_user
+        credentials: [Permission_admin]
+      manage_groups:
+        label:   Manage Groups
+        route:   @sf_guard_permission
+        credentials: [Permission_admin]
+      manage_permissions:
+        label:   Manage Permissions
+        route:   @sf_guard_permission
+        credentials: [Permission_admin]

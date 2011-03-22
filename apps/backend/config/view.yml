@@ -1,0 +1,25 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:
+    - /blueprint/blueprint/screen.css: { media: 'screen,projection' }
+    - /blueprint/blueprint/print.css: { media: print }
+    - main.css
+    - /blueprint/blueprint/ie.css { condition: IE 8 }
+    
+
+  javascripts:    []
+
+  has_layout:     true
+  layout:         layout
