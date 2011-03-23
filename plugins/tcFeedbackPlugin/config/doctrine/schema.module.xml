@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <orm-designer version="1.4.3.457">
 
-  <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="600" visSizeY="-163" visSizeY2="394">
+  <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="600" visSizeY="-163" visSizeY2="465">
     <table name="Opinion" visPositionX="-34" visPositionY="208" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="129">
-      <column name="id" primary="true" type="integer"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="opinion" required="true" size="255" type="string"/>
       <column name="opinion_possibility_id" type="integer"/>
       <column name="object_class" required="true" size="100" type="string"/>
@@ -22,17 +22,17 @@
       </orm-properties>
     </table>
     <table name="OpinionPossibility" visPositionX="145" visPositionY="268" visSizeX="0" visSizeX2="133" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true" type="integer"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column name="opinion_possibility_group_id" type="integer"/>
     </table>
     <table name="OpinionPossibilityGroup" visPositionX="326" visPositionY="268" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true" type="integer"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column default="0" name="display_graph" required="true" type="boolean"/>
     </table>
     <table name="Comments" visPositionX="457" visPositionY="241" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="101">
-      <column name="id" primary="true" type="integer"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="comment" required="true" size="255" type="string"/>
       <column name="object_class" required="true" size="100" type="string"/>
       <column name="object_id" required="true" type="integer"/>
@@ -49,9 +49,8 @@
       </orm-properties>
     </table>
     <table name="OpinionLike" visPositionX="120" visPositionY="173" visSizeX="0" visSizeX2="89" visSizeY="0" visSizeY2="59">
-      <column auto-increment="true" name="id" primary="true" type="integer"/>
-      <column name="user_id" required="true" type="integer"/>
-      <column name="opinion_id" required="true" type="integer"/>
+      <column name="user_id" primary="true" required="true" type="integer"/>
+      <column name="opinion_id" primary="true" required="true" type="integer"/>
       <index name="IX_OpinionLike_1" unique="true">
         <index-column name="user_id"/>
         <index-column name="opinion_id"/>
@@ -59,21 +58,36 @@
     </table>
     <foreign-key from="Opinion" name="FK_Opinion_OpinionPossibility_id" to="OpinionPossibility">
       <foreign-key-column from="opinion_possibility_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="Opinion" name="FK_Opinion_sfGuardUser_id" to="sfGuardUser">
+    <foreign-key from="Opinion" name="FK_Opinion_sfGuardUser_id" to="sfGuardUser" visCenterX="0" visCenterY="0">
       <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key from="OpinionPossibility" name="FK_OpinionPossibility_OpinionPossibilityGroup_id" to="OpinionPossibilityGroup" visCenterX="0" visCenterY="0">
       <foreign-key-column from="opinion_possibility_group_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key from="Comments" name="FK_Comments_sfGuardUser_id" to="sfGuardUser">
       <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key from="OpinionLike" name="FK_OpinionLike_sfGuardUser_id" to="sfGuardUser">
       <foreign-key-column from="user_id" to="id"/>
     </foreign-key>
     <foreign-key from="OpinionLike" name="FK_OpinionLike_Opinion_id" to="Opinion">
       <foreign-key-column from="opinion_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
   </module>
 

@@ -8,31 +8,28 @@
  * @property integer $id
  * @property string $name
  * @property string $description
- * @property Doctrine_Collection $profiles
+ * @property Doctrine_Collection $Profiles
  * @property Doctrine_Collection $Proposals
- * @property Doctrine_Collection $Actions
- * @property Doctrine_Collection $ProposalHasCategory
- * @property Doctrine_Collection $SubscriptionCategory
+ * @property Doctrine_Collection $ContentHasCategory
  * @property Doctrine_Collection $ActionHasCategory
+ * @property Doctrine_Collection $SubscriptionCategory
  * 
  * @method integer             getId()                   Returns the current record's "id" value
  * @method string              getName()                 Returns the current record's "name" value
  * @method string              getDescription()          Returns the current record's "description" value
- * @method Doctrine_Collection getProfiles()             Returns the current record's "profiles" collection
+ * @method Doctrine_Collection getProfiles()             Returns the current record's "Profiles" collection
  * @method Doctrine_Collection getProposals()            Returns the current record's "Proposals" collection
- * @method Doctrine_Collection getActions()              Returns the current record's "Actions" collection
- * @method Doctrine_Collection getProposalHasCategory()  Returns the current record's "ProposalHasCategory" collection
- * @method Doctrine_Collection getSubscriptionCategory() Returns the current record's "SubscriptionCategory" collection
+ * @method Doctrine_Collection getContentHasCategory()   Returns the current record's "ContentHasCategory" collection
  * @method Doctrine_Collection getActionHasCategory()    Returns the current record's "ActionHasCategory" collection
+ * @method Doctrine_Collection getSubscriptionCategory() Returns the current record's "SubscriptionCategory" collection
  * @method Category            setId()                   Sets the current record's "id" value
  * @method Category            setName()                 Sets the current record's "name" value
  * @method Category            setDescription()          Sets the current record's "description" value
- * @method Category            setProfiles()             Sets the current record's "profiles" collection
+ * @method Category            setProfiles()             Sets the current record's "Profiles" collection
  * @method Category            setProposals()            Sets the current record's "Proposals" collection
- * @method Category            setActions()              Sets the current record's "Actions" collection
- * @method Category            setProposalHasCategory()  Sets the current record's "ProposalHasCategory" collection
- * @method Category            setSubscriptionCategory() Sets the current record's "SubscriptionCategory" collection
+ * @method Category            setContentHasCategory()   Sets the current record's "ContentHasCategory" collection
  * @method Category            setActionHasCategory()    Sets the current record's "ActionHasCategory" collection
+ * @method Category            setSubscriptionCategory() Sets the current record's "SubscriptionCategory" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -63,30 +60,25 @@ abstract class BaseCategory extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('SfGuardUserProfile as profiles', array(
+        $this->hasMany('sfGuardUserProfile as Profiles', array(
              'refClass' => 'SubscriptionCategory',
              'local' => 'category_id',
-             'foreign' => 'user_profile_id'));
+             'foreign' => 'user_id'));
 
-        $this->hasMany('Proposal as Proposals', array(
-             'refClass' => 'ProposalHasCategory',
+        $this->hasMany('Content as Proposals', array(
+             'refClass' => 'ContentHasCategory',
              'local' => 'category_id',
-             'foreign' => 'proposal_id'));
+             'foreign' => 'content_id'));
 
-        $this->hasMany('Action as Actions', array(
-             'refClass' => 'ActionHasCategory',
-             'local' => 'category_id',
-             'foreign' => 'action_id'));
-
-        $this->hasMany('ProposalHasCategory', array(
-             'local' => 'id',
-             'foreign' => 'category_id'));
-
-        $this->hasMany('SubscriptionCategory', array(
+        $this->hasMany('ContentHasCategory', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 
         $this->hasMany('ActionHasCategory', array(
+             'local' => 'id',
+             'foreign' => 'category_id'));
+
+        $this->hasMany('SubscriptionCategory', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

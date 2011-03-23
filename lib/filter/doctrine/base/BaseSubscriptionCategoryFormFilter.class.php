@@ -13,11 +13,11 @@ abstract class BaseSubscriptionCategoryFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'slug'            => new sfWidgetFormFilterInput(),
+      'slug'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'slug'            => new sfValidatorPass(array('required' => false)),
+      'slug'        => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('subscription_category_filters[%s]');
@@ -37,9 +37,9 @@ abstract class BaseSubscriptionCategoryFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'user_profile_id' => 'Number',
-      'category_id'     => 'Number',
-      'slug'            => 'Text',
+      'user_id'     => 'Number',
+      'category_id' => 'Number',
+      'slug'        => 'Text',
     );
   }
 }

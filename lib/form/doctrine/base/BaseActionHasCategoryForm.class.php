@@ -27,7 +27,11 @@ abstract class BaseActionHasCategoryForm extends BaseFormDoctrine
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'ActionHasCategory', 'column' => array('slug')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'ActionHasCategory', 'column' => array('category_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ActionHasCategory', 'column' => array('action_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ActionHasCategory', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('action_has_category[%s]');

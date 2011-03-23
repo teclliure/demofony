@@ -17,14 +17,14 @@ abstract class BaseResponseForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
       'body'          => new sfWidgetFormTextarea(),
-      'initiative_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Proposal'), 'add_empty' => true)),
+      'initiative_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Content'), 'add_empty' => true)),
       'slug'          => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'body'          => new sfValidatorString(),
-      'initiative_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Proposal'), 'required' => false)),
+      'initiative_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Content'), 'required' => false)),
       'slug'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 

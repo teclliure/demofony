@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <orm-designer version="1.4.3.457">
 
-  <module import-format="DoctrineYml" import-path="schema.yml" name="demofony" visBkColor="16643574" visSizeX="50" visSizeX2="792" visSizeY="0" visSizeY2="874">
-    <table name="SfGuardUserProfile" visPositionX="615" visPositionY="650" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="199">
-      <column auto-increment="true" name="id" primary="true" type="integer"/>
-      <column name="user_id" required="true" type="integer" unique="true"/>
+  <module import-format="DoctrineYml" import-path="schema.yml" name="demofony" visBkColor="16643574" visSizeX="50" visSizeX2="1123" visSizeY="0" visSizeY2="874">
+    <table name="sfGuardUserProfile" visPositionX="589" visPositionY="648" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="185">
+      <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
       <column name="nickname" size="255" type="string"/>
       <column name="gender" type="integer"/>
       <column name="telephone" size="25" type="string"/>
@@ -23,30 +22,28 @@
         </attribute>
       </orm-properties>
     </table>
-    <table name="Category" visPositionX="200" visPositionY="351" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="59">
+    <table name="Category" visPositionX="159" visPositionY="525" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column name="description" size="255" type="string"/>
     </table>
-    <table name="Proposal" visPositionX="97" visPositionY="40" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="157">
-      <column name="id" primary="true" type="integer"/>
-      <column name="proposal_type" required="true" size="100" type="string"/>
-      <column name="publish_date" required="true" type="date"/>
+    <table name="Content" visPositionX="326" visPositionY="137" visSizeX="0" visSizeX2="130" visSizeY="0" visSizeY2="157">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
       <column name="image" size="255" type="string"/>
       <column name="video" size="255" type="string"/>
-      <column name="tip" type="clob"/>
-      <column name="user_id" required="true" type="integer"/>
       <column default="1" name="active" required="true" type="boolean"/>
+      <column name="user_id" required="true" type="integer"/>
+      <inheritance-parent type="concrete"/>
       <orm-properties>
         <attribute name="actAs">
           <attribute name="Timestampable"/>
           <attribute name="Sluggable">
             <attribute name="alias">slug</attribute>
             <attribute name="unique">true</attribute>
-            <attribute name="fields">[publish_date,title]</attribute>
-            <attribute name="uniqueBy">[publish_date,title]</attribute>
+            <attribute name="fields">[title]</attribute>
+            <attribute name="uniqueBy">[title]</attribute>
           </attribute>
           <attribute name="Searchable">
             <attribute name="fields">[title,body]</attribute>
@@ -55,8 +52,8 @@
         </attribute>
       </orm-properties>
     </table>
-    <table name="Region" visPositionX="60" visPositionY="350" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true" type="integer"/>
+    <table name="Region" visPositionX="-3" visPositionY="539" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="59">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column name="description" size="255" type="string"/>
       <orm-properties>
@@ -65,80 +62,90 @@
         </attribute>
       </orm-properties>
     </table>
-    <table name="ProposalHasRegion" visPositionX="-26" visPositionY="256" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="74">
-      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
-      <column name="proposal_id" required="true" type="integer"/>
-      <column name="region_id" required="true" type="integer"/>
-    </table>
-    <table name="ProposalHasCategory" visPositionX="292" visPositionY="212" visSizeX="0" visSizeX2="117" visSizeY="0" visSizeY2="60">
-      <column name="proposal_id" primary="true" required="true" type="integer"/>
-      <column name="category_id" primary="true" required="true" type="integer"/>
-    </table>
-    <table name="SubscriptionRegion" visPositionX="149" visPositionY="639" visSizeX="0" visSizeX2="149" visSizeY="0" visSizeY2="60">
-      <column name="user_profile_id" primary="true" required="true" type="integer"/>
+    <table name="ContentHasRegion" visPositionX="-40" visPositionY="440" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="60">
+      <column name="content_id" primary="true" required="true" type="integer"/>
       <column name="region_id" primary="true" required="true" type="integer"/>
     </table>
-    <table name="SubscriptionCategory" visPositionX="358" visPositionY="639" visSizeX="0" visSizeX2="158" visSizeY="0" visSizeY2="60">
-      <column name="user_profile_id" primary="true" required="true" type="integer"/>
-      <column name="category_id" primary="true" required="true" type="integer"/>
+    <table name="ContentHasCategory" visPositionX="85" visPositionY="442" visSizeX="0" visSizeX2="113" visSizeY="0" visSizeY2="60">
+      <column name="content_id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="category_id" primary="true" required="true" type="integer" unique="true"/>
     </table>
     <table name="Response" visPositionX="339" visPositionY="16" visSizeX="0" visSizeX2="70" visSizeY="0" visSizeY2="59">
-      <column name="id" primary="true" type="integer"/>
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="body" required="true" type="clob"/>
       <column name="initiative_id" type="integer"/>
     </table>
-    <table name="Action" visPositionX="504" visPositionY="25" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="213">
-      <column name="id" primary="true" type="integer"/>
-      <column name="author" required="true" size="150" type="string"/>
-      <column name="action_type" required="true" size="100" type="string"/>
-      <column name="title" required="true" size="255" type="string"/>
-      <column name="body" required="true" type="clob"/>
-      <column name="action_date" type="date"/>
-      <column name="location" size="255" type="string"/>
-      <column name="min_users_allowed" required="true" type="integer" unique="true"/>
-      <column name="max_users_allowed" type="integer"/>
-      <column name="register_start_date" required="true" type="date"/>
-      <column name="register_end_date" type="date"/>
-      <column name="price" type="decimal"/>
-      <column default="1" name="active" required="true" type="boolean"/>
-      <column name="user_id" required="true" type="integer"/>
-      <orm-properties>
-        <attribute name="actAs">
-          <attribute name="Timestampable"/>
-          <attribute name="Sluggable">
-            <attribute name="alias">slug</attribute>
-            <attribute name="unique">true</attribute>
-            <attribute name="fields">[action_date,title]</attribute>
-            <attribute name="uniqueBy">[title,action_date]</attribute>
-          </attribute>
-          <attribute name="Searchable">
-            <attribute name="fields">[author,title,body]</attribute>
-          </attribute>
-          <attribute name="Geographical"/>
-        </attribute>
-      </orm-properties>
+    <table name="ActionHasCategory" visPositionX="517" visPositionY="553" visSizeX="0" visSizeX2="107" visSizeY="0" visSizeY2="60">
+      <column name="category_id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="action_id" primary="true" required="true" type="integer" unique="true"/>
     </table>
-    <table name="ActionHasCategory" visPositionX="364" visPositionY="406" visSizeX="0" visSizeX2="107" visSizeY="0" visSizeY2="60">
-      <column name="category_id" primary="true" required="true" type="integer"/>
-      <column name="action_id" primary="true" required="true" type="integer"/>
-    </table>
-    <table name="VirtualMeeting" visPositionX="498" visPositionY="272" visSizeX="0" visSizeX2="126" visSizeY="0" visSizeY2="101">
-      <column name="id" primary="true" type="integer"/>
+    <table name="VirtualMeeting" visPositionX="778" visPositionY="482" visSizeX="0" visSizeX2="126" visSizeY="0" visSizeY2="101">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
       <column name="user_id" required="true" type="integer"/>
       <column name="answers_start_date" required="true" type="date"/>
       <column name="answers_end_date" required="true" type="date"/>
     </table>
-    <table name="VirtualMeetingAnswer" visPositionX="505" visPositionY="497" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="73">
-      <column name="id" primary="true" type="integer"/>
+    <table name="VirtualMeetingAnswer" visPositionX="814" visPositionY="637" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="73">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="answer" required="true" type="clob"/>
       <column name="opinion_id" required="true" type="integer"/>
       <column name="user_id" required="true" type="integer"/>
     </table>
-    <table name="ActionUser" visPositionX="665" visPositionY="40" visSizeX="0" visSizeX2="120" visSizeY="0" visSizeY2="60">
-      <column name="action_id" primary="true" required="true" type="integer"/>
-      <column name="action_user_id" primary="true" required="true" type="integer"/>
+    <table name="SubscriptionCategory" visPositionX="258" visPositionY="656" visSizeX="0" visSizeX2="157" visSizeY="0" visSizeY2="60">
+      <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="category_id" primary="true" required="true" type="integer" unique="true"/>
+    </table>
+    <table name="SubscriptionRegion" visPositionX="42" visPositionY="661" visSizeX="0" visSizeX2="148" visSizeY="0" visSizeY2="60">
+      <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="region_id" primary="true" required="true" type="integer" unique="true"/>
+    </table>
+    <table name="CitizenProposal" visPositionX="169" visPositionY="264" visSizeX="0" visSizeX2="77" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <column name="tip" type="clob"/>
+      <inheritance-child derived-from="Content"/>
+    </table>
+    <table name="GovermentProposal" visPositionX="169" visPositionY="316" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <column name="publish_date" required="true" type="date"/>
+      <inheritance-child derived-from="Content"/>
+    </table>
+    <table name="GovermentNew" visPositionX="171" visPositionY="42" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="31">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <column name="publish_date" required="true" type="date"/>
+      <inheritance-child derived-from="Content"/>
+    </table>
+    <table name="GovermentConsultation" visPositionX="166" visPositionY="370" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="20">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <column name="start_date" required="true" type="date"/>
+      <column name="end_date" type="date"/>
+      <inheritance-child derived-from="Content"/>
+    </table>
+    <table name="Action" visPositionX="381" visPositionY="289" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="129">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <column name="author" required="true" size="150" type="string"/>
+      <column name="action_date" type="date"/>
+      <column name="location" size="255" type="string"/>
+      <column name="min_users_allowed" required="true" type="integer"/>
+      <column name="max_users_allowed" type="integer"/>
+      <column name="register_start_date" required="true" type="date"/>
+      <column name="register_end_date" type="date"/>
+      <inheritance-parent type="concrete"/>
+      <inheritance-child derived-from="Content" visCenterX="0" visCenterY="0"/>
+    </table>
+    <table name="Workshop" visPositionX="331" visPositionY="449" visSizeX="0" visSizeX2="83" visSizeY="0" visSizeY2="31">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <column default="0" name="price" type="decimal"/>
+      <inheritance-child derived-from="Action" visCenterX="0" visCenterY="0"/>
+    </table>
+    <table name="CitizenAction" visPositionX="497" visPositionY="450" visSizeX="0" visSizeX2="65" visSizeY="0" visSizeY2="20">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <inheritance-child derived-from="Action" visCenterX="0" visCenterY="0"/>
+    </table>
+    <table name="ActionHasUser" visPositionX="680" visPositionY="308" visSizeX="0" visSizeX2="120" visSizeY="0" visSizeY2="74">
+      <column name="action_id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
     </table>
     <orm-properties>
       <attribute name="actAs">
@@ -147,86 +154,128 @@
         </attribute>
       </attribute>
     </orm-properties>
-    <foreign-key from="SfGuardUserProfile" name="FK_SfGuardUserProfile_sfGuardUser_id" to="sfGuardUser" visCenterX="0" visCenterY="17">
+    <foreign-key from="sfGuardUserProfile" inverse-alias="User" name="FK_SfGuardUserProfile_sfGuardUser_id" owning-alias="Profile" to="sfGuardUser" visCenterX="0" visCenterY="0">
       <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+        <attribute name="side-inverse">
+          <attribute name="type">one</attribute>
+        </attribute>
+        <attribute name="side-owning">
+          <attribute name="type">one</attribute>
+          <attribute name="cascade"></attribute>
+        </attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="Proposal" name="FK_Proposal_sfGuardUser_id" to="sfGuardUser">
+    <foreign-key from="Content" name="FK_Proposal_sfGuardUser_id" to="sfGuardUser">
       <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="ProposalHasRegion" name="FK_ProposalHasRegion_Proposal_id" to="Proposal">
-      <foreign-key-column from="proposal_id" to="id"/>
+    <foreign-key from="ContentHasRegion" name="FK_ProposalHasRegion_Proposal_id" to="Content">
+      <foreign-key-column from="content_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="ProposalHasRegion" name="FK_ProposalHasRegion_Region_id" to="Region" visCenterX="0" visCenterY="0">
+    <foreign-key from="ContentHasRegion" name="FK_ProposalHasRegion_Region_id" to="Region" visCenterX="0" visCenterY="0">
       <foreign-key-column from="region_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="ProposalHasCategory" name="FK_ProposalHasCategory_Category_id" to="Category">
+    <foreign-key from="ContentHasCategory" name="FK_ProposalHasCategory_Category_id" to="Category" visCenterX="0" visCenterY="0">
       <foreign-key-column from="category_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="ProposalHasCategory" name="FK_ProposalHasCategory_Proposal_id" to="Proposal">
-      <foreign-key-column from="proposal_id" to="id"/>
+    <foreign-key from="ContentHasCategory" name="FK_ProposalHasCategory_Proposal_id" to="Content">
+      <foreign-key-column from="content_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="SubscriptionRegion" name="FK_SubscriptionRegion_SfGuardUserProfile_id" to="SfGuardUserProfile">
-      <foreign-key-column from="user_profile_id" to="id"/>
-    </foreign-key>
-    <foreign-key from="SubscriptionRegion" name="FK_SubscriptionRegion_Region_id" to="Region">
-      <foreign-key-column from="region_id" to="id"/>
-    </foreign-key>
-    <foreign-key from="SubscriptionCategory" name="FK_SubscriptionCategory_SfGuardUserProfile_id" to="SfGuardUserProfile">
-      <foreign-key-column from="user_profile_id" to="id"/>
-    </foreign-key>
-    <foreign-key from="SubscriptionCategory" name="FK_SubscriptionCategory_Category_id" to="Category">
-      <foreign-key-column from="category_id" to="id"/>
-    </foreign-key>
-    <foreign-key from="Response" name="FK_Response_Proposal_id" to="Proposal" visCenterX="0" visCenterY="0">
+    <foreign-key from="Response" name="FK_Response_Proposal_id" to="Content" visCenterX="0" visCenterY="0">
       <foreign-key-column from="initiative_id" to="id"/>
-    </foreign-key>
-    <foreign-key from="Action" name="FK_Action_sfGuardUser_id" to="sfGuardUser">
-      <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key from="ActionHasCategory" name="FK_ActionHasCategory_Category_id" to="Category" visCenterX="0" visCenterY="0">
       <foreign-key-column from="category_id" to="id"/>
-    </foreign-key>
-    <foreign-key from="ActionHasCategory" name="FK_ActionHasCategory_Action_id" to="Action" visCenterX="0" visCenterY="0">
-      <foreign-key-column from="action_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key from="VirtualMeeting" name="FK_VirtualMeeting_sfGuardUser_id" to="sfGuardUser">
       <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="VirtualMeetingAnswer" name="FK_VirtualMeetingAnswer_Opinion_id" to="Opinion" visCenterX="0" visCenterY="-83">
+    <foreign-key from="VirtualMeetingAnswer" name="FK_VirtualMeetingAnswer_Opinion_id" to="Opinion" visCenterX="0" visCenterY="-39">
       <foreign-key-column from="opinion_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key from="VirtualMeetingAnswer" name="FK_VirtualMeetingAnswer_sfGuardUser_id" to="sfGuardUser">
       <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
     </foreign-key>
-    <foreign-key from="ActionUser" name="FK_ActionUser_Action_id" to="Action" visCenterX="0" visCenterY="0">
+    <foreign-key caption="sfGuardUserProfile SubscriptionCategory" from="SubscriptionCategory" name="FK_SubscriptionCategory_sfGuardUserProfile_user_id" to="sfGuardUserProfile">
+      <foreign-key-column from="user_id" to="user_id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key caption="Category SubscriptionCategory" from="SubscriptionCategory" name="FK_SubscriptionCategory_Category_id" to="Category" visCaption1X="0" visCaption1Y="0" visCenterX="0" visCenterY="0">
+      <foreign-key-column from="category_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key caption="sfGuardUserProfile SubscriptionRegion" from="SubscriptionRegion" name="FK_SubscriptionRegion_sfGuardUserProfile_user_id" to="sfGuardUserProfile" visCaption1X="0" visCaption1Y="0" visCenterX="-155" visCenterY="0">
+      <foreign-key-column from="user_id" to="user_id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key caption="Region SubscriptionRegion" from="SubscriptionRegion" name="FK_SubscriptionRegion_Region_id" to="Region">
+      <foreign-key-column from="region_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">CASCADE</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key caption="Action ActionHasUser" from="ActionHasUser" name="FK_ActionHasUser_Action_id" to="Action">
       <foreign-key-column from="action_id" to="id"/>
     </foreign-key>
-    <foreign-key from="ActionUser" name="FK_ActionUser_sfGuardUser_id" to="sfGuardUser">
-      <foreign-key-column from="action_user_id" to="id"/>
+    <foreign-key caption="sfGuardUser ActionHasUser" from="ActionHasUser" name="FK_ActionHasUser_sfGuardUser_id" to="sfGuardUser">
+      <foreign-key-column from="user_id" to="id"/>
     </foreign-key>
-    <many-to-many-relation mn-table="SubscriptionCategory">
-      <many-to-many-foreign-key foreign-key="FK_SubscriptionCategory_SfGuardUserProfile_id" relation-alias="profiles"/>
-      <many-to-many-foreign-key foreign-key="FK_SubscriptionCategory_Category_id" relation-alias="categories"/>
-    </many-to-many-relation>
-    <many-to-many-relation mn-table="SubscriptionRegion">
-      <many-to-many-foreign-key foreign-key="FK_SubscriptionRegion_SfGuardUserProfile_id" relation-alias="profiles"/>
-      <many-to-many-foreign-key foreign-key="FK_SubscriptionRegion_Region_id" relation-alias="regions"/>
-    </many-to-many-relation>
-    <many-to-many-relation mn-table="ProposalHasCategory">
+    <many-to-many-relation mn-table="ContentHasCategory">
       <many-to-many-foreign-key foreign-key="FK_ProposalHasCategory_Category_id" relation-alias="Categories"/>
       <many-to-many-foreign-key foreign-key="FK_ProposalHasCategory_Proposal_id" relation-alias="Proposals"/>
     </many-to-many-relation>
-    <many-to-many-relation mn-table="ActionHasCategory">
-      <many-to-many-foreign-key foreign-key="FK_ActionHasCategory_Category_id" relation-alias="Categories"/>
-      <many-to-many-foreign-key foreign-key="FK_ActionHasCategory_Action_id" relation-alias="Actions"/>
-    </many-to-many-relation>
-    <many-to-many-relation mn-table="ProposalHasRegion">
+    <many-to-many-relation mn-table="ContentHasRegion">
       <many-to-many-foreign-key foreign-key="FK_ProposalHasRegion_Proposal_id" relation-alias="Proposals"/>
       <many-to-many-foreign-key foreign-key="FK_ProposalHasRegion_Region_id" relation-alias="Regions"/>
     </many-to-many-relation>
-    <many-to-many-relation mn-table="ActionUser">
-      <many-to-many-foreign-key foreign-key="FK_ActionUser_Action_id"/>
-      <many-to-many-foreign-key foreign-key="FK_ActionUser_sfGuardUser_id" relation-alias="Users"/>
+    <many-to-many-relation mn-table="SubscriptionCategory">
+      <many-to-many-foreign-key foreign-key="FK_SubscriptionCategory_sfGuardUserProfile_user_id" relation-alias="Profiles"/>
+      <many-to-many-foreign-key foreign-key="FK_SubscriptionCategory_Category_id" relation-alias="Categories"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="SubscriptionRegion">
+      <many-to-many-foreign-key foreign-key="FK_SubscriptionRegion_sfGuardUserProfile_user_id" relation-alias="Profiles"/>
+      <many-to-many-foreign-key foreign-key="FK_SubscriptionRegion_Region_id" relation-alias="Regions"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="ActionHasUser">
+      <many-to-many-foreign-key foreign-key="FK_ActionHasUser_Action_id" relation-alias="Actions"/>
+      <many-to-many-foreign-key foreign-key="FK_ActionHasUser_sfGuardUser_id" relation-alias="Users"/>
     </many-to-many-relation>
   </module>
 

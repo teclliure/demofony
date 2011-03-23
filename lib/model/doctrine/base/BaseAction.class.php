@@ -7,95 +7,56 @@
  * 
  * @property integer $id
  * @property string $author
- * @property string $action_type
- * @property string $title
- * @property clob $body
  * @property date $action_date
  * @property string $location
  * @property integer $min_users_allowed
  * @property integer $max_users_allowed
  * @property date $register_start_date
  * @property date $register_end_date
- * @property decimal $price
- * @property boolean $active
- * @property integer $user_id
- * @property sfGuardUser $sfGuardUser
- * @property Doctrine_Collection $Categories
  * @property Doctrine_Collection $Users
- * @property Doctrine_Collection $ActionHasCategory
- * @property Doctrine_Collection $ActionUser
+ * @property Doctrine_Collection $ActionHasUser
  * 
  * @method integer             getId()                  Returns the current record's "id" value
  * @method string              getAuthor()              Returns the current record's "author" value
- * @method string              getActionType()          Returns the current record's "action_type" value
- * @method string              getTitle()               Returns the current record's "title" value
- * @method clob                getBody()                Returns the current record's "body" value
  * @method date                getActionDate()          Returns the current record's "action_date" value
  * @method string              getLocation()            Returns the current record's "location" value
  * @method integer             getMinUsersAllowed()     Returns the current record's "min_users_allowed" value
  * @method integer             getMaxUsersAllowed()     Returns the current record's "max_users_allowed" value
  * @method date                getRegisterStartDate()   Returns the current record's "register_start_date" value
  * @method date                getRegisterEndDate()     Returns the current record's "register_end_date" value
- * @method decimal             getPrice()               Returns the current record's "price" value
- * @method boolean             getActive()              Returns the current record's "active" value
- * @method integer             getUserId()              Returns the current record's "user_id" value
- * @method sfGuardUser         getSfGuardUser()         Returns the current record's "sfGuardUser" value
- * @method Doctrine_Collection getCategories()          Returns the current record's "Categories" collection
  * @method Doctrine_Collection getUsers()               Returns the current record's "Users" collection
- * @method Doctrine_Collection getActionHasCategory()   Returns the current record's "ActionHasCategory" collection
- * @method Doctrine_Collection getActionUser()          Returns the current record's "ActionUser" collection
+ * @method Doctrine_Collection getActionHasUser()       Returns the current record's "ActionHasUser" collection
  * @method Action              setId()                  Sets the current record's "id" value
  * @method Action              setAuthor()              Sets the current record's "author" value
- * @method Action              setActionType()          Sets the current record's "action_type" value
- * @method Action              setTitle()               Sets the current record's "title" value
- * @method Action              setBody()                Sets the current record's "body" value
  * @method Action              setActionDate()          Sets the current record's "action_date" value
  * @method Action              setLocation()            Sets the current record's "location" value
  * @method Action              setMinUsersAllowed()     Sets the current record's "min_users_allowed" value
  * @method Action              setMaxUsersAllowed()     Sets the current record's "max_users_allowed" value
  * @method Action              setRegisterStartDate()   Sets the current record's "register_start_date" value
  * @method Action              setRegisterEndDate()     Sets the current record's "register_end_date" value
- * @method Action              setPrice()               Sets the current record's "price" value
- * @method Action              setActive()              Sets the current record's "active" value
- * @method Action              setUserId()              Sets the current record's "user_id" value
- * @method Action              setSfGuardUser()         Sets the current record's "sfGuardUser" value
- * @method Action              setCategories()          Sets the current record's "Categories" collection
  * @method Action              setUsers()               Sets the current record's "Users" collection
- * @method Action              setActionHasCategory()   Sets the current record's "ActionHasCategory" collection
- * @method Action              setActionUser()          Sets the current record's "ActionUser" collection
+ * @method Action              setActionHasUser()       Sets the current record's "ActionHasUser" collection
  * 
  * @package    demofony
  * @subpackage model
  * @author     Marc Montañés <marc@teclliure.net>
  * @version    SVN: $Id: Builder.php 7691 2011-02-04 15:43:29Z jwage $
  */
-abstract class BaseAction extends sfDoctrineRecord
+abstract class BaseAction extends Content
 {
     public function setTableDefinition()
     {
+        parent::setTableDefinition();
         $this->setTableName('action');
         $this->hasColumn('id', 'integer', null, array(
              'primary' => true,
              'type' => 'integer',
+             'autoincrement' => true,
              ));
         $this->hasColumn('author', 'string', 150, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 150,
-             ));
-        $this->hasColumn('action_type', 'string', 100, array(
-             'type' => 'string',
-             'notnull' => true,
-             'length' => 100,
-             ));
-        $this->hasColumn('title', 'string', 255, array(
-             'type' => 'string',
-             'notnull' => true,
-             'length' => 255,
-             ));
-        $this->hasColumn('body', 'clob', null, array(
-             'type' => 'clob',
-             'notnull' => true,
              ));
         $this->hasColumn('action_date', 'date', null, array(
              'type' => 'date',
@@ -105,7 +66,6 @@ abstract class BaseAction extends sfDoctrineRecord
              'length' => 255,
              ));
         $this->hasColumn('min_users_allowed', 'integer', null, array(
-             'unique' => true,
              'type' => 'integer',
              'notnull' => true,
              ));
@@ -119,72 +79,23 @@ abstract class BaseAction extends sfDoctrineRecord
         $this->hasColumn('register_end_date', 'date', null, array(
              'type' => 'date',
              ));
-        $this->hasColumn('price', 'decimal', null, array(
-             'type' => 'decimal',
-             ));
-        $this->hasColumn('active', 'boolean', null, array(
-             'default' => 1,
-             'type' => 'boolean',
-             'notnull' => true,
-             ));
-        $this->hasColumn('user_id', 'integer', null, array(
-             'type' => 'integer',
-             'notnull' => true,
-             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('sfGuardUser', array(
-             'local' => 'user_id',
-             'foreign' => 'id'));
-
-        $this->hasMany('Category as Categories', array(
-             'refClass' => 'ActionHasCategory',
-             'local' => 'action_id',
-             'foreign' => 'category_id'));
-
         $this->hasMany('sfGuardUser as Users', array(
-             'refClass' => 'ActionUser',
+             'refClass' => 'ActionHasUser',
              'local' => 'action_id',
-             'foreign' => 'action_user_id'));
+             'foreign' => 'user_id'));
 
-        $this->hasMany('ActionHasCategory', array(
+        $this->hasMany('ActionHasUser', array(
              'local' => 'id',
              'foreign' => 'action_id'));
 
-        $this->hasMany('ActionUser', array(
-             'local' => 'id',
-             'foreign' => 'action_id'));
-
-        $timestampable0 = new Doctrine_Template_Timestampable();
         $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'alias' => 'slug',
              'unique' => true,
-             'fields' => 
-             array(
-              0 => 'action_date',
-              1 => 'title',
-             ),
-             'uniqueBy' => 
-             array(
-              0 => 'title',
-              1 => 'action_date',
-             ),
              ));
-        $searchable0 = new Doctrine_Template_Searchable(array(
-             'fields' => 
-             array(
-              0 => 'author',
-              1 => 'title',
-              2 => 'body',
-             ),
-             ));
-        $geographical0 = new Doctrine_Template_Geographical();
-        $this->actAs($timestampable0);
         $this->actAs($sluggable0);
-        $this->actAs($searchable0);
-        $this->actAs($geographical0);
     }
 }

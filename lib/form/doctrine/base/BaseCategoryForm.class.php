@@ -19,9 +19,8 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'name'           => new sfWidgetFormInputText(),
       'description'    => new sfWidgetFormInputText(),
       'slug'           => new sfWidgetFormInputText(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Proposal')),
-      'actions_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Action')),
+      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -29,9 +28,8 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'name'           => new sfValidatorString(array('max_length' => 100)),
       'description'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'slug'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Proposal', 'required' => false)),
-      'actions_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Action', 'required' => false)),
+      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
@@ -58,7 +56,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
 
     if (isset($this->widgetSchema['profiles_list']))
     {
-      $this->setDefault('profiles_list', $this->object->profiles->getPrimaryKeys());
+      $this->setDefault('profiles_list', $this->object->Profiles->getPrimaryKeys());
     }
 
     if (isset($this->widgetSchema['proposals_list']))
@@ -66,23 +64,17 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       $this->setDefault('proposals_list', $this->object->Proposals->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['actions_list']))
-    {
-      $this->setDefault('actions_list', $this->object->Actions->getPrimaryKeys());
-    }
-
   }
 
   protected function doSave($con = null)
   {
-    $this->saveprofilesList($con);
+    $this->saveProfilesList($con);
     $this->saveProposalsList($con);
-    $this->saveActionsList($con);
 
     parent::doSave($con);
   }
 
-  public function saveprofilesList($con = null)
+  public function saveProfilesList($con = null)
   {
     if (!$this->isValid())
     {
@@ -100,7 +92,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       $con = $this->getConnection();
     }
 
-    $existing = $this->object->profiles->getPrimaryKeys();
+    $existing = $this->object->Profiles->getPrimaryKeys();
     $values = $this->getValue('profiles_list');
     if (!is_array($values))
     {
@@ -110,13 +102,13 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
     $unlink = array_diff($existing, $values);
     if (count($unlink))
     {
-      $this->object->unlink('profiles', array_values($unlink));
+      $this->object->unlink('Profiles', array_values($unlink));
     }
 
     $link = array_diff($values, $existing);
     if (count($link))
     {
-      $this->object->link('profiles', array_values($link));
+      $this->object->link('Profiles', array_values($link));
     }
   }
 
@@ -155,44 +147,6 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Proposals', array_values($link));
-    }
-  }
-
-  public function saveActionsList($con = null)
-  {
-    if (!$this->isValid())
-    {
-      throw $this->getErrorSchema();
-    }
-
-    if (!isset($this->widgetSchema['actions_list']))
-    {
-      // somebody has unset this widget
-      return;
-    }
-
-    if (null === $con)
-    {
-      $con = $this->getConnection();
-    }
-
-    $existing = $this->object->Actions->getPrimaryKeys();
-    $values = $this->getValue('actions_list');
-    if (!is_array($values))
-    {
-      $values = array();
-    }
-
-    $unlink = array_diff($existing, $values);
-    if (count($unlink))
-    {
-      $this->object->unlink('Actions', array_values($unlink));
-    }
-
-    $link = array_diff($values, $existing);
-    if (count($link))
-    {
-      $this->object->link('Actions', array_values($link));
     }
   }
 

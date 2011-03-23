@@ -18,8 +18,8 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
       'lft'            => new sfWidgetFormFilterInput(),
       'rgt'            => new sfWidgetFormFilterInput(),
       'level'          => new sfWidgetFormFilterInput(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Proposal')),
+      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -28,8 +28,8 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
       'lft'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'rgt'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'level'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Proposal', 'required' => false)),
+      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('region_filters[%s]');
@@ -55,7 +55,7 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
 
     $query
       ->leftJoin($query->getRootAlias().'.SubscriptionRegion SubscriptionRegion')
-      ->andWhereIn('SubscriptionRegion.user_profile_id', $values)
+      ->andWhereIn('SubscriptionRegion.user_id', $values)
     ;
   }
 
@@ -72,8 +72,8 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
     }
 
     $query
-      ->leftJoin($query->getRootAlias().'.ProposalHasRegion ProposalHasRegion')
-      ->andWhereIn('ProposalHasRegion.proposal_id', $values)
+      ->leftJoin($query->getRootAlias().'.ContentHasRegion ContentHasRegion')
+      ->andWhereIn('ContentHasRegion.content_id', $values)
     ;
   }
 

@@ -8,16 +8,13 @@
  * @property integer $category_id
  * @property integer $action_id
  * @property Category $Category
- * @property Action $Action
  * 
  * @method integer           getCategoryId()  Returns the current record's "category_id" value
  * @method integer           getActionId()    Returns the current record's "action_id" value
  * @method Category          getCategory()    Returns the current record's "Category" value
- * @method Action            getAction()      Returns the current record's "Action" value
  * @method ActionHasCategory setCategoryId()  Sets the current record's "category_id" value
  * @method ActionHasCategory setActionId()    Sets the current record's "action_id" value
  * @method ActionHasCategory setCategory()    Sets the current record's "Category" value
- * @method ActionHasCategory setAction()      Sets the current record's "Action" value
  * 
  * @package    demofony
  * @subpackage model
@@ -31,10 +28,12 @@ abstract class BaseActionHasCategory extends sfDoctrineRecord
         $this->setTableName('action_has_category');
         $this->hasColumn('category_id', 'integer', null, array(
              'primary' => true,
+             'unique' => true,
              'type' => 'integer',
              ));
         $this->hasColumn('action_id', 'integer', null, array(
              'primary' => true,
+             'unique' => true,
              'type' => 'integer',
              ));
     }
@@ -44,11 +43,8 @@ abstract class BaseActionHasCategory extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Category', array(
              'local' => 'category_id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Action', array(
-             'local' => 'action_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $sluggable0 = new Doctrine_Template_Sluggable(array(
              'unique' => true,

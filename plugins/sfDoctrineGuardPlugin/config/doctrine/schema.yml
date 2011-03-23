@@ -121,6 +121,11 @@ sfGuardUser:
       refClass: sfGuardUserPermission
       local: user_id
       foreign: permission_id
+    Actions:
+      class: Action
+      refClass: ActionHasUser
+      local: user_id
+      foreign: action_id
 sfGuardUserPermission:
   actAs:
     Timestampable: 

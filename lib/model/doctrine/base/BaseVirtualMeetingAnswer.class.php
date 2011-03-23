@@ -35,6 +35,7 @@ abstract class BaseVirtualMeetingAnswer extends sfDoctrineRecord
         $this->hasColumn('id', 'integer', null, array(
              'primary' => true,
              'type' => 'integer',
+             'autoincrement' => true,
              ));
         $this->hasColumn('answer', 'clob', null, array(
              'type' => 'clob',
@@ -55,7 +56,8 @@ abstract class BaseVirtualMeetingAnswer extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $sluggable0 = new Doctrine_Template_Sluggable(array(
              'unique' => true,

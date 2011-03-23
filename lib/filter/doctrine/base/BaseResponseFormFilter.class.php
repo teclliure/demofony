@@ -14,13 +14,13 @@ abstract class BaseResponseFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'body'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'initiative_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Proposal'), 'add_empty' => true)),
+      'initiative_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Content'), 'add_empty' => true)),
       'slug'          => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'body'          => new sfValidatorPass(array('required' => false)),
-      'initiative_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Proposal'), 'column' => 'id')),
+      'initiative_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Content'), 'column' => 'id')),
       'slug'          => new sfValidatorPass(array('required' => false)),
     ));
 

@@ -8,24 +8,24 @@
  * @property integer $id
  * @property string $name
  * @property string $description
- * @property Doctrine_Collection $profiles
+ * @property Doctrine_Collection $Profiles
  * @property Doctrine_Collection $Proposals
- * @property Doctrine_Collection $ProposalHasRegion
+ * @property Doctrine_Collection $ContentHasRegion
  * @property Doctrine_Collection $SubscriptionRegion
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method string              getName()               Returns the current record's "name" value
  * @method string              getDescription()        Returns the current record's "description" value
- * @method Doctrine_Collection getProfiles()           Returns the current record's "profiles" collection
+ * @method Doctrine_Collection getProfiles()           Returns the current record's "Profiles" collection
  * @method Doctrine_Collection getProposals()          Returns the current record's "Proposals" collection
- * @method Doctrine_Collection getProposalHasRegion()  Returns the current record's "ProposalHasRegion" collection
+ * @method Doctrine_Collection getContentHasRegion()   Returns the current record's "ContentHasRegion" collection
  * @method Doctrine_Collection getSubscriptionRegion() Returns the current record's "SubscriptionRegion" collection
  * @method Region              setId()                 Sets the current record's "id" value
  * @method Region              setName()               Sets the current record's "name" value
  * @method Region              setDescription()        Sets the current record's "description" value
- * @method Region              setProfiles()           Sets the current record's "profiles" collection
+ * @method Region              setProfiles()           Sets the current record's "Profiles" collection
  * @method Region              setProposals()          Sets the current record's "Proposals" collection
- * @method Region              setProposalHasRegion()  Sets the current record's "ProposalHasRegion" collection
+ * @method Region              setContentHasRegion()   Sets the current record's "ContentHasRegion" collection
  * @method Region              setSubscriptionRegion() Sets the current record's "SubscriptionRegion" collection
  * 
  * @package    demofony
@@ -41,6 +41,7 @@ abstract class BaseRegion extends sfDoctrineRecord
         $this->hasColumn('id', 'integer', null, array(
              'primary' => true,
              'type' => 'integer',
+             'autoincrement' => true,
              ));
         $this->hasColumn('name', 'string', 100, array(
              'type' => 'string',
@@ -56,17 +57,17 @@ abstract class BaseRegion extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('SfGuardUserProfile as profiles', array(
+        $this->hasMany('sfGuardUserProfile as Profiles', array(
              'refClass' => 'SubscriptionRegion',
              'local' => 'region_id',
-             'foreign' => 'user_profile_id'));
+             'foreign' => 'user_id'));
 
-        $this->hasMany('Proposal as Proposals', array(
-             'refClass' => 'ProposalHasRegion',
+        $this->hasMany('Content as Proposals', array(
+             'refClass' => 'ContentHasRegion',
              'local' => 'region_id',
-             'foreign' => 'proposal_id'));
+             'foreign' => 'content_id'));
 
-        $this->hasMany('ProposalHasRegion', array(
+        $this->hasMany('ContentHasRegion', array(
              'local' => 'id',
              'foreign' => 'region_id'));
 

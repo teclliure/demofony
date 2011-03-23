@@ -1,3 +1,30 @@
+citizen_proposal:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CitizenProposal
+    module:               citizen_proposal
+    prefix_path:          /citizen_proposal
+    column:               id
+    with_wildcard_routes: true
+
+category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Category
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
+region:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Region
+    module:               region
+    prefix_path:          /region
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 

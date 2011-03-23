@@ -1,0 +1,97 @@
+Region:
+  region_1:
+    name: DALT VILA
+  region_2:
+    name: SA PENYA
+  region_3:
+    name: LA MARINA
+  region_4:
+    name: S’ALAMERA
+  region_5:
+    name: SA CAPALLETA
+  region_6:
+    name: ES SOTO
+  region_7:
+    name: CAN PARTIT
+  region_8:
+    name: ES PUIG D’ES MOLINS
+  region_9:
+    name: SES FIGUERETES
+  region_10:
+    name: ES VIVER
+  region_11:
+    name: LA PUNTA
+  region_12:
+    name: CA LES ANIMES
+  region_13:
+    name: CAN BOSSA
+  region_14:
+    name: S’HORT DEL BISBE
+  region_15:
+    name: SES CANYES
+  region_16:
+    name: SA BODEGA
+  region_17:
+    name: ES CLOT
+  region_18:
+    name: CAN BELLET
+  region_19:
+    name: ES PALMER
+  region_20:
+    name: SA COLOMINA
+  region_21:
+    name:  ES LLIMONERS
+  region_22:
+    name:  SA REAL
+  region_23:
+    name:  ES PRATTET
+  region_24:
+    name:  ES PRAT DE VILA
+  region_25:
+    name:  PÀSSEIG MARITIM
+  region_26:
+    name:  S’ILLA PLANA
+  region_27:
+    name:  S’ILLA GROSA
+  region_28:
+    name:  TALAMANCA
+  region_29:
+    name:  ES PRAT DE SES MONGES
+  region_30:
+    name:  ES CLOT D’EN LLAUDIS
+  region_31:
+    name:  CAN BERNAT
+  region_32:
+    name:  ES GORG
+  region_33:
+    name:  CA NA GLAUDIS
+  region_34:
+    name:  CAS FERRO
+  region_35:
+    name:  CAS DOMINGUETS
+  region_36:
+    name:  SA JOVERIA
+  region_37:
+    name:  CAN MISSES
+  region_38:
+    name:  ES PUTXET
+  region_39:
+    name:  CAN CANTÓ
+  region_40:
+    name:  CA N’ESCANDELL
+  region_41:
+    name:  CAN SANT
+  region_42:
+    name:  CAS SERRES
+  region_43:
+    name:  CAN SIFRE
+  region_44:
+    name:  CAS MUT
+  region_45:
+    name:  CAS ESCANDELLS
+  region_46:
+    name:  CAN BOFI
+  region_47:
+    name:  SA BLANCA DONA
+  region_48:
+    name:  ES RASPALLAR

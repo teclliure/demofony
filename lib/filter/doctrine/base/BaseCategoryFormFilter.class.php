@@ -16,18 +16,16 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'name'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description'    => new sfWidgetFormFilterInput(),
       'slug'           => new sfWidgetFormFilterInput(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Proposal')),
-      'actions_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Action')),
+      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
       'name'           => new sfValidatorPass(array('required' => false)),
       'description'    => new sfValidatorPass(array('required' => false)),
       'slug'           => new sfValidatorPass(array('required' => false)),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Proposal', 'required' => false)),
-      'actions_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Action', 'required' => false)),
+      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('category_filters[%s]');
@@ -53,7 +51,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
 
     $query
       ->leftJoin($query->getRootAlias().'.SubscriptionCategory SubscriptionCategory')
-      ->andWhereIn('SubscriptionCategory.user_profile_id', $values)
+      ->andWhereIn('SubscriptionCategory.user_id', $values)
     ;
   }
 
@@ -70,26 +68,8 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
     }
 
     $query
-      ->leftJoin($query->getRootAlias().'.ProposalHasCategory ProposalHasCategory')
-      ->andWhereIn('ProposalHasCategory.proposal_id', $values)
-    ;
-  }
-
-  public function addActionsListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.ActionHasCategory ActionHasCategory')
-      ->andWhereIn('ActionHasCategory.action_id', $values)
+      ->leftJoin($query->getRootAlias().'.ContentHasCategory ContentHasCategory')
+      ->andWhereIn('ContentHasCategory.content_id', $values)
     ;
   }
 
@@ -107,7 +87,6 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'slug'           => 'Text',
       'profiles_list'  => 'ManyKey',
       'proposals_list' => 'ManyKey',
-      'actions_list'   => 'ManyKey',
     );
   }
 }

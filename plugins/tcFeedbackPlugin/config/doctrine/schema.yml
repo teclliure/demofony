@@ -5,6 +5,7 @@ Opinion:
     id:
       primary: true
       type: integer
+      autoincrement: true
     opinion:
       type: string(255)
       notnull: true
@@ -31,9 +32,11 @@ Opinion:
       fields: [object_class, object_id]
   relations:
     OpinionPossibility:
+      onDelete: CASCADE
       local: opinion_possibility_id
       foreign: id
     sfGuardUser:
+      onDelete: CASCADE
       local: user_id
       foreign: id
 OpinionPossibility:
@@ -41,6 +44,7 @@ OpinionPossibility:
     id:
       primary: true
       type: integer
+      autoincrement: true
     name:
       type: string(100)
       notnull: true
@@ -48,6 +52,7 @@ OpinionPossibility:
       type: integer
   relations:
     OpinionPossibilityGroup:
+      onDelete: CASCADE
       local: opinion_possibility_group_id
       foreign: id
 OpinionPossibilityGroup:
@@ -55,6 +60,7 @@ OpinionPossibilityGroup:
     id:
       primary: true
       type: integer
+      autoincrement: true
     name:
       type: string(100)
       notnull: true
@@ -69,6 +75,7 @@ Comments:
     id:
       primary: true
       type: integer
+      autoincrement: true
     comment:
       type: string(255)
       notnull: true
@@ -90,18 +97,17 @@ Comments:
       fields: [object_class, object_id]
   relations:
     sfGuardUser:
+      onDelete: CASCADE
       local: user_id
       foreign: id
 OpinionLike:
   columns:
-    id:
-      primary: true
-      type: integer
-      autoincrement: true
     user_id:
+      primary: true
       type: integer
       notnull: true
     opinion_id:
+      primary: true
       type: integer
       notnull: true
   indexes:
@@ -113,5 +119,6 @@ OpinionLike:
       local: user_id
       foreign: id
     Opinion:
+      onDelete: CASCADE
       local: opinion_id
       foreign: id

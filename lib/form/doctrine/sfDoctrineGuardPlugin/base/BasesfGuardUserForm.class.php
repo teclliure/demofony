@@ -30,6 +30,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'updated_at'       => new sfWidgetFormDateTime(),
       'groups_list'      => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup')),
       'permissions_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission')),
+      'actions_list'     => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Action')),
     ));
 
     $this->setValidators(array(
@@ -48,6 +49,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'updated_at'       => new sfValidatorDateTime(),
       'groups_list'      => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup', 'required' => false)),
       'permissions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission', 'required' => false)),
+      'actions_list'     => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Action', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
@@ -85,12 +87,18 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       $this->setDefault('permissions_list', $this->object->Permissions->getPrimaryKeys());
     }
 
+    if (isset($this->widgetSchema['actions_list']))
+    {
+      $this->setDefault('actions_list', $this->object->Actions->getPrimaryKeys());
+    }
+
   }
 
   protected function doSave($con = null)
   {
     $this->saveGroupsList($con);
     $this->savePermissionsList($con);
+    $this->saveActionsList($con);
 
     parent::doSave($con);
   }
@@ -168,6 +176,44 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Permissions', array_values($link));
+    }
+  }
+
+  public function saveActionsList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['actions_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Actions->getPrimaryKeys();
+    $values = $this->getValue('actions_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Actions', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Actions', array_values($link));
     }
   }
 

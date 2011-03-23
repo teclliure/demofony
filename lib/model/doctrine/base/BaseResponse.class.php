@@ -8,16 +8,16 @@
  * @property integer $id
  * @property clob $body
  * @property integer $initiative_id
- * @property Proposal $Proposal
+ * @property Content $Content
  * 
  * @method integer  getId()            Returns the current record's "id" value
  * @method clob     getBody()          Returns the current record's "body" value
  * @method integer  getInitiativeId()  Returns the current record's "initiative_id" value
- * @method Proposal getProposal()      Returns the current record's "Proposal" value
+ * @method Content  getContent()       Returns the current record's "Content" value
  * @method Response setId()            Sets the current record's "id" value
  * @method Response setBody()          Sets the current record's "body" value
  * @method Response setInitiativeId()  Sets the current record's "initiative_id" value
- * @method Response setProposal()      Sets the current record's "Proposal" value
+ * @method Response setContent()       Sets the current record's "Content" value
  * 
  * @package    demofony
  * @subpackage model
@@ -32,6 +32,7 @@ abstract class BaseResponse extends sfDoctrineRecord
         $this->hasColumn('id', 'integer', null, array(
              'primary' => true,
              'type' => 'integer',
+             'autoincrement' => true,
              ));
         $this->hasColumn('body', 'clob', null, array(
              'type' => 'clob',
@@ -45,9 +46,10 @@ abstract class BaseResponse extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Proposal', array(
+        $this->hasOne('Content', array(
              'local' => 'initiative_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $sluggable0 = new Doctrine_Template_Sluggable(array(
              'unique' => true,

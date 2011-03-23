@@ -21,8 +21,8 @@ abstract class BaseRegionForm extends BaseFormDoctrine
       'lft'            => new sfWidgetFormInputText(),
       'rgt'            => new sfWidgetFormInputText(),
       'level'          => new sfWidgetFormInputText(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Proposal')),
+      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -32,8 +32,8 @@ abstract class BaseRegionForm extends BaseFormDoctrine
       'lft'            => new sfValidatorInteger(array('required' => false)),
       'rgt'            => new sfValidatorInteger(array('required' => false)),
       'level'          => new sfValidatorInteger(array('required' => false)),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'SfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Proposal', 'required' => false)),
+      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('region[%s]');
@@ -56,7 +56,7 @@ abstract class BaseRegionForm extends BaseFormDoctrine
 
     if (isset($this->widgetSchema['profiles_list']))
     {
-      $this->setDefault('profiles_list', $this->object->profiles->getPrimaryKeys());
+      $this->setDefault('profiles_list', $this->object->Profiles->getPrimaryKeys());
     }
 
     if (isset($this->widgetSchema['proposals_list']))
@@ -68,13 +68,13 @@ abstract class BaseRegionForm extends BaseFormDoctrine
 
   protected function doSave($con = null)
   {
-    $this->saveprofilesList($con);
+    $this->saveProfilesList($con);
     $this->saveProposalsList($con);
 
     parent::doSave($con);
   }
 
-  public function saveprofilesList($con = null)
+  public function saveProfilesList($con = null)
   {
     if (!$this->isValid())
     {
@@ -92,7 +92,7 @@ abstract class BaseRegionForm extends BaseFormDoctrine
       $con = $this->getConnection();
     }
 
-    $existing = $this->object->profiles->getPrimaryKeys();
+    $existing = $this->object->Profiles->getPrimaryKeys();
     $values = $this->getValue('profiles_list');
     if (!is_array($values))
     {
@@ -102,13 +102,13 @@ abstract class BaseRegionForm extends BaseFormDoctrine
     $unlink = array_diff($existing, $values);
     if (count($unlink))
     {
-      $this->object->unlink('profiles', array_values($unlink));
+      $this->object->unlink('Profiles', array_values($unlink));
     }
 
     $link = array_diff($values, $existing);
     if (count($link))
     {
-      $this->object->link('profiles', array_values($link));
+      $this->object->link('Profiles', array_values($link));
     }
   }
 

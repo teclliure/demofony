@@ -1,21 +1,43 @@
 name:     Admin menu
 attributes: {id: admin_menu, class: sf-menu}
 children:
-  user_admin:
-    label:          User Admin
+  site_content:
+    label:         Content
     requires_auth: true
     route:   ''
     children:
+      manage_citizen_proposals:
+        label:   Citizen proposal
+        route:   @citizen_proposal
+        credentials: [Permission_admin]
+  site_admin:
+    label:          Site admin
+    requires_auth: true
+    route:   ''
+    children:
+      manage_regions:
+        label:   Manage regions
+        route:   @region
+        credentials: [Permission_admin]
+      manage_categories:
+        label:   Manage categories
+        route:   @category
+        credentials: [Permission_admin]
+  user_admin:
+    label:          User Admin
+    requires_auth: true
+    route:   @sf_guard_user
+    children:
       manage_users:
-        label:   Manage Users
+        label:   Manage users
         route:   @sf_guard_user
         credentials: [Permission_admin]
       manage_groups:
-        label:   Manage Groups
+        label:   Manage groups
         route:   @sf_guard_permission
         credentials: [Permission_admin]
       manage_permissions:
-        label:   Manage Permissions
+        label:   Manage permissions
         route:   @sf_guard_permission
         credentials: [Permission_admin]
   signin:
