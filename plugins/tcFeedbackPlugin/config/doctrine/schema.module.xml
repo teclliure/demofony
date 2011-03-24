@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <orm-designer version="1.4.3.457">
 
-  <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="600" visSizeY="-163" visSizeY2="465">
+  <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="586" visSizeY="-163" visSizeY2="465">
     <table name="Opinion" visPositionX="-34" visPositionY="208" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="129">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="opinion" required="true" size="255" type="string"/>

@@ -6,9 +6,33 @@ children:
     requires_auth: true
     route:   ''
     children:
+      manage_goverment_news:
+        label:   Goverment news
+        route:   @goverment_new
+        credentials: [Permission_admin]
+      manage_goverment_proposals:
+        label:   Goverment proposals
+        route:   @goverment_proposal
+        credentials: [Permission_admin]
+      manage_goverment_consultations:
+        label:   Goverment consultations
+        route:   @goverment_consultation
+        credentials: [Permission_admin]
+      manage_goverment_news:
+        label:   Goverment news
+        route:   @goverment_new
+        credentials: [Permission_admin]
+      manage_workshops:
+        label:   Workshops
+        route:   @workshop
+        credentials: [Permission_admin]
       manage_citizen_proposals:
-        label:   Citizen proposal
+        label:   Citizen proposals
         route:   @citizen_proposal
+        credentials: [Permission_admin]
+      manage_citizen_actions:
+        label:   Citizen actions
+        route:   @citizen_action
         credentials: [Permission_admin]
   site_admin:
     label:          Site admin

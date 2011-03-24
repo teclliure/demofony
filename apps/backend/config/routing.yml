@@ -1,3 +1,57 @@
+virtual_meeting:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VirtualMeeting
+    module:               virtual_meeting
+    prefix_path:          /virtual_meeting
+    column:               id
+    with_wildcard_routes: true
+
+citizen_action:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CitizenAction
+    module:               citizen_action
+    prefix_path:          /citizen_action
+    column:               id
+    with_wildcard_routes: true
+
+workshop:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Workshop
+    module:               workshop
+    prefix_path:          /workshop
+    column:               id
+    with_wildcard_routes: true
+
+goverment_consultation:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GovermentConsultation
+    module:               goverment_consultation
+    prefix_path:          /goverment_consultation
+    column:               id
+    with_wildcard_routes: true
+
+goverment_proposal:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GovermentProposal
+    module:               goverment_proposal
+    prefix_path:          /goverment_proposal
+    column:               id
+    with_wildcard_routes: true
+
+goverment_new:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GovermentNew
+    module:               goverment_new
+    prefix_path:          /goverment_new
+    column:               id
+    with_wildcard_routes: true
+
 citizen_proposal:
   class: sfDoctrineRouteCollection
   options:

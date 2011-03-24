@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           GovermentConsultation
+    theme:                 jroller2
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          goverment_consultation
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    # extra: [show, print, export]
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~
+      show:    ~

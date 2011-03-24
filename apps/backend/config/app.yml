@@ -3,6 +3,24 @@
 
 # default values
 all:
- sf_guard_plugin:
-     remember_key_expiration_age:  2592000   # 30 days in seconds
-     remember_cookie_name:         demofonyAdminRememberMe
+  sf_guard_plugin:
+    remember_key_expiration_age:  2592000   # 30 days in seconds
+    remember_cookie_name:         demofonyAdminRememberMe
+  sf_admin_theme_jroller_plugin:
+    # icons for each buttons
+    # icon class as: ui-icon-value
+    icons:
+      new: plus
+      filter: check
+      filters: search
+      reset: circle-close
+      show: document
+      edit: pencil
+      delete: trash
+      list: arrowreturnthick-1-w
+      save: circle-check
+      saveAndAdd: circle-plus
+      first: seek-first
+      previous: seek-prev
+      next: seek-next
+      last: seek-end
