@@ -16,5 +16,6 @@ class WorkshopForm extends BaseWorkshopForm
   public function configure()
   {
     parent::configure();
+    $this->widgetSchema['price']->setAttributes(array('size'=>4));
   }
 }

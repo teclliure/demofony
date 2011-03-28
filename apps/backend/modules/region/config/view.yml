@@ -1,0 +1,5 @@
+indexSuccess:
+  stylesheets:
+    - jQuery.treeTable.css
+  javascripts:
+    - jquery.treeTable.min.js

@@ -19,6 +19,7 @@ sfGmapWidgetWidget.prototype.init = function() {
   this.lat      = jQuery("#" + this.options.latitude);
   this.address  = jQuery("#" + this.options.address);
   this.lookup   = jQuery("#" + this.options.lookup);
+  this.required = jQuery("#" + this.options.required);
   this.initialLocation;
   this.ibiza = new google.maps.LatLng(38.9102, 1.4324);
   // this.ibiza = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
@@ -46,8 +47,15 @@ sfGmapWidgetWidget.prototype.init = function() {
   this.geocoder.sfGmapWidgetWidget = this;
   this.lookup.get(0).sfGmapWidgetWidget = this;
  
-  // add the default location
-  this.marker = new google.maps.Marker({ position: this.initialLocation, map: this.map });
+  // add the default location marker if required
+  if (this.required == true || (this.lat.val() != '' && this.lng.val() != '')) {
+    this.marker = new google.maps.Marker({ position: this.initialLocation, map: this.map });
+    this.lat.val(this.initialLocation.lat());
+    this.lng.val(this.initialLocation.lng());
+  }
+  else {
+    this.marker = new google.maps.Marker({ position: this.initialLocation, map: null });
+  }
   this.map.setCenter(this.initialLocation,13);
  
   // bind the click action on the map
@@ -90,6 +98,7 @@ sfGmapWidgetWidget.moveMarker = function(point)
   var widget = sfGmapWidgetWidget.activeWidget;
   sfGmapWidgetWidget.activeWidget = null;
  
+  widget.marker.setMap(widget.map);
   widget.marker.setPosition(point);
   widget.map.setCenter(point, 13);
   widget.lat.val(point.lat());

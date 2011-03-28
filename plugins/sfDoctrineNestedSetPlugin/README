@@ -1,0 +1,50 @@
+# sfDoctrineNestedSetPlugin
+
+The sfDoctrineNestedSetPlugin plugin adds a widget and validator to provide
+additional functionality to Doctrine's NestedSet behavior.
+
+## Installation
+
+  * Install the plugin
+
+        $ symfony plugin:install sfDoctrineNestedSetPlugin
+
+## Documentation
+
+This plugin contains a widget, sfWidgetFormDoctrineChoiceNestedSet, and validator,
+sfValidatorDoctrineNestedSet. For a full explanation with examples (including additional
+styling in admin generated forms), please visit:
+[Implementing a Nested Set](http://halestock.wordpress.com/2010/02/03/symfony-implementing-a-nested-set-part-one/).
+
+#### sfWidgetFormDoctrineChoiceNestedSet
+
+The sfWidgetFormDoctrineChoiceNestedSet functions nearly the same as sfWidgetFormDoctrineChoice,
+the only difference being that it will automatically sort the items by their hierarchy, and will
+indent each item according to its level. As this widget extends sfWidgetFormDoctrineChoice, it
+can be added without any other code changes necessary:
+
+    $this->setWidget('item', new sfWidgetFormDoctrineChoiceNestedSet(array(
+      'model'     => 'Category',
+      'add_empty' => true;
+    )));
+
+Keep in mind, however, that anything specified for the 'order_by' option will be ignored.
+
+#### sfValidatorDoctrineNestedSet
+
+The sfValidatorDoctrineNestedSet provides validation by checking that the selected node is not
+a descendant of the node passed to it during configuration (and that they are not the same). This
+can be used to ensure that when moving a node, it is not made a descendant of itself. The validator
+extends from sfValidatorBase and includes two required options: 'model', which is the model class,
+and 'node', which is the node that the selected item is being checked against. Normally, this will
+be the form's object:
+
+    $this->setValidator('item', new sfValidatorDoctrineNestedSet(array(
+      'model' => 'Category',
+      'node'  => $this->getObject(),
+    )));
+
+## Support
+
+If you run into any issues, or would like to request a feature or contribute, please feel free to
+visit [halestock.wordpress.com](http://halestock.wordpress.com) and leave a comment.

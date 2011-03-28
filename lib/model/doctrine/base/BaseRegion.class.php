@@ -75,7 +75,10 @@ abstract class BaseRegion extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'region_id'));
 
-        $nestedset0 = new Doctrine_Template_NestedSet();
+        $nestedset0 = new Doctrine_Template_NestedSet(array(
+             'hasManyRoots' => true,
+             'rootColumnName' => 'root_id',
+             ));
         $this->actAs($nestedset0);
     }
 }

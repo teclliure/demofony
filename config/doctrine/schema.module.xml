@@ -58,7 +58,10 @@
       <column name="description" size="255" type="string"/>
       <orm-properties>
         <attribute name="actAs">
-          <attribute name="NestedSet"/>
+          <attribute name="NestedSet">
+            <attribute name="hasManyRoots">true</attribute>
+            <attribute name="rootColumnName">root_id</attribute>
+          </attribute>
         </attribute>
       </orm-properties>
     </table>

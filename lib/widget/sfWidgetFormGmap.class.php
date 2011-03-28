@@ -3,7 +3,6 @@ class sfWidgetFormGMap extends sfWidgetForm
 {
   public function configure($options = array(), $attributes = array())
   {
-    $this->addOption('send_address', true);
     $this->addOption('bind_latitude', false);
     $this->addOption('bind_longitude', false);
     $this->addOption('address.options', array('style' => 'width:400px'));
@@ -37,7 +36,8 @@ class sfWidgetFormGMap extends sfWidgetForm
             latitude: "{input.latitude.id}",
             address: "{input.address.id}",
             lookup: "{input.lookup.id}",
-            map: "{map.id}"
+            map: "{map.id}",
+            required: {required}
           });
         })
       </script>
@@ -65,6 +65,7 @@ class sfWidgetFormGMap extends sfWidgetForm
       '{input.lookup.id}'    => $this->generateId($name.'[lookup]'),
       '{input.lookup.name}'  => $this->getOption('lookup.name'),
       '{input.address.id}'   => $this->generateId($name.'[address]'),
+      
     );
     
     if ($this->getOption('bind_latitude')) {
@@ -79,6 +80,13 @@ class sfWidgetFormGMap extends sfWidgetForm
     }
     else {
       $template_vars['{input.longitude.id}'] = $this->generateId($name.'[longitude]');
+    }
+    
+    if ($this->getOption('required')) {
+      $template_vars['{required}'] = 'true';
+    }
+    else {
+      $template_vars['{required}'] = 'false';
     }
  
     // avoid any notice errors to invalid $value format

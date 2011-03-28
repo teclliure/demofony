@@ -15,6 +15,7 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description'    => new sfWidgetFormFilterInput(),
+      'root_id'        => new sfWidgetFormFilterInput(),
       'lft'            => new sfWidgetFormFilterInput(),
       'rgt'            => new sfWidgetFormFilterInput(),
       'level'          => new sfWidgetFormFilterInput(),
@@ -25,6 +26,7 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'name'           => new sfValidatorPass(array('required' => false)),
       'description'    => new sfValidatorPass(array('required' => false)),
+      'root_id'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'lft'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'rgt'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'level'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -88,6 +90,7 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
       'id'             => 'Number',
       'name'           => 'Text',
       'description'    => 'Text',
+      'root_id'        => 'Number',
       'lft'            => 'Number',
       'rgt'            => 'Number',
       'level'          => 'Number',

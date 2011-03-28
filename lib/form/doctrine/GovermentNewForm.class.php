@@ -16,5 +16,11 @@ class GovermentNewForm extends BaseGovermentNewForm
   public function configure()
   {
     parent::configure();
+    
+    $this->setWidget('publish_date', new sfWidgetFormJQueryDate(array(
+      'image'=>sfContext::getInstance()->getRequest()->getRelativeUrlRoot().'/images/calendar.png',
+      'config' => '{}',
+    )));
+    $this->widgetSchema->moveField('publish_date', sfWidgetFormSchema::AFTER, 'title');
   }
 }

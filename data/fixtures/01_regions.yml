@@ -1,97 +1,145 @@
 Region:
   region_1:
     name: DALT VILA
+    children: []
   region_2:
     name: SA PENYA
+    children: []
   region_3:
     name: LA MARINA
+    children: []
   region_4:
     name: S’ALAMERA
+    children: []
   region_5:
     name: SA CAPALLETA
+    children: []
   region_6:
     name: ES SOTO
+    children: []
   region_7:
     name: CAN PARTIT
+    children: []
   region_8:
     name: ES PUIG D’ES MOLINS
+    children: []
   region_9:
     name: SES FIGUERETES
+    children: []
   region_10:
     name: ES VIVER
+    children: []
   region_11:
     name: LA PUNTA
+    children: []
   region_12:
     name: CA LES ANIMES
+    children: []
   region_13:
     name: CAN BOSSA
+    children: []
   region_14:
     name: S’HORT DEL BISBE
+    children: []
   region_15:
     name: SES CANYES
+    children: []
   region_16:
     name: SA BODEGA
+    children: []
   region_17:
     name: ES CLOT
+    children: []
   region_18:
     name: CAN BELLET
+    children: []
   region_19:
     name: ES PALMER
+    children: []
   region_20:
     name: SA COLOMINA
+    children: []
   region_21:
     name:  ES LLIMONERS
+    children: []
   region_22:
     name:  SA REAL
+    children: []
   region_23:
     name:  ES PRATTET
+    children: []
   region_24:
     name:  ES PRAT DE VILA
+    children: []
   region_25:
     name:  PÀSSEIG MARITIM
+    children: []
   region_26:
     name:  S’ILLA PLANA
+    children: []
   region_27:
     name:  S’ILLA GROSA
+    children: []
   region_28:
     name:  TALAMANCA
+    children: []
   region_29:
     name:  ES PRAT DE SES MONGES
+    children: []
   region_30:
     name:  ES CLOT D’EN LLAUDIS
+    children: []
   region_31:
     name:  CAN BERNAT
+    children: []
   region_32:
     name:  ES GORG
+    children: []
   region_33:
     name:  CA NA GLAUDIS
+    children: []
   region_34:
     name:  CAS FERRO
+    children: []
   region_35:
     name:  CAS DOMINGUETS
+    children: []
   region_36:
     name:  SA JOVERIA
+    children: []
   region_37:
     name:  CAN MISSES
+    children: []
   region_38:
     name:  ES PUTXET
+    children: []
   region_39:
     name:  CAN CANTÓ
+    children: []
   region_40:
     name:  CA N’ESCANDELL
+    children: []
   region_41:
     name:  CAN SANT
+    children: []
   region_42:
     name:  CAS SERRES
+    children: []
   region_43:
     name:  CAN SIFRE
+    children: []
   region_44:
     name:  CAS MUT
+    children: []
   region_45:
     name:  CAS ESCANDELLS
+    children: []
   region_46:
     name:  CAN BOFI
+    children: []
   region_47:
     name:  SA BLANCA DONA
+    children: []
   region_48:
     name:  ES RASPALLAR
+    children: []
