@@ -15,7 +15,8 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:
+        display: [=title, sfGuardUser, register_start_date, register_end_date, created_at, updated_at, active]
       filter:  ~
       form:    ~
       edit:    ~
