@@ -6,7 +6,7 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:        Demofony
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en
@@ -15,12 +15,10 @@ default:
   stylesheets:
     - /blueprint/blueprint/screen.css: { media: 'screen,projection' }
     - /blueprint/blueprint/print.css: { media: print }
-    - /jquery/ui/css/pepper-grinder/jquery-ui-1.8.11.custom.css
-    - main.css
-    - /jquery/superfish/css/superfish.css
-    - /css/admin_menu.css
     - /blueprint/blueprint/ie.css { condition: IE 8 }
-    
+    - /jquery/ui/css/pepper-grinder/jquery-ui-1.8.11.custom.css
+    - /jquery/superfish/css/superfish.css
+    - admin_menu.css
 
   javascripts:    [/jquery/jquery-1.5.1.min.js, /jquery/ui/jquery-ui-1.8.11.custom.min.js, /jquery/superfish/js/hoverIntent.js, /jquery/superfish/js/jquery.bgiframe.min.js, /jquery/superfish/js/superfish.js]
 

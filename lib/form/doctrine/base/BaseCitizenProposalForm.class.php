@@ -10,7 +10,7 @@
  * @author     Marc Montañés <marc@teclliure.net>
  * @version    SVN: $Id: sfDoctrineFormGeneratedInheritanceTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
-abstract class BaseCitizenProposalForm extends ContentForm
+abstract class BaseCitizenProposalForm extends ProposalForm
 {
   protected function setupInheritance()
   {

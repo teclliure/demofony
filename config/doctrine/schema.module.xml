@@ -104,26 +104,26 @@
       <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
       <column name="region_id" primary="true" required="true" type="integer" unique="true"/>
     </table>
-    <table name="CitizenProposal" visPositionX="169" visPositionY="264" visSizeX="0" visSizeX2="77" visSizeY="0" visSizeY2="45">
+    <table name="CitizenProposal" visPositionX="59" visPositionY="287" visSizeX="0" visSizeX2="77" visSizeY="0" visSizeY2="45">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="tip" type="clob"/>
-      <inheritance-child derived-from="Content"/>
+      <inheritance-child derived-from="Proposal"/>
     </table>
-    <table name="GovermentProposal" visPositionX="169" visPositionY="316" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="45">
+    <table name="GovermentProposal" visPositionX="150" visPositionY="286" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="45">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="publish_date" required="true" type="date"/>
-      <inheritance-child derived-from="Content"/>
+      <inheritance-child derived-from="Proposal"/>
     </table>
     <table name="GovermentNew" visPositionX="171" visPositionY="42" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="31">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="publish_date" required="true" type="date"/>
       <inheritance-child derived-from="Content"/>
     </table>
-    <table name="GovermentConsultation" visPositionX="166" visPositionY="370" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="20">
+    <table name="GovermentConsultation" visPositionX="255" visPositionY="286" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="start_date" required="true" type="date"/>
       <column name="end_date" type="date"/>
-      <inheritance-child derived-from="Content"/>
+      <inheritance-child derived-from="Proposal"/>
     </table>
     <table name="Action" visPositionX="381" visPositionY="289" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="129">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
@@ -149,6 +149,11 @@
     <table name="ActionHasUser" visPositionX="680" visPositionY="308" visSizeX="0" visSizeX2="120" visSizeY="0" visSizeY2="74">
       <column name="action_id" primary="true" required="true" type="integer" unique="true"/>
       <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
+    </table>
+    <table name="Proposal" visPositionX="205" visPositionY="173" visSizeX="0" visSizeX2="20" visSizeY="0" visSizeY2="20">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
+      <inheritance-parent type="concrete"/>
+      <inheritance-child derived-from="Content"/>
     </table>
     <orm-properties>
       <attribute name="actAs">

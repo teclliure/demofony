@@ -8,7 +8,7 @@
  * @author     Marc Montañés <marc@teclliure.net>
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedInheritanceTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
  */
-abstract class BaseCitizenProposalFormFilter extends ContentFormFilter
+abstract class BaseCitizenProposalFormFilter extends ProposalFormFilter
 {
   protected function setupInheritance()
   {

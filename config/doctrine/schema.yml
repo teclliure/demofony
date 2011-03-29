@@ -321,7 +321,7 @@ CitizenProposal:
     tip:
       type: clob
   inheritance:
-    extends: Content
+    extends: Proposal
     type: concrete
 GovermentProposal:
   columns:
@@ -334,7 +334,7 @@ GovermentProposal:
       type: date
       notnull: true
   inheritance:
-    extends: Content
+    extends: Proposal
     type: concrete
 GovermentNew:
   columns:
@@ -362,7 +362,7 @@ GovermentConsultation:
     end_date:
       type: date
   inheritance:
-    extends: Content
+    extends: Proposal
     type: concrete
 Action:
   columns:
@@ -439,6 +439,16 @@ ActionHasUser:
     sfGuardUser:
       local: user_id
       foreign: id
+Proposal:
+  columns:
+    id:
+      primary: true
+      type: integer
+      notnull: true
+      autoincrement: true
+  inheritance:
+    extends: Content
+    type: concrete
 actAs:
   Sluggable:
     unique: true

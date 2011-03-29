@@ -40,7 +40,6 @@ all:
     secure_module:          sfGuardAuth
     secure_action:          secure
         
-    
     default_culture:        es
     
     enabled_modules:        [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission, sfDoctrineBreadcrumbs, nestedSetManager]
