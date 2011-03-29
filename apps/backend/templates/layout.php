@@ -11,14 +11,13 @@
   </head>
   <body>
    <div class="container">
-     <div class="span-24 last"><h1>Cabecera</h1></div>
-     <div class="span-24 last"><?php include_component('home', 'menu'); ?></div>
-     <div class="span-24 last"><?php include_component('sfDoctrineBreadcrumbs', 'breadcrumbs'); ?></div>
+     <div id="header" class="span-24 last"><h1>Demofony</h1></div>
+     <div id="top_menu" class="span-24 last"><?php include_component('home', 'menu'); ?></div>
+     <div id="breadcrumbs" class="span-24 last"><?php include_component('sfDoctrineBreadcrumbs', 'breadcrumbs'); ?></div>
      <div class="span-24 last">
-     Contenido
      <?php echo $sf_content ?>
      </div>
-     <div class="span-24 last"><h3>Pie de pàgina</h3></div>
+     <div id="footer" class="span-24 last"><?php echo __('Project developed by') ?> <a href="http://www.teclliure.net">Teclliure</a> <?php echo __('using') ?> <a href="http://www.symfony-project.org/">Symfony</a></div>
   </div>
   </body>
 </html>

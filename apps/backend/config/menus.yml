@@ -5,6 +5,7 @@ children:
     label:         Content
     requires_auth: true
     route:   ''
+    attributes: {class: ui-corner-left}
     children:
       manage_goverment_news:
         label:   Goverment news
@@ -34,6 +35,10 @@ children:
         label:   Citizen actions
         route:   @citizen_action
         credentials: [Permission_admin]
+      manage_virtual_meeting:
+        label:   Virtual meetings
+        route:   @virtual_meeting
+        credentials: [Permission_admin]
   site_admin:
     label:          Site admin
     requires_auth: true
@@ -41,7 +46,7 @@ children:
     children:
       manage_regions:
         label:   Manage regions
-        route:   @region
+        route:   region/nested
         credentials: [Permission_admin]
       manage_categories:
         label:   Manage categories
@@ -64,12 +69,8 @@ children:
         label:   Manage permissions
         route:   @sf_guard_permission
         credentials: [Permission_admin]
-  signin:
-    label:   Sign in
-    route:   @sf_guard_signin
-    requires_no_auth: true
-    attributes: {class: signin}
   signout:
     label:   Sign out
     route:   @sf_guard_signout
     requires_auth: true
+    attributes: {class: ui-corner-right}

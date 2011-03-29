@@ -1,0 +1,54 @@
+.clear {
+	clear: both;
+}
+
+ul#tree {
+	font-family: sans-serif;
+}
+
+ul#tree a img {
+	border: none;
+	opacity: 0.5;
+}
+
+ul#tree a {
+	color: blue;
+	text-decoration: none;
+}
+
+ul#tree a:hover {
+	color: red;
+}
+
+ul#tree a img:hover {
+	opacity: 1;
+}
+
+ul#tree, ul#tree ul {
+	list-style: none;
+}
+
+ul#tree li span, ul#tree h3 {
+	float: left;
+	margin: 0 5px;
+}
+
+ul#tree li {
+	clear:both;
+	padding: 10px;
+}
+
+.move_controls {
+	width: 60px;
+	height: 20px;
+}
+
+.tree_edit_zone {
+	font-size: 14px;
+}
+
+.tree_edit_zone input {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-right: 5px;
+}

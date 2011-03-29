@@ -1,0 +1,1 @@
+<div style="float: right"><?php echo link_to ('<span class="ui-icon ui-icon-document"></span>'.__('Show as nested set'), 'region/nested', array('class'=>'fg-button-mini fg-button ui-state-default fg-button-icon-left ui-corner-all')) ?></div>

@@ -1,0 +1,55 @@
+# sfDoctrineNestedSetEasyManagerPlugin
+**David Valin Cabrera - [Binarty](http://www.binarty.com "Binarty's website") - [Send an email to the author](mailto:info@binarty.com "Send email to the author")**
+
+## Whats this?
+
+**This is a symfony plugin to manage NestedSet models with multiple roots**. It uses Doctrine ORM in backend and a pretty ajax&jquery UI in frontend to deal with the items of the tree.
+You need to use it as **a component** (in fact it is), not as a widget, **you can embed it** near your lists asociated to the tree model: in product list, post list... or even in single templates or
+**WHEREVER YOU WANT**.
+
+## Dependencies
+ 
+  * sfDoctrinePlugin
+  * sfJqueryReloadedPlugin
+
+## How to use it
+
+  * First of all, **make sure you have loaded the plugin** in your config/ProjectConfiguration.class.php file.
+
+
+  * **Now enable the 'nestedSetManager' module** that comes with the plugin, in /apps/**yourapp**/config/settings.yml:
+  
+        enabled_modules:         [default, nestedSetManager]
+
+
+  * **Clear the cache**:
+
+        symfony cc
+
+
+  * **Publish the plugin assets**:
+
+        symfony plugin:publish-assets
+
+
+  * **Add the 'NestedSet' Doctrine behaviour** to one element of your model, example:
+
+        ProductCategory:
+          actAs:
+            NestedSet:
+              hasManyRoots: true
+              rootColumnName: root_id
+          columns:
+            name: string(255)
+
+
+  * Now you can **include the 'manager' component** in any template of your app, you need to pass 'the NestedSet model' and 'the item field' that you want to edit in the manager, example: 
+
+        <?php echo include_component('nestedSetManager','manager', array('model' => 'ProductCategory', 'field' => 'name')) ?>
+
+## Next step ?
+
+  * Factorize and optimizations on code
+  * Be able to move an element outside its level
+  * Add sorting  feature using drag&drop
+  * UX optimizations

@@ -12,6 +12,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfOrmBreadcrumbsPlugin');
     $this->enablePlugins('ioMenuPlugin');
     $this->enablePlugins('sfFormExtraPlugin');
+    $this->enablePlugins('sfDoctrineNestedSetEasyManagerPlugin');
     $this->enablePlugins('sfDoctrineNestedSetPlugin');
   }
 }

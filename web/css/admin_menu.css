@@ -1,0 +1,59 @@
+a:focus, a:hover {color: white;}
+
+.sf-menu li {
+	background: #ECEADF;
+  border: 1px solid #D9D6C4;
+}
+.sf-menu li li {
+  background:   #F8F7F6;
+}
+.sf-menu li li li {
+  background:   #9AAEDB;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+  background: #D9D6C4;
+  outline:    0;
+}
+
+.sf-menu a {
+	font-size: 1em;
+	border: none;
+}
+
+.sf-menu a, .sf-menu a:visited {
+  color: #654B24;
+}
+
+.sf-menu a.sf-with-ul {
+    padding-left: 2.25em;
+}
+
+tr.sf_admin_row.even td {
+	background: #D9D6C4;
+}
+
+tr.sf_admin_row.odd td {
+  background: #ECEADF;
+}
+
+#sf_admin_actions_button {
+	margin: 10px 0;
+}
+
+input.ui-button {
+	padding: 0 0.5em 0.2em;
+}
+
+button.fg-button {
+	 padding-top: 0.5em;
+}
+
+#footer {
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#breadcrumbs {
+  margin-bottom: 10px;
+}

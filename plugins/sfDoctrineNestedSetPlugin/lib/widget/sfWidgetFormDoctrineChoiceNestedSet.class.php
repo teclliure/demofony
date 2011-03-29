@@ -23,16 +23,10 @@ class sfWidgetFormDoctrineChoiceNestedSet extends sfWidgetFormDoctrineChoice
 
     if (null === $this->getOption('table_method'))
     {
-      
-      $table = Doctrine_Core::getTable($this->getOption('model'));
       $query = null === $this->getOption('query') ? Doctrine_Core::getTable($this->getOption('model'))->createQuery() : $this->getOption('query');
       // force manual sorting according to root_id then by lft
-      // check if multiple roots is set, if it is find out what the root column is.
-      if ($table->getTree()->getAttribute('rootColumnName') !== null) {
-        $query->addOrderBy($table->getTree()->getAttribute('rootColumnName') .' asc');
-      }
-      $query->addOrderBy('lft asc');
-      
+      $query->addOrderBy('root_id asc')
+            ->addOrderBy('lft asc');
       $objects = $query->execute();
     }
     else

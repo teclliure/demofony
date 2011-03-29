@@ -12,5 +12,14 @@ class VirtualMeetingForm extends BaseVirtualMeetingForm
 {
   public function configure()
   {
+    unset($this['slug']);
+    $this->setWidget('answers_start_date', new sfWidgetFormJQueryDate(array(
+      'image'=>sfContext::getInstance()->getRequest()->getRelativeUrlRoot().'/images/calendar.png',
+      'config' => '{}',
+    )));
+    $this->setWidget('answers_end_date', new sfWidgetFormJQueryDate(array(
+      'image'=>sfContext::getInstance()->getRequest()->getRelativeUrlRoot().'/images/calendar.png',
+      'config' => '{}',
+    )));
   }
 }

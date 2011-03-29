@@ -59,7 +59,7 @@
     </tfoot>
 
     <tbody>
-      [?php foreach ($pager->getResults() as $i => $<?php echo $this->getSingularName() ?>): $odd = fmod(++$i, 2) ? ' odd' : '' ?]
+      [?php foreach ($pager->getResults() as $i => $<?php echo $this->getSingularName() ?>): $odd = fmod(++$i, 2) ? ' odd' : ' even' ?]
         <tr class="sf_admin_row ui-widget-content [?php echo $odd ?]">
           <?php if ($this->configuration->getValue('list.batch_actions')): ?>
             [?php include_partial('<?php echo $this->getModuleName() ?>/list_td_batch_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper)) ?]

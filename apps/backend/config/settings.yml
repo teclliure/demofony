@@ -43,4 +43,4 @@ all:
     
     default_culture:        es
     
-    enabled_modules:        [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission, sfDoctrineBreadcrumbs]
+    enabled_modules:        [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission, sfDoctrineBreadcrumbs, nestedSetManager]

@@ -17,8 +17,8 @@ default:
     - /blueprint/blueprint/print.css: { media: print }
     - /jquery/ui/css/pepper-grinder/jquery-ui-1.8.11.custom.css
     - main.css
-    - /css/admin_menu.css
     - /jquery/superfish/css/superfish.css
+    - /css/admin_menu.css
     - /blueprint/blueprint/ie.css { condition: IE 8 }
     
 

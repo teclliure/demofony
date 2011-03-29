@@ -1,0 +1,23 @@
+tree_add_root:
+  url:   /tree_add_root
+  param: { module: nestedSetManager, action: add_root}
+
+tree_add_child:
+  url:  /tree_add_child
+  param: { module: nestedSetManager, action: add_child }
+
+tree_move_item_to:
+  url:   /tree_item_move_to
+  param: { module: nestedSetManager, action: move }
+
+tree_delete_item:
+  url:   /tree_delete_item
+  param: { module: nestedSetManager, action: delete }
+
+tree_edit_item:
+  url:   /tree_edit_item
+  param: { module: nestedSetManager, action: edit_field }
+
+tree_do_edit_item:
+  url:   /tree_do_edit_field_item
+  param: { module: nestedSetManager, action: doEditField }

@@ -12,5 +12,6 @@ class CategoryForm extends BaseCategoryForm
 {
   public function configure()
   {
+    unset($this['slug'],$this['profiles_list'],$this['proposals_list']);
   }
 }

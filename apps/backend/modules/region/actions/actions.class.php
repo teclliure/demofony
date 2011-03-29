@@ -10,11 +10,6 @@
  */
 class regionActions extends autoRegionActions
 {
-  public function executeMoveUp(sfRequest $request) {
-    $this->redirect('region/index');
-  }
-  
-  public function executeMoveDown(sfRequest $request) {
-    $this->redirect('region/index');
+  public function executeNested(sfRequest $request) {
   }
 }
