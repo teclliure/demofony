@@ -126,6 +126,16 @@ sfGuardUser:
       refClass: ActionHasUser
       local: user_id
       foreign: action_id
+    Opinions:
+      class: Opinion
+      refClass: OpinionMarkedAsSpam
+      local: user_id
+      foreign: opinion_id
+    Comments:
+      class: Comments
+      refClass: CommentMarkedAsSpam
+      local: user_id
+      foreign: comment_id
 sfGuardUserPermission:
   actAs:
     Timestampable: 

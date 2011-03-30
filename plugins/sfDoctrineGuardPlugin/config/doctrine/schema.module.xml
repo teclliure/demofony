@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <orm-designer version="1.4.3.457">
 
-  <module import-format="DoctrineYml" import-path="schema.yml" name="sfDoctrineGuardPlugin" visBkColor="16317694" visSizeX="0" visSizeX2="642" visSizeY="0" visSizeY2="564">
+  <module import-format="DoctrineYml" import-path="schema.yml" name="sfDoctrineGuardPlugin" visBkColor="16317694" visSizeX="0" visSizeX2="807" visSizeY="0" visSizeY2="564">
     <table name="sfGuardGroup" visPositionX="46" visPositionY="40" visSizeX="0" visSizeX2="121" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" size="255" type="string" unique="true"/>
@@ -190,6 +190,10 @@
     <many-to-many-relation mn-table="sfGuardUserPermission">
       <many-to-many-foreign-key foreign-key="FK_sfGuardUserPermission_sfGuardPermission_id" relation-alias="Permissions"/>
       <many-to-many-foreign-key foreign-key="FK_sfGuardUserPermission_sfGuardUser_id" relation-alias="Users"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="OpinionMarkedAsSpam">
+      <many-to-many-foreign-key foreign-key="FK_MarkedAsSpam_sfGuardUser_id" relation-alias="Users"/>
+      <many-to-many-foreign-key foreign-key="FK_MarkedAsSpam_Opinion_id" relation-alias="Opinions"/>
     </many-to-many-relation>
   </module>
 

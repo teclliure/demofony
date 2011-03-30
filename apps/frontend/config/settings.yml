@@ -42,4 +42,5 @@ all:
         
     default_culture:        es
     
-    enabled_modules:        [default, sfGuardAuth]
+    enabled_modules:        [default, sfGuardAuth, sfGuardRegister, sfGuardForgotPassword]
+    standard_helpers:       [Partial, Cache, I18N]

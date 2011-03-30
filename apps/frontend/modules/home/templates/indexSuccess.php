@@ -4,6 +4,7 @@ $(function() {
   $( "#tabs" ).tabs();
 });
 //-->
+</script>
 
 <div id="tabs">
   <ul>

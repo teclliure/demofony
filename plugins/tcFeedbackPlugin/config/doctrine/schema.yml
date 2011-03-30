@@ -39,6 +39,11 @@ Opinion:
       onDelete: CASCADE
       local: user_id
       foreign: id
+    Users:
+      class: sfGuardUser
+      refClass: OpinionMarkedAsSpam
+      local: opinion_id
+      foreign: user_id
 OpinionPossibility:
   columns:
     id:
@@ -100,6 +105,11 @@ Comments:
       onDelete: CASCADE
       local: user_id
       foreign: id
+    Users:
+      class: sfGuardUser
+      refClass: CommentMarkedAsSpam
+      local: comment_id
+      foreign: user_id
 OpinionLike:
   columns:
     user_id:
@@ -121,4 +131,46 @@ OpinionLike:
     Opinion:
       onDelete: CASCADE
       local: opinion_id
+      foreign: id
+OpinionMarkedAsSpam:
+  actAs:
+    Timestampable: 
+  columns:
+    user_id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+    opinion_id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+    Opinion:
+      local: opinion_id
+      foreign: id
+CommentMarkedAsSpam:
+  actAs:
+    Timestampable: 
+  columns:
+    comment_id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+    user_id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+  relations:
+    Comments:
+      local: comment_id
+      foreign: id
+    sfGuardUser:
+      local: user_id
       foreign: id
