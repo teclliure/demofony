@@ -16,7 +16,6 @@ abstract class BasesfGuardUserProfileForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'user_id'            => new sfWidgetFormInputHidden(),
-      'nickname'           => new sfWidgetFormInputText(),
       'gender'             => new sfWidgetFormInputText(),
       'telephone'          => new sfWidgetFormInputText(),
       'address'            => new sfWidgetFormInputText(),
@@ -26,6 +25,7 @@ abstract class BasesfGuardUserProfileForm extends BaseFormDoctrine
       'country'            => new sfWidgetFormInputText(),
       'web'                => new sfWidgetFormInputText(),
       'about'              => new sfWidgetFormTextarea(),
+      'image'              => new sfWidgetFormInputText(),
       'subscription_email' => new sfWidgetFormInputCheckbox(),
       'created_at'         => new sfWidgetFormDateTime(),
       'updated_at'         => new sfWidgetFormDateTime(),
@@ -37,7 +37,6 @@ abstract class BasesfGuardUserProfileForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'user_id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
-      'nickname'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'gender'             => new sfValidatorInteger(array('required' => false)),
       'telephone'          => new sfValidatorString(array('max_length' => 25, 'required' => false)),
       'address'            => new sfValidatorString(array('max_length' => 255, 'required' => false)),
@@ -47,6 +46,7 @@ abstract class BasesfGuardUserProfileForm extends BaseFormDoctrine
       'country'            => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'web'                => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'about'              => new sfValidatorString(array('required' => false)),
+      'image'              => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'subscription_email' => new sfValidatorBoolean(array('required' => false)),
       'created_at'         => new sfValidatorDateTime(),
       'updated_at'         => new sfValidatorDateTime(),

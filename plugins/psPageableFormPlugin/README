@@ -1,0 +1,159 @@
+psPageableFormPlugin
+====================
+
+This plugin provides simple to use pageable form functionality.
+
+Usually multipage forms are implementing by big if/switch instruction in the controller or single action for each step.
+By this plugin, you can create pageable form with one if instruction ("if(form is fully valid)") and in single, very simple
+action, which looks like standard form maniplate action. This plugin also provides more sophisticated features as adding forms in
+runtime (adding form's steps according to values from previous steps), merging multipage forms and in the future - embed multipage forms.
+
+Forms created by this plugin are flexible and easier in maintaining. Adding steps, changing order of the steps, adding new fields, changing
+source of form's persistance are very simple.
+
+Core of this plugin hasn't dependencies with symfony components. If you use only symfony form subframework, this plugin will works fine, but remember,
+you should write your own persistance strategy which implements psPageableFormPersistanceStrategy.
+
+Documentation
+-------------
+Simple sample code:
+
+* form definition:
+
+		[php]
+		class MyPageableForm extends psPageableForm
+		{
+			public function setup()
+			{
+				//set name format for all forms
+				$this->setNameFormat('form[%s]');
+				
+				$flag = false;
+				
+				//If $flag is false, name format will be merged with global pageable form name format.				
+				//for example: name format for SampleForm is 'sample_form[%s]'
+				//merged name format will be 'form[sample_form][%s]', if $flag equals false
+				//otherwise name format will be 'form[%s]'				
+				
+				$this->setUseGlobalNamespace($flag); //must be set before addForm/addForms/setForm/setForms methods call!
+				$this->addForm(new SampleForm(array(), array(), false));//disable csrf protection for all forms except last
+				$this->addForm(new SampleForm(array(), array(), false));//form for second page
+
+				//add form via passing creation data, form object will be created if necessary
+				$this->addForm(array(
+					'class' => 'SampleForm',
+					'arguments' => array(array(), array(), false),//array of construct's arguments
+				));
+				$this->addForm('SampleForm');//pass only class name
+			}
+		}
+		
+		class SampleForm1 extends sfForm
+		{
+			//class definition
+		}
+
+* In action:
+
+		[php]
+		$form = new MyPageableForm();
+
+		//set persistance strategy
+		$form->setPersistanceStrategy(new psPageableFormSessionPersistanceStrategy($this->getUser()));
+		
+		$processOptions = array(
+			'formParameterName' => 'form' //parameter of $reqeust->getParameter() method
+		);
+		
+		//create and execute form processing
+		$process = new psPageableFormProcess($form, $request, processOptions);
+		
+		if($process->process())
+		{
+			//save and redirect
+		}
+		
+		$this->form = $form;
+
+* In template:
+
+		[php]
+		<form action="?step=<?php echo $form->getCurrentPageNumber() + 1 ?>" method="post">
+			<?php echo $form->getCurrentForm() ?> 
+			<?php if($form->getCurrentPageNumber() > 1): ?>
+				<!-- navigation doesn't work with post persistance strategy -->
+				<a href="?step=<?php echo $form->getCurrentPageNumber() ?>">Back</a>
+			<?php endif; ?>
+			<input type="submit" value="next" />
+		</form>
+		
+Another example:
+
+* Form with conditional steps:
+
+		[php]
+		class MyPageableForm extends psPageableForm
+		{
+			public function setup()
+			{
+				$this->setNameFormat(...);
+				$this->setUseGlobalNamespace(false);
+				
+				//add only forms, which should be display for all use cases
+				$this->addForm(new Form1());
+				$this->addForm(new Form2());
+				$this->addForm(new Form4());
+			}
+			
+			public function bind(array $taintedValues = null, array $taintedFiles = null)
+			{
+				if($this->shouldBeForm3Set($taintedValues) && !$this->isFormSet(3, 'Form3'))
+				{
+					$this->setForm(3, new Form3());
+				}
+
+				parent::bind($taintedValues, $taintedFiles);
+			}
+			
+			private function shouldBeForm3Set($values)
+			{
+				return (isset($values['form1']['someForm1Value']) && $values['form1']['someForm1Value'] == 'exceptedValue');
+			}
+			
+			private function isFormSet($page, $formClass)
+			{
+				return $this->getForm($page) instanceof $formClass;
+			}
+		}
+
+Pageable form merging:
+* class definitions
+		[php]
+		class PageableForm1 extends psPageableForm
+		{
+			public function setup()
+			{
+				$this->setNameFormat('pageableForm1[%s]');
+				$this->setUseGlobalNamespace(false);
+
+				$this->addForm(new Form1());//name format of Form1 is form1[%s]
+				$this->addForm(new Form2());
+			}
+		}
+
+		class PageableForm2 extends psPageableForm
+		{
+			public function setup()
+			{
+				$this->setNameFormat('pageableForm2[%s]');
+				$this->setUseGlobalNamespace(false);
+
+				$this->addForm(new Form3());
+				$this->addForm(new Form4());
+
+                                //merge with another pageable form. Name formats are also merged, for example
+                                //name format of Form1 will be 'pageableForm2[pageableForm1][form1][%s]'.
+                                //Form PageableForm2 has 4 subforms on 4 pages.
+                                $this->mergeForm(new PageableForm1());
+			}
+		}

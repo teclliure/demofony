@@ -18,6 +18,7 @@
      Menu
      </div>
      <div class="span-24 last">
+     <?php include_partial('home/flashes')?>
      <?php echo $sf_content ?>
      </div>
      <div id="footer" class="span-24 last"><?php echo __('Project developed by') ?> <a href="http://www.teclliure.net">Teclliure</a> <?php echo __('using') ?> <a href="http://www.symfony-project.org/">Symfony</a></div>

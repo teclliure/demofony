@@ -13,7 +13,6 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'nickname'           => new sfWidgetFormFilterInput(),
       'gender'             => new sfWidgetFormFilterInput(),
       'telephone'          => new sfWidgetFormFilterInput(),
       'address'            => new sfWidgetFormFilterInput(),
@@ -23,6 +22,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
       'country'            => new sfWidgetFormFilterInput(),
       'web'                => new sfWidgetFormFilterInput(),
       'about'              => new sfWidgetFormFilterInput(),
+      'image'              => new sfWidgetFormFilterInput(),
       'subscription_email' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'created_at'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
@@ -33,7 +33,6 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'nickname'           => new sfValidatorPass(array('required' => false)),
       'gender'             => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'telephone'          => new sfValidatorPass(array('required' => false)),
       'address'            => new sfValidatorPass(array('required' => false)),
@@ -43,6 +42,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
       'country'            => new sfValidatorPass(array('required' => false)),
       'web'                => new sfValidatorPass(array('required' => false)),
       'about'              => new sfValidatorPass(array('required' => false)),
+      'image'              => new sfValidatorPass(array('required' => false)),
       'subscription_email' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'created_at'         => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'         => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -106,7 +106,6 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'user_id'            => 'Number',
-      'nickname'           => 'Text',
       'gender'             => 'Number',
       'telephone'          => 'Text',
       'address'            => 'Text',
@@ -116,6 +115,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
       'country'            => 'Text',
       'web'                => 'Text',
       'about'              => 'Text',
+      'image'              => 'Text',
       'subscription_email' => 'Boolean',
       'created_at'         => 'Date',
       'updated_at'         => 'Date',

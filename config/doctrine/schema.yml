@@ -8,8 +8,6 @@ sfGuardUserProfile:
       unique: true
       type: integer
       notnull: true
-    nickname:
-      type: string(255)
     gender:
       type: integer
     telephone:
@@ -28,6 +26,8 @@ sfGuardUserProfile:
       type: string(255)
     about:
       type: clob
+    image:
+      type: string(255)
     subscription_email:
       default: 0
       type: boolean

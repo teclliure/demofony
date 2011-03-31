@@ -14,5 +14,8 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfFormExtraPlugin');
     $this->enablePlugins('sfDoctrineNestedSetEasyManagerPlugin');
     $this->enablePlugins('sfDoctrineNestedSetPlugin');
+    $this->enablePlugins('psPageableFormPlugin');
+    
+    // sfWidgetFormSchema::setDefaultFormFormatterName('Div');
   }
 }

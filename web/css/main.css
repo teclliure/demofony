@@ -1,0 +1,58 @@
+/* Css Forms */
+form .focused { 
+  background: #e0dfe1;
+}
+
+form .form_row {
+	clear: both;
+	padding: 5px;
+}
+
+form label {
+  float: left;
+  line-height: 1;
+  margin: 0.3em 0 0 0;
+  padding: 0;
+  position: relative;
+  width: 25%;
+}
+
+
+form input[type="text"], form  textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #AAAAAA;
+    padding: 4px 2px;
+}
+
+form .div_error_list.error {
+  margin-left: 25%;
+	margin-bottom: 0;
+	margin-top: 1em;
+}
+
+form .form_input {
+  clear: right;
+  float: left;
+  width: 70%;
+}
+
+form .form_help {
+    clear: both;
+    float: none;
+    margin-left: 25%;
+    top: -3px;
+    position: relative;
+    width: auto;
+    color: #777777;
+    font-size: 0.85em;
+}
+/* End css Forms */
+
+#login_box {
+  padding: 20px;
+  margin: 20px 200px 20px 200px;
+}
+
+.sf_admin_flashes .ui-icon {
+	display: inline;
+}

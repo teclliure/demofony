@@ -4,6 +4,14 @@
 loginAjax:
   url: /loginAjax
   param: { module: sfGuardAuth, action: formLoginAjax }
+  
+register:
+  url: /register
+  param: { module: user, action: register }
+
+profile:
+  url: /profile
+  param: { module: user, action: profile }
 
 # default rules
 homepage:
