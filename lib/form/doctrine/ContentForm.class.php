@@ -26,6 +26,7 @@ class ContentForm extends BaseContentForm
     )));
    $this->setValidator('latitude', new sfValidatorNumber(array( 'min' => -90, 'max' => 90, 'required' => false)));
    $this->setValidator('longitude', new sfValidatorNumber(array( 'min' => -180, 'max' => 180, 'required' => false)));
-   
+   $this->getObject()->configureJCropWidgets($this);
+   $this->getObject()->configureJCropValidators($this);
   }
 }

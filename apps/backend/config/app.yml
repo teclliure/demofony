@@ -3,6 +3,11 @@
 
 # default values
 all:
+  sfImageTransformPlugin:
+    default_adapter: GD
+    mime_type:
+      auto_detect: true
+      library: gd_mime_type
   sf_guard_plugin:
     remember_key_expiration_age:  2592000   # 30 days in seconds
     remember_cookie_name:         demofonyAdminRememberMe
@@ -24,3 +29,20 @@ all:
       previous: seek-prev
       next: seek-next
       last: seek-end
+  sfDoctrineJCroppablePlugin:
+    models:
+      Content:
+        directory:    content
+        images:
+          image:
+            sizes:
+              thumb:    { width: 250 }
+              main:     { width: 675 }
+      SfGuardUserProfile:
+        directory:    images/user
+        images:
+          image:
+            sizes:
+              thumb:    { width: 120 }
+              main:     { width: 300 }
+      

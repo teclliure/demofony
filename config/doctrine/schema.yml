@@ -2,6 +2,8 @@ sfGuardUserProfile:
   actAs:
     Timestampable: 
     Geographical: 
+    JCroppable:
+      images: [image]
   columns:
     user_id:
       primary: true
@@ -26,8 +28,6 @@ sfGuardUserProfile:
       type: string(255)
     about:
       type: clob
-    image:
-      type: string(255)
     subscription_email:
       default: 0
       type: boolean
@@ -83,6 +83,8 @@ Content:
     Searchable:
       fields: [title,body]
     Geographical: 
+    JCroppable:
+      images: [image]
   columns:
     id:
       primary: true
@@ -94,8 +96,6 @@ Content:
     body:
       type: clob
       notnull: true
-    image:
-      type: string(255)
     video:
       type: string(255)
     active:

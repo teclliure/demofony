@@ -19,6 +19,6 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
    
     $profileForm = new sfGuardUserProfileForm($this->getObject()->getProfile());
     unset($profileForm['user_id']);
-    $this->embedForm('Profile', $profileForm);
+    $this->embedForm('profile', $profileForm);
   }
 }

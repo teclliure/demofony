@@ -21,9 +21,9 @@ generator:
       form:
         class: sfGuardUserAdminForm
         display:
-          "User":                   [first_name, last_name, email_address, username, password, password_again]
+          "User":                   [first_name, last_name, email_address, username, password, password_again,profile]
           "Permissions and groups": [is_active, is_super_admin, groups_list, permissions_list]
-          "Profile": [Profile]
+          
 
       edit:
         title: Editing User "%%username%%"

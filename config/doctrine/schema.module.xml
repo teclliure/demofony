@@ -13,12 +13,14 @@
       <column name="country" size="150" type="string"/>
       <column name="web" size="255" type="string"/>
       <column name="about" type="clob"/>
-      <column name="image" size="255" type="string"/>
       <column default="0" name="subscription_email" type="boolean"/>
       <orm-properties>
         <attribute name="actAs">
           <attribute name="Timestampable"/>
           <attribute name="Geographical"/>
+          <attribute name="JCroppable">
+            <attribute name="images">[image]</attribute>
+          </attribute>
         </attribute>
       </orm-properties>
     </table>
@@ -31,7 +33,6 @@
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
-      <column name="image" size="255" type="string"/>
       <column name="video" size="255" type="string"/>
       <column default="1" name="active" required="true" type="boolean"/>
       <column name="user_id" required="true" type="integer"/>
@@ -49,6 +50,9 @@
             <attribute name="fields">[title,body]</attribute>
           </attribute>
           <attribute name="Geographical"/>
+          <attribute name="JCroppable">
+            <attribute name="images">[image]</attribute>
+          </attribute>
         </attribute>
       </orm-properties>
     </table>

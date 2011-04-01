@@ -19,8 +19,15 @@ default:
     - /jquery/ui/css/pepper-grinder/jquery-ui-1.8.11.custom.css
     - /jquery/superfish/css/superfish.css
     - admin_menu.css
+    - jquery.Jcrop.css
 
-  javascripts:    [/jquery/jquery-1.5.1.min.js, /jquery/ui/jquery-ui-1.8.11.custom.min.js, /jquery/superfish/js/hoverIntent.js, /jquery/superfish/js/jquery.bgiframe.min.js, /jquery/superfish/js/superfish.js]
+  javascripts:
+    - /jquery/jquery-1.5.1.min.js
+    - /jquery/ui/jquery-ui-1.8.11.custom.min.js
+    - /jquery/superfish/js/hoverIntent.js
+    - /jquery/superfish/js/jquery.bgiframe.min.js
+    - /jquery/superfish/js/superfish.js
+    - jquery.Jcrop.min.js
 
   has_layout:     true
   layout:         layout

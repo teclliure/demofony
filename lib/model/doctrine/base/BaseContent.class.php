@@ -8,7 +8,6 @@
  * @property integer $id
  * @property string $title
  * @property clob $body
- * @property string $image
  * @property string $video
  * @property boolean $active
  * @property integer $user_id
@@ -22,7 +21,6 @@
  * @method integer             getId()                 Returns the current record's "id" value
  * @method string              getTitle()              Returns the current record's "title" value
  * @method clob                getBody()               Returns the current record's "body" value
- * @method string              getImage()              Returns the current record's "image" value
  * @method string              getVideo()              Returns the current record's "video" value
  * @method boolean             getActive()             Returns the current record's "active" value
  * @method integer             getUserId()             Returns the current record's "user_id" value
@@ -35,7 +33,6 @@
  * @method Content             setId()                 Sets the current record's "id" value
  * @method Content             setTitle()              Sets the current record's "title" value
  * @method Content             setBody()               Sets the current record's "body" value
- * @method Content             setImage()              Sets the current record's "image" value
  * @method Content             setVideo()              Sets the current record's "video" value
  * @method Content             setActive()             Sets the current record's "active" value
  * @method Content             setUserId()             Sets the current record's "user_id" value
@@ -69,10 +66,6 @@ abstract class BaseContent extends sfDoctrineRecord
         $this->hasColumn('body', 'clob', null, array(
              'type' => 'clob',
              'notnull' => true,
-             ));
-        $this->hasColumn('image', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
              ));
         $this->hasColumn('video', 'string', 255, array(
              'type' => 'string',
@@ -140,9 +133,16 @@ abstract class BaseContent extends sfDoctrineRecord
              ),
              ));
         $geographical0 = new Doctrine_Template_Geographical();
+        $jcroppable0 = new Doctrine_Template_JCroppable(array(
+             'images' => 
+             array(
+              0 => 'image',
+             ),
+             ));
         $this->actAs($timestampable0);
         $this->actAs($sluggable0);
         $this->actAs($searchable0);
         $this->actAs($geographical0);
+        $this->actAs($jcroppable0);
     }
 }

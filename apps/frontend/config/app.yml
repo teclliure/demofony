@@ -2,4 +2,25 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
-#all:
+all:
+  sfImageTransformPlugin:
+    default_adapter: GD
+    mime_type:
+      auto_detect: true
+      library: gd_mime_type
+  sfDoctrineJCroppablePlugin:
+    models:
+      Content:
+        directory:    content
+        images:
+          image:
+            sizes:
+              thumb:    { width: 250 }
+              main:     { width: 675 }
+      SfGuardUserProfile:
+        directory:    images/user
+        images:
+          image:
+            sizes:
+              thumb:    { width: 120 }
+              main:     { width: 500 }

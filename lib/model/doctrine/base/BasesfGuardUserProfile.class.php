@@ -15,7 +15,6 @@
  * @property string $country
  * @property string $web
  * @property clob $about
- * @property string $image
  * @property boolean $subscription_email
  * @property sfGuardUser $User
  * @property Doctrine_Collection $Categories
@@ -33,7 +32,6 @@
  * @method string              getCountry()              Returns the current record's "country" value
  * @method string              getWeb()                  Returns the current record's "web" value
  * @method clob                getAbout()                Returns the current record's "about" value
- * @method string              getImage()                Returns the current record's "image" value
  * @method boolean             getSubscriptionEmail()    Returns the current record's "subscription_email" value
  * @method sfGuardUser         getUser()                 Returns the current record's "User" value
  * @method Doctrine_Collection getCategories()           Returns the current record's "Categories" collection
@@ -50,7 +48,6 @@
  * @method sfGuardUserProfile  setCountry()              Sets the current record's "country" value
  * @method sfGuardUserProfile  setWeb()                  Sets the current record's "web" value
  * @method sfGuardUserProfile  setAbout()                Sets the current record's "about" value
- * @method sfGuardUserProfile  setImage()                Sets the current record's "image" value
  * @method sfGuardUserProfile  setSubscriptionEmail()    Sets the current record's "subscription_email" value
  * @method sfGuardUserProfile  setUser()                 Sets the current record's "User" value
  * @method sfGuardUserProfile  setCategories()           Sets the current record's "Categories" collection
@@ -107,10 +104,6 @@ abstract class BasesfGuardUserProfile extends sfDoctrineRecord
         $this->hasColumn('about', 'clob', null, array(
              'type' => 'clob',
              ));
-        $this->hasColumn('image', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
-             ));
         $this->hasColumn('subscription_email', 'boolean', null, array(
              'default' => 0,
              'type' => 'boolean',
@@ -145,7 +138,14 @@ abstract class BasesfGuardUserProfile extends sfDoctrineRecord
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $geographical0 = new Doctrine_Template_Geographical();
+        $jcroppable0 = new Doctrine_Template_JCroppable(array(
+             'images' => 
+             array(
+              0 => 'image',
+             ),
+             ));
         $this->actAs($timestampable0);
         $this->actAs($geographical0);
+        $this->actAs($jcroppable0);
     }
 }

@@ -17,5 +17,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('psPageableFormPlugin');
     
     // sfWidgetFormSchema::setDefaultFormFormatterName('Div');
+    $this->enablePlugins('sfDoctrineJCroppablePlugin');
+    $this->enablePlugins('sfImageTransformPlugin');
   }
 }
