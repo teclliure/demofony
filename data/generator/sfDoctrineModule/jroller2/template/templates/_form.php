@@ -10,18 +10,18 @@
 
     <div class="ui-helper-clearfix"></div>
 	
-    [?php echo $form->renderHiddenFields() ?]
+    [?php echo $form->renderHiddenFields(false) ?]
 
     [?php if ($form->hasGlobalErrors()): ?]
       [?php echo $form->renderGlobalErrors() ?]
     [?php endif; ?]
 
 		
-   	[?php 
+   	[?php
 		$count = 0;
-		foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): 
+		foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields):
 			$count++;
-    endforeach; 
+    endforeach;
 		?]
 
 

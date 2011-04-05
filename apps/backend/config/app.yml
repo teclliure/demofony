@@ -42,8 +42,9 @@ all:
         directory:    images/user
         images:
           image:
-            ratio:      1.5
+            ratio:      1
             sizes:
               thumb:    { width: 120 }
               main:     { width: 300 }
+            preview:   thumb
       

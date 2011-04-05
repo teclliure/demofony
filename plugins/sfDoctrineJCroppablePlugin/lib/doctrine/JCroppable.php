@@ -68,9 +68,7 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
     $oldValues = $this->getInvoker()->getModified(true);
     
     if (!empty($oldValues[$fieldName]) && $oldValues[$fieldName] != $this->getInvoker()->$fieldName) {
-      
       $this->removeImages($fieldName, $oldValues[$fieldName]);
-      
     }
 
     if (in_array($fieldName, array_keys($this->getInvoker()->getModified()))) {
@@ -105,9 +103,10 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
           'image_ratio' => isset($imageConfig['ratio']) ? $imageConfig['ratio'] : false,
           'with_delete' => true,
           'file_src' => $this->getImageSrc($fieldName, 'editable'),
-          'template'  => '%file%<br />%input%<br />%delete% %delete_label%',
-          'form' => $form
-        ))
+          'form' => $form,
+          'preview' => isset($imageConfig['preview']) ? $imageConfig['preview'] : false,
+          'image_config' => $imageConfig
+          ))
       );
       
       foreach (array('x1', 'y1', 'x2', 'y2') as $suffix) {
@@ -139,6 +138,10 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
           array('mime_types' => 'Unsupported image type (%mime_type%)')
         )
       );
+      
+      foreach (array('x1', 'y1', 'x2', 'y2') as $suffix) {
+        $form->setValidator($fieldName . '_' . $suffix, new sfValidatorPass());
+      }
     }
   }
   

@@ -44,13 +44,15 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
     $this->setOption('needs_multipart', true);
     
     $this->addRequiredOption('file_src');
+    $this->addRequiredOption('image_config');
     $this->addOption('with_delete', true);
     $this->addOption('delete_label', 'remove the current file');
     $this->addOption('image_field', null);
     $this->addOption('image_ratio', null);
     $this->addOption('invoker', null);
-    $this->addOption('template', '%file%<br />%input%<br />%delete% %delete_label%');
+    $this->addOption('template', '<table><tr><td>%file%</td><td>%preview%</td></tr></table>%input%<br />%delete% %delete_label%');
     $this->addOption('form', null);
+    $this->addOption('preview', null);
   }
 
   /**
@@ -100,8 +102,23 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
       $delete = '';
       $deleteLabel = '';
     }
+    
+    
+    if ($this->getOption('preview')) {
+      $image_config = $this->getOption('image_config');
+      $image_config_size_width = $image_config['sizes'][$this->getOption('preview')]['width'];
+      $image_config_size_height = $image_config_size_width*$image_config['ratio'];
+      $preview = '
+      <div style="width: '.$image_config_size_width.'px; height: '.$image_config_size_height.'px; overflow: hidden; float: left; margin-left: 5px;">
+      <img id="'.$this->getIdStub().'_img_preview" src="'.$this->getOption('file_src').'" >
+      </div>
+      ';
+    }
+    else {
+      $preview = '';
+    }
 
-    return strtr($this->getOption('template') . $this->getJCropJS(), array('%input%' => $input, '%delete%' => $delete, '%delete_label%' => $deleteLabel, '%file%' => $this->getFileAsTag($attributes)));
+    return strtr($this->getOption('template') . $this->getJCropJS($image_config), array('%input%' => $input, '%delete%' => $delete, '%delete_label%' => $deleteLabel, '%file%' => $this->getFileAsTag($attributes), '%preview%' => $preview));
   }
 
   protected function getFileAsTag($attributes)
@@ -125,9 +142,31 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
     
   }
   
-  private function getJCropJS() {
+  private function getJCropJS($image_config) {
     $idStub = $this->getIdStub();
     $ratio = $this->getOption('image_ratio') ? 'aspectRatio: ' . $this->getOption('image_ratio') . ',' : '';
+    if ($this->getOption('preview')) {
+      $image_config_size_width = $image_config['sizes'][$this->getOption('preview')]['width'];
+      $image_config_size_height = $image_config_size_width*$image_config['ratio'];
+      $preview = "
+      if (parseInt(c.w) > 0) {
+        var rx = {$image_config_size_width} / c.w;
+        var ry = {$image_config_size_height} / c.h;
+        var img_width = $('#".$this->getIdStub()."_img').width();
+        var img_height = $('#".$this->getIdStub()."_img').height();
+  
+        $('#".$this->getIdStub()."_img_preview').css({
+          width: Math.round(rx * img_width) + 'px',
+          height: Math.round(ry * img_height) + 'px',
+          marginLeft: '-' + Math.round(rx * c.x) + 'px',
+          marginTop: '-' + Math.round(ry * c.y) + 'px'
+        });
+      }
+      ";
+    }
+    else {
+      $preview = '';
+    }
     
     $js = "
 <script language=\"Javascript\">
@@ -135,10 +174,10 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
 
     jQuery('#{$idStub}_img').Jcrop({
       $ratio
-      setSelect: [document.getElementById('{$idStub}_x1').value,
-                  document.getElementById('{$idStub}_y1').value,
-                  document.getElementById('{$idStub}_x2').value,
-                  document.getElementById('{$idStub}_y2').value
+      setSelect: [$('#{$idStub}_x1').val(),
+                  $('#{$idStub}_y1').val(),
+                  $('#{$idStub}_x2').val(),
+                  $('#{$idStub}_y2').val()
                   ],
       onChange: _jCropUpdateCoords" . ucfirst($idStub) . ",
       onSelect: _jCropUpdateCoords" . ucfirst($idStub) . "
@@ -147,10 +186,11 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
   });
   
   function _jCropUpdateCoords" . ucfirst($idStub) . "(c) {
-    jQuery('#{$idStub}_x1').val(c.x);
-    jQuery('#{$idStub}_y1').val(c.y);
-    jQuery('#{$idStub}_x2').val(c.x2);
-    jQuery('#{$idStub}_y2').val(c.y2);
+    $('#{$idStub}_x1').val(c.x);
+    $('#{$idStub}_y1').val(c.y);
+    $('#{$idStub}_x2').val(c.x2);
+    $('#{$idStub}_y2').val(c.y2);
+    {$preview}
   }
 </script>
   ";
