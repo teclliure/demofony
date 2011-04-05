@@ -32,9 +32,10 @@ all:
   sfDoctrineJCroppablePlugin:
     models:
       Content:
-        directory:    content
+        directory:    images/content
         images:
           image:
+            ratio:      1.5
             sizes:
               thumb:    { width: 250 }
               main:     { width: 675 }

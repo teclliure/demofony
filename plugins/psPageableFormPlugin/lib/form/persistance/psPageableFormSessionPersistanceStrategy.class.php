@@ -36,7 +36,6 @@ class psPageableFormSessionPersistanceStrategy implements psPageableFormPersista
   public function getValues()
   {
     $values = (array) $this->user->getAttribute($this->attributeKey);
-
     return $values;
   }
 

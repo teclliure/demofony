@@ -66,14 +66,15 @@ class userActions extends sfActions {
       $this->redirect('@homepage');
     }
 
-    $this->form = new ProfileForm($this->getUser());
+    $this->form = new ProfileForm($this->getUser()->getGuardUser());
 
     if ($request->isMethod('post'))
     {
-      $this->form->bind($request->getParameter($this->form->getName()));
+      $this->form->bind($request->getParameter($this->form->getName()),$request->getFiles($this->form->getName()));
       if ($this->form->isValid())
       {
         $user = $this->form->save();
+        $this->getUser()->setFlash('success', 'Profile saved!');
 
         $this->redirect('@profile');
       }

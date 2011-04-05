@@ -7,7 +7,7 @@
  */
 class psPageableForm implements ArrayAccess
 {
-  private 
+  private
     $forms = array(),
     $nameFormat = '%s',
     $useGlobalNamespace = true,
@@ -403,7 +403,7 @@ class psPageableForm implements ArrayAccess
     for($i=0; $i < $index; $i++)
     {
       $iterationForm = $this->getAndCreateFormIfNecessary($i);
-      $this->bindForm($iterationForm, $taintedValues);
+      $this->bindForm($iterationForm, $taintedValues,$taintedFiles);
       $this->addValuesFromForm($iterationForm);
 
       if(!$iterationForm->isValid())
@@ -427,11 +427,18 @@ class psPageableForm implements ArrayAccess
     $this->errorSchema = new sfValidatorErrorSchema(new sfValidatorSchema());
   }
 
-  private function bindForm(sfForm $form, array $taintedValues)
+  private function bindForm(sfForm $form, array $taintedValues, array $taintedFiles)
   {
     $values = $this->getValuesForForm($form, $taintedValues);
-
-    $form->bind($values);
+    if ($form->isMultipart() && $taintedFiles) {
+      //print_r ($values); print_r ($taintedFiles); print $form->getName(); print_r($this->getFormKeyNames($form)); exit();
+      $formKeyName = $this->getFormKeyNames($form);
+      $formKeyName = $formKeyName[0];
+      $form->bind($values, $taintedFiles[$formKeyName]);
+    }
+    else {
+      $form->bind($values);
+    }
 
     //pass possible validation errors
     $this->errorSchema->addErrors($form->getErrorSchema()->getErrors());
@@ -463,7 +470,7 @@ class psPageableForm implements ArrayAccess
 
     return $valuesCurrent;
   }
-
+  
   private function &getValuesByKeyNames(array &$values, array $keys)
   {
       $i=0;
@@ -518,6 +525,7 @@ class psPageableForm implements ArrayAccess
       $this->values = array_merge($values, (array)$this->values);
     }
   }
+  
 
   private function removeEmptyValues(array $values)
   {
@@ -581,6 +589,7 @@ class psPageableForm implements ArrayAccess
   {
     return $this->values;
   }
+  
 
   /**
    * @param string $name Value name

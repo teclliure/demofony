@@ -1,0 +1,6 @@
+profileSuccess:
+  stylesheets: 
+    - jquery.Jcrop.css
+
+  javascripts:
+    - jquery.Jcrop.min.js

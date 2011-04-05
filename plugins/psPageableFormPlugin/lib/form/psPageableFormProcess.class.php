@@ -106,12 +106,15 @@ class psPageableFormProcess
 
   private function bindForm()
   {
+    $key = $this->options['pageParameterName'];
+    $page = (int) $this->getRequestParameter($key, 1);
     $values = $this->mergeValues($this->form->getPersistanceStrategy()->getValues(), (array) $this->getRequestParameter($this->options['formParameterName']));
-    $this->form->bind($values);
+   
+    $this->form->bind($values,(array) $this->request->getFiles($this->options['formParameterName']));
   }
 
   private function mergeValues($values1, $values2)
-  {      
+  {
     foreach($values2 as $key => $value)
     {
       if(is_int($key))

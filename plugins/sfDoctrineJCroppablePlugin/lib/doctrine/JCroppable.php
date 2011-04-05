@@ -155,20 +155,12 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
    * @return string
    */
   private function getImageDir() {
-    $config = sfConfig::get('app_sfDoctrineJCroppablePlugin_models');
-    
     $basePath = sfConfig::get('sf_upload_dir');
-    
-    $tableName = $this->getTableNameCamelCase();
 
-    if (!empty($config[$tableName]['directory'])) {
-      
-      $relativePath = $config[$tableName]['directory'];
-      
+    if ($this->getModelConfig('directory')) {
+      $relativePath = $this->getModelConfig('directory');
     } else {
-      
       $relativePath = $this->getImageDirDefault();
-      
     }
     
     return $basePath . DIRECTORY_SEPARATOR . $relativePath;
@@ -481,15 +473,17 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
    */
   private function getImageConfig($fieldName) {
     $config = sfConfig::get('app_sfDoctrineJCroppablePlugin_models');
+
+    $images = $this->getModelConfig('images',array());
     
-    if (!isset($config[$this->getTableNameCamelCase()]['images'][$fieldName])) {
+    if (!isset($images[$fieldName])) {
       return array('sizes' => array(
         'thumb' => array('width' => 120),
         'main' => array('width' => 360)
       ));
     }
     
-    return $config[$this->getTableNameCamelCase()]['images'][$fieldName];
+    return $images[$fieldName];
   }
   
   /**
@@ -527,5 +521,30 @@ class ' . $extendedForm . ' extends ' . $baseForm . '
 }';
     
     eval($class);
+  }
+  
+  private function getModelConfig($option, $default_value = null) {
+    $config = sfConfig::get('app_sfDoctrineJCroppablePlugin_models');
+    $tableName = $this->getTableNameCamelCase();
+    $found = false;
+
+    while (!$found) {
+      if (!empty($config[$tableName][$option])) {
+        $option_value = $config[$tableName][$option];
+        $found = true;
+      }
+      else {
+        if ($tableName == 'sfDoctrineRecord') {
+          break;
+        }
+        $tableName = get_parent_class($tableName);
+      }
+    }
+    if ($found) {
+      return $option_value;
+    }
+    else {
+      return $default_value;
+    }
   }
 }

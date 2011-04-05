@@ -2,14 +2,14 @@
 
 /**
  * Interface of persistance strategy
- * 
+ *
  * @author Piotr Śliwa <peter.pl7@gmail.com>
  */
 interface psPageableFormPersistanceStrategy
 {
   /**
    * Persist form data
-   * 
+   *
    * @param psPageableForm $form Pageable form
    * @return mixed
    */
@@ -20,6 +20,7 @@ interface psPageableFormPersistanceStrategy
    * @return array
    */
   public function getValues();
+  
 
   /**
    * Clear values from strategy

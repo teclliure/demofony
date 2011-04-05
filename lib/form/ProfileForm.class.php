@@ -7,6 +7,6 @@ class ProfileForm extends sfGuardRegisterForm {
     
     $profileForm = new sfGuardUserProfileForm($this->getObject()->getProfile());
     unset($profileForm['user_id'],$profileForm['subscription_email'],$profileForm['categories_list'],$profileForm['regions_list']);
-    $this->embedForm('Profile', $profileForm);
+    $this->embedForm('profile', $profileForm);
   }
 }
