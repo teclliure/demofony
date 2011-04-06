@@ -12,4 +12,8 @@
  */
 class Content extends BaseContent
 {
+  public function addView() {
+    $this->setViews($this->getViews() + 1);
+    $this->save();
+  }
 }

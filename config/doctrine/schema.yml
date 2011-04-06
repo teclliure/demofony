@@ -104,6 +104,9 @@ Content:
       default: 1
       type: boolean
       notnull: true
+    views:
+      default: 0
+      type: integer(16)
     user_id:
       type: integer
       notnull: true

@@ -36,6 +36,7 @@
       <column name="body" required="true" type="clob"/>
       <column name="video" size="255" type="string"/>
       <column default="1" name="active" required="true" type="boolean"/>
+      <column default="0" name="views" size="16" type="integer"/>
       <column name="user_id" required="true" type="integer"/>
       <inheritance-parent type="concrete"/>
       <orm-properties>

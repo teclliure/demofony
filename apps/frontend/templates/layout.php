@@ -11,7 +11,7 @@
   </head>
   <body>
    <div class="container">
-     <div id="header" class="span-24 last"><h1><?php echo link_to (__('Demofony'),'@homepage') ?></h1></div>
+     <div id="header" class="span-24 last" style="background: #eeeeee"><h1><?php echo link_to (__('Demofony'),'@homepage') ?></h1></div>
      <div id="top_logo" class="span-8">Logo</div>
      <div id="top_menu" class="span-16 last">
      <?php include_partial('sfGuardAuth/menu')?>
