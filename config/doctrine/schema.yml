@@ -10,6 +10,8 @@ sfGuardUserProfile:
       unique: true
       type: integer
       notnull: true
+    born_date:
+      type: date
     gender:
       type: integer
     telephone:

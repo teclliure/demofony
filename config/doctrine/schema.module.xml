@@ -4,6 +4,7 @@
   <module import-format="DoctrineYml" import-path="schema.yml" name="demofony" visBkColor="16643574" visSizeX="50" visSizeX2="1123" visSizeY="0" visSizeY2="874">
     <table name="sfGuardUserProfile" visPositionX="589" visPositionY="648" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="185">
       <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="born_date" type="date"/>
       <column name="gender" type="integer"/>
       <column name="telephone" size="25" type="string"/>
       <column name="address" size="255" type="string"/>

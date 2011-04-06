@@ -180,9 +180,9 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
    *
    * @return string
    */
-  private function getImageDirWeb() {
-	$webDir = str_replace('\\', '/', sfConfig::get('sf_web_dir'));
-	$imageDir = str_replace('\\', '/', $this->getImageDir());
+  public function getImageDirWeb() {
+  	$webDir = str_replace('\\', '/', sfConfig::get('sf_web_dir'));
+	  $imageDir = str_replace('\\', '/', $this->getImageDir());
 	
     return (string)str_replace($webDir . '/', '', $imageDir);
   }

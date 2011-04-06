@@ -45,7 +45,7 @@ all:
           image:
             ratio:      1
             sizes:
-              thumb:    { width: 120 }
+              thumb:    { width: 90 }
               main:     { width: 300 }
             preview:   thumb
       

@@ -19,7 +19,7 @@ class ContentTable extends Doctrine_Table
     
   public function getActive($limit = null)
   {
-    $q = $this->createQuery('c')
+    $q = self::createQuery('c')
       ->where('c.active = 1')
       ->addOrderBy('c.created_at desc');
     if ($limit) {

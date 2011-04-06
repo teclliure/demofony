@@ -13,6 +13,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'born_date'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'gender'             => new sfWidgetFormFilterInput(),
       'telephone'          => new sfWidgetFormFilterInput(),
       'address'            => new sfWidgetFormFilterInput(),
@@ -37,6 +38,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
+      'born_date'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'gender'             => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'telephone'          => new sfValidatorPass(array('required' => false)),
       'address'            => new sfValidatorPass(array('required' => false)),
@@ -114,6 +116,7 @@ abstract class BasesfGuardUserProfileFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'user_id'            => 'Number',
+      'born_date'          => 'Date',
       'gender'             => 'Number',
       'telephone'          => 'Text',
       'address'            => 'Text',
