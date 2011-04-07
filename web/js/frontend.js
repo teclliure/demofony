@@ -1,22 +1,43 @@
 $(function() {
-    $( "#login_dialog" ).dialog({
+  if ($(".login_opener").length){
+    $("#login_dialog").dialog({
         autoOpen: false,
         modal: true,
         open: function ()
         {
-            $(this).load('/demofony/loginAjax');
+            $(this).load(login_url);
         },
         height: 400,
         width: 600,
-        title: 'Login'
+        title: login_title
     });
      
     $(".login_opener").click(function() {
        $("#login_dialog").dialog("open");
        return false;
     });
+  }  
     
-    jQuery('form').uniform();
+  if ($(".select_content").length){
+    $("#select_content").dialog({
+      autoOpen: false,
+      modal: true,
+      open: function ()
+      {
+          $(this).load(select_content_url);
+      },
+      height: 400,
+      width: 400,
+      title: select_content_title
+    });
+     
+    $(".select_content").click(function() {
+       $("#select_content").dialog("open");
+       return false;
+    });
+  }
+  
+  jQuery('form').uniform();
 });
 //Author: Ilija Studen for the purposes of Uni–Form
 

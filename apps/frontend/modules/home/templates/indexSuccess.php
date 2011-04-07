@@ -1,7 +1,11 @@
 <script type="text/javascript">
 <!--
+login_url = '<?php echo url_for('@loginAjax') ?>';
+login_title = '<?php echo __('Login') ?>';
+select_content_url = '<?php echo url_for('@selectContent') ?>';
+select_content_title = '<?php echo __('Select with content do you want add') ?>';
 $(function() {
-  $( "#tabs" ).tabs();
+  $("#tabs").tabs();
 });
 //-->
 </script>
@@ -42,7 +46,16 @@ $(function() {
 </div>
 
 <div id="sidebar_right" class="span-8 last" style="margin-bottom: 1em;">
-  <div class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">Create users</div>
+  <?php if ($sf_user->isAuthenticated()): ?>
+  <div class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">
+    <a href="#" class="select_content"><?php echo __('Make your proposal') ?></a>
+  </div>
+  <?php else: ?>
+  <div class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">
+    <?php echo link_to(__('Create user'),'@register') ?>
+  </div>
+  <?php endif; ?>
+  
   <div class="span-8 last" style="background: #eeeeee">
     <h3><?php echo __('Last news')?></h3>
     <?php foreach($last_news as $new): ?>

@@ -1,6 +1,16 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+# Content rules
+contentAdd:
+  url: /add
+  param: { module: content, action: add }
+
+selectContent:
+  url: /selectContent
+  param: { module: content, action: selectContentType }
+  
+# User rules
 loginAjax:
   url: /loginAjax
   param: { module: sfGuardAuth, action: formLoginAjax }
@@ -12,6 +22,7 @@ register:
 profile:
   url: /profile
   param: { module: user, action: profile }
+
 
 # default rules
 homepage:

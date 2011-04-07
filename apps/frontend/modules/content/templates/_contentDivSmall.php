@@ -5,7 +5,7 @@
       <a href="<?php echo url_for ('content/show?slug='.$content->getSlug())?>"><img src="<?php echo $content->getSfGuardUser()->getProfile()->getImageSrcWithDefault('image', 'thumb')?>" alt="profile_image" /></a>
     </div>
     <div class="span-11 last">
-      <h4><?php echo link_to ($content->getTitle(),'content/show?slug='.$content->getSlug())?></h4>
+      <h4><?php echo link_to ($content->getTitle(),'content/show?class='.get_class($content->getRawValue()).'&slug='.$content->getSlug())?></h4>
       <?php echo __('by') ?> <?php echo link_to($content->getSfGuardUser(),'user/showProfile?username='.$content->getSfGuardUser()->getUsername()) ?> <?php echo __('on')?> <?php echo format_date($content->getCreatedAt()) ?> <?php echo __('in')?> <?php echo __('categories') ?>
     </div>
   </div>

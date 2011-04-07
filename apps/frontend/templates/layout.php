@@ -6,14 +6,13 @@
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
-
     <?php include_javascripts() ?>
   </head>
   <body>
    <div class="container">
      <div id="header" class="span-24 last" style="background: #eeeeee"><h1><?php echo link_to (__('Demofony'),'@homepage') ?></h1></div>
-     <div id="top_logo" class="span-8">Logo</div>
-     <div id="top_menu" class="span-16 last">
+     <div id="top_logo" class="span-16">Logo</div>
+     <div id="top_menu" class="span-8 last">
      <?php include_partial('sfGuardAuth/menu')?>
      Menu
      </div>
@@ -23,6 +22,7 @@
      </div>
      <div id="footer" class="span-24 last"><?php echo __('Project developed by') ?> <a href="http://www.teclliure.net">Teclliure</a> <?php echo __('using') ?> <a href="http://www.symfony-project.org/">Symfony</a></div>
   </div>
-  <div id="login_dialog" style=""></div>
+  <div id="login_dialog"></div>
+  <div id="select_content"></div>
   </body>
 </html>
