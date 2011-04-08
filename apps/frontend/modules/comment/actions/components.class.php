@@ -29,6 +29,9 @@ class commentComponents extends BaseCommentComponents
   }
   
   public function executeFormReportAjax($request) {
-    $this->formReport = new CommentReportForm(null, array('id_comment'  => $this->id_comment));
+    // If we come from the action because forms has errors we don't create a new form
+    if (!isset($this->formReport)) {
+      $this->formReport = new CommentReportForm(null, array('id_comment'  => $this->id_comment));
+    }
   }
 }

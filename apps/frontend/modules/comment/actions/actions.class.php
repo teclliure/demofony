@@ -69,7 +69,7 @@ class commentActions extends BaseCommentActions
         $this->form->save();
       }
       else {
-        return $this->renderComponent('comment','formReportAjax',array('id_comment'=>$request->getParameter('id_comment')));
+        return $this->renderComponent('comment','formReportAjax',array('id_comment'=>$request->getParameter('id_comment'),'formReport'=>$this->form));
       }
     }
   }
