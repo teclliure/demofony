@@ -10,6 +10,7 @@
  * @property clob $body
  * @property string $video
  * @property boolean $active
+ * @property integer $views
  * @property integer $user_id
  * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Categories
@@ -23,6 +24,7 @@
  * @method clob                getBody()               Returns the current record's "body" value
  * @method string              getVideo()              Returns the current record's "video" value
  * @method boolean             getActive()             Returns the current record's "active" value
+ * @method integer             getViews()              Returns the current record's "views" value
  * @method integer             getUserId()             Returns the current record's "user_id" value
  * @method sfGuardUser         getSfGuardUser()        Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getCategories()         Returns the current record's "Categories" collection
@@ -35,6 +37,7 @@
  * @method Content             setBody()               Sets the current record's "body" value
  * @method Content             setVideo()              Sets the current record's "video" value
  * @method Content             setActive()             Sets the current record's "active" value
+ * @method Content             setViews()              Sets the current record's "views" value
  * @method Content             setUserId()             Sets the current record's "user_id" value
  * @method Content             setSfGuardUser()        Sets the current record's "sfGuardUser" value
  * @method Content             setCategories()         Sets the current record's "Categories" collection
@@ -75,6 +78,11 @@ abstract class BaseContent extends sfDoctrineRecord
              'default' => 1,
              'type' => 'boolean',
              'notnull' => true,
+             ));
+        $this->hasColumn('views', 'integer', 16, array(
+             'default' => 0,
+             'type' => 'integer',
+             'length' => 16,
              ));
         $this->hasColumn('user_id', 'integer', null, array(
              'type' => 'integer',
@@ -139,10 +147,12 @@ abstract class BaseContent extends sfDoctrineRecord
               0 => 'image',
              ),
              ));
+        $commentable0 = new Doctrine_Template_Commentable();
         $this->actAs($timestampable0);
         $this->actAs($sluggable0);
         $this->actAs($searchable0);
         $this->actAs($geographical0);
         $this->actAs($jcroppable0);
+        $this->actAs($commentable0);
     }
 }

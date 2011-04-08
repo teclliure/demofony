@@ -1,0 +1,41 @@
+div#sf_admin_content a.info{
+  position:relative;
+  z-index:24;
+  color:#000;
+  text-decoration:none
+}
+
+div#sf_admin_content a.info:hover{
+  cursor: pointer;
+  z-index:25;
+  background-color:#ff0
+}
+
+div#sf_admin_content a.info span.body{
+  display: none
+}
+
+div#sf_admin_content a.info:hover span.body{
+  display:block;
+  position:absolute;
+  top:15px;
+  left:20px;
+  width:400px;
+  border:1px solid #000000;
+  background-color:#eeeeee;
+  color:#444444;
+  padding:1px;
+}
+
+div#sf_admin_content a.info:hover span.body:hover{
+  display:block;
+  position:absolute;
+  cursor:default;
+}
+
+div#sf_admin_content a.info:hover span.body blockquote{
+  display:block;
+  margin:5px 0 0 20px;
+  border-left:3px solid #aaaaaa;
+  padding:0 0 5px 5px;
+}

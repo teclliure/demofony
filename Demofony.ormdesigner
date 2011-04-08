@@ -7,10 +7,13 @@
 
   <include name="plugins\tcFeedbackPlugin\config\doctrine\schema.module.xml"/>
 
-  <project code-name="Demofony" framework="Symfony" name="demofony" orm="Doctrine" visSizeX="85" visSizeX2="2099" visSizeY="27" visSizeY2="1509">
-    <module-position name="demofony" visPositionX="16" visPositionY="93"/>
+  <include name="plugins\vjCommentAdaptedPlugin\config\doctrine\schema.module.xml"/>
+
+  <project code-name="Demofony" framework="Symfony" name="demofony" orm="Doctrine" visSizeX="85" visSizeX2="2448" visSizeY="27" visSizeY2="1166">
+    <module-position name="demofony" visPositionX="16" visPositionY="269"/>
     <module-position name="sfDoctrineGuardPlugin" visPositionX="1147" visPositionY="94"/>
     <module-position name="tcFeedbackPlugin" visPositionX="1202" visPositionY="502"/>
+    <module-position name="vjCommentAdaptedPlugin" visPositionX="1694" visPositionY="668"/>
   </project>
 
 </orm-designer>

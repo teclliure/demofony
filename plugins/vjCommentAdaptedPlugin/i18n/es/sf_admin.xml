@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" target-language="es" datatype="plaintext">
+    <header />
+    <body>
+      <!-- commentAdmin module -->
+      <trans-unit>
+        <source>Your comment has been removed</source>
+        <target>Su comentario ha sido eliminado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was restored successfully.</source>
+        <target>El item fue restaurado exitosamente</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected items have been restored successfully.</source>
+        <target>El item seleccionado ha sido restaurado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>There is no email adress configure for the moderation team. Please contact the administrator.</source>
+        <target>No hay un email configurado para el equipo de moderacion. Por favor contacte el administrador</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Restore</source>
+        <target>Restaurar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply</source>
+        <target>Responder</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and Delete</source>
+        <target>Guardar y Eliminar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and Restore</source>
+        <target>Guardar y Restaurar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply message</source>
+        <target>Responder mensaje</target>
+      </trans-unit>
+      <!-- commentReportAdmin module -->
+      <trans-unit>
+        <source>You can't add new report.</source>
+        <target>No puedes crear un nuevo reporte.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You can't edit report.</source>
+        <target>No puedes editar el reporte.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report validated</source>
+        <target>Reporte validado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report invalidated</source>
+        <target>Reporte invalidado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comment removed and report validated.</source>
+        <target>Comentario eliminado y reporte validado.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>valid</source>
+        <target>valido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>invalid</source>
+        <target>invalido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>untreated</source>
+        <target>No tratado</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

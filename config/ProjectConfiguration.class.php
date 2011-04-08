@@ -19,5 +19,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     // sfWidgetFormSchema::setDefaultFormFormatterName('Div');
     $this->enablePlugins('sfDoctrineJCroppablePlugin');
     $this->enablePlugins('sfImageTransformPlugin');
+    $this->enablePlugins('sfReCaptchaPlugin');
+    $this->enablePlugins('vjCommentAdaptedPlugin');
   }
 }

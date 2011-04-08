@@ -1,0 +1,13 @@
+div#report-sent{
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+div#report-sent span{
+  font-weight: bold;
+}
+
+div#report-sent a{
+  color:#000000;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<orm-designer version="1.4.3.457">
+
+  <module import-format="DoctrineYml" import-path="schema.yml" name="vjCommentAdaptedPlugin" visBkColor="16317694" visSizeX="0" visSizeX2="261" visSizeY="0" visSizeY2="471">
+    <table name="Comment" visPositionX="20" visPositionY="40" visSizeX="0" visSizeX2="132" visSizeY="0" visSizeY2="171">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="record_model" required="true" size="255" type="string"/>
+      <column name="record_id" required="true" type="integer"/>
+      <column name="author_name" required="true" size="255" type="string"/>
+      <column name="author_email" size="255" type="string"/>
+      <column name="author_website" size="255" type="string">
+        <orm-properties>
+          <attribute name="extra">link</attribute>
+        </orm-properties>
+      </column>
+      <column name="body" required="true" type="clob"/>
+      <column default="false" name="is_delete" type="boolean"/>
+      <column name="edition_reason" type="clob"/>
+      <column name="reply" type="integer"/>
+      <column name="user_id" type="integer"/>
+      <index name="record_model_record_id" unique="false">
+        <index-column name="record_model"/>
+        <index-column name="record_id"/>
+      </index>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="CommentReport" visPositionX="32" visPositionY="274" visSizeX="0" visSizeX2="108" visSizeY="0" visSizeY2="87">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="reason" required="true" type="clob"/>
+      <column name="referer" size="255" type="string"/>
+      <column default="untreated" name="state" type="enum" values="valid,invalid,untreated"/>
+      <column name="id_comment" required="true" type="integer"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
+    </table>
+    <foreign-key from="Comment" name="FK_Comment_Comment_id" to="Comment" visCenterX="0" visCenterY="-20">
+      <foreign-key-column from="reply" to="id"/>
+    </foreign-key>
+    <foreign-key from="Comment" inverse-alias="User" name="FK_Comment_sfGuardUser_id" owning-alias="Comments" to="sfGuardUser">
+      <foreign-key-column from="user_id" to="id"/>
+      <orm-properties>
+        <attribute name="side-inverse">
+          <attribute name="type">one</attribute>
+        </attribute>
+        <attribute name="side-owning">
+          <attribute name="type">many</attribute>
+        </attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="CommentReport" name="FK_CommentReport_Comment_id" to="Comment" visCenterX="0" visCenterY="0">
+      <foreign-key-column from="id_comment" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">cascade</attribute>
+      </orm-properties>
+    </foreign-key>
+  </module>
+
+</orm-designer>

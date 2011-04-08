@@ -58,9 +58,13 @@ form .form_help {
 }
 
 .bottom-border {
- border-bottom: 1px dotted #eeeeee;
+ border-bottom: 1px dotted #D9D6C4;
 }
 
 .top-border {
- border-top: 1px dotted #eeeeee;
+ border-top: 1px dotted #D9D6C4;
+}
+
+#content-info {
+	margin: 5px 0 10px 0;
 }

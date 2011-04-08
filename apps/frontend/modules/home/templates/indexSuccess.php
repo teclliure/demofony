@@ -1,9 +1,5 @@
 <script type="text/javascript">
 <!--
-login_url = '<?php echo url_for('@loginAjax') ?>';
-login_title = '<?php echo __('Login') ?>';
-select_content_url = '<?php echo url_for('@selectContent') ?>';
-select_content_title = '<?php echo __('Select with content do you want add') ?>';
 $(function() {
   $("#tabs").tabs();
 });

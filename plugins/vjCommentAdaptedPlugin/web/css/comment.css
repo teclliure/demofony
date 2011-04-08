@@ -1,0 +1,54 @@
+table.list-comments{
+  width:500px;
+}
+
+table.list-comments td.author, table.list-comments td.report, table.list-comments td.infos{
+  border-top: 1px dashed #aaaaaa;
+  padding-top: 5px;
+}
+
+table.list-comments tr.first_line td{
+  border-top: none;
+}
+
+table.list-comments td.author span.author{
+  font-weight: bold;
+}
+
+table.list-comments td.author span.author a{
+  color:#000000;
+}
+
+table.list-comments td.author span.date{
+  font-size: smaller;
+}
+
+table.list-comments td.infos img{
+  border:0;
+}
+
+table.list-comments td.infos{
+  width:70px;
+  text-align: right;
+  vertical-align: top;
+  margin-top:0;
+}
+
+table.list-comments td.infos a.ancre, table.list-comments tbody.deleted, table.list-comments tbody.deleted td.author span.author a{
+  color:#aaaaaa;
+}
+
+table.list-comments td.body, table.list-comments td.infos{
+  padding-bottom: 10px;
+}
+
+table.list-comments td.body span.msg-deleted, table.list-comments td.author span.date, table.list-comments td.author span.author, table.list-comments td.body blockquote{
+  font-style: italic;
+}
+
+table.list-comments td.body blockquote{
+  display:block;
+  margin:5px 0 0 20px;
+  border-left:3px solid #aaaaaa;
+  padding:0 0 5px 5px;
+}

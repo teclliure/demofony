@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" target-language="es" datatype="plaintext">
+    <header />
+    <body>
+      <trans-unit>
+        <source>Add new comment</source>
+        <target>Enviar un comentario</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Deleted</source>
+        <target>Eliminar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>send</source>
+        <target>enviar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report a comment</source>
+        <target>Reportar un comentario</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comments list</source>
+        <target>Lista de comentarios</target>
+      </trans-unit>
+      <trans-unit>
+        <source>at</source>
+        <target>en</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comment deleted by moderator</source>
+        <target>Comentario eliminado por moderador</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Be the first to post</source>
+        <target>Haz el primer comentario!</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report this comment - New window</source>
+        <target>Reportar este comentario - Nueva ventana</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply to this comment</source>
+        <target>Responder a este comentario</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report sent.</source>
+        <target>Reporte enviado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The moderation team has been notified.</source>
+        <target>El equipo de moderacion ha sido notificado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Close the popup</source>
+        <target>Cerrar el popup</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Delete the reply</source>
+        <target>Eliminar la respuesta</target>
+      </trans-unit>
+      <!-- FORM MESSAGES -->
+      <trans-unit>
+        <source>Required</source>
+        <target>Requerido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Invalid Url</source>
+        <target>URL invalido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Required message</source>
+        <target>Mensaje obligatorio</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Invalid Mail</source>
+        <target>Email invalido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The captcha is not valid (%error%).</source>
+        <target>El captcha no es valido (%error%).</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Unable to check the captcha from the server (%error%).</source>
+        <target>No fue posible verificar el captcha del servidor (%error%).</target>
+      </trans-unit>
+      <!-- FORM LABELS -->
+      <trans-unit>
+        <source>Name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Website</source>
+        <target>Sitio/ Blog</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reason</source>
+        <target>Razón</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply to</source>
+        <target>Responder </target>
+      </trans-unit>
+      <!-- FORM HELPS -->
+      <trans-unit>
+        <source>Why this message should be moderated ?</source>
+        <target>Porque este mensaje debe ser moderado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Your email will never be published</source>
+        <target>Su email no será publicado</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Must start with http:// or https://</source>
+        <target>Debe empezar con  http:// o https://</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Please log in to comment</source>
+        <target>Por favor ingrese o registrese para comentar</target>
+      </trans-unit>
+      <!-- Pagination -->
+      <trans-unit>
+        <source>First page of comments</source>
+        <target>Primer pagina de comentarios</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Previous page of comments</source>
+        <target>Pagina anterior de comentarios</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Next page of comments</source>
+        <target>Siguiente pagina de comentarios</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Last page of comments</source>
+        <target>Ultima pagina de comentarios</target>
+      </trans-unit>
+      <trans-unit>
+        <source>(page %%page%%/%%nb_pages%%)</source>
+        <target>(page %%page%%/%%nb_pages%%)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Back to top</source>
+        <target>Regresar arriba</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

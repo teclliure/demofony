@@ -9,6 +9,14 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+   <script type="text/javascript">
+    <!--
+    login_url = '<?php echo url_for('@loginAjax') ?>';
+    login_title = '<?php echo __('Login') ?>';
+    select_content_url = '<?php echo url_for('@selectContent') ?>';
+    select_content_title = '<?php echo __('Select with content do you want add') ?>';
+    //-->
+   </script>
    <div class="container">
      <div id="header" class="span-24 last" style="background: #eeeeee"><h1><?php echo link_to (__('Demofony'),'@homepage') ?></h1></div>
      <div id="top_logo" class="span-16">Logo</div>

@@ -23,6 +23,7 @@ default:
   javascripts:
     - /jquery/jquery-1.5.1.min.js
     - /jquery/ui/jquery-ui-1.8.11.custom.min.js
+    - /jquery/jquery.form.js
     - frontend.js
 
   has_layout:     true

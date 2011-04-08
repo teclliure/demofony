@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <orm-designer version="1.4.3.457">
 
-  <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="765" visSizeY="-163" visSizeY2="460">
+  <module import-format="DoctrineYml" import-path="schema.yml" name="tcFeedbackPlugin" visBkColor="16709106" visSizeX="55" visSizeX2="477" visSizeY="-163" visSizeY2="636">
     <table name="Opinion" visPositionX="-34" visPositionY="208" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="129">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="opinion" required="true" size="255" type="string"/>
@@ -18,35 +18,19 @@
       <orm-properties>
         <attribute name="actAs">
           <attribute name="Timestampable"/>
+          <attribute name="Commentable"/>
         </attribute>
       </orm-properties>
     </table>
-    <table name="OpinionPossibility" visPositionX="145" visPositionY="268" visSizeX="0" visSizeX2="133" visSizeY="0" visSizeY2="59">
+    <table name="OpinionPossibility" visPositionX="138" visPositionY="231" visSizeX="0" visSizeX2="167" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column name="opinion_possibility_group_id" type="integer"/>
     </table>
-    <table name="OpinionPossibilityGroup" visPositionX="326" visPositionY="268" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">
+    <table name="OpinionPossibilityGroup" visPositionX="163" visPositionY="326" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
       <column default="0" name="display_graph" required="true" type="boolean"/>
-    </table>
-    <table name="Comments" visPositionX="457" visPositionY="241" visSizeX="0" visSizeX2="123" visSizeY="0" visSizeY2="101">
-      <column auto-increment="true" name="id" primary="true" type="integer"/>
-      <column name="comment" required="true" size="255" type="string"/>
-      <column name="object_class" required="true" size="100" type="string"/>
-      <column name="object_id" required="true" type="integer"/>
-      <column default="0" name="innapropiate" required="true" type="boolean"/>
-      <column name="user_id" required="true" type="integer"/>
-      <index name="IX_Comments_1" unique="false">
-        <index-column name="object_class"/>
-        <index-column name="object_id"/>
-      </index>
-      <orm-properties>
-        <attribute name="actAs">
-          <attribute name="Timestampable"/>
-        </attribute>
-      </orm-properties>
     </table>
     <table name="OpinionLike" visPositionX="120" visPositionY="173" visSizeX="0" visSizeX2="89" visSizeY="0" visSizeY2="59">
       <column name="user_id" primary="true" required="true" type="integer"/>
@@ -65,16 +49,7 @@
         </attribute>
       </orm-properties>
     </table>
-    <table name="CommentMarkedAsSpam" visPositionX="370" visPositionY="379" visSizeX="0" visSizeX2="139" visSizeY="0" visSizeY2="60">
-      <column name="comment_id" primary="true" required="true" type="integer" unique="true"/>
-      <column name="user_id" primary="true" required="true" type="integer" unique="true"/>
-      <orm-properties>
-        <attribute name="actAs">
-          <attribute name="Timestampable"/>
-        </attribute>
-      </orm-properties>
-    </table>
-    <foreign-key from="Opinion" name="FK_Opinion_OpinionPossibility_id" to="OpinionPossibility">
+    <foreign-key from="Opinion" name="FK_Opinion_OpinionPossibility_id" to="OpinionPossibility" visCenterX="0" visCenterY="0">
       <foreign-key-column from="opinion_possibility_id" to="id"/>
       <orm-properties>
         <attribute name="onDelete">CASCADE</attribute>
@@ -88,12 +63,6 @@
     </foreign-key>
     <foreign-key from="OpinionPossibility" name="FK_OpinionPossibility_OpinionPossibilityGroup_id" to="OpinionPossibilityGroup" visCenterX="0" visCenterY="0">
       <foreign-key-column from="opinion_possibility_group_id" to="id"/>
-      <orm-properties>
-        <attribute name="onDelete">CASCADE</attribute>
-      </orm-properties>
-    </foreign-key>
-    <foreign-key from="Comments" name="FK_Comments_sfGuardUser_id" to="sfGuardUser">
-      <foreign-key-column from="user_id" to="id"/>
       <orm-properties>
         <attribute name="onDelete">CASCADE</attribute>
       </orm-properties>
@@ -113,16 +82,6 @@
     <foreign-key caption="Opinion MarkedAsSpam" from="OpinionMarkedAsSpam" name="FK_MarkedAsSpam_Opinion_id" to="Opinion" visCaption1X="0" visCaption1Y="0" visCenterX="0" visCenterY="0">
       <foreign-key-column from="opinion_id" to="id"/>
     </foreign-key>
-    <foreign-key caption="Comments CommentMarkedAsSpam" from="CommentMarkedAsSpam" name="FK_CommentMarkedAsSpam_Comments_id" to="Comments" visCaption1X="0" visCaption1Y="0" visCenterX="0" visCenterY="0">
-      <foreign-key-column from="comment_id" to="id"/>
-    </foreign-key>
-    <foreign-key caption="sfGuardUser CommentMarkedAsSpam" from="CommentMarkedAsSpam" name="FK_CommentMarkedAsSpam_sfGuardUser_id" to="sfGuardUser">
-      <foreign-key-column from="user_id" to="id"/>
-    </foreign-key>
-    <many-to-many-relation mn-table="CommentMarkedAsSpam">
-      <many-to-many-foreign-key foreign-key="FK_CommentMarkedAsSpam_Comments_id" relation-alias="Comments"/>
-      <many-to-many-foreign-key foreign-key="FK_CommentMarkedAsSpam_sfGuardUser_id" relation-alias="Users"/>
-    </many-to-many-relation>
   </module>
 
 </orm-designer>

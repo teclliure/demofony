@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" target-language="fr" datatype="plaintext">
+    <header />
+    <body>
+      <!-- commentAdmin module -->
+      <trans-unit>
+        <source>Your comment has been removed</source>
+        <target>Votre commentaire a été supprimé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was restored successfully.</source>
+        <target>L'objet a été restauré avec succès.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected items have been restored successfully.</source>
+        <target>Les objets sélectionnés ont été restaurés avec succès.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>There is no email adress configure for the moderation team. Please contact the administrator.</source>
+        <target>Aucune adresse email n'est configurée pour l'équipe de modération. Veuillez contacter l'administrateur.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Restore</source>
+        <target>Restaurer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply</source>
+        <target>Répondre</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and Delete</source>
+        <target>Enregistrer &amp; Supprimer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and Restore</source>
+        <target>Enregistrer &amp; Restaurer</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply message</source>
+        <target>Message initial</target>
+      </trans-unit>
+      <!-- commentReportAdmin module -->
+      <trans-unit>
+        <source>You can't add new report.</source>
+        <target>Vous ne pouvez pas ajouté de rapport.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You can't edit report.</source>
+        <target>Vous ne pouvez pas éditer de rapport.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report validated</source>
+        <target>Rapport validé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report invalidated</source>
+        <target>Rapport invalidé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comment removed and report validated.</source>
+        <target>Le commentaire a été supprimé et le rapport validé.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>valid</source>
+        <target>Valide</target>
+      </trans-unit>
+      <trans-unit>
+        <source>invalid</source>
+        <target>Invalide</target>
+      </trans-unit>
+      <trans-unit>
+        <source>untreated</source>
+        <target>Non traité</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

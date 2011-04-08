@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<xliff version="1.0">
+  <file original="global" source-language="en" target-language="it" datatype="plaintext">
+    <header />
+    <body>
+      <!-- commentAdmin module -->
+      <trans-unit>
+        <source>Your comment has been removed</source>
+        <target>Il tuo commento e' stato rimosso</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was restored successfully.</source>
+        <target>L'elemento e' stato recuperato con successo.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected items have been restored successfully.</source>
+        <target>Gli elementi selezionati sono stari recuperati con successo.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>There is no email adress configure for the moderation team. Please contact the administrator.</source>
+        <target>Non esiste alcun indirizzo email per il team di moderazione. Prego contattare l'amministratore.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Restore</source>
+        <target>Recupera</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply</source>
+        <target>Replica</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and Delete</source>
+        <target>Salva ed Elimina</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Save and Restore</source>
+        <target>Salva e Recupera</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Reply message</source>
+        <target>Messaggio iniziale</target>
+      </trans-unit>
+      <!-- commentReportAdmin module -->
+      <trans-unit>
+        <source>You can't add new report.</source>
+        <target>Non puoi aggiungere una nuova segnalazione.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You can't edit report.</source>
+        <target>Non puoi modificare la segnalazione.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report validated</source>
+        <target>Segnalazione validata</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report invalidated</source>
+        <target>Segnalazione invalidata</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Comment removed and report validated.</source>
+        <target>Commento rimosso e segnalazione validata.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>valid</source>
+        <target>valido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>invalid</source>
+        <target>non valido</target>
+      </trans-unit>
+      <trans-unit>
+        <source>untreated</source>
+        <target>Non trattato</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

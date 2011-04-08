@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="en" target-language="pl" datatype="plaintext" original="vjComment" date="2010-03-25T20:02:15Z" product-name="vjComment">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Report a comment</source>
+        <target>Zgłoś komentarz</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>send</source>
+        <target>Wyślij</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Comments list</source>
+        <target>Komentarze</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Reply to this comment</source>
+        <target>Odpowiedz na ten komentarz</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Add new comment</source>
+        <target>Skomentuj!</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Report this comment - New window</source>
+        <target>Zgłoś komentarz (Nowe okno)</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Comment deleted by moderator</source>
+        <target>Komentarz usunięty przez moderatora</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Deleted</source>
+        <target>Supprimé</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Be the first to post</source>
+        <target>Skomentuj pierwszy!</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Report sent.</source>
+        <target>Raport wysłany.</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>The moderation team has been notified.</source>
+        <target>Zespół moderacyjny został poinformowany.</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Close the popup</source>
+        <target>Zamknij okno</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Delete the reply</source>
+        <target>Usuń odpowiedź</target>
+      </trans-unit>
+      <!-- FORM MESSAGES -->
+      <trans-unit id="15">
+        <source>Required</source>
+        <target>Wymagane</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Invalid Url</source>
+        <target>Nieprawidłowy URL</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Required message</source>
+        <target>Wymagana wiadomość</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Invalid Mail</source>
+        <target>Nieprawidłowy adres email</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>The captcha is not valid (%error%).</source>
+        <target>Nieprawidłowa captcha (%error%).</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Unable to check the captcha from the server (%error%).</source>
+        <target>Nie można sprawdzić captcha z serwera (%error%).</target>
+      </trans-unit>
+      <!-- FORM LABELS -->
+      <trans-unit id="21">
+        <source>Name</source>
+        <target>Imię</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Website</source>
+        <target>Strona www</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Reason</source>
+        <target>Powód</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Reply to</source>
+        <target>Odpowiadasz</target>
+      </trans-unit>
+      <!-- FORM HELPS -->
+      <trans-unit id="25">
+        <source>Why this message should be moderated ?</source>
+        <target>Dlaczego wiadomość powinna zostać zmoderowana?</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Your email will never be published</source>
+        <target>Adres email nie zostanie opublikowany</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Must start with http:// or https://</source>
+        <target>Musi zaczynać się od http:// lub https://</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Please log in to comment</source>
+        <target>Zaloguj się, by skomentować</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

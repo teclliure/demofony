@@ -1,0 +1,158 @@
+sfReCaptcha plugin
+==================
+
+The reCAPTCHA project takes unOCRable bits of text and uses people to decipher
+them via CAPTCHA tests.
+Answers are verified by juxtaposing deciphered texts with the undeciphered.
+By implementing reCAPTCHA you are helping digitize books.
+
+The `sfReCaptcha` plugin integrates the reCAPTCHA service in symfony.
+It comes with a custom validator as well as an example module which demonstrates the usage.
+
+For more information on reCAPTCHA visit [recaptcha.net](http://www.recaptcha.net).
+
+Installation
+------------
+
+To install the plugin, navigate to your symfony project root and run:
+
+    $ symfony plugin-install http://plugins.symfony-project.com/sfReCaptchaPlugin
+
+
+In order to use the reCAPTCHA or Mailhide service, you first need to sign up and
+get an API key.
+You can do this [here](http://recaptcha.net/api/getkey?app=php) for reCAPTCHA and
+[here](http://mailhide.recaptcha.net/apikey) for Mailhide.
+
+>**NOTE** If you're using a name-based virtual host like `http://jobeet`, the
+>API key registration will fail because the reCAPTCHA service doesn't identify
+>your `ServerName` as a valid URI.
+
+To handle this, simply append a `.tld` to your `ServerName` variable (e.g.
+`ServerName askeet.org`).
+
+Insert your API keys in your applications `app.yml`:
+
+    [yml]
+    all:
+      recaptcha:
+        active:     true
+        publickey:  "foo"
+        privatekey: "bar"
+      mailhide:
+        publickey:  "foo"
+        privatekey: "bar"
+    test:
+      recaptcha:
+        active:     false
+
+>**NOTE** It's important to make recaptcha *not* active in your test environment.
+>Otherwise, your tests will fail, since reCAPTCHA is not testable.
+
+
+Examples
+--------
+
+You can see an example module by enabling `recaptcha` in your applications `settings.yml`:
+
+    [yml]
+    all:
+      .settings:
+        enabled_modules:  [recaptcha]
+
+and clear your cache afterwards:
+
+    $ symfony cc
+
+Now you can see an example of reCAPTCHA by navigating to:
+
+    http://foobar.com/frontend_dev.php/recaptcha
+
+or for Mailhide example, to:
+
+    http://foobar.com/frontend_dev.php/recaptcha/mailhide
+
+
+Real world use
+--------------
+
+To use reCAPTCHA in your forms, simply extend `reCaptchaForm` instead of `BaseForm`:
+
+    [php]
+    class myForm extends reCaptchaForm
+    {
+      public function configure()
+      {
+        // your definitions here...
+
+        parent::configure();
+      }
+    }
+
+Please pay attention to insert `parent::configure()` in your form, otherwise
+you'll get an error.
+
+Then, you can put in your template, where you want your CAPTCHA widget:
+
+    [php]
+    <?php use_helper('recaptcha') ?>
+    [...]
+    <?php if (sfConfig::get('app_recaptcha_active', false)): ?>
+    <?php echo recaptcha_get_html(sfConfig::get('app_recaptcha_publickey'), $form['response']->getError()) ?>
+    <?php endif ?>
+
+If you are using a form bound to an ORM, you should extend reCaptchaPropelForm
+or reCaptchaDoctrineForm instead of reCaptchaForm.
+
+If you can't modify form extension, you need a bit more work.
+Put this code in the `configure()` method of your form:
+
+    [php]
+    // reCaptcha
+    if (sfConfig::get('app_recaptcha_active', false))
+    {
+      $this->setWidget('response', new sfWidgetFormInput());
+      $this->validatorSchema->setPostValidator(
+        new sfValidatorSchemaReCaptcha('challenge', 'response')
+      );
+      $this->validatorSchema->setOption('allow_extra_fields', true);
+      $this->validatorSchema->setOption('filter_extra_fields', false);
+    }
+
+And the following code in your action:
+
+    [php]
+    if ($request->isMethod(sfRequest::POST))
+    {
+      $requestData = $request->getParameter($this->form->getName());
+      if (sfConfig::get('app_recaptcha_active', false))
+      {
+        $requestData['challenge'] = $this->getRequestParameter('recaptcha_challenge_field');
+        $requestData['response'] = $this->getRequestParameter('recaptcha_response_field');
+      }
+      $this->form->bind($requestData);
+      if ($this->form->isValid())
+      {
+        // ...
+      }
+    }
+
+Finally, the template is just the same seen above:
+
+    [php]
+    <?php use_helper('recaptcha') ?>
+    [...]
+    <?php if (sfConfig::get('app_recaptcha_active', false)): ?>
+    <?php echo recaptcha_get_html(sfConfig::get('app_recaptcha_publickey'), $form['response']->getError()) ?>
+    <?php endif ?>
+
+
+Issue with iframe
+-----------------
+
+If you need an output compliant with XHTML strict, you can pass an optional
+ 4th parameter to `recaptcha_get_html()`, that forces use of `object` tag
+instead of the unsupported `iframe`:
+
+    [php]
+    <?php echo recaptcha_get_html(sfConfig::get('app_recaptcha_publickey'), $form['response']->getError(), false, true) ?>

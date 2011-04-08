@@ -131,11 +131,6 @@ sfGuardUser:
       refClass: OpinionMarkedAsSpam
       local: user_id
       foreign: opinion_id
-    Comments:
-      class: Comments
-      refClass: CommentMarkedAsSpam
-      local: user_id
-      foreign: comment_id
 sfGuardUserPermission:
   actAs:
     Timestampable: 

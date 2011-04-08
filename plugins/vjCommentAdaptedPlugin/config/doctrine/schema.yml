@@ -1,0 +1,73 @@
+Comment:
+  actAs:
+    Timestampable: 
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    record_model:
+      type: string(255)
+      notnull: true
+    record_id:
+      type: integer
+      notnull: true
+    author_name:
+      type: string(255)
+      notnull: true
+    author_email:
+      type: string(255)
+    author_website:
+      type: string(255)
+      extra: link
+    body:
+      type: clob
+      notnull: true
+    is_delete:
+      default: false
+      type: boolean
+    edition_reason:
+      type: clob
+    reply:
+      type: integer
+    user_id:
+      type: integer
+  indexes:
+    record_model_record_id:
+      fields: [record_model, record_id]
+  relations:
+    Comment:
+      local: reply
+      foreign: id
+    User:
+      class: sfGuardUser
+      foreignAlias: Comments
+      type: one
+      foreignType: many
+      local: user_id
+      foreign: id
+CommentReport:
+  actAs:
+    Timestampable: 
+  columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true
+    reason:
+      type: clob
+      notnull: true
+    referer:
+      type: string(255)
+    state:
+      default: untreated
+      type: enum
+      values: [valid,invalid,untreated]
+    id_comment:
+      type: integer
+      notnull: true
+  relations:
+    Comment:
+      onDelete: cascade
+      local: id_comment
+      foreign: id

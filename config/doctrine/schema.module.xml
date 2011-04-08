@@ -55,6 +55,7 @@
           <attribute name="JCroppable">
             <attribute name="images">[image]</attribute>
           </attribute>
+          <attribute name="Commentable"/>
         </attribute>
       </orm-properties>
     </table>

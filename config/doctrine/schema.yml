@@ -87,6 +87,7 @@ Content:
     Geographical: 
     JCroppable:
       images: [image]
+    Commentable: 
   columns:
     id:
       primary: true

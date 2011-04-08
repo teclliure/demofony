@@ -1,6 +1,7 @@
 Opinion:
   actAs:
     Timestampable: 
+    Commentable: 
   columns:
     id:
       primary: true
@@ -73,43 +74,6 @@ OpinionPossibilityGroup:
       default: 0
       type: boolean
       notnull: true
-Comments:
-  actAs:
-    Timestampable: 
-  columns:
-    id:
-      primary: true
-      type: integer
-      autoincrement: true
-    comment:
-      type: string(255)
-      notnull: true
-    object_class:
-      type: string(100)
-      notnull: true
-    object_id:
-      type: integer
-      notnull: true
-    innapropiate:
-      default: 0
-      type: boolean
-      notnull: true
-    user_id:
-      type: integer
-      notnull: true
-  indexes:
-    IX_Comments_1:
-      fields: [object_class, object_id]
-  relations:
-    sfGuardUser:
-      onDelete: CASCADE
-      local: user_id
-      foreign: id
-    Users:
-      class: sfGuardUser
-      refClass: CommentMarkedAsSpam
-      local: comment_id
-      foreign: user_id
 OpinionLike:
   columns:
     user_id:
@@ -152,25 +116,4 @@ OpinionMarkedAsSpam:
       foreign: id
     Opinion:
       local: opinion_id
-      foreign: id
-CommentMarkedAsSpam:
-  actAs:
-    Timestampable: 
-  columns:
-    comment_id:
-      primary: true
-      unique: true
-      type: integer
-      notnull: true
-    user_id:
-      primary: true
-      unique: true
-      type: integer
-      notnull: true
-  relations:
-    Comments:
-      local: comment_id
-      foreign: id
-    sfGuardUser:
-      local: user_id
       foreign: id

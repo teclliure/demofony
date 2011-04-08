@@ -1,0 +1,19 @@
+all:
+  recaptcha:
+    enabled:        false
+#  vjCommentPlugin:
+#    guardbind: false
+#    restricted: false
+  commentAdmin:
+    max_length:     50
+  gravatar:
+    enabled:        true
+    default_size:   40
+    #default_image:  <?php echo sfConfig::get('sf_web_dir') ?>/images/gravatar_default.png
+  purifier:
+    #set to false use only your allowed tags
+    merge: true
+    #by default, [blockquote,strong,div,br] are allowed
+    #set to [i,u] with merge to true allows [blockquote,strong,div,br,i,u]
+    #set to [] with merge to false disables allowed tags
+    allowed_tags: [] 

@@ -23,6 +23,7 @@
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
+ * @property Doctrine_Collection $Comments
  * @property sfGuardUserProfile $Profile
  * @property Doctrine_Collection $Content
  * @property Doctrine_Collection $VirtualMeeting
@@ -47,6 +48,7 @@
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
+ * @method Doctrine_Collection   getComments()              Returns the current record's "Comments" collection
  * @method sfGuardUserProfile    getProfile()               Returns the current record's "Profile" value
  * @method Doctrine_Collection   getContent()               Returns the current record's "Content" collection
  * @method Doctrine_Collection   getVirtualMeeting()        Returns the current record's "VirtualMeeting" collection
@@ -70,6 +72,7 @@
  * @method sfGuardUser           setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
+ * @method sfGuardUser           setComments()              Sets the current record's "Comments" collection
  * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
  * @method sfGuardUser           setContent()               Sets the current record's "Content" collection
  * @method sfGuardUser           setVirtualMeeting()        Sets the current record's "VirtualMeeting" collection
@@ -177,6 +180,10 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasOne('sfGuardForgotPassword as ForgotPassword', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Comment as Comments', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

@@ -1,0 +1,36 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CommentReport
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          commentReportAdmin
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        _state:           { label: Etat }
+        state:            { label: Etat }
+        reason:           { label: Raison }
+        created_at:       { label: Envoyé le }
+        comment_link:     { label: Lien }
+      list:
+        title:            Liste des rapports de commentaire
+        display:          [_state, _comment_link, reason, created_at]
+        actions:          {}
+        object_actions:
+          _delete:        { label: Supprimer le rapport }
+          edit_comment:   { label: Modifier le commentaire, action: editComment }
+          delete_comment: { label: Supprimer le commentaire, action: deleteComment }
+          validate:       { label: Valider, action: validate }
+          invalidate:     { label: Invalider, action: invalidate }
+      filter:
+        display:          [reason, state, created_at]
+      form:    ~
+      edit:    ~
+      new:     ~

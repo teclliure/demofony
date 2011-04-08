@@ -1,0 +1,12 @@
+div.form-comment{
+  width:550px;
+}
+
+div.form-comment input, div.form-comment textarea{
+  margin-top:10px;
+  width:430px;
+}
+
+div.form-comment textarea{
+  height:120px;
+}
