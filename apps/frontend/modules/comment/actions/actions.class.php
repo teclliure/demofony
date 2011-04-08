@@ -58,6 +58,22 @@ class commentActions extends BaseCommentActions
     return $this->crypt;
   }
   
+  public function executeFormReportAjax($request) {
+    $this->form = new CommentReportForm(null, array('id_comment'  => $request->getParameter('id_comment')));
+    
+    if($request->isMethod('post'))
+    {
+      $this->form->bind($request->getParameter($this->form->getName()));
+      if ($this->form->isValid())
+      {
+        $this->form->save();
+      }
+      else {
+        return $this->renderComponent('comment','formReportAjax',array('id_comment'=>$request->getParameter('id_comment')));
+      }
+    }
+  }
+  
 /*  private function initPager(sfWebRequest $request)
   {
     if ($this->has_comments = $this->object->hasComments())

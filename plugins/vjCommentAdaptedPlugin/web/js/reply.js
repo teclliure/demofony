@@ -1,4 +1,7 @@
-function reply(id, value, form_name){
+function reply(id, value, form_name, form_id){
+  if (typeof(form_id) != 'undefined') {
+    $('#'+form_id).fadeIn('slow');
+  }
   document.getElementById(form_name+"_reply").value = id;
   document.getElementById(form_name+"_reply_author").value = value;
   document.getElementById("tr_reply_author_"+form_name).style.display = "table-row";

@@ -1,0 +1,1 @@
+<h3><?php echo __('Inapropiate notification sent successfully.')?></h3>

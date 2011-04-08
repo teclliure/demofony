@@ -68,3 +68,6 @@ form .form_help {
 #content-info {
 	margin: 5px 0 10px 0;
 }
+.ancre {
+	display: none;
+}

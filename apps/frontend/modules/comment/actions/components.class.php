@@ -27,4 +27,8 @@ class commentComponents extends BaseCommentComponents
   {
     $this->executeList($request);
   }
+  
+  public function executeFormReportAjax($request) {
+    $this->formReport = new CommentReportForm(null, array('id_comment'  => $this->id_comment));
+  }
 }
