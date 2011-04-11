@@ -99,6 +99,6 @@ class UIHelper
       self::$icons = sfConfig::get('app_sf_admin_theme_jroller_plugin_icons', array());
     }
 
-    return array_key_exists($type, self::$icons) ? self::$icons[$type] : '';
+    return array_key_exists($type, self::$icons) ? self::$icons[$type] : $type;
   }
 }

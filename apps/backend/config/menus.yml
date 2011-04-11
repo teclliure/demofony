@@ -39,6 +39,19 @@ children:
         label:   Virtual meetings
         route:   @virtual_meeting
         credentials: [Permission_admin]
+  comments_opionions:
+    label:          Comments and opinions
+    requires_auth: true
+    route:   ''
+    children:
+      manage_comments:
+        label:   Manage comments
+        route:   commentAdmin/index
+        credentials: [Permission_admin]
+      manage_comments_reports:
+        label:   Manage comments reports
+        route:   commentReportAdmin/index
+        credentials: [Permission_admin]
   site_admin:
     label:          Site admin
     requires_auth: true
