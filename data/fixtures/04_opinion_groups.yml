@@ -1,0 +1,28 @@
+OpinionPossibilityGroup:
+  op_gr_1:
+    name: A favor o en contra
+  op_gr_2:
+    name: Apoyo
+    can_text_be_added: 0
+  op_gr_3:
+    name: Si, no y intermedio
+
+OpinionPossibility:
+  op_po_1:
+    name: A favor
+    OpinionPossibilityGroup: op_gr_1    
+  op_po_2:
+    name: En contra
+    OpinionPossibilityGroup: op_gr_1
+  op_po_3:
+    name: Lo apoyo
+    OpinionPossibilityGroup: op_gr_2
+  op_po_4:
+    name: Si
+    OpinionPossibilityGroup: op_gr_3
+  op_po_5:
+    name: No
+    OpinionPossibilityGroup: op_gr_3
+  op_po_6:
+    name: No se
+    OpinionPossibilityGroup: op_gr_3

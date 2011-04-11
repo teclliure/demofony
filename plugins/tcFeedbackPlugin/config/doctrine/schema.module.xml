@@ -9,7 +9,7 @@
       <column name="object_class" required="true" size="100" type="string"/>
       <column name="object_id" required="true" type="integer"/>
       <column default="0" name="innapropiate" required="true" type="boolean"/>
-      <column name="selected" required="true" type="boolean"/>
+      <column default="0" name="selected" required="true" type="boolean"/>
       <column name="user_id" required="true" type="integer"/>
       <index name="IX_Opinion_1" unique="false">
         <index-column name="object_class"/>
@@ -27,10 +27,19 @@
       <column name="name" required="true" size="100" type="string"/>
       <column name="opinion_possibility_group_id" type="integer"/>
     </table>
-    <table name="OpinionPossibilityGroup" visPositionX="163" visPositionY="326" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">
+    <table name="OpinionPossibilityGroup" visPositionX="162" visPositionY="326" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
-      <column name="name" required="true" size="100" type="string"/>
-      <column default="0" name="display_graph" required="true" type="boolean"/>
+      <column name="name" required="true" size="100" type="string" unique="true"/>
+      <column default="1" name="can_text_be_added" required="true" type="boolean"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[name]</attribute>
+            <attribute name="unique">true</attribute>
+            <attribute name="uniqueBy">[name]</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
     </table>
     <table name="OpinionLike" visPositionX="120" visPositionY="173" visSizeX="0" visSizeX2="89" visSizeY="0" visSizeY2="59">
       <column name="user_id" primary="true" required="true" type="integer"/>

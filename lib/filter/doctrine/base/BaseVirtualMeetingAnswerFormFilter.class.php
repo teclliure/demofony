@@ -14,14 +14,14 @@ abstract class BaseVirtualMeetingAnswerFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'answer'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'opinion_id' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'opinion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Opinion'), 'add_empty' => true)),
       'user_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'slug'       => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'answer'     => new sfValidatorPass(array('required' => false)),
-      'opinion_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'opinion_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Opinion'), 'column' => 'id')),
       'user_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
       'slug'       => new sfValidatorPass(array('required' => false)),
     ));
@@ -45,7 +45,7 @@ abstract class BaseVirtualMeetingAnswerFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'         => 'Number',
       'answer'     => 'Text',
-      'opinion_id' => 'Number',
+      'opinion_id' => 'ForeignKey',
       'user_id'    => 'ForeignKey',
       'slug'       => 'Text',
     );

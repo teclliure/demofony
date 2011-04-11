@@ -19,6 +19,9 @@
     <div class="span-15 last">
       <?php echo nl2br($content->getBody(),true)?>
     </div>
+    <div id="comments" class="span-15 last">
+      <?php include_component('comment', 'commentBoxAjax', array('object' => $content)) ?>
+    </div>
     <div class="clear">&nbsp;</div>
   </div>
 </div>
@@ -37,6 +40,6 @@
   </div>
 </div>
 
-<div id="comments" class="span-15 append-1">
-  <?php include_component('comment', 'commentBoxAjax', array('object' => $content)) ?>
+<div id="opinions_list" class="span-15 append-1">
+  <?php include_component('opinion', 'list', array('object' => $content)) ?>
 </div>

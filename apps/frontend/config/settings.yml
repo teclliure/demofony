@@ -42,5 +42,5 @@ all:
         
     default_culture:        es
     
-    enabled_modules:        [default, sfGuardAuth, sfGuardForgotPassword, comment]
+    enabled_modules:        [default, sfGuardAuth, sfGuardForgotPassword, comment, opinion]
     standard_helpers:       [Partial, Cache, I18N]

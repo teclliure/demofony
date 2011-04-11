@@ -19,11 +19,15 @@
  * @property Doctrine_Collection $Groups
  * @property Doctrine_Collection $Permissions
  * @property Doctrine_Collection $Actions
+ * @property Doctrine_Collection $Opinions
  * @property Doctrine_Collection $sfGuardUserPermission
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
  * @property Doctrine_Collection $Comments
+ * @property Doctrine_Collection $Opinion
+ * @property Doctrine_Collection $OpinionLike
+ * @property Doctrine_Collection $OpinionMarkedAsSpam
  * @property sfGuardUserProfile $Profile
  * @property Doctrine_Collection $Content
  * @property Doctrine_Collection $VirtualMeeting
@@ -44,11 +48,15 @@
  * @method Doctrine_Collection   getGroups()                Returns the current record's "Groups" collection
  * @method Doctrine_Collection   getPermissions()           Returns the current record's "Permissions" collection
  * @method Doctrine_Collection   getActions()               Returns the current record's "Actions" collection
+ * @method Doctrine_Collection   getOpinions()              Returns the current record's "Opinions" collection
  * @method Doctrine_Collection   getSfGuardUserPermission() Returns the current record's "sfGuardUserPermission" collection
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
  * @method Doctrine_Collection   getComments()              Returns the current record's "Comments" collection
+ * @method Doctrine_Collection   getOpinion()               Returns the current record's "Opinion" collection
+ * @method Doctrine_Collection   getOpinionLike()           Returns the current record's "OpinionLike" collection
+ * @method Doctrine_Collection   getOpinionMarkedAsSpam()   Returns the current record's "OpinionMarkedAsSpam" collection
  * @method sfGuardUserProfile    getProfile()               Returns the current record's "Profile" value
  * @method Doctrine_Collection   getContent()               Returns the current record's "Content" collection
  * @method Doctrine_Collection   getVirtualMeeting()        Returns the current record's "VirtualMeeting" collection
@@ -68,11 +76,15 @@
  * @method sfGuardUser           setGroups()                Sets the current record's "Groups" collection
  * @method sfGuardUser           setPermissions()           Sets the current record's "Permissions" collection
  * @method sfGuardUser           setActions()               Sets the current record's "Actions" collection
+ * @method sfGuardUser           setOpinions()              Sets the current record's "Opinions" collection
  * @method sfGuardUser           setSfGuardUserPermission() Sets the current record's "sfGuardUserPermission" collection
  * @method sfGuardUser           setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
  * @method sfGuardUser           setComments()              Sets the current record's "Comments" collection
+ * @method sfGuardUser           setOpinion()               Sets the current record's "Opinion" collection
+ * @method sfGuardUser           setOpinionLike()           Sets the current record's "OpinionLike" collection
+ * @method sfGuardUser           setOpinionMarkedAsSpam()   Sets the current record's "OpinionMarkedAsSpam" collection
  * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
  * @method sfGuardUser           setContent()               Sets the current record's "Content" collection
  * @method sfGuardUser           setVirtualMeeting()        Sets the current record's "VirtualMeeting" collection
@@ -167,6 +179,11 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'user_id',
              'foreign' => 'action_id'));
 
+        $this->hasMany('Opinion as Opinions', array(
+             'refClass' => 'OpinionMarkedAsSpam',
+             'local' => 'user_id',
+             'foreign' => 'opinion_id'));
+
         $this->hasMany('sfGuardUserPermission', array(
              'local' => 'id',
              'foreign' => 'user_id'));
@@ -184,6 +201,18 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasMany('Comment as Comments', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Opinion', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('OpinionLike', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('OpinionMarkedAsSpam', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

@@ -16,4 +16,24 @@ class Content extends BaseContent
     $this->setViews($this->getViews() + 1);
     $this->save();
   }
+  
+  public function hasOpinated($user) {
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
+    return $query->count();
+  }
+
+  public function getOpinion($user) {
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
+    return $query->execute()->getFirst();
+  }
+  
+  public function getOpinions() {
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    return $query->execute();
+  }
+  
+  public function countOpinions() {
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    return $query->count();
+  }
 }

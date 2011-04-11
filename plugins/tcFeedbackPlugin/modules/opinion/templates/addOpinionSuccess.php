@@ -1,0 +1,1 @@
+<h3><?php echo __('Opinion correctly submited') ?></h3>

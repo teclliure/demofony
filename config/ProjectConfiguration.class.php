@@ -21,5 +21,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfImageTransformPlugin');
     $this->enablePlugins('sfReCaptchaPlugin');
     $this->enablePlugins('vjCommentAdaptedPlugin');
+    
+    $this->enablePlugins('tcFeedbackPlugin');
   }
 }

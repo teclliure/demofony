@@ -28,6 +28,7 @@ abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
       'groups_list'      => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup')),
       'permissions_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission')),
       'actions_list'     => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Action')),
+      'opinions_list'    => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Opinion')),
     ));
 
     $this->setValidators(array(
@@ -46,6 +47,7 @@ abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
       'groups_list'      => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup', 'required' => false)),
       'permissions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission', 'required' => false)),
       'actions_list'     => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Action', 'required' => false)),
+      'opinions_list'    => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Opinion', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('sf_guard_user_filters[%s]');
@@ -111,6 +113,24 @@ abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
     ;
   }
 
+  public function addOpinionsListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.OpinionMarkedAsSpam OpinionMarkedAsSpam')
+      ->andWhereIn('OpinionMarkedAsSpam.opinion_id', $values)
+    ;
+  }
+
   public function getModelName()
   {
     return 'sfGuardUser';
@@ -135,6 +155,7 @@ abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
       'groups_list'      => 'ManyKey',
       'permissions_list' => 'ManyKey',
       'actions_list'     => 'ManyKey',
+      'opinions_list'    => 'ManyKey',
     );
   }
 }

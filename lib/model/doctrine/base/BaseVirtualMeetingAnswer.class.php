@@ -9,17 +9,20 @@
  * @property clob $answer
  * @property integer $opinion_id
  * @property integer $user_id
+ * @property Opinion $Opinion
  * @property sfGuardUser $sfGuardUser
  * 
  * @method integer              getId()          Returns the current record's "id" value
  * @method clob                 getAnswer()      Returns the current record's "answer" value
  * @method integer              getOpinionId()   Returns the current record's "opinion_id" value
  * @method integer              getUserId()      Returns the current record's "user_id" value
+ * @method Opinion              getOpinion()     Returns the current record's "Opinion" value
  * @method sfGuardUser          getSfGuardUser() Returns the current record's "sfGuardUser" value
  * @method VirtualMeetingAnswer setId()          Sets the current record's "id" value
  * @method VirtualMeetingAnswer setAnswer()      Sets the current record's "answer" value
  * @method VirtualMeetingAnswer setOpinionId()   Sets the current record's "opinion_id" value
  * @method VirtualMeetingAnswer setUserId()      Sets the current record's "user_id" value
+ * @method VirtualMeetingAnswer setOpinion()     Sets the current record's "Opinion" value
  * @method VirtualMeetingAnswer setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    demofony
@@ -54,6 +57,11 @@ abstract class BaseVirtualMeetingAnswer extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Opinion', array(
+             'local' => 'opinion_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
+
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
              'foreign' => 'id',

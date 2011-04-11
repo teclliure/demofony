@@ -23,6 +23,7 @@ Opinion:
       type: boolean
       notnull: true
     selected:
+      default: 0
       type: boolean
       notnull: true
     user_id:
@@ -62,16 +63,22 @@ OpinionPossibility:
       local: opinion_possibility_group_id
       foreign: id
 OpinionPossibilityGroup:
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [name]
+      uniqueBy: [name]
   columns:
     id:
       primary: true
       type: integer
       autoincrement: true
     name:
+      unique: true
       type: string(100)
       notnull: true
-    display_graph:
-      default: 0
+    can_text_be_added:
+      default: 1
       type: boolean
       notnull: true
 OpinionLike:

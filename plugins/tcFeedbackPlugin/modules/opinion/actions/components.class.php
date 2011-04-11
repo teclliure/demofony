@@ -13,4 +13,8 @@ class opinionComponents extends sfComponents
   public function executeOpinate ($request) {
     $this->form = new FrontendOpinionForm(null, array('user'=>$this->getUser(),'object'=>$this->object));
   }
+  
+  public function executeList ($request) {
+    $this->opinions = $this->object->getOpinions();
+  }
 }

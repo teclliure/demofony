@@ -31,6 +31,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'groups_list'      => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup')),
       'permissions_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission')),
       'actions_list'     => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Action')),
+      'opinions_list'    => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Opinion')),
     ));
 
     $this->setValidators(array(
@@ -50,6 +51,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'groups_list'      => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup', 'required' => false)),
       'permissions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission', 'required' => false)),
       'actions_list'     => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Action', 'required' => false)),
+      'opinions_list'    => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Opinion', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
@@ -92,6 +94,11 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       $this->setDefault('actions_list', $this->object->Actions->getPrimaryKeys());
     }
 
+    if (isset($this->widgetSchema['opinions_list']))
+    {
+      $this->setDefault('opinions_list', $this->object->Opinions->getPrimaryKeys());
+    }
+
   }
 
   protected function doSave($con = null)
@@ -99,6 +106,7 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
     $this->saveGroupsList($con);
     $this->savePermissionsList($con);
     $this->saveActionsList($con);
+    $this->saveOpinionsList($con);
 
     parent::doSave($con);
   }
@@ -214,6 +222,44 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Actions', array_values($link));
+    }
+  }
+
+  public function saveOpinionsList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['opinions_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Opinions->getPrimaryKeys();
+    $values = $this->getValue('opinions_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Opinions', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Opinions', array_values($link));
     }
   }
 
