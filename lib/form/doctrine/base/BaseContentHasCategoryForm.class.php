@@ -28,8 +28,7 @@ abstract class BaseContentHasCategoryForm extends BaseFormDoctrine
 
     $this->validatorSchema->setPostValidator(
       new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('content_id'))),
-        new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('category_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('content_id', 'category_id'))),
         new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('slug'))),
       ))
     );

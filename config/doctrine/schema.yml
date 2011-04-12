@@ -162,6 +162,10 @@ ContentHasRegion:
       primary: true
       type: integer
       notnull: true
+  indexes:
+    IX_ContentHasRegion_1:
+      fields: [region_id, content_id]
+      type: unique
   relations:
     Content:
       onDelete: CASCADE
@@ -175,14 +179,16 @@ ContentHasCategory:
   columns:
     content_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
     category_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
+  indexes:
+    IX_ContentHasCategory_1:
+      fields: [content_id, category_id]
+      type: unique
   relations:
     Category:
       onDelete: CASCADE
@@ -207,23 +213,6 @@ Response:
     Content:
       onDelete: CASCADE
       local: initiative_id
-      foreign: id
-ActionHasCategory:
-  columns:
-    category_id:
-      primary: true
-      unique: true
-      type: integer
-      notnull: true
-    action_id:
-      primary: true
-      unique: true
-      type: integer
-      notnull: true
-  relations:
-    Category:
-      onDelete: CASCADE
-      local: category_id
       foreign: id
 VirtualMeeting:
   columns:
@@ -279,14 +268,16 @@ SubscriptionCategory:
   columns:
     user_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
     category_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
+  indexes:
+    IX_SubscriptionCategory_1:
+      fields: [user_id, category_id]
+      type: unique
   relations:
     sfGuardUserProfile:
       onDelete: CASCADE
@@ -300,14 +291,16 @@ SubscriptionRegion:
   columns:
     user_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
     region_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
+  indexes:
+    IX_SubscriptionRegion_1:
+      fields: [user_id, region_id]
+      type: unique
   relations:
     sfGuardUserProfile:
       onDelete: CASCADE
@@ -430,14 +423,16 @@ ActionHasUser:
   columns:
     action_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
     user_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
+  indexes:
+    IX_ActionHasUser_1:
+      fields: [action_id, user_id]
+      type: unique
   relations:
     Action:
       local: action_id

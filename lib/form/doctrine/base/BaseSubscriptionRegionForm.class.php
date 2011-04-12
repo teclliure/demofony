@@ -28,8 +28,7 @@ abstract class BaseSubscriptionRegionForm extends BaseFormDoctrine
 
     $this->validatorSchema->setPostValidator(
       new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('user_id'))),
-        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('region_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('user_id', 'region_id'))),
         new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('slug'))),
       ))
     );

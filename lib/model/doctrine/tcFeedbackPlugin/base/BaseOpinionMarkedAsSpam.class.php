@@ -31,13 +31,21 @@ abstract class BaseOpinionMarkedAsSpam extends sfDoctrineRecord
         $this->setTableName('opinion_marked_as_spam');
         $this->hasColumn('user_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
              ));
         $this->hasColumn('opinion_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
+             ));
+
+
+        $this->index('IX_OpinionMarkedAsSpam_1', array(
+             'fields' => 
+             array(
+              0 => 'user_id',
+              1 => 'opinion_id',
+             ),
+             'type' => 'unique',
              ));
     }
 

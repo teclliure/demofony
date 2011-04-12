@@ -109,14 +109,16 @@ OpinionMarkedAsSpam:
   columns:
     user_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
     opinion_id:
       primary: true
-      unique: true
       type: integer
       notnull: true
+  indexes:
+    IX_OpinionMarkedAsSpam_1:
+      fields: [user_id, opinion_id]
+      type: unique
   relations:
     sfGuardUser:
       local: user_id

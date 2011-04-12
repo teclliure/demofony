@@ -7,6 +7,30 @@ sfGuardUser:
     password:       admin
     is_super_admin: true
     Groups:         [Group_admin]
+    
+  User_test1:
+    first_name:     Name
+    last_name:      Lastname
+    email_address:  test@test.com
+    username:       test
+    password:       test
+    is_super_admin: false
+  
+  User_test2:
+    first_name:     Name
+    last_name:      Lastname
+    email_address:  test2@test.com
+    username:       test2
+    password:       test2
+    is_super_admin: false
+    
+  User_test3:
+    first_name:     Name
+    last_name:      Lastname
+    email_address:  test3@test.com
+    username:       test3
+    password:       test3
+    is_super_admin: false
 
 sfGuardGroup:
   Group_admin:

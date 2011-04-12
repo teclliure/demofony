@@ -27,7 +27,7 @@
 </div>
 
 <div id="sidebar_right" class="span-8 last" style="margin-bottom: 1em;">
-  <div class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">
+  <div id="opinion_form" class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">
     Opinate
     <?php include_component('opinion', 'opinate', array('object' => $content)) ?>
   </div>
@@ -35,6 +35,7 @@
   <div class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">
     Opinions locations
   </div>
+  
   <div class="span-8 last" style="background: #eeeeee; margin-bottom: 1em">
     More on this category
   </div>

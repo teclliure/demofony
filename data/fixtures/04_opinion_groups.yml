@@ -26,3 +26,23 @@ OpinionPossibility:
   op_po_6:
     name: No se
     OpinionPossibilityGroup: op_gr_3
+
+Opinion:
+  op_1:
+    sfGuardUser: User_test2
+    OpinionPossibility: op_po_1
+    opinion: Por esto y lo otro
+    object_class: GovermentConsultation
+    object_id: 1    
+  op_2:
+    sfGuardUser: User_test3
+    OpinionPossibility: op_po_2
+    opinion: Por esto y lo otro
+    object_class: GovermentConsultation
+    object_id: 1
+  op_3:
+    sfGuardUser: User_test1
+    OpinionPossibility: op_po_1
+    opinion: Por esto y lo otro
+    object_class: GovermentConsultation
+    object_id: 1

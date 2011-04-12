@@ -31,13 +31,21 @@ abstract class BaseSubscriptionRegion extends sfDoctrineRecord
         $this->setTableName('subscription_region');
         $this->hasColumn('user_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
              ));
         $this->hasColumn('region_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
+             ));
+
+
+        $this->index('IX_SubscriptionRegion_1', array(
+             'fields' => 
+             array(
+              0 => 'user_id',
+              1 => 'region_id',
+             ),
+             'type' => 'unique',
              ));
     }
 

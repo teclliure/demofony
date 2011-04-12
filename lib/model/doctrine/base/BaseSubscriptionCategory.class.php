@@ -31,13 +31,21 @@ abstract class BaseSubscriptionCategory extends sfDoctrineRecord
         $this->setTableName('subscription_category');
         $this->hasColumn('user_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
              ));
         $this->hasColumn('category_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
+             ));
+
+
+        $this->index('IX_SubscriptionCategory_1', array(
+             'fields' => 
+             array(
+              0 => 'user_id',
+              1 => 'category_id',
+             ),
+             'type' => 'unique',
              ));
     }
 

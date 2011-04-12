@@ -37,6 +37,16 @@ abstract class BaseContentHasRegion extends sfDoctrineRecord
              'primary' => true,
              'type' => 'integer',
              ));
+
+
+        $this->index('IX_ContentHasRegion_1', array(
+             'fields' => 
+             array(
+              0 => 'region_id',
+              1 => 'content_id',
+             ),
+             'type' => 'unique',
+             ));
     }
 
     public function setUp()

@@ -25,5 +25,14 @@ class PluginOpinion extends BaseOpinion
     $query = Doctrine::getTable('OpinionLike')->createQuery('o')->where('o.opinion_id = ?',$this->getId());
     return $query->count();
   }
+  
+  public function getObject() {
+    return Doctrine::getTable($this->getObjectClass())->findOneBy('id',$this->getObjectId());
+  }
+  
+  public function hasMarkedAsSpam($user) {
+    $query = Doctrine::getTable('OpinionMarkedAsSpam')->createQuery('os')->where('os.opinion_id = ?',$this->getId())->andWhere('os.user_id = ?',$user->getId());
+    return $query->count();
+  }
 
 }

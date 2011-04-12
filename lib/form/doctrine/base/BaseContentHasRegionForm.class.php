@@ -27,7 +27,10 @@ abstract class BaseContentHasRegionForm extends BaseFormDoctrine
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'ContentHasRegion', 'column' => array('slug')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'ContentHasRegion', 'column' => array('region_id', 'content_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ContentHasRegion', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('content_has_region[%s]');

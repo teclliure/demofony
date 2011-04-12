@@ -31,13 +31,21 @@ abstract class BaseContentHasCategory extends sfDoctrineRecord
         $this->setTableName('content_has_category');
         $this->hasColumn('content_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
              ));
         $this->hasColumn('category_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
+             ));
+
+
+        $this->index('IX_ContentHasCategory_1', array(
+             'fields' => 
+             array(
+              0 => 'content_id',
+              1 => 'category_id',
+             ),
+             'type' => 'unique',
              ));
     }
 

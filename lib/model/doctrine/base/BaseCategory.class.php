@@ -11,7 +11,6 @@
  * @property Doctrine_Collection $Profiles
  * @property Doctrine_Collection $Proposals
  * @property Doctrine_Collection $ContentHasCategory
- * @property Doctrine_Collection $ActionHasCategory
  * @property Doctrine_Collection $SubscriptionCategory
  * 
  * @method integer             getId()                   Returns the current record's "id" value
@@ -20,7 +19,6 @@
  * @method Doctrine_Collection getProfiles()             Returns the current record's "Profiles" collection
  * @method Doctrine_Collection getProposals()            Returns the current record's "Proposals" collection
  * @method Doctrine_Collection getContentHasCategory()   Returns the current record's "ContentHasCategory" collection
- * @method Doctrine_Collection getActionHasCategory()    Returns the current record's "ActionHasCategory" collection
  * @method Doctrine_Collection getSubscriptionCategory() Returns the current record's "SubscriptionCategory" collection
  * @method Category            setId()                   Sets the current record's "id" value
  * @method Category            setName()                 Sets the current record's "name" value
@@ -28,7 +26,6 @@
  * @method Category            setProfiles()             Sets the current record's "Profiles" collection
  * @method Category            setProposals()            Sets the current record's "Proposals" collection
  * @method Category            setContentHasCategory()   Sets the current record's "ContentHasCategory" collection
- * @method Category            setActionHasCategory()    Sets the current record's "ActionHasCategory" collection
  * @method Category            setSubscriptionCategory() Sets the current record's "SubscriptionCategory" collection
  * 
  * @package    demofony
@@ -71,10 +68,6 @@ abstract class BaseCategory extends sfDoctrineRecord
              'foreign' => 'content_id'));
 
         $this->hasMany('ContentHasCategory', array(
-             'local' => 'id',
-             'foreign' => 'category_id'));
-
-        $this->hasMany('ActionHasCategory', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

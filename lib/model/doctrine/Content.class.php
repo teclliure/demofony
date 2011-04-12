@@ -18,13 +18,33 @@ class Content extends BaseContent
   }
   
   public function hasOpinated($user) {
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->where('ol.user_id = ?',$user->getId());
+    $opinionLike = $query->count();
     $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
-    return $query->count();
+    $opinion = $query->count();
+    
+    if ($opinion || $opinionLike) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   public function getOpinion($user) {
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
-    return $query->execute()->getFirst();
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->where('ol.user_id = ?',$user->getId());
+    $opinion = $query->execute()->getFirst();
+    if (!$opinion) {
+      $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
+      $opinion = $query->execute()->getFirst();
+    }
+    
+    if ($opinion) {
+      return $opinion;
+    }
+    else {
+      return false;
+    }
   }
   
   public function getOpinions() {
@@ -35,5 +55,13 @@ class Content extends BaseContent
   public function countOpinions() {
     $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
     return $query->count();
+  }
+  
+  public function countAllOpinions() {
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    $numOpinions = $query->count();
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    $numOpinions += $query->count();
+    return $numOpinions;
   }
 }

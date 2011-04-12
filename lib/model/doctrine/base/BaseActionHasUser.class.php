@@ -31,13 +31,21 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
         $this->setTableName('action_has_user');
         $this->hasColumn('action_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
              ));
         $this->hasColumn('user_id', 'integer', null, array(
              'primary' => true,
-             'unique' => true,
              'type' => 'integer',
+             ));
+
+
+        $this->index('IX_ActionHasUser_1', array(
+             'fields' => 
+             array(
+              0 => 'action_id',
+              1 => 'user_id',
+             ),
+             'type' => 'unique',
              ));
     }
 

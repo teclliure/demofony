@@ -28,8 +28,7 @@ abstract class BaseSubscriptionCategoryForm extends BaseFormDoctrine
 
     $this->validatorSchema->setPostValidator(
       new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('user_id'))),
-        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('category_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('user_id', 'category_id'))),
         new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('slug'))),
       ))
     );
