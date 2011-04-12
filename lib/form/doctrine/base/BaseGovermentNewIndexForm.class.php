@@ -28,6 +28,10 @@ abstract class BaseGovermentNewIndexForm extends BaseFormDoctrine
       'id'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
     ));
 
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'GovermentNewIndex', 'column' => array('id')))
+    );
+
     $this->widgetSchema->setNameFormat('goverment_new_index[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

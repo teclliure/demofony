@@ -13,19 +13,19 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'name'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'description'    => new sfWidgetFormFilterInput(),
-      'slug'           => new sfWidgetFormFilterInput(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
+      'name'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'description'   => new sfWidgetFormFilterInput(),
+      'slug'          => new sfWidgetFormFilterInput(),
+      'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
-      'name'           => new sfValidatorPass(array('required' => false)),
-      'description'    => new sfValidatorPass(array('required' => false)),
-      'slug'           => new sfValidatorPass(array('required' => false)),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
+      'name'          => new sfValidatorPass(array('required' => false)),
+      'description'   => new sfValidatorPass(array('required' => false)),
+      'slug'          => new sfValidatorPass(array('required' => false)),
+      'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('category_filters[%s]');
@@ -55,7 +55,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
     ;
   }
 
-  public function addProposalsListColumnQuery(Doctrine_Query $query, $field, $values)
+  public function addContentsListColumnQuery(Doctrine_Query $query, $field, $values)
   {
     if (!is_array($values))
     {
@@ -81,12 +81,12 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'             => 'Number',
-      'name'           => 'Text',
-      'description'    => 'Text',
-      'slug'           => 'Text',
-      'profiles_list'  => 'ManyKey',
-      'proposals_list' => 'ManyKey',
+      'id'            => 'Number',
+      'name'          => 'Text',
+      'description'   => 'Text',
+      'slug'          => 'Text',
+      'profiles_list' => 'ManyKey',
+      'contents_list' => 'ManyKey',
     );
   }
 }

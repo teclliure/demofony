@@ -1,32 +1,33 @@
-GovermentNew:
+Content:
   new_1:
     title: Noticia govern 1
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
-    publish_date: '2011-04-10'
+    created_at: '2011-04-10'
     sfGuardUser: User_admin
+    type: GovermentNew 
+    
   new_2:
     title: Noticia govern 2 lore ipsum
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
     
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
-    publish_date: '2011-04-10'
+    created_at: '2011-04-10'
     sfGuardUser: User_admin
-
-GovermentProposal:
+    type: GovermentNew
+    
   propos_1:
     title: Proposta de prova
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
-    publish_date: '2011-04-10'
+    created_at: '2011-04-10'
     sfGuardUser: User_admin
-    
-GovermentConsultation:
+    type: GovermentProposal
   consul_1:
     title: Consulta activa
     body: |
@@ -35,7 +36,9 @@ GovermentConsultation:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     start_date: '2011-03-10'
     end_date: '2011-05-30'
-    sfGuardUser: User_admin    
+    sfGuardUser: User_admin
+    type: GovermentConsultation
+        
   consul_2:
     title: Consulta pasada
     body: |
@@ -45,6 +48,7 @@ GovermentConsultation:
     start_date: '2011-03-10'
     end_date: '2011-03-15'
     sfGuardUser: User_admin
+    type: GovermentConsultation    
   consul_3:
     title: Consulta futura
     body: |
@@ -54,8 +58,8 @@ GovermentConsultation:
     start_date: '2011-06-10'
     end_date: '2011-06-15'
     sfGuardUser: User_admin   
-
-Workshop:
+    type: GovermentConsultation
+    
   work_1:
     title: Workshop activo
     body: |
@@ -69,8 +73,8 @@ Workshop:
     location: Plaça Major
     min_users_allowed: 10
     max_users_allowed: 30
-
-CitizenProposal:
+    type: Workshop
+    
   cit_prop_1:
     title: Proposta ciudadana 1
     body: |
@@ -79,8 +83,8 @@ CitizenProposal:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     tip: Don't publish this
     sfGuardUser: User_admin
-
-CitizenAction:
+    type: CitizenProposal
+    
   cit_act_1:
     title: Citizen action
     body: |
@@ -93,7 +97,24 @@ CitizenAction:
     sfGuardUser: User_admin
     location: Plaça Major
     min_users_allowed: 10
-    max_users_allowed: 30
+    max_users_allowed: 30    
+    type: CitizenAction
+
+ContentHasRegion:
+  cont_reg_1:
+    Content: consul_1
+    Region: region_1
+  cont_reg_2:
+    Content: consul_1
+    Region: region_2
+  
+ContentHasCategory:
+  cont_cat_1:
+    Content: consul_1
+    Category: cat_1
+  cont_cat_2:
+    Content: consul_1
+    Category: cat_2
 
 VirtualMeeting:
   vm_1:

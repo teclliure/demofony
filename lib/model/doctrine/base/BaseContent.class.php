@@ -11,40 +11,82 @@
  * @property string $video
  * @property boolean $active
  * @property integer $views
+ * @property string $type
  * @property integer $user_id
+ * @property clob $tip
+ * @property date $start_date
+ * @property date $end_date
+ * @property string $author
+ * @property date $action_date
+ * @property string $location
+ * @property integer $min_users_allowed
+ * @property integer $max_users_allowed
+ * @property date $register_start_date
+ * @property date $register_end_date
+ * @property decimal $price
  * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Categories
+ * @property Doctrine_Collection $Users
  * @property Doctrine_Collection $Regions
+ * @property Doctrine_Collection $Response
  * @property Doctrine_Collection $ContentHasRegion
  * @property Doctrine_Collection $ContentHasCategory
- * @property Doctrine_Collection $Response
+ * @property Doctrine_Collection $ActionHasUser
  * 
- * @method integer             getId()                 Returns the current record's "id" value
- * @method string              getTitle()              Returns the current record's "title" value
- * @method clob                getBody()               Returns the current record's "body" value
- * @method string              getVideo()              Returns the current record's "video" value
- * @method boolean             getActive()             Returns the current record's "active" value
- * @method integer             getViews()              Returns the current record's "views" value
- * @method integer             getUserId()             Returns the current record's "user_id" value
- * @method sfGuardUser         getSfGuardUser()        Returns the current record's "sfGuardUser" value
- * @method Doctrine_Collection getCategories()         Returns the current record's "Categories" collection
- * @method Doctrine_Collection getRegions()            Returns the current record's "Regions" collection
- * @method Doctrine_Collection getContentHasRegion()   Returns the current record's "ContentHasRegion" collection
- * @method Doctrine_Collection getContentHasCategory() Returns the current record's "ContentHasCategory" collection
- * @method Doctrine_Collection getResponse()           Returns the current record's "Response" collection
- * @method Content             setId()                 Sets the current record's "id" value
- * @method Content             setTitle()              Sets the current record's "title" value
- * @method Content             setBody()               Sets the current record's "body" value
- * @method Content             setVideo()              Sets the current record's "video" value
- * @method Content             setActive()             Sets the current record's "active" value
- * @method Content             setViews()              Sets the current record's "views" value
- * @method Content             setUserId()             Sets the current record's "user_id" value
- * @method Content             setSfGuardUser()        Sets the current record's "sfGuardUser" value
- * @method Content             setCategories()         Sets the current record's "Categories" collection
- * @method Content             setRegions()            Sets the current record's "Regions" collection
- * @method Content             setContentHasRegion()   Sets the current record's "ContentHasRegion" collection
- * @method Content             setContentHasCategory() Sets the current record's "ContentHasCategory" collection
- * @method Content             setResponse()           Sets the current record's "Response" collection
+ * @method integer             getId()                  Returns the current record's "id" value
+ * @method string              getTitle()               Returns the current record's "title" value
+ * @method clob                getBody()                Returns the current record's "body" value
+ * @method string              getVideo()               Returns the current record's "video" value
+ * @method boolean             getActive()              Returns the current record's "active" value
+ * @method integer             getViews()               Returns the current record's "views" value
+ * @method string              getType()                Returns the current record's "type" value
+ * @method integer             getUserId()              Returns the current record's "user_id" value
+ * @method clob                getTip()                 Returns the current record's "tip" value
+ * @method date                getStartDate()           Returns the current record's "start_date" value
+ * @method date                getEndDate()             Returns the current record's "end_date" value
+ * @method string              getAuthor()              Returns the current record's "author" value
+ * @method date                getActionDate()          Returns the current record's "action_date" value
+ * @method string              getLocation()            Returns the current record's "location" value
+ * @method integer             getMinUsersAllowed()     Returns the current record's "min_users_allowed" value
+ * @method integer             getMaxUsersAllowed()     Returns the current record's "max_users_allowed" value
+ * @method date                getRegisterStartDate()   Returns the current record's "register_start_date" value
+ * @method date                getRegisterEndDate()     Returns the current record's "register_end_date" value
+ * @method decimal             getPrice()               Returns the current record's "price" value
+ * @method sfGuardUser         getSfGuardUser()         Returns the current record's "sfGuardUser" value
+ * @method Doctrine_Collection getCategories()          Returns the current record's "Categories" collection
+ * @method Doctrine_Collection getUsers()               Returns the current record's "Users" collection
+ * @method Doctrine_Collection getRegions()             Returns the current record's "Regions" collection
+ * @method Doctrine_Collection getResponse()            Returns the current record's "Response" collection
+ * @method Doctrine_Collection getContentHasRegion()    Returns the current record's "ContentHasRegion" collection
+ * @method Doctrine_Collection getContentHasCategory()  Returns the current record's "ContentHasCategory" collection
+ * @method Doctrine_Collection getActionHasUser()       Returns the current record's "ActionHasUser" collection
+ * @method Content             setId()                  Sets the current record's "id" value
+ * @method Content             setTitle()               Sets the current record's "title" value
+ * @method Content             setBody()                Sets the current record's "body" value
+ * @method Content             setVideo()               Sets the current record's "video" value
+ * @method Content             setActive()              Sets the current record's "active" value
+ * @method Content             setViews()               Sets the current record's "views" value
+ * @method Content             setType()                Sets the current record's "type" value
+ * @method Content             setUserId()              Sets the current record's "user_id" value
+ * @method Content             setTip()                 Sets the current record's "tip" value
+ * @method Content             setStartDate()           Sets the current record's "start_date" value
+ * @method Content             setEndDate()             Sets the current record's "end_date" value
+ * @method Content             setAuthor()              Sets the current record's "author" value
+ * @method Content             setActionDate()          Sets the current record's "action_date" value
+ * @method Content             setLocation()            Sets the current record's "location" value
+ * @method Content             setMinUsersAllowed()     Sets the current record's "min_users_allowed" value
+ * @method Content             setMaxUsersAllowed()     Sets the current record's "max_users_allowed" value
+ * @method Content             setRegisterStartDate()   Sets the current record's "register_start_date" value
+ * @method Content             setRegisterEndDate()     Sets the current record's "register_end_date" value
+ * @method Content             setPrice()               Sets the current record's "price" value
+ * @method Content             setSfGuardUser()         Sets the current record's "sfGuardUser" value
+ * @method Content             setCategories()          Sets the current record's "Categories" collection
+ * @method Content             setUsers()               Sets the current record's "Users" collection
+ * @method Content             setRegions()             Sets the current record's "Regions" collection
+ * @method Content             setResponse()            Sets the current record's "Response" collection
+ * @method Content             setContentHasRegion()    Sets the current record's "ContentHasRegion" collection
+ * @method Content             setContentHasCategory()  Sets the current record's "ContentHasCategory" collection
+ * @method Content             setActionHasUser()       Sets the current record's "ActionHasUser" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -58,6 +100,7 @@ abstract class BaseContent extends sfDoctrineRecord
         $this->setTableName('content');
         $this->hasColumn('id', 'integer', null, array(
              'primary' => true,
+             'unique' => true,
              'type' => 'integer',
              'autoincrement' => true,
              ));
@@ -84,9 +127,76 @@ abstract class BaseContent extends sfDoctrineRecord
              'type' => 'integer',
              'length' => 16,
              ));
+        $this->hasColumn('type', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 255,
+             ));
         $this->hasColumn('user_id', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
+             ));
+        $this->hasColumn('tip', 'clob', null, array(
+             'type' => 'clob',
+             ));
+        $this->hasColumn('start_date', 'date', null, array(
+             'type' => 'date',
+             ));
+        $this->hasColumn('end_date', 'date', null, array(
+             'type' => 'date',
+             ));
+        $this->hasColumn('author', 'string', 150, array(
+             'type' => 'string',
+             'length' => 150,
+             ));
+        $this->hasColumn('action_date', 'date', null, array(
+             'type' => 'date',
+             ));
+        $this->hasColumn('location', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('min_users_allowed', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('max_users_allowed', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('register_start_date', 'date', null, array(
+             'type' => 'date',
+             ));
+        $this->hasColumn('register_end_date', 'date', null, array(
+             'type' => 'date',
+             ));
+        $this->hasColumn('price', 'decimal', null, array(
+             'type' => 'decimal',
+             ));
+
+        $this->setSubClasses(array(
+             'CitizenProposal' => 
+             array(
+              'type' => 'CitizenProposal',
+             ),
+             'GovermentProposal' => 
+             array(
+              'type' => 'GovermentProposal',
+             ),
+             'GovermentNew' => 
+             array(
+              'type' => 'GovermentNew',
+             ),
+             'GovermentConsultation' => 
+             array(
+              'type' => 'GovermentConsultation',
+             ),
+             'Workshop' => 
+             array(
+              'type' => 'Workshop',
+             ),
+             'CitizenAction' => 
+             array(
+              'type' => 'CitizenAction',
+             ),
              ));
     }
 
@@ -95,18 +205,26 @@ abstract class BaseContent extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
+             'foreign' => 'id'));
 
         $this->hasMany('Category as Categories', array(
              'refClass' => 'ContentHasCategory',
              'local' => 'content_id',
              'foreign' => 'category_id'));
 
+        $this->hasMany('sfGuardUser as Users', array(
+             'refClass' => 'ActionHasUser',
+             'local' => 'action_id',
+             'foreign' => 'user_id'));
+
         $this->hasMany('Region as Regions', array(
              'refClass' => 'ContentHasRegion',
              'local' => 'content_id',
              'foreign' => 'region_id'));
+
+        $this->hasMany('Response', array(
+             'local' => 'id',
+             'foreign' => 'content_id'));
 
         $this->hasMany('ContentHasRegion', array(
              'local' => 'id',
@@ -116,28 +234,24 @@ abstract class BaseContent extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'content_id'));
 
-        $this->hasMany('Response', array(
+        $this->hasMany('ActionHasUser', array(
              'local' => 'id',
-             'foreign' => 'initiative_id'));
+             'foreign' => 'action_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $sluggable0 = new Doctrine_Template_Sluggable(array(
              'alias' => 'slug',
              'unique' => true,
+             'options' => NULL,
              'fields' => 
              array(
-              0 => 'title',
+              0 => 'type',
+              1 => 'title',
              ),
              'uniqueBy' => 
              array(
               0 => 'title',
-             ),
-             ));
-        $searchable0 = new Doctrine_Template_Searchable(array(
-             'fields' => 
-             array(
-              0 => 'title',
-              1 => 'body',
+              1 => 'type',
              ),
              ));
         $geographical0 = new Doctrine_Template_Geographical();
@@ -150,7 +264,6 @@ abstract class BaseContent extends sfDoctrineRecord
         $commentable0 = new Doctrine_Template_Commentable();
         $this->actAs($timestampable0);
         $this->actAs($sluggable0);
-        $this->actAs($searchable0);
         $this->actAs($geographical0);
         $this->actAs($jcroppable0);
         $this->actAs($commentable0);

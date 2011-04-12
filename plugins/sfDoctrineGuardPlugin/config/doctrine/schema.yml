@@ -122,7 +122,7 @@ sfGuardUser:
       local: user_id
       foreign: permission_id
     Actions:
-      class: Action
+      class: Content
       refClass: ActionHasUser
       local: user_id
       foreign: action_id

@@ -37,8 +37,8 @@ abstract class BaseContentHasCategoryFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'content_id'  => 'Number',
       'category_id' => 'Number',
+      'content_id'  => 'Number',
       'slug'        => 'Text',
     );
   }

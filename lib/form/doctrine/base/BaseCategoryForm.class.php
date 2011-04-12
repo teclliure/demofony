@@ -15,25 +15,28 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'             => new sfWidgetFormInputHidden(),
-      'name'           => new sfWidgetFormInputText(),
-      'description'    => new sfWidgetFormInputText(),
-      'slug'           => new sfWidgetFormInputText(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
+      'id'            => new sfWidgetFormInputHidden(),
+      'name'          => new sfWidgetFormInputText(),
+      'description'   => new sfWidgetFormInputText(),
+      'slug'          => new sfWidgetFormInputText(),
+      'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
-      'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'name'           => new sfValidatorString(array('max_length' => 100)),
-      'description'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'slug'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
+      'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'name'          => new sfValidatorString(array('max_length' => 100)),
+      'description'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'slug'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('slug')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('name'))),
+        new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('category[%s]');
@@ -59,9 +62,9 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       $this->setDefault('profiles_list', $this->object->Profiles->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['proposals_list']))
+    if (isset($this->widgetSchema['contents_list']))
     {
-      $this->setDefault('proposals_list', $this->object->Proposals->getPrimaryKeys());
+      $this->setDefault('contents_list', $this->object->Contents->getPrimaryKeys());
     }
 
   }
@@ -69,7 +72,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
   protected function doSave($con = null)
   {
     $this->saveProfilesList($con);
-    $this->saveProposalsList($con);
+    $this->saveContentsList($con);
 
     parent::doSave($con);
   }
@@ -112,14 +115,14 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
     }
   }
 
-  public function saveProposalsList($con = null)
+  public function saveContentsList($con = null)
   {
     if (!$this->isValid())
     {
       throw $this->getErrorSchema();
     }
 
-    if (!isset($this->widgetSchema['proposals_list']))
+    if (!isset($this->widgetSchema['contents_list']))
     {
       // somebody has unset this widget
       return;
@@ -130,8 +133,8 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       $con = $this->getConnection();
     }
 
-    $existing = $this->object->Proposals->getPrimaryKeys();
-    $values = $this->getValue('proposals_list');
+    $existing = $this->object->Contents->getPrimaryKeys();
+    $values = $this->getValue('contents_list');
     if (!is_array($values))
     {
       $values = array();
@@ -140,13 +143,13 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
     $unlink = array_diff($existing, $values);
     if (count($unlink))
     {
-      $this->object->unlink('Proposals', array_values($unlink));
+      $this->object->unlink('Contents', array_values($unlink));
     }
 
     $link = array_diff($values, $existing);
     if (count($link))
     {
-      $this->object->link('Proposals', array_values($link));
+      $this->object->link('Contents', array_values($link));
     }
   }
 

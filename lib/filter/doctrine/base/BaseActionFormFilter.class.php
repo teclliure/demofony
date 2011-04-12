@@ -14,67 +14,11 @@ abstract class BaseActionFormFilter extends ContentFormFilter
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['author'] = new sfWidgetFormFilterInput(array('with_empty' => false));
-    $this->validatorSchema['author'] = new sfValidatorPass(array('required' => false));
-
-    $this->widgetSchema   ['action_date'] = new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate()));
-    $this->validatorSchema['action_date'] = new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false))));
-
-    $this->widgetSchema   ['location'] = new sfWidgetFormFilterInput();
-    $this->validatorSchema['location'] = new sfValidatorPass(array('required' => false));
-
-    $this->widgetSchema   ['min_users_allowed'] = new sfWidgetFormFilterInput(array('with_empty' => false));
-    $this->validatorSchema['min_users_allowed'] = new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false)));
-
-    $this->widgetSchema   ['max_users_allowed'] = new sfWidgetFormFilterInput();
-    $this->validatorSchema['max_users_allowed'] = new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false)));
-
-    $this->widgetSchema   ['register_start_date'] = new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false));
-    $this->validatorSchema['register_start_date'] = new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false))));
-
-    $this->widgetSchema   ['register_end_date'] = new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate()));
-    $this->validatorSchema['register_end_date'] = new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false))));
-
-    $this->widgetSchema   ['users_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUser'));
-    $this->validatorSchema['users_list'] = new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUser', 'required' => false));
-
     $this->widgetSchema->setNameFormat('action_filters[%s]');
-  }
-
-  public function addUsersListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.ActionHasUser ActionHasUser')
-      ->andWhereIn('ActionHasUser.user_id', $values)
-    ;
   }
 
   public function getModelName()
   {
     return 'Action';
-  }
-
-  public function getFields()
-  {
-    return array_merge(parent::getFields(), array(
-      'author' => 'Text',
-      'action_date' => 'Date',
-      'location' => 'Text',
-      'min_users_allowed' => 'Number',
-      'max_users_allowed' => 'Number',
-      'register_start_date' => 'Date',
-      'register_end_date' => 'Date',
-      'users_list' => 'ManyKey',
-    ));
   }
 }

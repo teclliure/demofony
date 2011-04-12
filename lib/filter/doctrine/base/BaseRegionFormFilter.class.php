@@ -13,25 +13,25 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'name'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'description'    => new sfWidgetFormFilterInput(),
-      'root_id'        => new sfWidgetFormFilterInput(),
-      'lft'            => new sfWidgetFormFilterInput(),
-      'rgt'            => new sfWidgetFormFilterInput(),
-      'level'          => new sfWidgetFormFilterInput(),
-      'profiles_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'proposals_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
+      'name'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'description'   => new sfWidgetFormFilterInput(),
+      'root_id'       => new sfWidgetFormFilterInput(),
+      'lft'           => new sfWidgetFormFilterInput(),
+      'rgt'           => new sfWidgetFormFilterInput(),
+      'level'         => new sfWidgetFormFilterInput(),
+      'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
+      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
-      'name'           => new sfValidatorPass(array('required' => false)),
-      'description'    => new sfValidatorPass(array('required' => false)),
-      'root_id'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'lft'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'rgt'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'level'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'profiles_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'proposals_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
+      'name'          => new sfValidatorPass(array('required' => false)),
+      'description'   => new sfValidatorPass(array('required' => false)),
+      'root_id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'lft'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'rgt'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'level'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
+      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('region_filters[%s]');
@@ -61,7 +61,7 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
     ;
   }
 
-  public function addProposalsListColumnQuery(Doctrine_Query $query, $field, $values)
+  public function addContentsListColumnQuery(Doctrine_Query $query, $field, $values)
   {
     if (!is_array($values))
     {
@@ -87,15 +87,15 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'             => 'Number',
-      'name'           => 'Text',
-      'description'    => 'Text',
-      'root_id'        => 'Number',
-      'lft'            => 'Number',
-      'rgt'            => 'Number',
-      'level'          => 'Number',
-      'profiles_list'  => 'ManyKey',
-      'proposals_list' => 'ManyKey',
+      'id'            => 'Number',
+      'name'          => 'Text',
+      'description'   => 'Text',
+      'root_id'       => 'Number',
+      'lft'           => 'Number',
+      'rgt'           => 'Number',
+      'level'         => 'Number',
+      'profiles_list' => 'ManyKey',
+      'contents_list' => 'ManyKey',
     );
   }
 }

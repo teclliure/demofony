@@ -15,20 +15,20 @@ abstract class BaseContentHasCategoryForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'content_id'  => new sfWidgetFormInputHidden(),
       'category_id' => new sfWidgetFormInputHidden(),
+      'content_id'  => new sfWidgetFormInputHidden(),
       'slug'        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'content_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('content_id')), 'empty_value' => $this->getObject()->get('content_id'), 'required' => false)),
       'category_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('category_id')), 'empty_value' => $this->getObject()->get('category_id'), 'required' => false)),
+      'content_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('content_id')), 'empty_value' => $this->getObject()->get('content_id'), 'required' => false)),
       'slug'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
       new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('content_id', 'category_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('category_id', 'content_id'))),
         new sfValidatorDoctrineUnique(array('model' => 'ContentHasCategory', 'column' => array('slug'))),
       ))
     );

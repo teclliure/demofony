@@ -28,7 +28,7 @@ abstract class BaseActionHasUserForm extends BaseFormDoctrine
 
     $this->validatorSchema->setPostValidator(
       new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'ActionHasUser', 'column' => array('action_id', 'user_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ActionHasUser', 'column' => array('user_id', 'action_id'))),
         new sfValidatorDoctrineUnique(array('model' => 'ActionHasUser', 'column' => array('slug'))),
       ))
     );

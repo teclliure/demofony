@@ -28,6 +28,10 @@ abstract class BaseWorkshopIndexForm extends BaseFormDoctrine
       'id'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
     ));
 
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'WorkshopIndex', 'column' => array('id')))
+    );
+
     $this->widgetSchema->setNameFormat('workshop_index[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

@@ -57,8 +57,10 @@ Category:
     id:
       primary: true
       type: integer
+      notnull: true
       autoincrement: true
     name:
+      unique: true
       type: string(100)
       notnull: true
     description:
@@ -69,7 +71,7 @@ Category:
       refClass: SubscriptionCategory
       local: category_id
       foreign: user_id
-    Proposals:
+    Contents:
       class: Content
       refClass: ContentHasCategory
       local: category_id
@@ -80,10 +82,9 @@ Content:
     Sluggable:
       alias: slug
       unique: true
-      fields: [title]
-      uniqueBy: [title]
-    Searchable:
-      fields: [title,body]
+      options: 
+      fields: [type,title]
+      uniqueBy: [title,type]
     Geographical: 
     JCroppable:
       images: [image]
@@ -91,7 +92,9 @@ Content:
   columns:
     id:
       primary: true
+      unique: true
       type: integer
+      notnull: true
       autoincrement: true
     title:
       type: string(255)
@@ -108,12 +111,14 @@ Content:
     views:
       default: 0
       type: integer(16)
+    type:
+      type: string(255)
+      notnull: true
     user_id:
       type: integer
       notnull: true
   relations:
     sfGuardUser:
-      onDelete: CASCADE
       local: user_id
       foreign: id
     Categories:
@@ -121,6 +126,11 @@ Content:
       refClass: ContentHasCategory
       local: content_id
       foreign: category_id
+    Users:
+      class: sfGuardUser
+      refClass: ActionHasUser
+      local: action_id
+      foreign: user_id
     Regions:
       class: Region
       refClass: ContentHasRegion
@@ -135,8 +145,10 @@ Region:
     id:
       primary: true
       type: integer
+      notnull: true
       autoincrement: true
     name:
+      unique: true
       type: string(100)
       notnull: true
     description:
@@ -147,57 +159,11 @@ Region:
       refClass: SubscriptionRegion
       local: region_id
       foreign: user_id
-    Proposals:
+    Contents:
       class: Content
       refClass: ContentHasRegion
       local: region_id
       foreign: content_id
-ContentHasRegion:
-  columns:
-    content_id:
-      primary: true
-      type: integer
-      notnull: true
-    region_id:
-      primary: true
-      type: integer
-      notnull: true
-  indexes:
-    IX_ContentHasRegion_1:
-      fields: [region_id, content_id]
-      type: unique
-  relations:
-    Content:
-      onDelete: CASCADE
-      local: content_id
-      foreign: id
-    Region:
-      onDelete: CASCADE
-      local: region_id
-      foreign: id
-ContentHasCategory:
-  columns:
-    content_id:
-      primary: true
-      type: integer
-      notnull: true
-    category_id:
-      primary: true
-      type: integer
-      notnull: true
-  indexes:
-    IX_ContentHasCategory_1:
-      fields: [content_id, category_id]
-      type: unique
-  relations:
-    Category:
-      onDelete: CASCADE
-      local: category_id
-      foreign: id
-    Content:
-      onDelete: CASCADE
-      local: content_id
-      foreign: id
 Response:
   columns:
     id:
@@ -207,12 +173,12 @@ Response:
     body:
       type: clob
       notnull: true
-    initiative_id:
+    content_id:
       type: integer
   relations:
     Content:
       onDelete: CASCADE
-      local: initiative_id
+      local: content_id
       foreign: id
 VirtualMeeting:
   columns:
@@ -312,113 +278,120 @@ SubscriptionRegion:
       foreign: id
 CitizenProposal:
   columns:
-    id:
-      primary: true
-      type: integer
-      notnull: true
-      autoincrement: true
     tip:
       type: clob
   inheritance:
-    extends: Proposal
-    type: concrete
+    extends: Content
+    type: column_aggregation
+    keyField: type
+    keyValue: CitizenProposal
 GovermentProposal:
-  columns:
-    id:
-      primary: true
-      type: integer
-      notnull: true
-      autoincrement: true
-    publish_date:
-      type: date
-      notnull: true
-  inheritance:
-    extends: Proposal
-    type: concrete
-GovermentNew:
-  columns:
-    id:
-      primary: true
-      type: integer
-      notnull: true
-      autoincrement: true
-    publish_date:
-      type: date
-      notnull: true
   inheritance:
     extends: Content
-    type: concrete
+    type: column_aggregation
+    keyField: type
+    keyValue: GovermentProposal
+GovermentNew:
+  inheritance:
+    extends: Content
+    type: column_aggregation
+    keyField: type
+    keyValue: GovermentNew
 GovermentConsultation:
   columns:
-    id:
-      primary: true
-      type: integer
-      notnull: true
-      autoincrement: true
     start_date:
       type: date
-      notnull: true
     end_date:
       type: date
   inheritance:
-    extends: Proposal
-    type: concrete
-Action:
+    extends: Content
+    type: column_aggregation
+    keyField: type
+    keyValue: GovermentConsultation
+Workshop:
   columns:
-    id:
-      primary: true
-      type: integer
-      notnull: true
-      autoincrement: true
     author:
       type: string(150)
-      notnull: true
     action_date:
       type: date
     location:
       type: string(255)
     min_users_allowed:
       type: integer
-      notnull: true
     max_users_allowed:
       type: integer
     register_start_date:
       type: date
-      notnull: true
+    register_end_date:
+      type: date
+    price:
+      type: decimal
+  inheritance:
+    extends: Content
+    type: column_aggregation
+    keyField: type
+CitizenAction:
+  columns:
+    author:
+      type: string(150)
+    action_date:
+      type: date
+    location:
+      type: string(255)
+    min_users_allowed:
+      type: integer
+    max_users_allowed:
+      type: integer
+    register_start_date:
+      type: date
     register_end_date:
       type: date
   inheritance:
     extends: Content
-    type: concrete
+    type: column_aggregation
+    keyField: type
+ContentHasRegion:
+  columns:
+    region_id:
+      primary: true
+      type: integer
+      notnull: true
+    content_id:
+      primary: true
+      type: integer
+      notnull: true
+  indexes:
+    IX_ContentHasRegion_1:
+      fields: [region_id, content_id]
+      type: unique
   relations:
-    Users:
-      class: sfGuardUser
-      refClass: ActionHasUser
-      local: action_id
-      foreign: user_id
-Workshop:
+    Region:
+      local: region_id
+      foreign: id
+    Content:
+      local: content_id
+      foreign: id
+ContentHasCategory:
   columns:
-    id:
+    category_id:
       primary: true
       type: integer
       notnull: true
-      autoincrement: true
-    price:
-      default: 0
-      type: decimal
-  inheritance:
-    extends: Action
-    type: concrete
-CitizenAction:
-  columns:
-    id:
+    content_id:
       primary: true
       type: integer
       notnull: true
-      autoincrement: true
-  inheritance:
-    extends: Action
-    type: concrete
+  indexes:
+    IX_ContentHasCategories_1:
+      fields: [category_id, content_id]
+      type: unique
+  relations:
+    Category:
+      local: category_id
+      foreign: id
+    Content:
+      local: content_id
+      foreign: id
 ActionHasUser:
   columns:
     action_id:
@@ -431,25 +404,15 @@ ActionHasUser:
       notnull: true
   indexes:
     IX_ActionHasUser_1:
-      fields: [action_id, user_id]
+      fields: [user_id, action_id]
       type: unique
   relations:
-    Action:
+    Content:
       local: action_id
       foreign: id
     sfGuardUser:
       local: user_id
       foreign: id
-Proposal:
-  columns:
-    id:
-      primary: true
-      type: integer
-      notnull: true
-      autoincrement: true
-  inheritance:
-    extends: Content
-    type: concrete
 actAs:
   Sluggable:
     unique: true

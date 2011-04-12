@@ -9,24 +9,24 @@
  * @property string $name
  * @property string $description
  * @property Doctrine_Collection $Profiles
- * @property Doctrine_Collection $Proposals
- * @property Doctrine_Collection $ContentHasCategory
+ * @property Doctrine_Collection $Contents
  * @property Doctrine_Collection $SubscriptionCategory
+ * @property Doctrine_Collection $ContentHasCategory
  * 
  * @method integer             getId()                   Returns the current record's "id" value
  * @method string              getName()                 Returns the current record's "name" value
  * @method string              getDescription()          Returns the current record's "description" value
  * @method Doctrine_Collection getProfiles()             Returns the current record's "Profiles" collection
- * @method Doctrine_Collection getProposals()            Returns the current record's "Proposals" collection
- * @method Doctrine_Collection getContentHasCategory()   Returns the current record's "ContentHasCategory" collection
+ * @method Doctrine_Collection getContents()             Returns the current record's "Contents" collection
  * @method Doctrine_Collection getSubscriptionCategory() Returns the current record's "SubscriptionCategory" collection
+ * @method Doctrine_Collection getContentHasCategory()   Returns the current record's "ContentHasCategory" collection
  * @method Category            setId()                   Sets the current record's "id" value
  * @method Category            setName()                 Sets the current record's "name" value
  * @method Category            setDescription()          Sets the current record's "description" value
  * @method Category            setProfiles()             Sets the current record's "Profiles" collection
- * @method Category            setProposals()            Sets the current record's "Proposals" collection
- * @method Category            setContentHasCategory()   Sets the current record's "ContentHasCategory" collection
+ * @method Category            setContents()             Sets the current record's "Contents" collection
  * @method Category            setSubscriptionCategory() Sets the current record's "SubscriptionCategory" collection
+ * @method Category            setContentHasCategory()   Sets the current record's "ContentHasCategory" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -44,6 +44,7 @@ abstract class BaseCategory extends sfDoctrineRecord
              'autoincrement' => true,
              ));
         $this->hasColumn('name', 'string', 100, array(
+             'unique' => true,
              'type' => 'string',
              'notnull' => true,
              'length' => 100,
@@ -62,16 +63,16 @@ abstract class BaseCategory extends sfDoctrineRecord
              'local' => 'category_id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('Content as Proposals', array(
+        $this->hasMany('Content as Contents', array(
              'refClass' => 'ContentHasCategory',
              'local' => 'category_id',
              'foreign' => 'content_id'));
 
-        $this->hasMany('ContentHasCategory', array(
+        $this->hasMany('SubscriptionCategory', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 
-        $this->hasMany('SubscriptionCategory', array(
+        $this->hasMany('ContentHasCategory', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

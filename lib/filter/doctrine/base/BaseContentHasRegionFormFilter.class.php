@@ -37,8 +37,8 @@ abstract class BaseContentHasRegionFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'content_id' => 'Number',
       'region_id'  => 'Number',
+      'content_id' => 'Number',
       'slug'       => 'Text',
     );
   }

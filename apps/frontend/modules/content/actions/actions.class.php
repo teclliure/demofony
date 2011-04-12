@@ -3,8 +3,7 @@
 class contentActions extends sfActions {
   public function executeShow($request)
   {
-    $table = Doctrine::getTable($request->getParameter('class'));
-    $this->content = $table->findOneBy('slug',$request->getParameter('slug'));
+    $this->content = Doctrine::getTable('Content')->findOneBy('slug',$request->getParameter('slug'));
     $this->forward404Unless($this->content);
     $this->forward404Unless($this->content->getActive());
   }

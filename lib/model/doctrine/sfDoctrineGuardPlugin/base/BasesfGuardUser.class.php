@@ -174,7 +174,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'user_id',
              'foreign' => 'permission_id'));
 
-        $this->hasMany('Action as Actions', array(
+        $this->hasMany('Content as Actions', array(
              'refClass' => 'ActionHasUser',
              'local' => 'user_id',
              'foreign' => 'action_id'));

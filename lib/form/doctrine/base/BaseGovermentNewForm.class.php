@@ -16,9 +16,6 @@ abstract class BaseGovermentNewForm extends ContentForm
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['publish_date'] = new sfWidgetFormDate();
-    $this->validatorSchema['publish_date'] = new sfValidatorDate();
-
     $this->widgetSchema->setNameFormat('goverment_new[%s]');
   }
 

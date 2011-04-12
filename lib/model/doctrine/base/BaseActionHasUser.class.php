@@ -7,16 +7,16 @@
  * 
  * @property integer $action_id
  * @property integer $user_id
- * @property Action $Action
+ * @property Content $Content
  * @property sfGuardUser $sfGuardUser
  * 
  * @method integer       getActionId()    Returns the current record's "action_id" value
  * @method integer       getUserId()      Returns the current record's "user_id" value
- * @method Action        getAction()      Returns the current record's "Action" value
+ * @method Content       getContent()     Returns the current record's "Content" value
  * @method sfGuardUser   getSfGuardUser() Returns the current record's "sfGuardUser" value
  * @method ActionHasUser setActionId()    Sets the current record's "action_id" value
  * @method ActionHasUser setUserId()      Sets the current record's "user_id" value
- * @method ActionHasUser setAction()      Sets the current record's "Action" value
+ * @method ActionHasUser setContent()     Sets the current record's "Content" value
  * @method ActionHasUser setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    demofony
@@ -42,8 +42,8 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
         $this->index('IX_ActionHasUser_1', array(
              'fields' => 
              array(
-              0 => 'action_id',
-              1 => 'user_id',
+              0 => 'user_id',
+              1 => 'action_id',
              ),
              'type' => 'unique',
              ));
@@ -52,7 +52,7 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Action', array(
+        $this->hasOne('Content', array(
              'local' => 'action_id',
              'foreign' => 'id'));
 
