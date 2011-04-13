@@ -11,11 +11,10 @@
 class WorkshopForm extends BaseWorkshopForm
 {
   /**
-   * @see ActionForm
+   * @see ContentForm
    */
   public function configure()
   {
     parent::configure();
-    $this->widgetSchema['price']->setAttributes(array('size'=>4));
   }
 }

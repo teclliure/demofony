@@ -12,7 +12,7 @@
  */
 class Content extends BaseContent
 {
-  public function addView() {
+   public function addView() {
     $this->setViews($this->getViews() + 1);
     $this->save();
   }
@@ -64,4 +64,5 @@ class Content extends BaseContent
     $numOpinions += $query->count();
     return $numOpinions;
   }
+  
 }

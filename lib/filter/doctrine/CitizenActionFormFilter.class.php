@@ -11,7 +11,7 @@
 class CitizenActionFormFilter extends BaseCitizenActionFormFilter
 {
   /**
-   * @see ActionFormFilter
+   * @see ContentFormFilter
    */
   public function configure()
   {

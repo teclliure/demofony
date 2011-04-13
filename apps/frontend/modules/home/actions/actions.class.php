@@ -18,7 +18,8 @@ class homeActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     // $this->forward('default', 'module');
-    $this->last_proposals = Doctrine_Core::getTable('Content')->getActive(10);
+    $q = Doctrine_Core::getTable('Content')->createQuery('c')->whereIn('c.type',array('GovermentProposal','CitizenProposal','GovermentConsultation'));
+    $this->last_proposals = Doctrine_Core::getTable('Content')->getActive(10,$q);
     $this->last_goverment_proposals = Doctrine_Core::getTable('GovermentProposal')->getActive(10);
     $this->last_citizen_proposals = Doctrine_Core::getTable('CitizenProposal')->getActive(10);
     $this->last_goverment_consultations = Doctrine_Core::getTable('GovermentConsultation')->getActive(10);

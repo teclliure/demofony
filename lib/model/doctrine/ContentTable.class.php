@@ -7,25 +7,28 @@
  */
 class ContentTable extends Doctrine_Table
 {
-  /**
-   * Returns an instance of this class.
-   *
-   * @return object ContentTable
-   */
-  public static function getInstance()
-  {
-      return Doctrine_Core::getTable('Content');
-  }
+    /**
+     * Returns an instance of this class.
+     *
+     * @return object ContentTable
+     */
+    public static function getInstance()
+    {
+        return Doctrine_Core::getTable('Content');
+    }
     
-  public function getActive($limit = null)
+  public function getActive($limit = null, Doctrine_Query $q = null)
   {
-    $q = self::createQuery('c')
-      ->where('c.active = 1')
-      ->addOrderBy('c.created_at desc');
+    if (!$q) {
+      $q = self::createQuery('c');
+    }
+    $rootAlias = $q->getRootAlias();
+    $q->andWhere("{$rootAlias}.active = 1")->addOrderBy("{$rootAlias}.created_at desc");
     if ($limit) {
       $q->limit($limit);
     }
  
     return $q->execute();
   }
+  
 }

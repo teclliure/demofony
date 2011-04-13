@@ -11,7 +11,7 @@
 class CitizenActionForm extends BaseCitizenActionForm
 {
   /**
-   * @see ActionForm
+   * @see ContentForm
    */
   public function configure()
   {

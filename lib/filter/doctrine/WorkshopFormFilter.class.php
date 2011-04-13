@@ -11,7 +11,7 @@
 class WorkshopFormFilter extends BaseWorkshopFormFilter
 {
   /**
-   * @see ActionFormFilter
+   * @see ContentFormFilter
    */
   public function configure()
   {
