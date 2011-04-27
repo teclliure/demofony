@@ -17,18 +17,20 @@ abstract class BaseActionHasUserForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'action_id' => new sfWidgetFormInputHidden(),
       'user_id'   => new sfWidgetFormInputHidden(),
+      'type'      => new sfWidgetFormInputHidden(),
       'slug'      => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'action_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('action_id')), 'empty_value' => $this->getObject()->get('action_id'), 'required' => false)),
       'user_id'   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
+      'type'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('type')), 'empty_value' => $this->getObject()->get('type'), 'required' => false)),
       'slug'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
       new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'ActionHasUser', 'column' => array('user_id', 'action_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ActionHasUser', 'column' => array('action_id', 'user_id', 'type'))),
         new sfValidatorDoctrineUnique(array('model' => 'ActionHasUser', 'column' => array('slug'))),
       ))
     );

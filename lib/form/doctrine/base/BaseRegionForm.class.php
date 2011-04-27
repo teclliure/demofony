@@ -23,7 +23,6 @@ abstract class BaseRegionForm extends BaseFormDoctrine
       'rgt'           => new sfWidgetFormInputText(),
       'level'         => new sfWidgetFormInputText(),
       'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -35,12 +34,7 @@ abstract class BaseRegionForm extends BaseFormDoctrine
       'rgt'           => new sfValidatorInteger(array('required' => false)),
       'level'         => new sfValidatorInteger(array('required' => false)),
       'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Region', 'column' => array('name')))
-    );
 
     $this->widgetSchema->setNameFormat('region[%s]');
 
@@ -65,17 +59,11 @@ abstract class BaseRegionForm extends BaseFormDoctrine
       $this->setDefault('profiles_list', $this->object->Profiles->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['contents_list']))
-    {
-      $this->setDefault('contents_list', $this->object->Contents->getPrimaryKeys());
-    }
-
   }
 
   protected function doSave($con = null)
   {
     $this->saveProfilesList($con);
-    $this->saveContentsList($con);
 
     parent::doSave($con);
   }
@@ -115,44 +103,6 @@ abstract class BaseRegionForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Profiles', array_values($link));
-    }
-  }
-
-  public function saveContentsList($con = null)
-  {
-    if (!$this->isValid())
-    {
-      throw $this->getErrorSchema();
-    }
-
-    if (!isset($this->widgetSchema['contents_list']))
-    {
-      // somebody has unset this widget
-      return;
-    }
-
-    if (null === $con)
-    {
-      $con = $this->getConnection();
-    }
-
-    $existing = $this->object->Contents->getPrimaryKeys();
-    $values = $this->getValue('contents_list');
-    if (!is_array($values))
-    {
-      $values = array();
-    }
-
-    $unlink = array_diff($existing, $values);
-    if (count($unlink))
-    {
-      $this->object->unlink('Contents', array_values($unlink));
-    }
-
-    $link = array_diff($values, $existing);
-    if (count($link))
-    {
-      $this->object->link('Contents', array_values($link));
     }
   }
 

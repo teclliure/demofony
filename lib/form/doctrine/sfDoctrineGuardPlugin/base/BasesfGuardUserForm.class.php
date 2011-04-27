@@ -30,7 +30,6 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'updated_at'       => new sfWidgetFormDateTime(),
       'groups_list'      => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup')),
       'permissions_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission')),
-      'actions_list'     => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
       'opinions_list'    => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Opinion')),
     ));
 
@@ -50,7 +49,6 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'updated_at'       => new sfValidatorDateTime(),
       'groups_list'      => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup', 'required' => false)),
       'permissions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission', 'required' => false)),
-      'actions_list'     => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
       'opinions_list'    => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Opinion', 'required' => false)),
     ));
 
@@ -89,11 +87,6 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       $this->setDefault('permissions_list', $this->object->Permissions->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['actions_list']))
-    {
-      $this->setDefault('actions_list', $this->object->Actions->getPrimaryKeys());
-    }
-
     if (isset($this->widgetSchema['opinions_list']))
     {
       $this->setDefault('opinions_list', $this->object->Opinions->getPrimaryKeys());
@@ -105,7 +98,6 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
   {
     $this->saveGroupsList($con);
     $this->savePermissionsList($con);
-    $this->saveActionsList($con);
     $this->saveOpinionsList($con);
 
     parent::doSave($con);
@@ -184,44 +176,6 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Permissions', array_values($link));
-    }
-  }
-
-  public function saveActionsList($con = null)
-  {
-    if (!$this->isValid())
-    {
-      throw $this->getErrorSchema();
-    }
-
-    if (!isset($this->widgetSchema['actions_list']))
-    {
-      // somebody has unset this widget
-      return;
-    }
-
-    if (null === $con)
-    {
-      $con = $this->getConnection();
-    }
-
-    $existing = $this->object->Actions->getPrimaryKeys();
-    $values = $this->getValue('actions_list');
-    if (!is_array($values))
-    {
-      $values = array();
-    }
-
-    $unlink = array_diff($existing, $values);
-    if (count($unlink))
-    {
-      $this->object->unlink('Actions', array_values($unlink));
-    }
-
-    $link = array_diff($values, $existing);
-    if (count($link))
-    {
-      $this->object->link('Actions', array_values($link));
     }
   }
 

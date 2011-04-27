@@ -20,7 +20,6 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
       'rgt'           => new sfWidgetFormFilterInput(),
       'level'         => new sfWidgetFormFilterInput(),
       'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -31,7 +30,6 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
       'rgt'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'level'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('region_filters[%s]');
@@ -61,24 +59,6 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
     ;
   }
 
-  public function addContentsListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.ContentHasRegion ContentHasRegion')
-      ->andWhereIn('ContentHasRegion.content_id', $values)
-    ;
-  }
-
   public function getModelName()
   {
     return 'Region';
@@ -95,7 +75,6 @@ abstract class BaseRegionFormFilter extends BaseFormFilterDoctrine
       'rgt'           => 'Number',
       'level'         => 'Number',
       'profiles_list' => 'ManyKey',
-      'contents_list' => 'ManyKey',
     );
   }
 }

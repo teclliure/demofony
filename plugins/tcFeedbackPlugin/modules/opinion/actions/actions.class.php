@@ -27,7 +27,8 @@ class opinionActions extends sfActions
     $object = $table->findOneBy('id',$request->getParameter('id'));
     $this->forward404Unless($object);
     $this->forward404Unless($object->getActive());
-    return $this->renderPartial('opinion/list', array('object'=>$object, 'opinions'=>$object->getOpinions()));
+    $numOpinions = $object->countOpinions();
+    return $this->renderPartial('opinion/list', array('object'=>$object, 'opinions'=>$object->getNonSelectedOpinions(),'numOpinions'=>$numOpinions));
   }
   
   public function executeOpinate($request) {

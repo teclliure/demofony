@@ -7,16 +7,16 @@
  * 
  * @property integer $action_id
  * @property integer $user_id
- * @property Content $Content
+ * @property string $type
  * @property sfGuardUser $sfGuardUser
  * 
  * @method integer       getActionId()    Returns the current record's "action_id" value
  * @method integer       getUserId()      Returns the current record's "user_id" value
- * @method Content       getContent()     Returns the current record's "Content" value
+ * @method string        getType()        Returns the current record's "type" value
  * @method sfGuardUser   getSfGuardUser() Returns the current record's "sfGuardUser" value
  * @method ActionHasUser setActionId()    Sets the current record's "action_id" value
  * @method ActionHasUser setUserId()      Sets the current record's "user_id" value
- * @method ActionHasUser setContent()     Sets the current record's "Content" value
+ * @method ActionHasUser setType()        Sets the current record's "type" value
  * @method ActionHasUser setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    demofony
@@ -37,13 +37,19 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
              'primary' => true,
              'type' => 'integer',
              ));
+        $this->hasColumn('type', 'string', 100, array(
+             'primary' => true,
+             'type' => 'string',
+             'length' => 100,
+             ));
 
 
         $this->index('IX_ActionHasUser_1', array(
              'fields' => 
              array(
-              0 => 'user_id',
-              1 => 'action_id',
+              0 => 'action_id',
+              1 => 'user_id',
+              2 => 'type',
              ),
              'type' => 'unique',
              ));
@@ -52,10 +58,6 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Content', array(
-             'local' => 'action_id',
-             'foreign' => 'id'));
-
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
              'foreign' => 'id'));

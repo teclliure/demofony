@@ -17,6 +17,11 @@ class opinionComponents extends sfComponents
   }
   
   public function executeList ($request) {
-    $this->opinions = $this->object->getOpinions();
+    $this->opinions = $this->object->getNonSelectedOpinions();
+    $this->numOpinions = $this->object->countOpinions();
+  }
+  
+  public function executeListSelected ($request) {
+    $this->opinions = $this->object->getSelectedOpinions();
   }
 }

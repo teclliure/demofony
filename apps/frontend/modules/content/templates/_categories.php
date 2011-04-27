@@ -1,0 +1,1 @@
+<?php foreach ($categories as $key=>$category): ?><?php if ($key): ?>, <?php endif; ?><?php echo $category ?><?php endforeach ?>

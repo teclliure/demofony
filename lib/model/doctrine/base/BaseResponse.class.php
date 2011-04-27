@@ -7,17 +7,17 @@
  * 
  * @property integer $id
  * @property clob $body
- * @property integer $content_id
+ * @property integer $initiative_id
  * @property Content $Content
  * 
- * @method integer  getId()         Returns the current record's "id" value
- * @method clob     getBody()       Returns the current record's "body" value
- * @method integer  getContentId()  Returns the current record's "content_id" value
- * @method Content  getContent()    Returns the current record's "Content" value
- * @method Response setId()         Sets the current record's "id" value
- * @method Response setBody()       Sets the current record's "body" value
- * @method Response setContentId()  Sets the current record's "content_id" value
- * @method Response setContent()    Sets the current record's "Content" value
+ * @method integer  getId()            Returns the current record's "id" value
+ * @method clob     getBody()          Returns the current record's "body" value
+ * @method integer  getInitiativeId()  Returns the current record's "initiative_id" value
+ * @method Content  getContent()       Returns the current record's "Content" value
+ * @method Response setId()            Sets the current record's "id" value
+ * @method Response setBody()          Sets the current record's "body" value
+ * @method Response setInitiativeId()  Sets the current record's "initiative_id" value
+ * @method Response setContent()       Sets the current record's "Content" value
  * 
  * @package    demofony
  * @subpackage model
@@ -38,7 +38,7 @@ abstract class BaseResponse extends sfDoctrineRecord
              'type' => 'clob',
              'notnull' => true,
              ));
-        $this->hasColumn('content_id', 'integer', null, array(
+        $this->hasColumn('initiative_id', 'integer', null, array(
              'type' => 'integer',
              ));
     }
@@ -47,7 +47,7 @@ abstract class BaseResponse extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasOne('Content', array(
-             'local' => 'content_id',
+             'local' => 'initiative_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 

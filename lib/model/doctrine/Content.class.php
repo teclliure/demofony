@@ -12,7 +12,7 @@
  */
 class Content extends BaseContent
 {
-   public function addView() {
+  public function addView() {
     $this->setViews($this->getViews() + 1);
     $this->save();
   }
@@ -47,8 +47,13 @@ class Content extends BaseContent
     }
   }
   
-  public function getOpinions() {
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+  public function getNonSelectedOpinions() {
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.selected = 0 OR o.selected IS NULL');
+    return $query->execute();
+  }
+  
+  public function getSelectedOpinions() {
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.selected = 1');
     return $query->execute();
   }
   
@@ -65,4 +70,54 @@ class Content extends BaseContent
     return $numOpinions;
   }
   
+  public function getCategories() {
+    $query = $this->getCategoriesQuery();
+    return $query->execute();
+  }
+  
+  public function getRegions() {
+    $query = $this->getRegionsQuery();
+    return $query->execute();
+  }
+  
+  public function getRegionsQuery() {
+    return Doctrine::getTable('Region')->createQuery('r')->innerJoin('r.ContentHasRegion cr')->where('cr.type = ?',get_class($this))->andWhere('cr.content_id = ?',$this->getId());
+  }
+  
+  public function getCategoriesQuery() {
+    return Doctrine::getTable('Category')->createQuery('c')->innerJoin('c.ContentHasCategory cc')->where('cc.type = ?',get_class($this))->andWhere('cc.content_id = ?',$this->getId());
+  }
+  
+  public function getRelatedContent($limit = 5) {
+    $inheritedClasses = array('GovermentNew','CitizenProposal','GovermentProposal','GovermentConsultation','Workshop','CitizenAction');
+    $sql = '';
+    $selectFieldsQuery = Doctrine::getTable('Content')->getColumns();
+    $select = '';
+    foreach ($selectFieldsQuery as $key=>$selectField) {
+      $select .= ','.$key;
+    }
+    foreach ($inheritedClasses as $key=>$class) {
+      if ($key) $sql .= ' UNION ';
+      $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName();
+      if ($class == get_class($this)) {
+        $sql .= ' where id != '.$this->getId();
+      }
+      $sql .= ')';
+    }
+
+    $conn = Doctrine_Manager::connection();
+    $pdo = $conn->execute($sql.' order by created_at desc limit '.$limit);
+    $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
+    $items = $pdo->fetchAll();
+    
+    $objects = array();
+    foreach ($items as $item) {
+      $class = $item['class'];
+      unset ($item['class']);
+      $object = new $class;
+      $object->fromArray($item);
+      $objects[] = $object;
+    }
+    return $objects;
+  }
 }

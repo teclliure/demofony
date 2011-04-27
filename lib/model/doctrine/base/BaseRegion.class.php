@@ -9,24 +9,21 @@
  * @property string $name
  * @property string $description
  * @property Doctrine_Collection $Profiles
- * @property Doctrine_Collection $Contents
- * @property Doctrine_Collection $SubscriptionRegion
  * @property Doctrine_Collection $ContentHasRegion
+ * @property Doctrine_Collection $SubscriptionRegion
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method string              getName()               Returns the current record's "name" value
  * @method string              getDescription()        Returns the current record's "description" value
  * @method Doctrine_Collection getProfiles()           Returns the current record's "Profiles" collection
- * @method Doctrine_Collection getContents()           Returns the current record's "Contents" collection
- * @method Doctrine_Collection getSubscriptionRegion() Returns the current record's "SubscriptionRegion" collection
  * @method Doctrine_Collection getContentHasRegion()   Returns the current record's "ContentHasRegion" collection
+ * @method Doctrine_Collection getSubscriptionRegion() Returns the current record's "SubscriptionRegion" collection
  * @method Region              setId()                 Sets the current record's "id" value
  * @method Region              setName()               Sets the current record's "name" value
  * @method Region              setDescription()        Sets the current record's "description" value
  * @method Region              setProfiles()           Sets the current record's "Profiles" collection
- * @method Region              setContents()           Sets the current record's "Contents" collection
- * @method Region              setSubscriptionRegion() Sets the current record's "SubscriptionRegion" collection
  * @method Region              setContentHasRegion()   Sets the current record's "ContentHasRegion" collection
+ * @method Region              setSubscriptionRegion() Sets the current record's "SubscriptionRegion" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -44,7 +41,6 @@ abstract class BaseRegion extends sfDoctrineRecord
              'autoincrement' => true,
              ));
         $this->hasColumn('name', 'string', 100, array(
-             'unique' => true,
              'type' => 'string',
              'notnull' => true,
              'length' => 100,
@@ -63,16 +59,11 @@ abstract class BaseRegion extends sfDoctrineRecord
              'local' => 'region_id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('Content as Contents', array(
-             'refClass' => 'ContentHasRegion',
-             'local' => 'region_id',
-             'foreign' => 'content_id'));
-
-        $this->hasMany('SubscriptionRegion', array(
+        $this->hasMany('ContentHasRegion', array(
              'local' => 'id',
              'foreign' => 'region_id'));
 
-        $this->hasMany('ContentHasRegion', array(
+        $this->hasMany('SubscriptionRegion', array(
              'local' => 'id',
              'foreign' => 'region_id'));
 

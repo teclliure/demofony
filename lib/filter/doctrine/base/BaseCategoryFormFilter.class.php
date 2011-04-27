@@ -17,7 +17,6 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'description'   => new sfWidgetFormFilterInput(),
       'slug'          => new sfWidgetFormFilterInput(),
       'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -25,7 +24,6 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'description'   => new sfValidatorPass(array('required' => false)),
       'slug'          => new sfValidatorPass(array('required' => false)),
       'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('category_filters[%s]');
@@ -55,24 +53,6 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
     ;
   }
 
-  public function addContentsListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.ContentHasCategory ContentHasCategory')
-      ->andWhereIn('ContentHasCategory.content_id', $values)
-    ;
-  }
-
   public function getModelName()
   {
     return 'Category';
@@ -86,7 +66,6 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'description'   => 'Text',
       'slug'          => 'Text',
       'profiles_list' => 'ManyKey',
-      'contents_list' => 'ManyKey',
     );
   }
 }

@@ -18,12 +18,40 @@ class homeActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     // $this->forward('default', 'module');
-    $q = Doctrine_Core::getTable('Content')->createQuery('c')->whereIn('c.type',array('GovermentProposal','CitizenProposal','GovermentConsultation'));
-    $this->last_proposals = Doctrine_Core::getTable('Content')->getActive(10,$q);
-    $this->last_goverment_proposals = Doctrine_Core::getTable('GovermentProposal')->getActive(10);
-    $this->last_citizen_proposals = Doctrine_Core::getTable('CitizenProposal')->getActive(10);
-    $this->last_goverment_consultations = Doctrine_Core::getTable('GovermentConsultation')->getActive(10);
+    $sql = Doctrine_Core::getTable('Proposal')->getSqlUnion();
+    $this->pager_last_proposals = new sfPdoUnionPager ('Proposal',5);
+    $this->pager_last_proposals->setSql($sql);
+    $this->pager_last_proposals->setPage(1);
+    $this->pager_last_proposals->init();
     
-    $this->last_news = Doctrine_Core::getTable('GovermentNew')->getActive(4);
+    $this->pager_last_goverment_proposals = new sfDoctrinePager('GovermentProposal', '5');
+    $this->pager_last_goverment_proposals->setQuery(Doctrine_Core::getTable('GovermentProposal')->getActiveQuery());
+    $this->pager_last_goverment_proposals->setPage(1);
+    $this->pager_last_goverment_proposals->init();
+    
+    $this->pager_last_citizen_proposals = new sfDoctrinePager('CitizenProposal', '5');
+    $this->pager_last_citizen_proposals->setQuery(Doctrine_Core::getTable('CitizenProposal')->getActiveQuery());
+    $this->pager_last_citizen_proposals->setPage(1);
+    $this->pager_last_citizen_proposals->init();
+    
+    $this->pager_last_goverment_consultations = new sfDoctrinePager('GovermentConsultation', '5');
+    $this->pager_last_goverment_consultations->setQuery(Doctrine_Core::getTable('GovermentConsultation')->getActiveQuery());
+    $this->pager_last_goverment_consultations->setPage(1);
+    $this->pager_last_goverment_consultations->init();
+    
+    $this->pager_last_workshops = new sfDoctrinePager('Workshop', '5');
+    $this->pager_last_workshops->setQuery(Doctrine_Core::getTable('Workshop')->getActiveQuery());
+    $this->pager_last_workshops->setPage(1);
+    $this->pager_last_workshops->init();
+    
+    $this->pager_last_citizen_actions = new sfDoctrinePager('CitizenAction', '5');
+    $this->pager_last_citizen_actions->setQuery(Doctrine_Core::getTable('CitizenAction')->getActiveQuery());
+    $this->pager_last_citizen_actions->setPage(1);
+    $this->pager_last_citizen_actions->init();
+    
+    $this->pager_last_news = new sfDoctrinePager('GovermentNew', '4');
+    $this->pager_last_news->setQuery(Doctrine_Core::getTable('GovermentNew')->getActiveQuery());
+    $this->pager_last_news->setPage(1);
+    $this->pager_last_news->init();
   }
 }

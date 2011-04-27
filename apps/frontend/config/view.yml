@@ -13,11 +13,15 @@ default:
     #robots:       index, follow
 
   stylesheets:    
-    - /blueprint/blueprint/screen.css: { media: 'screen,projection' }
-    - /blueprint/blueprint/print.css: { media: print }
-    - /blueprint/blueprint/ie.css { condition: IE 8 }
-    - /jquery/ui/css/pepper-grinder/jquery-ui-1.8.11.custom.css
+    # - /blueprint/blueprint/screen.css: { media: 'screen,projection' }
+    # - /blueprint/blueprint/print.css: { media: print }
+    # - /blueprint/blueprint/ie.css { condition: IE 8 }
+    - reset.css
+    - icons.css
+    - fonts.css
+    - /jquery/ui/css/overcast/jquery-ui-1.8.11.custom.css
     - main.css
+    - ie.css { condition: IE }
     
 
   javascripts:

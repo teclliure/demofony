@@ -39,6 +39,7 @@ abstract class BaseActionHasUserFormFilter extends BaseFormFilterDoctrine
     return array(
       'action_id' => 'Number',
       'user_id'   => 'Number',
+      'type'      => 'Text',
       'slug'      => 'Text',
     );
   }

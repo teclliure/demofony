@@ -80,4 +80,11 @@ class userActions extends sfActions {
       }
     }
   }
+  
+  public function executeShowProfile($request) {
+    $this->userProfile = Doctrine_Core::getTable('sfGuardUser')->retrieveByUsername($request->getParameter('username'));
+    $this->section = $request->getParameter('section');
+    if (!$this->section) $this->section = 'opinions';
+    $this->forward404Unless($this->userProfile);
+  }
 }

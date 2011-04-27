@@ -18,7 +18,6 @@
  * @property timestamp $last_login
  * @property Doctrine_Collection $Groups
  * @property Doctrine_Collection $Permissions
- * @property Doctrine_Collection $Actions
  * @property Doctrine_Collection $Opinions
  * @property Doctrine_Collection $sfGuardUserPermission
  * @property Doctrine_Collection $sfGuardUserGroup
@@ -47,7 +46,6 @@
  * @method timestamp             getLastLogin()             Returns the current record's "last_login" value
  * @method Doctrine_Collection   getGroups()                Returns the current record's "Groups" collection
  * @method Doctrine_Collection   getPermissions()           Returns the current record's "Permissions" collection
- * @method Doctrine_Collection   getActions()               Returns the current record's "Actions" collection
  * @method Doctrine_Collection   getOpinions()              Returns the current record's "Opinions" collection
  * @method Doctrine_Collection   getSfGuardUserPermission() Returns the current record's "sfGuardUserPermission" collection
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
@@ -75,7 +73,6 @@
  * @method sfGuardUser           setLastLogin()             Sets the current record's "last_login" value
  * @method sfGuardUser           setGroups()                Sets the current record's "Groups" collection
  * @method sfGuardUser           setPermissions()           Sets the current record's "Permissions" collection
- * @method sfGuardUser           setActions()               Sets the current record's "Actions" collection
  * @method sfGuardUser           setOpinions()              Sets the current record's "Opinions" collection
  * @method sfGuardUser           setSfGuardUserPermission() Sets the current record's "sfGuardUserPermission" collection
  * @method sfGuardUser           setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
@@ -173,11 +170,6 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'refClass' => 'sfGuardUserPermission',
              'local' => 'user_id',
              'foreign' => 'permission_id'));
-
-        $this->hasMany('Content as Actions', array(
-             'refClass' => 'ActionHasUser',
-             'local' => 'user_id',
-             'foreign' => 'action_id'));
 
         $this->hasMany('Opinion as Opinions', array(
              'refClass' => 'OpinionMarkedAsSpam',

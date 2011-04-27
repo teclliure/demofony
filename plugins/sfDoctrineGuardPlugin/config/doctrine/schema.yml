@@ -121,11 +121,6 @@ sfGuardUser:
       refClass: sfGuardUserPermission
       local: user_id
       foreign: permission_id
-    Actions:
-      class: Content
-      refClass: ActionHasUser
-      local: user_id
-      foreign: action_id
     Opinions:
       class: Opinion
       refClass: OpinionMarkedAsSpam

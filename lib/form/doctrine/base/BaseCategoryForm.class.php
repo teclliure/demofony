@@ -20,7 +20,6 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'description'   => new sfWidgetFormInputText(),
       'slug'          => new sfWidgetFormInputText(),
       'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
-      'contents_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Content')),
     ));
 
     $this->setValidators(array(
@@ -29,14 +28,10 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'description'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'slug'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
-      'contents_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Content', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('name'))),
-        new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('slug'))),
-      ))
+      new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('slug')))
     );
 
     $this->widgetSchema->setNameFormat('category[%s]');
@@ -62,17 +57,11 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       $this->setDefault('profiles_list', $this->object->Profiles->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['contents_list']))
-    {
-      $this->setDefault('contents_list', $this->object->Contents->getPrimaryKeys());
-    }
-
   }
 
   protected function doSave($con = null)
   {
     $this->saveProfilesList($con);
-    $this->saveContentsList($con);
 
     parent::doSave($con);
   }
@@ -112,44 +101,6 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Profiles', array_values($link));
-    }
-  }
-
-  public function saveContentsList($con = null)
-  {
-    if (!$this->isValid())
-    {
-      throw $this->getErrorSchema();
-    }
-
-    if (!isset($this->widgetSchema['contents_list']))
-    {
-      // somebody has unset this widget
-      return;
-    }
-
-    if (null === $con)
-    {
-      $con = $this->getConnection();
-    }
-
-    $existing = $this->object->Contents->getPrimaryKeys();
-    $values = $this->getValue('contents_list');
-    if (!is_array($values))
-    {
-      $values = array();
-    }
-
-    $unlink = array_diff($existing, $values);
-    if (count($unlink))
-    {
-      $this->object->unlink('Contents', array_values($unlink));
-    }
-
-    $link = array_diff($values, $existing);
-    if (count($link))
-    {
-      $this->object->link('Contents', array_values($link));
     }
   }
 

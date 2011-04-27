@@ -7,28 +7,61 @@
  */
 class ContentTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object ContentTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('Content');
-    }
-    
-  public function getActive($limit = null, Doctrine_Query $q = null)
+  var $inheritedClasses = array('GovermentNew','CitizenProposal','GovermentProposal','GovermentConsultation','Workshop','CitizenAction');
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object ContentTable
+   */
+  public static function getInstance()
   {
-    if (!$q) {
-      $q = self::createQuery('c');
-    }
-    $rootAlias = $q->getRootAlias();
-    $q->andWhere("{$rootAlias}.active = 1")->addOrderBy("{$rootAlias}.created_at desc");
+      return Doctrine_Core::getTable('Content');
+  }
+    
+  public function getActive($limit = null)
+  {
+    $q = self::getActiveQuery();
     if ($limit) {
       $q->limit($limit);
     }
  
     return $q->execute();
   }
+ 
+  public function getActiveQuery()
+  {
+    $q = self::createQuery('c')
+      ->where('c.active = 1')
+      ->addOrderBy('c.created_at desc');
+ 
+    return $q;
+  }
   
+  public function getAll($class = null, $limit = null, $offset = null) {
+    $sql = '';
+    $selectFieldsQuery = Doctrine::getTable('Content')->getColumns();
+    $select = '';
+    foreach ($selectFieldsQuery as $key=>$selectField) {
+      $select .= ','.$key;
+    }
+    foreach ($this->inheritedClasses as $key=>$class) {
+      if ($key) $sql .= ' UNION ';
+      $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().')';
+    }
+
+    $conn = Doctrine_Manager::connection();
+    $pdo = $conn->execute($sql.' order by created_at');
+    $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
+    $items = $pdo->fetchAll();
+    
+    $objects = array();
+    foreach ($items as $item) {
+      $class = $item['class'];
+      unset ($item['class']);
+      $object = new $class;
+      $object->fromArray($item);
+      $objects[] = $object;
+    }
+    return $objects;
+  }
 }

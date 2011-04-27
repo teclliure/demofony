@@ -1,0 +1,5 @@
+
+	.box h1.hdr{top:-26px;}
+	#footer ul li{zoom:1; *display:inline;}
+	#footer{filter: alpha(opacity = 60);}
+	.box ul.tabs{clip:rect(-5px 600px 40px -5px);}
