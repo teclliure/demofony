@@ -13,11 +13,13 @@ abstract class BaseActionHasUserFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'slug'      => new sfWidgetFormFilterInput(),
+      'created_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'slug'      => new sfValidatorPass(array('required' => false)),
+      'created_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
     $this->widgetSchema->setNameFormat('action_has_user_filters[%s]');
@@ -37,10 +39,11 @@ abstract class BaseActionHasUserFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'action_id' => 'Number',
-      'user_id'   => 'Number',
-      'type'      => 'Text',
-      'slug'      => 'Text',
+      'action_id'  => 'Number',
+      'user_id'    => 'Number',
+      'type'       => 'Text',
+      'created_at' => 'Date',
+      'updated_at' => 'Date',
     );
   }
 }

@@ -10,7 +10,7 @@
       <? foreach($results as $i=>$result): ?>
         <?php if (is_subclass_of($result->getRawValue(),'Action')): ?>
         <?php $result->refresh(true) ?>
-        <?php echo $result->getState() ?>
+        <?php // echo $result->getState() ?>
         <div class="result <?= $i%2? '' : 'color' ?>">
           <div class="icon-pin_<?php echo $result->getColor() ?> letter"></div>
           <div class="img"></div>

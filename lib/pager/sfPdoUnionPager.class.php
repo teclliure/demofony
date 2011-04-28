@@ -4,7 +4,8 @@
 class sfPdoUnionPager extends sfPager
 {
   protected
-    $sql             = null;
+    $sql             = null,
+    $objects         = null;
 
   /**
    * @see sfPager
@@ -84,23 +85,25 @@ class sfPdoUnionPager extends sfPager
    */
   public function getResults($hydrationMode = null)
   {
-    $offset = ($this->getPage() - 1) * $this->getMaxPerPage();
-    $conn = Doctrine_Manager::connection();
-    $sql = $this->getSql().' LIMIT '.$this->getMaxPerPage();
-    if ($offset) $sql .= ' OFFSET '.$offset;
-    $pdo = $conn->execute($sql);
-    $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
-    $items = $pdo->fetchAll();
-    
-    $objects = array();
-    foreach ($items as $item) {
-      $class = $item['class'];
-      unset ($item['class']);
-      $object = new $class;
-      $object->fromArray($item);
-      $objects[] = $object;
+    if (!$this->objects) {
+      $offset = ($this->getPage() - 1) * $this->getMaxPerPage();
+      $conn = Doctrine_Manager::connection();
+      $sql = $this->getSql().' LIMIT '.$this->getMaxPerPage();
+      if ($offset) $sql .= ' OFFSET '.$offset;
+      $pdo = $conn->execute($sql);
+      $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
+      $items = $pdo->fetchAll();
+      
+      foreach ($items as $item) {
+        $class = $item['class'];
+        unset ($item['class']);
+        $object = new $class;
+        $object->assignIdentifier($item['id']);
+        // $object->fromArray($item);
+        $this->objects[] = $object;
+      }
     }
 
-    return $objects;
+    return $this->objects;
   }
 }

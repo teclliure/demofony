@@ -77,8 +77,6 @@ Content:
       unique: true
       fields: [title]
       uniqueBy: [title]
-    Searchable:
-      fields: [title,body]
     Geographical: 
     JCroppable:
       images: [image]
@@ -388,6 +386,8 @@ CitizenAction:
     extends: Action
     type: concrete
 ActionHasUser:
+  actAs:
+    Timestampable: 
   columns:
     action_id:
       primary: true
@@ -403,7 +403,7 @@ ActionHasUser:
       notnull: true
   indexes:
     IX_ActionHasUser_1:
-      fields: [action_id, user_id, type]
+      fields: [action_id, user_id]
       type: unique
   relations:
     sfGuardUser:

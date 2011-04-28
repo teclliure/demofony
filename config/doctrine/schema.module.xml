@@ -30,7 +30,7 @@
       <column name="name" required="true" size="100" type="string"/>
       <column name="description" size="255" type="string"/>
     </table>
-    <table name="Content" visPositionX="326" visPositionY="137" visSizeX="0" visSizeX2="130" visSizeY="0" visSizeY2="157">
+    <table name="Content" visPositionX="326" visPositionY="137" visSizeX="0" visSizeX2="98" visSizeY="0" visSizeY2="115">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="title" required="true" size="255" type="string"/>
       <column name="body" required="true" type="clob"/>
@@ -47,9 +47,6 @@
             <attribute name="unique">true</attribute>
             <attribute name="fields">[title]</attribute>
             <attribute name="uniqueBy">[title]</attribute>
-          </attribute>
-          <attribute name="Searchable">
-            <attribute name="fields">[title,body]</attribute>
           </attribute>
           <attribute name="Geographical"/>
           <attribute name="JCroppable">

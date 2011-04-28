@@ -49,7 +49,6 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
              array(
               0 => 'action_id',
               1 => 'user_id',
-              2 => 'type',
              ),
              'type' => 'unique',
              ));
@@ -62,9 +61,7 @@ abstract class BaseActionHasUser extends sfDoctrineRecord
              'local' => 'user_id',
              'foreign' => 'id'));
 
-        $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'unique' => true,
-             ));
-        $this->actAs($sluggable0);
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

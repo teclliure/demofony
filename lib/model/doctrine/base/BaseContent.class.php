@@ -103,13 +103,6 @@ abstract class BaseContent extends sfDoctrineRecord
               0 => 'title',
              ),
              ));
-        $searchable0 = new Doctrine_Template_Searchable(array(
-             'fields' => 
-             array(
-              0 => 'title',
-              1 => 'body',
-             ),
-             ));
         $geographical0 = new Doctrine_Template_Geographical();
         $jcroppable0 = new Doctrine_Template_JCroppable(array(
              'images' => 
@@ -120,7 +113,6 @@ abstract class BaseContent extends sfDoctrineRecord
         $commentable0 = new Doctrine_Template_Commentable();
         $this->actAs($timestampable0);
         $this->actAs($sluggable0);
-        $this->actAs($searchable0);
         $this->actAs($geographical0);
         $this->actAs($jcroppable0);
         $this->actAs($commentable0);

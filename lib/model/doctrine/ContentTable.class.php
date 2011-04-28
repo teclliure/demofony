@@ -7,7 +7,7 @@
  */
 class ContentTable extends Doctrine_Table
 {
-  var $inheritedClasses = array('gn'=>'GovermentNew','cp'=>'CitizenProposal','gp'=>'GovermentProposal','gc'=>'GovermentConsultation','w'=>'Workshop','ca'=>'CitizenAction');
+  var $inheritedClasses = array('GovermentNew','CitizenProposal','GovermentProposal','GovermentConsultation','Workshop','CitizenAction');
   /**
    * Returns an instance of this class.
    *
@@ -39,11 +39,7 @@ class ContentTable extends Doctrine_Table
   
   public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = null) {
     $sql = '';
-    $selectFieldsQuery = self::getColumns();
-    $select = '';
-    foreach ($selectFieldsQuery as $key=>$selectField) {
-      $select .= ','.$key;
-    }
+    $select = ',id, created_at, views';
     
     if (!$inheritedClasses) $inheritedClasses = $this->inheritedClasses;
     
