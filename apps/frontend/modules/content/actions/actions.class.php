@@ -61,10 +61,21 @@ class contentActions extends sfActions {
   }
   
   public function executeList($request) {
+    $where = null;
+    if ($request->getParameter('q'))
+    {
+      $conn = Doctrine_Manager::connection();
+      $where = ' title LIKE '.$conn->quote('%'.$request->getParameter('q').'%');
+      $this->title = 'SEARCH';
+      $this->searchStr = $request->getParameter('q');
+    }
+    else {
+      $this->searchStr = '';
+    }
     if ($request->getParameter('title')) {
       $this->title = $request->getParameter('title');
     }
-    else {
+    elseif (!isset($this->title)) {
       $this->title = 'last';
     }
     $order = null;
@@ -83,18 +94,42 @@ class contentActions extends sfActions {
     if ($request->getParameter('region')) {
       $regions=array($request->getParameter('region'));
     }
-    $sql = Doctrine_Core::getTable('Content')->getSqlUnion($order,$type,$categories,$regions);
+    $sql = Doctrine_Core::getTable('Content')->getSqlUnion($order,$type,$categories,$regions, $where);
     $this->pager = new sfPdoUnionPager ('Content',6);
     $this->pager->setSql($sql);
     $this->pager->setPage($request->getParameter('page',1));
     $this->pager->init();
     
     if ($request->isXmlHttpRequest()) {
-      return $this->renderPartial('content/list',array('pager'=>$this->pager,'title'=>$this->title));
+      return $this->renderPartial('content/list',array('pager'=>$this->pager,'title'=>$this->title,'searchStr'=>$this->searchStr));
     }
     
     $this->categories = Doctrine_core::getTable('Category')->findAll();
     $this->regions = Doctrine_core::getTable('Region')->findAll();
+  }
+  
+  public function executeFilter($request) {
+    $form = new FilterByCategoryOrRegionForm();
+
+    if ($request->isMethod('post'))
+    {
+      $form->bind($request->getParameter($form->getName()),$request->getFiles($form->getName()));
+      if ($form->isValid())
+      {
+        $url = '';
+        if ($form->getValue('regions')) {
+          $url = 'region='.$form->getValue('regions');
+        }
+        if ($form->getValue('categories')) {
+          $url = 'categories='.$form->getValue('categories');
+        }
+        $this->redirect('content/list?title=filter&'.$url);
+      }
+    }
+    elseif ($request->getParameter('q')) {
+      $this->redirect('content/list?q='.$request->getParameter('q'));
+    }
+    $this->redirect('content/list?title=filter');
   }
   
   /*public function executeAddOk($request) {

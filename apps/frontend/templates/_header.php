@@ -25,8 +25,9 @@
             </form>
           </li>
           <li class="search">
-            <form action="#" class="misc misc-search">
+            <form action="<?php echo url_for ('content/filter') ?>" method="get" class="misc misc-search">
               <input name="q" />
+              <button></button>
             </form>
           </li>
         </ul>

@@ -7,7 +7,7 @@
  */
 class ContentTable extends Doctrine_Table
 {
-  var $inheritedClasses = array('GovermentNew','CitizenProposal','GovermentProposal','GovermentConsultation','Workshop','CitizenAction');
+  var $inheritedClasses = array('gn'=>'GovermentNew','cp'=>'CitizenProposal','gp'=>'GovermentProposal','gc'=>'GovermentConsultation','w'=>'Workshop','ca'=>'CitizenAction');
   /**
    * Returns an instance of this class.
    *
@@ -37,7 +37,7 @@ class ContentTable extends Doctrine_Table
     return $q;
   }
   
-  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null) {
+  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = null) {
     $sql = '';
     $selectFieldsQuery = self::getColumns();
     $select = '';
@@ -79,7 +79,11 @@ class ContentTable extends Doctrine_Table
     if (!$categories && !$regions) {
       foreach ($inheritedClasses as $key=>$class) {
         if ($key) $sql .= ' UNION ';
-        $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().') ';
+        $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName();
+        if ($where) {
+          $sql .= ' WHERE '.$where;
+        }
+        $sql .= ') ';
       }
     }
     else {
@@ -90,7 +94,11 @@ class ContentTable extends Doctrine_Table
             $first = false;
           }
           else $sql .= ' UNION ';
-          $sql .= "(SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().' where id IN ('.implode(',',$subQuery[$class]).'))';
+          $sql .= "(SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().' where id IN ('.implode(',',$subQuery[$class]).')';
+          if ($where) {
+            $sql .= ' AND '.$where;
+          }
+          $sql .= ') ';
         }
       }
       if ($first) $sql = "SELECT 'Content' as class".$select.' FROM content ';
