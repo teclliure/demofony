@@ -2,10 +2,10 @@
         <?php echo link_to ('&nbsp;','@homepage',array('class'=>'logo misc misc-logo'))?>
         <ul>
           <li class="link">
-            <a href="#"><?php echo __('Last') ?></a>
+            <a href="<?php echo url_for('content/list?title=last') ?>"><?php echo __('Last') ?></a>
           </li>
           <li class="link">
-            <a href="#"><?php echo __('More viewed') ?></a>
+            <a href="<?php echo url_for('content/list?title=more_viewed') ?>"><?php echo __('More viewed') ?></a>
           </li>
           
           <li class="filter">

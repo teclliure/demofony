@@ -37,31 +37,86 @@ class ContentTable extends Doctrine_Table
     return $q;
   }
   
-  public function getAll($class = null, $limit = null, $offset = null) {
+  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null) {
     $sql = '';
-    $selectFieldsQuery = Doctrine::getTable('Content')->getColumns();
+    $selectFieldsQuery = self::getColumns();
     $select = '';
     foreach ($selectFieldsQuery as $key=>$selectField) {
       $select .= ','.$key;
     }
-    foreach ($this->inheritedClasses as $key=>$class) {
-      if ($key) $sql .= ' UNION ';
-      $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().')';
-    }
-
-    $conn = Doctrine_Manager::connection();
-    $pdo = $conn->execute($sql.' order by created_at');
-    $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
-    $items = $pdo->fetchAll();
     
-    $objects = array();
-    foreach ($items as $item) {
-      $class = $item['class'];
-      unset ($item['class']);
-      $object = new $class;
-      $object->fromArray($item);
-      $objects[] = $object;
+    if (!$inheritedClasses) $inheritedClasses = $this->inheritedClasses;
+    
+    $subQueryCat = array();
+    if ($categories) {
+      $ccs = Doctrine_core::getTable('ContentHasCategory')->createQuery('cc')->whereIn('cc.category_id',(array)$categories)->andWhereIn('cc.type',$inheritedClasses)->orderBy('cc.type')->execute();
+      foreach ($ccs as $cc) {
+        if (!isset($subQueryCat[$cc->getType()])) $subQueryCat[$cc->getType()] = array();
+        $subQueryCat[$cc->getType()][$cc->getContentId()] = $cc->getContentId();
+      }
     }
-    return $objects;
+    
+    $subQueryReg = array();
+    if ($regions) {
+      $crs = Doctrine_core::getTable('ContentHasRegion')->createQuery('cr')->whereIn('cr.region_id',(array)$regions)->andWhereIn('cr.type',$inheritedClasses)->orderBy('cr.type')->execute();
+      foreach ($crs as $cr) {
+        if (!isset($subQueryReg[$cr->getType()])) $subQueryReg[$cr->getType()] = array();
+        $subQueryReg[$cr->getType()][$cr->getContentId()] = $cr->getContentId();
+      }
+    }
+    
+    if ($regions && $categories) {
+      //$subQuery = array_intersect_assoc($subQueryCat,$subQueryReg);
+      $subQuery = $this->array_intersect_assoc_recursive($subQueryCat,$subQueryReg);
+    }
+    elseif ($categories) {
+      $subQuery = $subQueryCat;
+    }
+    elseif ($regions) {
+      $subQuery = $subQueryReg;
+    }
+    
+    if (!$categories && !$regions) {
+      foreach ($inheritedClasses as $key=>$class) {
+        if ($key) $sql .= ' UNION ';
+        $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().') ';
+      }
+    }
+    else {
+      $first = true;
+      foreach ($inheritedClasses as $key=>$class) {
+        if (isset($subQuery[$class])) {
+          if ($first) {
+            $first = false;
+          }
+          else $sql .= ' UNION ';
+          $sql .= "(SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().' where id IN ('.implode(',',$subQuery[$class]).'))';
+        }
+      }
+      if ($first) $sql = "SELECT 'Content' as class".$select.' FROM content ';
+    }
+    
+    if ($order) {
+      $sql .= ' '.$order;
+    }
+    else {
+      $sql .= ' ORDER BY created_at DESC';
+    }
+    return $sql;
+  }
+  
+  protected function array_intersect_assoc_recursive($arr1, $arr2) {
+    if (!is_array($arr1) || !is_array($arr2)) {
+      if ($arr1 == $arr2) {
+        return $arr1;
+      }
+      else return null;
+    }
+    $commonkeys = array_intersect_assoc($arr1, $arr2);
+    $ret = array();
+    foreach ($commonkeys as $key=>$value) {
+        $ret[$key] = $this->array_intersect_assoc_recursive($arr1[$key], $arr2[$key]);
+    }
+    return $ret;
   }
 }

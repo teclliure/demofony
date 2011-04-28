@@ -330,3 +330,21 @@ ContentHasCategory:
     content_id: 1
     category_id: 2
     type: GovermentConsultation
+    
+ContentHasRegion:
+  cr_1:
+    content_id: 1
+    region_id: 1
+    type: GovermentNew
+  cr_2:
+    content_id: 1
+    region_id: 1
+    type: GovermentConsultation
+  cr_3:
+    content_id: 2
+    region_id: 1
+    type: GovermentConsultation
+  cr_4:
+    content_id: 1
+    region_id: 2
+    type: GovermentConsultation

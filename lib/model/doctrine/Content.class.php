@@ -120,4 +120,8 @@ class Content extends BaseContent
     }
     return $objects;
   }
+  
+  public function getStrippedBody($length = 255) {
+    return substr($this->getBody(),0,$length). ' ...';
+  }
 }

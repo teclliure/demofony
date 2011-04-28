@@ -1,5 +1,5 @@
 <?php use_helper ('Date') ?>
-<span class="icon icon-pin_<?php echo strtoupper($action->getColor()) ?>"></span>
+<span class="icon icon-pin_<?php echo $action->getColor() ?>"></span>
 <div class="col1">
     <div class="img"></div>
     <div class="img"><img src="<?php echo $action->getSfGuardUser()->getProfile()->getImageSrcWithDefault('image', 'thumb')?>" alt="profile_image" /></div>

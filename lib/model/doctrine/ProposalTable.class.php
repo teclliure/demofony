@@ -7,6 +7,7 @@
  */
 class ProposalTable extends ContentTable
 {
+  public $inheritedClasses = array('CitizenProposal','GovermentProposal','GovermentConsultation');
     /**
      * Returns an instance of this class.
      *
@@ -60,22 +61,4 @@ class ProposalTable extends ContentTable
     return ($atime > $btime) ? +1 : -1;
   }
   
-  public function getSqlUnion() {
-    $inheritedClasses = array('CitizenProposal','GovermentProposal','GovermentConsultation');
-    $sql = '';
-    $selectFieldsQuery = Doctrine::getTable('Proposal')->getColumns();
-    $select = '';
-    foreach ($selectFieldsQuery as $key=>$selectField) {
-      $select .= ','.$key;
-    }
-    foreach ($inheritedClasses as $key=>$class) {
-      if ($key) $sql .= ' UNION ';
-      $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName();
-      if ($class == get_class($this)) {
-        $sql .= ' where id != '.$this->getId();
-      }
-      $sql .= ')';
-    }
-    return $sql;
-  }
 }

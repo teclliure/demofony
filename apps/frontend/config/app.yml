@@ -14,16 +14,16 @@ all:
           image:
             ratio:      1.5
             sizes:
-              thumb:    { width: 250 }
-              main:     { width: 675 }
+              thumb:    { width: 160 }
+              main:     { width: 210 }
       SfGuardUserProfile:
         directory:    images/user
         images:
           image:
             ratio:      1
             sizes:
-              thumb:    { width: 90 }
-              main:     { width: 300 }
+              thumb:    { width: 50, height: 40 }
+              main:     { width: 120, height: 115 }
             preview:   thumb
   sfImageTransformPlugin:
     default_adapter: GD

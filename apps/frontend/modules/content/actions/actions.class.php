@@ -7,6 +7,7 @@ class contentActions extends sfActions {
     $this->content = $table->findOneBy('slug',$request->getParameter('slug'));
     $this->forward404Unless($this->content);
     $this->forward404Unless($this->content->getActive());
+    $this->content->addView();
   }
   
   public function executeSelectContentType($request) {
@@ -57,6 +58,43 @@ class contentActions extends sfActions {
         // $this->redirect('content/addedOk?class='.$this->class.'&id='.$object->getId());
       }
     }
+  }
+  
+  public function executeList($request) {
+    if ($request->getParameter('title')) {
+      $this->title = $request->getParameter('title');
+    }
+    else {
+      $this->title = 'last';
+    }
+    $order = null;
+    if ($this->title == 'more_viewed') {
+      $order = 'ORDER BY views DESC';
+    }
+    $type = null;
+    if ($request->getParameter('type')) {
+      $type=array($request->getParameter('type'));
+    }
+    $categories = null;
+    if ($request->getParameter('category')) {
+      $categories=array($request->getParameter('category'));
+    }
+    $regions = null;
+    if ($request->getParameter('region')) {
+      $regions=array($request->getParameter('region'));
+    }
+    $sql = Doctrine_Core::getTable('Content')->getSqlUnion($order,$type,$categories,$regions);
+    $this->pager = new sfPdoUnionPager ('Content',6);
+    $this->pager->setSql($sql);
+    $this->pager->setPage($request->getParameter('page',1));
+    $this->pager->init();
+    
+    if ($request->isXmlHttpRequest()) {
+      return $this->renderPartial('content/list',array('pager'=>$this->pager,'title'=>$this->title));
+    }
+    
+    $this->categories = Doctrine_core::getTable('Category')->findAll();
+    $this->regions = Doctrine_core::getTable('Region')->findAll();
   }
   
   /*public function executeAddOk($request) {
