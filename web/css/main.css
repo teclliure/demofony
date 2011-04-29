@@ -1,6 +1,6 @@
   /* Body */
 
-  body{font-size:12px; font-family:"Trebuchet MS", Arial, Verdana; background:#FCFBF7 url(../img/bg.jpg) repeat-x 0 0;}
+  body{font-size:12px; font-family:"Trebuchet MS", Arial, Verdana; background:#FCFBF7 url(../images/bg.jpg) repeat-x 0 0;}
   a{color:#194A96; text-decoration:none;}
   a:hover{text-decoration:underline;}
 
@@ -38,9 +38,9 @@
   .img{ overflow:hidden; background-image:url(../images/no-pic.gif); background-repeat:no-repeat; background-position:50% 50%;}
   .profile{ background-image:url(../images/no-profile.gif);}
   
-  .loading{ background-image:url(../images/loading.gif); background-repeat:no-repeat; background-position:50% 50%;}
+  .loading{ background-image:url(../images/loading.gif); background-repeat:no-repeat; background-position:50% 50%;min-height:30px;}
   .loading.alone{min-height:30px; width:auto;}
-
+  .ui-tabs-panel.loading { background-image:url(../images/loading.gif); background-repeat:no-repeat; background-position:50% 50%; z-index: 2; }
   /* Pagina */
   
   #container{background:#fff; padding:0 15px 0 15px; box-shadow:0 2px 20px rgba(0,0,0,.5); width:980px; margin:auto auto;}
@@ -178,26 +178,26 @@
   .result.color{background:#f3f3f3;}
   
   .comment{padding:1px; margin-bottom:10px; border-bottom:1px dotted #666; position:relative; min-height:110px;}
-    .comment:last-child{border:none;}
-    .comment a{text-decoration:none;}
-    .comment h1{margin-bottom:10px; font-style:italic; font-size:14px; font-weight:bold; color:#194A96;}
-    .comment p.info{color:#666; font-size:11px; margin-bottom:10px;}
-    .comment div.content{background-color:#ECEDF0; padding:10px 10px 20px 10px; position:relative;}
-    .comment span.quote{color:#fff; font-family:Helvetica; font-weight:bold; font-size:220px; position:absolute; display:block; z-index:1;}
-    .comment span.quote.quote-left{left:0; top:-1px;}
-    .comment span.quote.quote-right{right:0; bottom:-1px;}
-    .comment div.left{position:absolute; top:10px; left:10px; z-index:2; width:120px;}
-    .comment div.left h2{font-weight:bold; color:#194A96; margin-bottom:2px;}
-    .comment div.left p.date{font-size:11px; color:#666; margin-bottom:10px;}
-    .comment div.left p.opinion{color:#666; text-transform:uppercase; font-style:italic;}
-    .comment div.left p.opinion strong{color:#BD9C3F;}
-    .comment div.right{margin-left:130px;}
-    .comment div.footer{margin-top:5px;}
-    .comment div.footer a.opino{padding:5px 8px 5px 8px; background-color:#7E8A8F;}
-    .comment div.text{margin-bottom:15px; margin-right:100px; position:relative;}
-    .comment div.footer{position:relative; margin-right:100px;}
-    .comment div.footer div.stats{position:absolute; right:0; top:0;}
-    .comment div.footer div.stats strong{margin-left:10px;}
+  .comment:last-child{border:none;}
+  .comment a{text-decoration:none;}
+  .comment h1{margin-bottom:10px; font-style:italic; font-size:14px; font-weight:bold; color:#194A96;}
+  .comment p.info{color:#666; font-size:11px; margin-bottom:10px;}
+  .comment div.content{background-color:#ECEDF0; padding:10px 10px 20px 10px; position:relative; min-height: 82px;}
+  .comment span.quote{color:#fff; font-family:Helvetica; font-weight:bold; font-size:220px; position:absolute; display:block; z-index:1;}
+  .comment span.quote.quote-left{left:0; top:-1px;}
+  .comment span.quote.quote-right{right:0; bottom:-1px;}
+  .comment div.left{position:absolute; top:10px; left:10px; z-index:2; width:120px;}
+  .comment div.left h2{font-weight:bold; color:#194A96; margin-bottom:2px;}
+  .comment div.left p.date{font-size:11px; color:#666; margin-bottom:10px;}
+  .comment div.left p.opinion{color:#666; text-transform:uppercase; font-style:italic;}
+  .comment div.left p.opinion strong{color:#BD9C3F;}
+  .comment div.right{margin-left:130px;}
+  .comment div.footer{margin-top:5px;}
+  .comment div.footer a.opino{padding:5px 8px 5px 8px; background-color:#7E8A8F;}
+  .comment div.text{margin-bottom:15px; margin-right:100px; position:relative;}
+  .comment div.footer{position:relative; margin-right:100px;}
+  .comment div.footer div.stats{position:absolute; right:0; top:0;}
+  .comment div.footer div.stats strong{margin-left:10px;}
 
     /* Pagina: HOME */
   
@@ -259,20 +259,20 @@
     #perfil #main ul li:first-child{border:none;}
     #perfil #main ul li a{display:block; text-transform:uppercase;}
     
-    #perfil div.featured{padding:12px; background:url(../images/deg.jpg) repeat-x top; margin-bottom:10px; border-bottom:1px dotted #000;}
-    #perfil div.featured-comment{padding:10px; border-bottom:1px solid #D2DAE9;}
-    #perfil div.featured-comment:last-child{border:none;}
-    #perfil div.featured-comment div.img{background-color:white; padding:2px; border:1px solid #ccc; width:50px; height:45px; float:left;}
-    #perfil div.featured-comment div.content{margin-left:70px; padding-left:10px; border-left:1px solid #ccc;}
-    #perfil div.featured-comment h1{color:#000; margin-bottom:12px;}
-    #perfil div.featured-comment h1 span{font-size:11px; color:#999;}
-    #perfil div.featured-comment div.text{font-style:italic; font-size:12px; color:#BD9C3F; font-weight:bold; line-height:15px;}
-    #perfil form.add-comment{margin-bottom:10px;}
-    #perfil form.add-comment a{text-decoration:underline; color:#194A96;}
-    #perfil form.add-comment div{text-align:center; margin-top:10px; margin-bottom:10px; display:none;}
-    #perfil form.add-comment div textarea{width:620px; height:70px; display:block; margin-bottom:10px;}
-    #perfil form.add-comment button{margin-right:20px;}
-    #perfil form.add-comment{}
+    div.featured{padding:12px; background:url(../images/deg.jpg) repeat-x top; margin-bottom:10px; border-bottom:1px dotted #000;}
+    div.featured-comment{padding:10px; border-bottom:1px solid #D2DAE9;}
+    div.featured-comment:last-child{border:none;}
+    div.featured-comment div.img{background-color:white; padding:2px; border:1px solid #ccc; width:50px; height:45px; float:left;}
+    div.featured-comment div.content{margin-left:70px; padding-left:10px; border-left:1px solid #ccc;}
+    div.featured-comment h1{color:#000; margin-bottom:12px;}
+    div.featured-comment h1 span{font-size:11px; color:#999;}
+    div.featured-comment div.text{font-style:italic; font-size:12px; color:#BD9C3F; font-weight:bold; line-height:15px;}
+    form.add-comment{margin-bottom:10px;}
+    form.add-comment a{text-decoration:underline; color:#194A96;}
+    form.add-comment div{text-align:center; margin-top:10px; margin-bottom:10px; display:none;}
+    form.add-comment div textarea{width:620px; height:70px; display:block; margin-bottom:10px;}
+    form.add-comment button{margin-right:20px;}
+    form.add-comment{}
     
     /* Pagina: BUSQUEDA */
     

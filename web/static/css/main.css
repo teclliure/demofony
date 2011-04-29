@@ -38,7 +38,9 @@
 	
 	.img{ overflow:hidden; background-image:url(../img/no-pic.gif); background-repeat:no-repeat; background-position:50% 50%;}
 	.profile{ background-image:url(../img/no-profile.gif);}
-
+  
+  .loading{ background-image:url(../img/loading.gif); background-repeat:no-repeat; background-position:50% 50%;}
+  .loading.alone{min-height:30px; width:auto;}
 	/* Pagina */
 	
 	#container{background:#fff; padding:0 15px 0 15px; box-shadow:0 2px 20px rgba(0,0,0,.5); width:980px; margin:auto auto;}
@@ -73,7 +75,7 @@
 	#footer div.misc-logo2{position:absolute; left:30px; top:10px;}
 	#footer div.misc-logo3{position:absolute; right:30px; top:35px;}
 	#footer ul{margin:auto auto auto auto; padding-top:35px; width:600px; text-align:center; border:0 solid red;}
-	#footer ul li{margin:0 5px 0 5px; display:inline-block;ÁÁÁ}
+	#footer ul li{margin:0 5px 0 5px; display:inline-block;ï¿½ï¿½ï¿½}
 	#footer ul li a{color:#fff; text-decoration:none; text-shadow:2px 2px 2px rgba(0,0,0,.7);}
 	
 	#main div.bar-left{width:670px; float:left;}

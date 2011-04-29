@@ -50,7 +50,7 @@
         <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4da393350f4bddf1"></script>
         <!-- AddThis Button END -->
         </div>
-        
+        <br />
         <?php include_component('comment', 'commentBoxAjax', array('object' => $content)) ?>
         
         <div class="clear"></div>

@@ -18,6 +18,10 @@ class sfGuardUser extends PluginsfGuardUser
     return $num+$num2;
   }
   
+  public function getOpinions() {
+    return Doctrine_core::getTable('Opinion')->createQuery('o')->leftJoin('o.OpinionLike ol')->where('o.user_id = ?',$this->getId())->orWhere('ol.user_id = ?',$this->getId())->execute();
+  }
+  
   public function getNumberComments() {
     return Doctrine_core::getTable('Comment')->createQuery('c')->where('c.user_id = ?',$this->getId())->execute()->count();
   }

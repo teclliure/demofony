@@ -27,7 +27,7 @@ class commentActions extends BaseCommentActions
       //Adding captcha
       $formValues = array_merge( $formValues, array('captcha' => $captcha)  );
     }
-    if( vjComment::isUserBoundAndAuthenticated($this->getUser()) )
+    if(vjComment::isUserBoundAndAuthenticated($this->getUser()) )
     {
       //adding user id
       $formValues = array_merge( $formValues, array('user_id' => $this->getUser()->getGuardUser()->getId() )  );

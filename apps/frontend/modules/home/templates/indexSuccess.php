@@ -75,9 +75,14 @@ $(function() {
           <?php endif; ?>
       </div>
   </div>
-
-  <?php include_partial ('content/news',array('contents'=>$pager_last_news->getResults(), 'pager'=>$pager_last_news)); ?>
- 
+  
+  <div class="box has-title noticias">
+    <h1 class="hdr"><span class="inline icon-news"></span><?php echo __('News') ?></h1>
+    <div id="news_box" class="box-content">
+    <?php include_partial ('content/news',array('contents'=>$pager_last_news->getResults(), 'pager'=>$pager_last_news)); ?>
+    </div>
+  </div>
+  
   <div class="box has-title entrevistas">
       <h1 class="hdr"><span class="inline icon-microphone"></span>E-ntrevistas</h1>
       <div class="box-content">

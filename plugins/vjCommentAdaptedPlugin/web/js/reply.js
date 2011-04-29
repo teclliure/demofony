@@ -6,7 +6,7 @@ function reply(id, value, form_name, form_id){
   document.getElementById(form_name+"_reply_author").value = value;
   document.getElementById("tr_reply_author_"+form_name).style.display = "table-row";
   document.getElementById("tr_reply_author_delete_"+form_name).style.display = "table-row";
-  document.location.href = document.location.toString().split("#")[0]+"#top";
+   // document.location.href = document.location.toString().split("#")[0]+"#top";
 }
 
 function deleteReply(form_name){
