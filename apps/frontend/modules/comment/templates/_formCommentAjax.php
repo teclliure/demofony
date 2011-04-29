@@ -18,7 +18,7 @@ $(document).ready(function()
       //timeout:   3000
   };
   // bind to the form's submit event
-  $('#submit_comment_<?php echo get_class($object->getRawValue()) ?>_form').submit(function() {
+  $('#submit_comment_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>_form').submit(function() {
       $(this).ajaxSubmit(options);
       return false;
   });
@@ -32,8 +32,8 @@ $(document).ready(function()
 </script>
 <div class="form-comment">
 <?php if(vjComment::checkAccessToForm($sf_user) ): ?>
-  <form id="submit_comment_<?php echo get_class($object->getRawValue()) ?>_form" action="<?php echo url_for('comment/formCommentAjax?record_model='.get_class($object->getRawValue()).'&record_id='.$object->getId()) ?>" method="post" name="<?php echo $form->getName() ?>">
-    <table summary="">
+  <form id="submit_comment_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>_form" action="<?php echo url_for('comment/formCommentAjax?record_model='.get_class($object->getRawValue()).'&record_id='.$object->getId()) ?>" method="post" name="<?php echo $form->getName() ?>">
+    <table>
     <?php foreach($form as $id => $f): ?>
       <?php if($id == "reply_author" && $f->getValue()!= ""): ?>
         <?php use_stylesheet("/vjCommentAdaptedPlugin/css/replyTo.min.css", "last") ?>

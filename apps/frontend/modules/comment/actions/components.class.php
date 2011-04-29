@@ -34,4 +34,8 @@ class commentComponents extends BaseCommentComponents
       $this->formReport = new CommentReportForm(null, array('id_comment'  => $this->id_comment,'referer'=>url_for($request->getUri())."#".$this->num));
     }
   }
+  
+  public function executeShowListHtml () {
+    $this->form_name = $this->generateCryptModel();
+  }
 }

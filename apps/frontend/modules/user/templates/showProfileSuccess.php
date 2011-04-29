@@ -8,7 +8,7 @@
                   <div class="user">
                     <h1><?php echo $userProfile->getName() ?></h1>
                     <div>
-                        <p><?php echo __('Opiniones') ?>: <strong><?php echo $userProfile->getNumberOpinions() ?></strong></p>
+                        <p><?php echo __('Opinions') ?>: <strong><?php echo $userProfile->getNumberOpinions() ?></strong></p>
                         <p><?php echo __('Comments') ?>: <strong><?php echo $userProfile->getNumberComments() ?></strong></p>
                         <p><?php echo __('Initiatives') ?>: <strong><?php echo $userProfile->getNumberInitiatives() ?></strong></p>
                         <p><?php echo __('Meetings') ?>: <strong><?php echo $userProfile->getNumberActions() ?></strong></p>
@@ -44,6 +44,7 @@
                 
                 <? if($section == 'opinions'): ?>
                 <div class="opinions">
+                   <?php include_partial('user/opinionsList',array('opinions'=>$userProfile->getOpinions()))?>
                     <?php for($i = 0; $i < 5; $i++): ?>
                     <div class="comment">
                         <h1>Lorem ipsum this is a test</h1>
@@ -104,12 +105,12 @@
                 
                 <? if($section == 'initiatives'): ?>
                 <div class="iniciatives">
-                  <?php include_partial('content/initiativesList',array('initiatives'=>$userProfile->getInitiatives()))?>
+                  <?php include_partial('content/initiativesList',array('contents'=>$userProfile->getInitiatives()))?>
                 </div>
                 <? endif; ?>
                 
                 <? if($section == 'actions'): ?>
-                  <?php include_partial('content/actionsList',array('actions'=>$userProfile->getActions()))?>
+                  <?php include_partial('content/actionsList',array('contents'=>$userProfile->getActions()))?>
                 <? endif; ?>
             </div>
         </div>

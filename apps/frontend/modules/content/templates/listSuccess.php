@@ -3,8 +3,18 @@
   $url = preg_replace('/(?:&|(\?))page=[^&]*(?(1)&|)?/i', "$1", $sf_request->getUri());
   if (substr($url,-1) == '?') $url = substr($url, 0, strlen($url)-1);
 ?>
-<div class="bar-left" id="list_results">
-  <?php include_partial ('content/list',array('pager'=>$pager,'title'=>$title,'searchStr'=>$searchStr))?>
+<div class="bar-left">
+  <div class="box no-tabs" >
+    <div class="box-content show">
+      <div class="box-title">
+        <p><?php echo strtoupper(__(str_replace('_',' ', $title))) ?><?php if (isset($searchStr) && $searchStr): ?>: <?php echo $searchStr?><?php endif;?></p>
+        <span><strong><?php echo $pager->getNbResults() ?></strong> <?php echo __('results') ?></span>
+      </div>
+      <div id="list_results">
+        <?php include_partial ('content/list',array('pager'=>$pager,'title'=>$title,'searchStr'=>$searchStr))?>
+      </div>
+    </div>
+  </div>
 </div>
     
 <div class="bar-right">
