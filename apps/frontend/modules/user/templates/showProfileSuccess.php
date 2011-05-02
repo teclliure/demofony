@@ -45,60 +45,6 @@
                 <? if($section == 'opinions'): ?>
                 <div class="opinions">
                    <?php include_partial('user/opinionsList',array('opinions'=>$userProfile->getOpinions()))?>
-                    <?php for($i = 0; $i < 5; $i++): ?>
-                    <div class="comment">
-                        <h1>Lorem ipsum this is a test</h1>
-                        <p class="info">
-                            Propuesto por <a href="#">Concerjería de Igualdad y Empleo</a> el 17 de enero de 2011
-                        </p>
-                        <div class="content">
-                            <div class="left">
-                                <h2>John Doe</h2>
-                                <p class="date">17 de enero de 2011</p>
-                                <p class="opinion">Opinió a <strong>Favor</strong></p>
-                            </div>
-                            <div class="right">
-                                <div class="text">
-                                    sa gasdfsdfi usgdifsau dfuas diufa isdgfisgd iyfg isyd gfysgadyifg adisgfi yogsdioyfag disgfiosdiyfag diyos dfsdf sdf sdaf sdfasdfasdfa
-                                </div>
-                                <div class="footer">
-                                    <a href="#" class="opino button1">Opino el mateix</a>
-                                    <div class="stats">
-                                        <strong>2 <span class="inline icon-thumb-up"></span></strong>
-                                        <strong>2 <span class="inline misc misc-comments"></span></strong>
-                                        <strong><a href="#"><span class="inline icon-banned"></span></a></strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                            <span class="icon-quote2 quote quote-left"></span>
-                          <span class="icon-quote1 quote quote-right"></span>
-                        </div>
-                    </div>
-                    <? if($i == 0): ?>
-                    <div class="featured">
-                    <form class="add-comment">
-                      <a href="#" class="add"><span class="inline icon-add_comment"></span> Añadir un comentario</a>
-                      <div>
-                        <textarea></textarea>
-                        <button type="submit" class="button1">Comentar</button>
-                        <a href="#" class="cancel">Cancelar</a>
-                      </div>
-                    </form>
-                    <?php for($i = 0; $i < 2; $i++): ?>
-                    <div class="featured-comment">
-                      <div class="img profile"></div>
-                      <div class="content">
-                        <h1>John Doe II <span>- 23 de marzo de 2011</span></h1>
-                        <div class="text">
-                          Lorem ipsum pisum lorem ipus ipsum pisum lorem ipus ipsum pisum lorem ipus lorem ipus ipsum pisum lorem ipus ipsum pisum lorem ipus.
-                        </div>
-                      </div>
-                    </div>
-                     <? endfor; ?>
-                  </div>
-                    <? endif; ?>
-                    <? endfor; ?>
                 </div>
                 
                 <? endif; ?>
