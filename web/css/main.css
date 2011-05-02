@@ -41,6 +41,13 @@
   .loading{ background-image:url(../images/loading.gif); background-repeat:no-repeat; background-position:50% 50%;min-height:30px;}
   .loading.alone{min-height:30px; width:auto;}
   .ui-tabs-panel.loading { background-image:url(../images/loading.gif); background-repeat:no-repeat; background-position:50% 50%; z-index: 2; }
+  
+  /* Alerts */
+	
+  .alert{padding:8px; margin-bottom:10px; border-radius:5px; color:#000;}
+  .error{background:#EBCBC8; border:1px solid #C94743;}
+  .success{background:#D5EBA3; border:1px solid #669900;}
+  
   /* Pagina */
   
   #container{background:#fff; padding:0 15px 0 15px; box-shadow:0 2px 20px rgba(0,0,0,.5); width:980px; margin:auto auto;}
