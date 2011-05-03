@@ -7,6 +7,7 @@ $(function() {
         {
             $(this).load(login_url);
         },
+        draggable: false,
         height: 400,
         width: 600,
         title: login_title
@@ -26,6 +27,7 @@ $(function() {
       {
           $(this).load(select_content_url);
       },
+      draggable: false,
       height: 400,
       width: 400,
       title: select_content_title

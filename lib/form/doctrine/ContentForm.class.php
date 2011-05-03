@@ -12,7 +12,7 @@ class ContentForm extends BaseContentForm
 {
   public function configure()
   {
-    unset($this['created_at'],$this['updated_at'],$this['slug']);
+    unset($this['created_at'],$this['updated_at'],$this['slug'],$this['views']);
     $this->setWidget('latitude',new sfWidgetFormInputHidden());
     $this->setWidget('longitude',new sfWidgetFormInputHidden());
     $this->setWidget('gmap', new sfWidgetFormGMap(array(
@@ -34,6 +34,9 @@ class ContentForm extends BaseContentForm
     $this->setWidget('regions', new sfWidgetFormDoctrineChoice(array('multiple' => true,'expanded'=>true, 'model' => 'Region')));
     $this->setValidator('categories', new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Category', 'required' => false)));
     $this->setValidator('regions', new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Region', 'required' => false)));
+    
+    $this->widgetSchema->setHelp('video','You can include a URL from a YouTUbe video');
+    $this->widgetSchema->setHelp('gmap','You can click on map or search a location to geolocate the content');
   }
 
   public function updateDefaultsFromObject()

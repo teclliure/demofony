@@ -4,7 +4,12 @@ class FrontendCitizenProposalForm extends CitizenProposalForm {
   public function configure()
   {
     parent::configure();
-    unset($this['active'],$this['user_id'],$this['categories_list'],$this['regions_list']);
+    unset($this['active'],$this['user_id'],$this['categories'],$this['regions']);
+    
+    $decorator = new sfWidgetFormSchemaFormatterFrontend($this->widgetSchema, $this->validatorSchema);
+    $this->widgetSchema->addFormFormatter('custom', $decorator);
+    $this->widgetSchema->setFormFormatterName('custom');
+    
   }
   
   protected function doUpdateObject($values)
