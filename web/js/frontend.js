@@ -32,22 +32,6 @@ $(function() {
 			}
 		}).dialog("open");
 	})
-	
-	$("#container li.user a").click(function(){
-		$.get('signup.php', function(data) {
-			var dialog = $(data).appendTo("body").dialog({
-				autoOpen: false,
-				modal: true,
-				width: 450,
-				dialogClass: 'dialog-modal',
-				draggable: false,
-				open: function(){
-					$(this).find("input:first").focus();
-				}
-			}).dialog("open");
-		});
-		return false;
-	})
   */
     
   if ($(".select_content").length){
