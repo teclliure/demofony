@@ -2,9 +2,8 @@
       <div id="top" class="misc misc-top-bar">
         <ul class="tools">
           <li class="social">
-            <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-            <fb:like href="<?php echo url_for ('@homepage',true) ?>" send="false" layout="button_count" width="40" show_faces="false" font=""></fb:like>
-            <a href="http://twitter.com/share" class="twitter-share-button misc misc-tw" data-url="<?php echo url_for ('@homepage',true) ?>" data-count="none" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <a class="misc misc-fb" href="#"></a>
+            <a class="misc misc-tw" href="#"></a>
           </li>
           <li class="user">
           <?php if ($sf_user->isAuthenticated()): ?>

@@ -6,10 +6,11 @@ $(function() {
         open: function ()
         {
             $(this).load(login_url);
+            $(this).find("input:first").focus();
         },
         draggable: false,
-        height: 400,
-        width: 600,
+        width: 450,
+        dialogClass: 'dialog-modal',       
         title: login_title
     });
      
@@ -58,8 +59,8 @@ $(function() {
           $(this).load(select_content_url);
       },
       draggable: false,
-      height: 400,
-      width: 400,
+      width: 200,
+      dialogClass: 'dialog-modal',
       title: select_content_title
     });
      

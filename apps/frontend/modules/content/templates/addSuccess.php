@@ -8,6 +8,8 @@
       <div class="box-title color1">
         <p><?php echo __('Add your') ?> <?php echo sfInflector::humanize(sfInflector::underscore($class)) ?></p>
       </div>
+      <?php echo $form->renderGlobalErrors() ?>
+      <?php echo $form->renderHiddenFields() ?>
       <?php echo $form['title']->renderRow(array('class'=>'wide')) ?>
       <?php echo $form['body']->renderRow(array('class'=>'wide')) ?>
       <?php if (isset($form['tip'])) echo $form['tip']->renderRow(array('class'=>'wide')) ?>

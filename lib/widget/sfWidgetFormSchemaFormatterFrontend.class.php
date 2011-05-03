@@ -37,7 +37,6 @@ class sfWidgetFormSchemaFormatterFrontend extends sfWidgetFormSchemaFormatter
   public function generateLabel($name, $attributes = array())
   {
     $labelName = $this->generateLabelName($name);
-    $labelName = strtoupper($labelName).':';
     return $this->widgetSchema->renderContentTag('span', $labelName, $attributes);
   }
   

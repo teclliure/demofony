@@ -11,8 +11,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions {
       return $this->renderText('User already logged in');
     }
 
-    $class = sfConfig::get('app_sf_guard_plugin_signin_form', 'sfGuardFormSignin');
-    $this->form = new $class();
+    $this->form = new sfGuardFormSigninFrontend();
     // if we have been forwarded, then the referer is the current URL
     // if not, this is the referer of the current request
     $user->setReferer($this->getContext()->getActionStack()->getSize() > 1 ? $request->getUri() : $request->getReferer());

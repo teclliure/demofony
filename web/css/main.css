@@ -357,19 +357,18 @@
   
   /* --- Signup Form --- */
   
-  #access-box{}
-  #access-box div.column{float:left; width:200px; color:#666; line-height:15px;}
-  #access-box div.column.margin{margin-right:10px;}
-  #access-box form label{margin-bottom:10px; font-weight:bold; display:block;}
-  #access-box form label input{width:170px; display:block; margin-top:5px;}
-  #access-box form div{margin-bottom:10px; line-height:15px;}
-  #access-box div.signup p{margin-bottom:15px;}
-  #access-box div.signup form{display:none;}
-  #access-box div.login form.remember{display:none;}
+  #login_dialog{}
+  #login_dialog div.column{float:left; width:200px; color:#666; line-height:15px;}
+  #login_dialog div.column.margin{margin-right:10px;}
+  #login_dialog form label{margin-bottom:10px; font-weight:bold; display:block;}
+  #login_dialog form label input{width:170px; display:block; margin-top:5px;}
+  #login_dialog form div{margin-bottom:10px; line-height:15px;}
+  #login_dialog div.signup p{margin-bottom:15px;}
+  #login_dialog div.signup form{display:none;}
+  #login_dialog div.login form.remember{display:none;}
   
-  #modal-accio{display:none;}
-  #modal-accio a{display:block; padding:5px; margin:0 20px 10px 20px;}
-  
+  #select_content{display:none;}
+  #select_content a{display:block; padding:5px; margin:0 20px 10px 20px;}
   
   /* --- MODAL --- */
 	
