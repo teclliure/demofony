@@ -1,4 +1,4 @@
-localhost/eivi$(function() {
+$(function() {
   if ($(".login_opener").length){
     $("#login_dialog").dialog({
         autoOpen: false,
