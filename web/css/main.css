@@ -313,7 +313,7 @@
     #form-signup label textarea{width:600px;}
     #form-signup label input.address{width:383px;}
     #form-signup label div.img{width:180px; height:200px;border:1px solid #666; margin:15px auto 0 auto;}
-    #form-signup form button{margin-left:80px;}
+    #form-signup button{margin-left:80px;}
     #form-signup div.line{margin-bottom:15px; border-bottom:1px solid #ccc;}
     
     /* Pagina: FORM INICIATIVAS */
