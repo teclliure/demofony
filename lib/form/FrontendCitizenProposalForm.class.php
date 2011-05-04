@@ -9,7 +9,6 @@ class FrontendCitizenProposalForm extends CitizenProposalForm {
     $decorator = new sfWidgetFormSchemaFormatterFrontend($this->widgetSchema, $this->validatorSchema);
     $this->widgetSchema->addFormFormatter('custom', $decorator);
     $this->widgetSchema->setFormFormatterName('custom');
-    
   }
   
   protected function doUpdateObject($values)

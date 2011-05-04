@@ -1,4 +1,15 @@
 <?php use_helper('I18N') ?>
-<h1><?php echo __('Register', null, 'sf_guard') ?></h1>
+<div class="box no-tabs no-margin">
+  <div class="box-content show">
 
-<?php echo get_partial('user/multipageForm', array('form' => $form)) ?>
+    <div class="box-title">
+      <p><?php echo __('Register', null, 'sf_guard') ?></p>
+    </div>
+    
+    <div class="">
+      <?php echo get_partial('user/multipageForm', array('form' => $form)) ?>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
