@@ -27,7 +27,8 @@ class FrontendOpinionForm extends OpinionForm {
           $group = Doctrine::getTable('OpinionPossibilityGroup')->findOneBy('slug',$config['group']);
           if ($group) {
             $query = Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$group->getId());
-            $this->widgetSchema['opinion_possibility_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibility'), 'add_empty' => false,'query'=>$query));
+            if ($query->execute()->count() == 1) unset($this['opinion']);
+            $this->widgetSchema['opinion_possibility_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibility'), 'expanded'=>true, 'add_empty' => false,'query'=>$query));
           
             return true;
           }

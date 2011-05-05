@@ -1,5 +1,10 @@
 <script>
-$('#opinions_list').load('<?php echo url_for('opinion/list?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>');
+if ($('#opinions_list').length) $('#opinions_list').load('<?php echo url_for('opinion/list?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>');
 </script>
-
-<h3><?php echo __('Opinion correctly submited') ?></h3>
+<div class="form-opinate box color1 no-tabs sign" id="form_opinate_Workshop_1">
+  <span class="icon-box-arrow"></span>
+  <div class="box-content show">
+    <div class="hdr"><span class="icon-ficha_accion_header"></span><strong><?php echo __('Participate') ?></strong></div>
+    <div id="alreadyopinated"><?php echo __('Opinion correctly submited') ?></div>
+  </div>
+</div>

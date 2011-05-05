@@ -21,7 +21,7 @@
             <?php if($result->getMaxUsersAllowed()): ?><p><strong>Max:</strong> <?php echo $result->getMaxUsersAllowed() ?></p><?php endif; ?>
         </div>
         <div class="col3">
-          <a href="#" class="button1 enter"><?php echo __('Enter')?></a>
+          <a href="<?php echo url_for('content/show?class='.get_class($result->getRawValue()).'&slug='.$result->getSlug()) ?>" class="button1 enter"><?php echo __('Enter')?></a>
         </div>
         <div class="comments"><span class="misc misc-comments inline"></span><?php echo $result->getNbComments() ?></div>
         <div class="clear"></div>
