@@ -309,15 +309,15 @@
 	
 	/* Pagina: FORM SIGNUP */
 	
-	#form-signup label{float:left; margin-right:15px; text-align:center;}
-	#form-signup label span{text-align:left;}
-	#form-signup label input[type=text], input[type=password], #form-signup label select{width:180px;}
-	#form-signup label textarea{width:600px;}
-	#form-signup label input.address{width:383px;}
-	#form-signup label div.img{width:180px; height:200px;border:1px solid #666; margin:15px auto 0 auto;}
-	#form-signup button{margin-left:80px;}
-	#form-signup div.line{margin-bottom:15px; border-bottom:1px solid #ccc;}
-	#form-signup div.form-toggle-content{margin-left:25px;}
+	#form-profile label{float:left; margin-right:15px; text-align:center;}
+	#form-profile label span{text-align:left;}
+	#form-profile label input[type=text], input[type=password], #form-signup label select{width:180px;}
+	#form-profile label textarea{width:600px;}
+	#form-profile label input.address{width:383px;}
+	#form-profile label div.img{width:180px; height:200px;border:1px solid #666; margin:15px auto 0 auto;}
+	#form-profile button{margin-left:80px;}
+	#form-profile div.line{margin-bottom:15px; border-bottom:1px solid #ccc;}
+	#form-profile div.form-toggle-content{margin-left:25px;}
 	
 	/* Pagina: FORM INICIATIVAS */
 	
