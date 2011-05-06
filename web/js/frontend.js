@@ -33,6 +33,12 @@ $(function() {
 		}).dialog("open");
 	})
   */
+  
+	$("div.box-title a.toggler").click(function(){
+		var $t = $(this);
+		$t.html($t.text() == "-" ? "+" : "-").parents("div.box-title:first").next().toggle();
+		return false;
+	}).filter(".show").click();
     
   if ($(".select_content").length){
     $("#select_content").dialog({
