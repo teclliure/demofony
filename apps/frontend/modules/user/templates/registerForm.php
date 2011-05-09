@@ -165,6 +165,5 @@
 	    </div>
 	    
 	    <div class="clear"></div>
-    
-    </form>
+    </form>     
  
