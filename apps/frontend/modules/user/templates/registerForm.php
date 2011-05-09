@@ -1,5 +1,5 @@
 
-    <form method="post" action="#" class="form" id="profile-profile">
+    <form action="#" class="form" id="profile-profile">
 
 	    <div class="bar-left">
 	    
