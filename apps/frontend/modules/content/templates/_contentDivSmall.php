@@ -5,5 +5,5 @@
 <p class="author"><?php echo ('by')?> <?php echo link_to($content->getSfGuardUser(),'user/showProfile?username='.$content->getSfGuardUser()->getUsername()) ?></p>
 
 <p class="date"><?php echo __('on')?> <?php echo format_date($content->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$content->getCategories()))?></p>
-<div class="comments"><span class="misc misc-comments inline"></span><?php echo ($content->getNbComments() + $content->countOpinions()) ?></div>
+<div class="comments"><span class="misc misc-comments inline"></span><?php echo $content->getNbComments() ?> | <span class="icon-opinions inline"></span><?php echo $content->countOpinions() ?></div>
 <div class="clear"></div>

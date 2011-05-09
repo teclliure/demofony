@@ -23,7 +23,7 @@
         <div class="col3">
           <a href="<?php echo url_for('content/show?class='.get_class($result->getRawValue()).'&slug='.$result->getSlug()) ?>" class="button1 enter"><?php echo __('Enter')?></a>
         </div>
-        <div class="comments"><span class="misc misc-comments inline"></span><?php echo $result->getNbComments() ?></div>
+        <div class="comments"><span class="misc misc-comments inline"></span><?php echo $result->getNbComments() ?> | <span class="icon-opinions inline"></span><?php echo $result->countOpinions() ?></div>
         <div class="clear"></div>
       </div>
       <?php else: ?>
@@ -39,7 +39,7 @@
         <div class="text">
           <?php echo $result->getStrippedBody() ?>
         </div>
-        <div class="comments"><span class="misc misc-comments inline"></span><?php echo $result->getNbComments() ?></div>
+        <div class="comments"><span class="misc misc-comments inline"></span><?php echo $result->getNbComments() ?> | <span class="icon-opinions inline"></span><?php echo $result->countOpinions() ?></div>
         <div class="clear"></div>
       </div>
       <?php endif; ?>

@@ -1,5 +1,5 @@
 <?php use_helper('I18N') ?>
-<a class="modal-close" href="#" onClick="$('#login_dialog').dialog('close'); return false;">X</a>
+<a class="dialog-close" href="#" onClick="$('#login_dialog').dialog('close'); return false;">X</a>
 <div class="signup-box">
   <div class="column margin login">
     <h1 class="modal-title"><?php echo __('Enter') ?></h1>

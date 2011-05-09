@@ -67,7 +67,7 @@ $(function() {
       <div class="box-content">
           <?php if ($sf_user->isAuthenticated()): ?>
             <div class="misc misc-people"></div>
-            <a href="#" class="select_content"><?php echo __('Make your proposal') ?></a>
+            <a href="#" class="select_content button1"><?php echo __('Make your proposal') ?></a>
           <?php else: ?>
             <div class="misc misc-people"></div>
             <p><?php echo __('Do you want participate in create a better <strong>Eivissa</strong>?') ?></p>
