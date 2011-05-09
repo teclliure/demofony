@@ -32,37 +32,45 @@
           <?php echo __('Filter by category') ?>
         </li>
         <?php foreach ($categories as $category):?>
-          <li <?php if ($sf_request->getParameter('category')==$category->getId()): ?>class="on"<?php endif ?>>
+          <?php if ($sf_request->getParameter('category')==$category->getId()): ?>
+          <li class="on">
+            <?php echo $category ?><a href="<?php echo url_for($url1)?>" class="delete">X</a>
+          </li>
+          <?php else: ?>
+          <li>
             <?php echo link_to ($category,$url1.'/category/'.$category->getId()) ?>
           </li>
+          <?php endif ?>
+          
+          
         <?php endforeach; ?>
       </ul>
       
       <?php
+      $classes = array('GovermentNew'=>'News',
+                        'CitizenProposal'=>'Citizen initiatives',
+                        'GovermentProposal'=>'Goverment initiatives',
+                        'GovermentConsultation'=>'Consultations',
+                        'CitizenAction'=>'Citizen actions',
+                        'Workshop'=>'Under demand workshops');
       $url2 = preg_replace('/\/type\/+[a-zA-Z0-9._-]*/i', '', $url);
       ?>
       <ul class="filter">
         <li class="header">
           <?php echo __('Filter by type') ?>
         </li>
-        <li <?php if ($sf_request->getParameter('type')=='GovermentNew'): ?>class="on"<?php endif ?>>
-          <?php echo link_to ('News',$url2.'/type/GovermentNew') ?>
-        </li>
-        <li <?php if ($sf_request->getParameter('type')=='CitizenProposal'): ?>class="on"<?php endif ?>>
-          <?php echo link_to ('Citizen initiatives',$url2.'/type/CitizenProposal') ?>
-        </li>
-        <li <?php if ($sf_request->getParameter('type')=='GovermentProposal'): ?>class="on"<?php endif ?>>
-          <?php echo link_to ('Goverment initiatives',$url2.'/type/GovermentProposal') ?>
-        </li>
-        <li <?php if ($sf_request->getParameter('type')=='GovermentConsultation'): ?>class="on"<?php endif ?>>
-          <?php echo link_to ('Consultations',$url2.'/type/GovermentConsultation') ?>
-        </li>
-        <li <?php if ($sf_request->getParameter('type')=='CitizenAction'): ?>class="on"<?php endif ?>>
-          <?php echo link_to ('Citizen actions',$url2.'/type/CitizenAction') ?>
-        </li>
-        <li <?php if ($sf_request->getParameter('type')=='Workshop'): ?>class="on"<?php endif ?>>
-          <?php echo link_to ('Under demand workshops',$url2.'/type/Workshop') ?>
-        </li>
+        
+        <?php foreach ($classes as $key=>$class): ?>
+          <?php if ($sf_request->getParameter('type')==$key): ?>
+          <li class="on">
+            <?php echo __($class) ?><a href="<?php echo url_for($url2)?>" class="delete">X</a>
+          </li>
+          <?php else: ?>
+          <li>
+            <?php echo link_to (__($class),$url2.'/type/'.$key) ?>
+          </li>
+          <?php endif; ?>
+        <?php endforeach; ?>
       </ul>
       
       <?php
@@ -73,11 +81,15 @@
           <?php echo __('Filter by neighborhood') ?>
         </li>
         <?php foreach ($regions as $region):?>
-          
-          <li <?php if ($sf_request->getParameter('region')==$region->getId()): ?>class="on"<?php endif ?>>
+          <?php if ($sf_request->getParameter('region')==$region->getId()): ?>
+          <li class="on">
+            <?php echo $region ?><a href="<?php echo url_for($url3)?>" class="delete">X</a>
+          </li>
+          <?php else: ?>
+          <li>
             <?php echo link_to ($region,$url3.'/region/'.$region->getId()) ?>
           </li>
-          
+          <?php endif; ?>
         <?php endforeach; ?>
       </ul>
     </div>
