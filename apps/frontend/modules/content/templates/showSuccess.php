@@ -67,21 +67,18 @@
   <div class="bar-right">
     <!-- Caja noticias -->
     <?php include_component('opinion', 'opinate', array('object' => $content)) ?>
+    
+    <?php if($content->hasJoinBox()): ?>
+      <?php include_partial('content/join', array('object' => $content)) ?>
+    <?php endif; ?>
   
     <?php if($content->hasGraphBox()): ?>
-    <div class="box no-tabs">
-      <div class="box-content show">
-      <?php foreach ($content->getPossibilities() as $possibility): ?>
-        <h2><?php echo $possibility ?></h2>
-        <div class="rating"><div class="graphcont"><div class="graph"><strong class="bar" style="width:<?php echo $content->getPossibilityPercent($possibility) ?>%;"></strong></div></div>
-      <?php endforeach; ?>
-      </div>
-    </div>
+      <?php include_partial('content/graph', array('object' => $content)) ?>
     <?php endif; ?>
     
     <?php if($content->hasCountBox()): ?>
+      <?php include_partial('content/count', array('object' => $content)) ?>
     <div class="box no-tabs" id="count_box">
-      
       <div class="box-content show">
         <div class="box-title color2">
           <p><?php echo __('Participation')?></p>

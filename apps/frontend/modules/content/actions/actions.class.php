@@ -43,6 +43,11 @@ class contentActions extends sfActions {
   }
   
   public function executeAdd($request) {
+    $user = $this->getUser();
+    if (!$user->isAuthenticated())
+    {
+      return $this->renderText('You must be registered and logged in to add content');
+    }
     $this->class = $request->getParameter('class');
     $formName = 'Frontend'.$this->class.'Form';
     $this->form = new $formName();
@@ -148,4 +153,36 @@ class contentActions extends sfActions {
       }
     }
   }*/
+  
+  public function executeJoin($request)
+  {
+    $user = $this->getUser();
+    if (!$user->isAuthenticated())
+    {
+      return $this->renderText('You must be registered and logged in to join');
+    }
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $content = $table->findOneBy('id',$request->getParameter('id'));
+    $this->forward404Unless($content);
+    $this->forward404Unless($content->getActive());
+    $this->forward404Unless($content->hasJoinBox());
+    $content->registerUser($this->getUser()->getGuardUser());
+    return $this->renderPartial('content/join',array('object'=>$content));
+  }
+  
+  public function executeUnjoin($request)
+  {
+    $user = $this->getUser();
+    if (!$user->isAuthenticated())
+    {
+      return $this->renderText('You must be registered and logged in to join');
+    }
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $content = $table->findOneBy('id',$request->getParameter('id'));
+    $this->forward404Unless($content);
+    $this->forward404Unless($content->getActive());
+    $this->forward404Unless($content->hasJoinBox());
+    $content->unregisterUser($this->getUser()->getGuardUser());
+    return $this->renderPartial('content/join',array('object'=>$content));
+  }
 }

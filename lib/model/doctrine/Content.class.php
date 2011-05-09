@@ -12,6 +12,8 @@
  */
 class Content extends BaseContent
 {
+  protected $possibilities = false, $possibilitiesSearched = false;
+  
   public function addView() {
     $this->setViews($this->getViews() + 1);
     $this->save();
@@ -125,11 +127,12 @@ class Content extends BaseContent
     return substr($this->getBody(),0,$length). ' ...';
   }
   
+  public function hasJoinBox () {
+    return is_subclass_of($this,'Action');
+  }
+  
   public function hasGraphBox() {
-    // var_dump($this->getPossibilities());
-    // print 'Hola'.$this->getPossibilities()->count();
     if ($this->getPossibilities() && $this->getPossibilities()->count() > 1) {
-      // print 'Hola2';
       return true;
     }
     else return false;
@@ -153,20 +156,28 @@ class Content extends BaseContent
   }
   
   public function getPossibilities() {
-    $className = get_class($this);
-    
-    $data = sfYaml::load(sfConfig::get('sf_root_dir').'/config/opinion.yml');
-    if (isset($data['class'])) {
-      foreach ($data['class'] as $key => $config) {
-        if ($key == $className) {
-          $group = Doctrine::getTable('OpinionPossibilityGroup')->findOneBy('slug',$config['group']);
-          if ($group) {
-            $query = Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$group->getId());
-            return $query->execute();
+    if (!$this->possibilitiesSearched) {
+      $this->possibilitiesSearched = true;
+      $className = get_class($this);
+      
+      $data = sfYaml::load(sfConfig::get('sf_root_dir').'/config/opinion.yml');
+      if (isset($data['class'])) {
+        foreach ($data['class'] as $key => $config) {
+          if ($key == $className) {
+            $group = Doctrine::getTable('OpinionPossibilityGroup')->findOneBy('slug',$config['group']);
+            if ($group) {
+              $query = Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$group->getId());
+              $this->possibilities = $query->execute();
+            }
           }
         }
       }
     }
-    return false;
+    return $this->possibilities;
+  }
+  
+  public function hasRegistered($user) {
+    $query = Doctrine::getTable('ActionHasUser')->createQuery('au')->where('au.type = ?',get_class($this))->andWhere('au.action_id = ?',$this->getId())->andWhere('au.user_id = ?',$user->getId());
+    return $query->count();
   }
 }

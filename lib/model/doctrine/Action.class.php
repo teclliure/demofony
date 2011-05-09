@@ -24,6 +24,21 @@ class Action extends BaseAction
     return $q->execute()->count();
   }
   
+  public function registerUser($user) {
+    $actionUser = new ActionHasUser();
+    $actionUser->setUserId($user->getId());
+    $actionUser->setType(get_class($this));
+    $actionUser->setActionId($this->getId());
+    $actionUser->save();
+  }
+  
+  public function unregisterUser($user) {
+    $query= $this->getUserRegisteredQuery();
+    $query->andWhere('ur.user_id = ?',$user->getId());
+    $actionUser = $query->execute()->getFirst();
+    $actionUser->delete();
+  }
+  
   protected function getUserRegisteredQuery() {
     return Doctrine_Core::getTable('ActionHasUser')->createQuery('ur')->where('ur.action_id = ? ',$this->getId())->andWhere('ur.type = ?',get_class($this));
   }
