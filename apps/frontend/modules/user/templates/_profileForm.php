@@ -2,7 +2,7 @@
 
 <?php include_stylesheets_for_form($form) ?>
 <?php include_javascripts_for_form($form) ?>
-<form action="<?php echo url_for('@profile') ?>" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?> method="post" class="form" id="profile-profile">
+<form action="<?php echo url_for('@profile') ?>" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?> method="post" class="form" id="form-profile">
   <div class="bar-left">
     <div class="box no-tabs no-margin">
       <div class="box-content show">
