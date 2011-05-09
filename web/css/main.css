@@ -422,7 +422,51 @@
 	div.modal_alpha{-webkit-opacity:.4; -moz-opacity:.4; }
 	div.modal_div{-webkit-border-radius:6px; -moz-border-radius:6px; }
 	
+<<<<<<< HEAD
 	/* --- MISC --- */
 	
+=======
+	/* --- Graph --- */
+  .graphcont {
+	padding-top:10px;
+	color:#000;
+	font-weight:700;
+	float:left
+	}
+	
+	.graph {
+	float:left;
+	margin-top:10px;
+	background-color:#cecece;
+	position:relative;
+	width:280px;
+	padding:0
+	}
+	
+	.graph .bar {
+	display:block;
+	position:relative;
+	background-image:url(../images/bargraph.gif);
+	background-position:right center;
+	background-repeat:repeat-x;
+	border-right:#538e02 1px solid;
+	text-align:center;
+	color:#fff;
+	height:25px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:1.9em
+	}
+	
+	.graph .bar span {
+	position:absolute;
+	left:1em
+	}
+  
+  /* --- MISC --- */
+  
+>>>>>>> 8b4e6597dcf216d2c0b7f442f5c4a403470ab0b2
 	#modal-accio{display:none;}
 	#modal-accio a{display:block; padding:5px; margin:0 20px 10px 20px;}
+
+	

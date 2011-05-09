@@ -19,6 +19,6 @@
     <?php if($action->getMaxUsersAllowed()): ?><p><strong>Max:</strong> <?php echo $action->getMaxUsersAllowed() ?></p><?php endif; ?>
 </div>
 <div class="col4">
-  <a href="#" class="button1 enter"><?php echo __('Enter')?></a>
+  <a href="<?php echo url_for('content/show?class='.get_class($action->getRawValue()).'&slug='.$action->getSlug()) ?>" class="button1 enter"><?php echo __('Enter')?></a>
 </div>
 <div class="clear"></div>

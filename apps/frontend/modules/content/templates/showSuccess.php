@@ -56,9 +56,10 @@
         <div class="clear"></div>
         
         
-        <?php include_component('opinion', 'listSelected', array('object' => $content)) ?>
-        
-        <?php include_component('opinion', 'list', array('object' => $content)) ?>
+        <?php if (!is_subclass_of($content->getRawValue(),'Action')): ?>
+          <?php include_component('opinion', 'listSelected', array('object' => $content)) ?>
+          <?php include_component('opinion', 'list', array('object' => $content)) ?>
+        <?php endif;?>
       </div>
     </div>
   </div>
@@ -67,13 +68,29 @@
     <!-- Caja noticias -->
     <?php include_component('opinion', 'opinate', array('object' => $content)) ?>
   
+    <?php if($content->hasGraphBox()): ?>
     <div class="box no-tabs">
       <div class="box-content show">
-      
-        (jquery plugin)
-      
+      <?php foreach ($content->getPossibilities() as $possibility): ?>
+        <h2><?php echo $possibility ?></h2>
+        <div class="rating"><div class="graphcont"><div class="graph"><strong class="bar" style="width:<?php echo $content->getPossibilityPercent($possibility) ?>%;"></strong></div></div>
+      <?php endforeach; ?>
       </div>
     </div>
+    <?php endif; ?>
+    
+    <?php if($content->hasCountBox()): ?>
+    <div class="box no-tabs" id="count_box">
+      
+      <div class="box-content show">
+        <div class="box-title color2">
+          <p><?php echo __('Participation')?></p>
+        </div>
+        <h2><?php echo $content->countOpinions() ?></h2>
+        <?php echo __('supports')?>
+      </div>
+    </div>
+    <?php endif; ?>
   
     <div class="box no-tabs comments-by-area">
       <div class="box-content show">

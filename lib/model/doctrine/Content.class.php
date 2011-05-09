@@ -18,7 +18,7 @@ class Content extends BaseContent
   }
   
   public function hasOpinated($user) {
-    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->where('ol.user_id = ?',$user->getId());
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('ol.user_id = ?',$user->getId());
     $opinionLike = $query->count();
     $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
     $opinion = $query->count();
@@ -32,7 +32,7 @@ class Content extends BaseContent
   }
 
   public function getOpinion($user) {
-    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->where('ol.user_id = ?',$user->getId());
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('ol.user_id = ?',$user->getId());
     $opinion = $query->execute()->getFirst();
     if (!$opinion) {
       $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.user_id = ?',$user->getId());
@@ -123,5 +123,50 @@ class Content extends BaseContent
   
   public function getStrippedBody($length = 255) {
     return substr($this->getBody(),0,$length). ' ...';
+  }
+  
+  public function hasGraphBox() {
+    // var_dump($this->getPossibilities());
+    // print 'Hola'.$this->getPossibilities()->count();
+    if ($this->getPossibilities() && $this->getPossibilities()->count() > 1) {
+      // print 'Hola2';
+      return true;
+    }
+    else return false;
+  }
+  
+  public function hasCountBox() {
+    if ($this->getPossibilities() && $this->getPossibilities()->count() == 1) return true;
+    else return false;
+  }
+  
+  public function countNumPossibilitiesAdded($possibility) {
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.opinion_possibility_id = ?',$possibility->getId())->andWhere('o.object_id = ?',$this->getId());
+    $num = $query->count();
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.opinion_possibility_id = ?',$possibility->getId());
+    $num += $query->count();
+    return $num;
+  }
+  
+  public function getPossibilityPercent($possibility) {
+    return round($this->countNumPossibilitiesAdded($possibility)/$this->countAllOpinions()*100,2);
+  }
+  
+  public function getPossibilities() {
+    $className = get_class($this);
+    
+    $data = sfYaml::load(sfConfig::get('sf_root_dir').'/config/opinion.yml');
+    if (isset($data['class'])) {
+      foreach ($data['class'] as $key => $config) {
+        if ($key == $className) {
+          $group = Doctrine::getTable('OpinionPossibilityGroup')->findOneBy('slug',$config['group']);
+          if ($group) {
+            $query = Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$group->getId());
+            return $query->execute();
+          }
+        }
+      }
+    }
+    return false;
   }
 }
