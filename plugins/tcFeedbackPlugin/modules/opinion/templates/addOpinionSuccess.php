@@ -1,5 +1,7 @@
 <script>
 if ($('#opinions_list').length) $('#opinions_list').load('<?php echo url_for('opinion/list?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>');
+if ($('#count_box').length) $('#count_box').load('<?php echo url_for('opinion/count?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>');
+if ($('#graph_box').length) $('#graph_box').load('<?php echo url_for('opinion/graph?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>');
 </script>
 <div class="form-opinate box color1 no-tabs sign" id="form_opinate_Workshop_1">
   <span class="icon-box-arrow"></span>

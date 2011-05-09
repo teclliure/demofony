@@ -69,4 +69,18 @@ class opinionActions extends sfActions
     $opinionSpam->setUserId($this->getUser()->getGuardUser()->getId());
     $opinionSpam->save();
   }
+  
+  public function executeCount($request)
+  {
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $content = $table->findOneBy('id',$request->getParameter('id'));
+    return $this->renderPartial('opinion/count',array('object'=>$content));
+  }
+
+  public function executeGraph($request)
+  {
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $content = $table->findOneBy('id',$request->getParameter('id'));
+    return $this->renderPartial('opinion/graph',array('object'=>$content));
+  }
 }

@@ -73,20 +73,11 @@
     <?php endif; ?>
   
     <?php if($content->hasGraphBox()): ?>
-      <?php include_partial('content/graph', array('object' => $content)) ?>
+      <?php include_partial('opinion/graph', array('object' => $content)) ?>
     <?php endif; ?>
     
     <?php if($content->hasCountBox()): ?>
-      <?php include_partial('content/count', array('object' => $content)) ?>
-    <div class="box no-tabs" id="count_box">
-      <div class="box-content show">
-        <div class="box-title color2">
-          <p><?php echo __('Participation')?></p>
-        </div>
-        <h2><?php echo $content->countOpinions() ?></h2>
-        <?php echo __('supports')?>
-      </div>
-    </div>
+      <?php include_partial('opinion/count', array('object' => $content)) ?>
     <?php endif; ?>
   
     <div class="box no-tabs comments-by-area">

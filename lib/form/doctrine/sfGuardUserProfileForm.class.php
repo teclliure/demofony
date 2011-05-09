@@ -241,5 +241,7 @@ class sfGuardUserProfileForm extends BasesfGuardUserProfileForm
       'image'=>sfContext::getInstance()->getRequest()->getRelativeUrlRoot().'/images/calendar.png',
       'config' => '{}',
     )));
+    $this->setWidget('categories_list', new sfWidgetFormDoctrineChoice(array('multiple' => true, 'expanded'=>true, 'model' => 'Category')));
+    $this->setWidget('regions_list', new sfWidgetFormDoctrineChoice(array('multiple' => true,'expanded'=>true, 'model' => 'Region')));
   }
 }

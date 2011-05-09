@@ -39,6 +39,7 @@ class userActions extends sfActions {
             $userProfile = $form->getObject();
           }
         }
+        $userProfile->setUsername($userValues['username']);
         $userProfile->setEmailAddress($userValues['email_address']);
         $userProfile->setPassword($userValues['password']);
         $userProfile->save($conn);

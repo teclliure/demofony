@@ -7,22 +7,22 @@
 	    		<div class="box-content show">
 	    
 	    			<div class="box-title color1">
-	    				<p><a href="#" class="toggler show">+</a>Información de registre</p>
+	    				<p><a href="#" class="toggler show">+</a><?php echo __('Register information') ?></p>
 	    			</div>
 	    			
 	    			<div class="hide form-toggle-content">
-	                
-		                <label>	
+	    			        
+		                <label>
 		                	<span>Nom</span>
 		                	<input type="text" name="name" class="wide" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>Cognom</span>
 		                	<input type="text" name="lastname" class="wide" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>El teu Barri</span>
 		                	<select name="neighborhood">
 		                		<option value="">Seleccione</option>
@@ -32,65 +32,65 @@
 		                <div class="clear"></div>
 		                <div class="line"></div>
 		                
-		                <label>	
+		                <label>
 		                	<span>Data de naixement</span>
 		                	<input type="text" name="dob" class="wide calendar" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>Home</span>
 		                	<input type="radio" name="gender" value="m" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>Dona</span>
 		                	<input type="radio" name="gender" value="f" />
 		                </label>
 		                
 		            	<div class="clear"></div>
 		            	
-		            	<label>	
+		            	<label>
 		                	<span>Algo sobre ti</span>
 		                	<textarea name="description" class="wide"></textarea>
 		                </label>
 		                
 		                <div class="clear"></div>
 		                
-		                <label>	
+		                <label>
 		                	<span>Nº Teléfon</span>
 		                	<input type="text" name="phone" class="wide" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>Website</span>
 		                	<input type="text" name="web" class="wide" />
 		                </label>
 		                
 		                <div class="clear"></div>
 		                
-		                <label>	
+		                <label>
 		                	<span>Direcció</span>
 		                	<input type="text" name="address" class="wide address" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>C.P.</span>
 		                	<input type="text" name="zip" class="wide" />
 		                </label>
 						
 						<div class="clear"></div>
 						
-						<label>	
+						<label>
 		                	<span>Localidad</span>
 		                	<input type="text" name="city" class="wide" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>Provincia</span>
 		                	<input type="text" name="state" class="wide" />
 		                </label>
 		                
-						<label>	
+						<label>
 		                	<span>Pais</span>
 		                	<select name="county">
 		                		<option value="">Seleccione</option>
@@ -107,12 +107,12 @@
 	    			
 	    			<div class="hide form-toggle-content">
 	    			
-		    			<label>	
+		    			<label>
 		                	<span>Contraseña actual</span>
 		                	<input type="password" name="current_password" />
 		                </label>
 		                
-		                <label>	
+		                <label>
 		                	<span>Nueva contraseña</span>
 		                	<input type="password" name="current_password" />
 		                </label>
@@ -127,11 +127,11 @@
 	    			
 	    			<div class="hide form-toggle-content">
 	    			
-		    			<label>	 
-		    				<input type="radio" name="suscription" value="1" /> Sí 
+		    			<label>
+		    				<input type="radio" name="suscription" value="1" /> Sí
 		                </label>
 		                
-		                <label>	 
+		                <label>
 		    				<input type="radio" name="suscription" value="0" /> No
 		                </label>
 		                
@@ -139,7 +139,7 @@
 		                
 		        	</div>
 	
-	            </div>    
+	            </div>
 	        </div>
 	    
 	    </div>
@@ -166,5 +166,5 @@
 	    
 	    <div class="clear"></div>
     
-    </form>     
+    </form>
  

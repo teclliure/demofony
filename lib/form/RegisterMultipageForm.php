@@ -13,8 +13,10 @@ class RegisterMultipageForm extends psPageableForm
         //merged name format will be 'form[sample_form][%s]', if $flag equals false
         //otherwise name format will be 'form[%s]'
  
+        $profileForm = new ProfileForm();
+        unset($profileForm['password'],$profileForm['password_again']);
         $this->setUseGlobalNamespace($flag); //must be set before addForm/addForms/setForm/setForms methods call!
         $this->addForm(new RegisterForm(array(), array(), false));//disable csrf protection for all forms except last
-        $this->addForm(new ProfileForm());//form for last page
+        $this->addForm($profileForm);//form for last page
     }
 }
