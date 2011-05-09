@@ -303,7 +303,7 @@
 	#form-taller form div.features{padding-bottom:5px; margin-bottom:5px; border-bottom:1px dashed #ccc;}
 	#form-taller form div.features label{float:left; margin-right:20px; color:#BD9C3F; margin-bottom:0;}
 	#form-taller form div.features label span{display:inline; text-transform:none; color:#BD9C3F;}
-	#form-taller form div.features input{width:120px;}
+	/* #form-taller form div.features input{width:120px;}*/
 	#form-taller form textarea{height:100px;}
 	
 	/* Pagina: FORM SIGNUP */
