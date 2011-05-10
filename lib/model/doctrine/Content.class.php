@@ -180,4 +180,13 @@ class Content extends BaseContent
     $query = Doctrine::getTable('ActionHasUser')->createQuery('au')->where('au.type = ?',get_class($this))->andWhere('au.action_id = ?',$this->getId())->andWhere('au.user_id = ?',$user->getId());
     return $query->count();
   }
+  
+  public function getGmapHtml() {
+    SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
+    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('added').' '.link_to ($this->getTitle(),'content/show?class='.get_class($this).'&slug='.$this->getSlug());
+  }
+  
+  public function getGmapIcon() {
+    return null;
+  }
 }

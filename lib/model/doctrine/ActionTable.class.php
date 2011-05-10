@@ -7,6 +7,9 @@
  */
 class ActionTable extends ContentTable
 {
+    protected $inheritedClasses = array('CitizenAction','Workshop');
+    protected $select = 'id, created_at, views, action_date, active,latitude, longitude';
+    
     /**
      * Returns an instance of this class.
      *

@@ -15,4 +15,10 @@ class Workshop extends BaseWorkshop
   public function getColor() {
     return 'blue';
   }
+  
+  public function getGmapIcon() {
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('Url'));
+
+    return public_path('images/icons/pin_blue.png');
+  }
 }

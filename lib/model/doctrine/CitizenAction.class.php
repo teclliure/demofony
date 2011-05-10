@@ -15,4 +15,10 @@ class CitizenAction extends BaseCitizenAction
   public function getColor() {
     return 'yellow';
   }
+  
+  public function getGmapIcon() {
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('Url'));
+
+    return public_path('images/icons/pin_yellow.png');
+  }
 }
