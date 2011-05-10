@@ -72,6 +72,28 @@ class Content extends BaseContent
     return $numOpinions;
   }
   
+  public function getOpinionsLocated() {
+    $q =  Doctrine::getTable('Opinion')->createQuery('o')
+    ->leftJoin('o.sfGuardUser u')
+    ->leftJoin('u.Profile up')
+    ->where('o.object_class = ?',get_class($this))
+    ->andWhere('o.object_id = ?',$this->getId())
+    ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
+    return  $q->execute();
+  }
+
+  public function getOpinionsLikeLocated() {
+    $q = Doctrine::getTable('OpinionLike')->createQuery('ol')
+    ->leftJoin('ol.Opinion o')
+    ->leftJoin('ol.sfGuardUser u')
+    ->leftJoin('u.Profile up')
+    ->where('o.object_class = ?',get_class($this))
+    ->andWhere('o.object_id = ?',$this->getId())
+    ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
+    
+    return $q->execute();
+  }
+  
   public function getCategories() {
     $query = $this->getCategoriesQuery();
     return $query->execute();
@@ -179,5 +201,25 @@ class Content extends BaseContent
   public function hasRegistered($user) {
     $query = Doctrine::getTable('ActionHasUser')->createQuery('au')->where('au.type = ?',get_class($this))->andWhere('au.action_id = ?',$this->getId())->andWhere('au.user_id = ?',$user->getId());
     return $query->count();
+  }
+  
+  public function getGmapHtml() {
+    SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
+    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('added').' '.link_to ($this->getTitle(),'content/show?class='.get_class($this).'&slug='.$this->getSlug());
+  }
+  
+  public function getGmapIcon() {
+    return null;
+  }
+  
+  public function getGmap() {
+    if ($this->getLatitude() && $this->getLongitude()) {
+      return GMap::loadMap('100%',100,array($this));
+    }
+    else return null;
+  }
+  
+  public function getGmapOpinions() {
+    return GMap::loadMapOpinions('100%',250,$this);
   }
 }

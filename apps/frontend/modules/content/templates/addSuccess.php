@@ -13,6 +13,37 @@
       <?php echo $form['title']->renderRow(array('class'=>'wide')) ?>
       <?php echo $form['body']->renderRow(array('class'=>'wide')) ?>
       <?php if (isset($form['tip'])) echo $form['tip']->renderRow(array('class'=>'wide')) ?>
+      
+      
+      <?php if (is_subclass_of($form, 'ActionForm')): ?>
+      <div class="features">
+        <p class="hdr"><?php echo __('Features') ?></p>
+        <?php echo $form['author']->renderRow() ?>
+        <?php echo $form['location']->renderRow() ?>
+        <div class="clear"></div>
+      </div>
+      
+      <div class="features">
+        <?php echo $form['action_date']->renderRow() ?>
+        <?php if(isset($form['price'])): ?>
+        <?php echo $form['price']->renderRow(array('size'=>3)) ?>
+        <?php endif; ?>
+        <div class="clear"></div>
+      </div>
+      
+      <div class="features">
+        <?php echo $form['register_start_date']->renderRow() ?>
+        <div class="clear"></div><br />
+        <?php echo $form['register_end_date']->renderRow() ?>
+        <div class="clear"></div>
+      </div>
+      
+      <div class="features no-border">
+        <?php echo $form['min_users_allowed']->renderRow(array('size'=>2)) ?>
+        <?php echo $form['max_users_allowed']->renderRow(array('size'=>2)) ?>
+        <div class="clear"></div>
+      </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>

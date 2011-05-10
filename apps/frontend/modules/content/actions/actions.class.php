@@ -8,6 +8,12 @@ class contentActions extends sfActions {
     $this->forward404Unless($this->content);
     $this->forward404Unless($this->content->getActive());
     $this->content->addView();
+    $this->map = $this->content->getGmap();
+    $this->mapOpinions = $this->content->getGmapOpinions();
+    if ($this->map || $this->mapOpinions) {
+      if ($this->map) $this->getResponse()->addJavascript($this->map->getGMapsJSUrl());
+      else $this->getResponse()->addJavascript($this->mapOpinions->getGMapsJSUrl());
+    }
   }
   
   public function executeSelectContentType($request) {

@@ -35,4 +35,12 @@ class PluginOpinion extends BaseOpinion
     return $query->count();
   }
 
+  public function getGmapHtml() {
+    SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
+    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('opinated').' '.$this->__toString();
+  }
+  
+  public function getGmapIcon() {
+    return null;
+  }
 }

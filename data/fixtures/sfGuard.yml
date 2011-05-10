@@ -7,6 +7,9 @@ sfGuardUser:
     password:       admin
     is_super_admin: true
     Groups:         [Group_admin]
+    Profile:
+      latitude: 38.9102
+      longitude: 1.4324
     
   User_test1:
     first_name:     Name

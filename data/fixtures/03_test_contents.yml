@@ -173,6 +173,8 @@ Workshop:
     location: Plaça Major
     min_users_allowed: 10
     max_users_allowed: 30
+    latitude: 38.9102
+    longitude: 1.42
   work_2:
     title: Workshop activo 2
     body: |
@@ -199,6 +201,8 @@ Workshop:
     location: Plaça Major
     min_users_allowed: 10
     max_users_allowed: 30
+    latitude: 38.9102
+    longitude: 1.43
   work_4:
     title: Workshop activo 4
     body: |
@@ -301,6 +305,8 @@ CitizenAction:
     location: Plaça Major
     min_users_allowed: 10
     max_users_allowed: 30
+    latitude: 38.9102
+    longitude: 1.41
 
 VirtualMeeting:
   vm_1:

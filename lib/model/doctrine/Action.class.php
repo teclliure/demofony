@@ -12,6 +12,7 @@
  */
 class Action extends BaseAction
 {
+  
   public function isOpened() {
     if (strtotime($this->getActionDate()) >= time() && (!$this->getMaxUsersAllowed() || ($this->getMaxUsersAllowed() < $this->getNumberUsersRegistered()))) {
       return true;

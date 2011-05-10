@@ -7,7 +7,8 @@
  */
 class ContentTable extends Doctrine_Table
 {
-  var $inheritedClasses = array('GovermentNew','CitizenProposal','GovermentProposal','GovermentConsultation','Workshop','CitizenAction');
+  protected $inheritedClasses = array('GovermentNew','CitizenProposal','GovermentProposal','GovermentConsultation','Workshop','CitizenAction');
+  protected $select = 'id, created_at, views, active, latitude, longitude';
   /**
    * Returns an instance of this class.
    *
@@ -39,7 +40,7 @@ class ContentTable extends Doctrine_Table
   
   public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = null) {
     $sql = '';
-    $select = ',id, created_at, views';
+    $select = $this->select;
     
     if (!$inheritedClasses) $inheritedClasses = $this->inheritedClasses;
     
@@ -75,7 +76,7 @@ class ContentTable extends Doctrine_Table
     if (!$categories && !$regions) {
       foreach ($inheritedClasses as $key=>$class) {
         if ($key) $sql .= ' UNION ';
-        $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName();
+        $sql .= "( SELECT '$class' as class,".$select.' FROM '.Doctrine::getTable($class)->getTableName();
         if ($where) {
           $sql .= ' WHERE '.$where;
         }
@@ -90,14 +91,14 @@ class ContentTable extends Doctrine_Table
             $first = false;
           }
           else $sql .= ' UNION ';
-          $sql .= "(SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().' where id IN ('.implode(',',$subQuery[$class]).')';
+          $sql .= "(SELECT '$class' as class,".$select.' FROM '.Doctrine::getTable($class)->getTableName().' where id IN ('.implode(',',$subQuery[$class]).')';
           if ($where) {
             $sql .= ' AND '.$where;
           }
           $sql .= ') ';
         }
       }
-      if ($first) $sql = "SELECT 'Content' as class".$select.' FROM content ';
+      if ($first) $sql = "SELECT 'Content' as class,".$select.' FROM content ';
     }
     
     if ($order) {
@@ -107,6 +108,24 @@ class ContentTable extends Doctrine_Table
       $sql .= ' ORDER BY created_at DESC';
     }
     return $sql;
+  }
+  
+  public function getObjectsUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = null) {
+    $objects = array();
+    $sql = $this->getSqlUnion($order, $inheritedClasses, $categories, $regions, $where);
+    $conn = Doctrine_Manager::connection();
+    $pdo = $conn->execute($sql);
+    $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
+    $items = $pdo->fetchAll();
+
+    foreach ($items as $item) {
+      $class = $item['class'];
+      unset ($item['class']);
+      $object = new $class;
+      $object->assignIdentifier($item['id']);
+      $objects[] = $object;
+    }
+    return $objects;
   }
   
   protected function array_intersect_assoc_recursive($arr1, $arr2) {

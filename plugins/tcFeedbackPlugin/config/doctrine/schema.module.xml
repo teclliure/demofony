@@ -25,6 +25,8 @@
     <table name="OpinionPossibility" visPositionX="138" visPositionY="231" visSizeX="0" visSizeX2="167" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string"/>
+      <column name="gmap_bubble_color" size="7" type="string"/>
+      <column name="icon" size="255" type="string"/>
       <column name="opinion_possibility_group_id" type="integer"/>
     </table>
     <table name="OpinionPossibilityGroup" visPositionX="162" visPositionY="326" visSizeX="0" visSizeX2="118" visSizeY="0" visSizeY2="59">

@@ -5,6 +5,4 @@ config/databases.yml
 cache/*
 web/uploads/
 log/*
-
-/web/css/main.min.css
-/config/ProjectConfiguration.class.php
+config/ProjectConfiguration.class.php

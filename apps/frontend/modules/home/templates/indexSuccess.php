@@ -52,7 +52,11 @@ $(function() {
       <li><a href="#sota-demanda"><span class="icon-pin_blue inline"></span><b><?php echo __('Under demand<br />workshops') ?></b></a></li>
     </ul>
     <div class="box-content" id="mapa">
-      <div class="map" id="map_canvas"></div>
+      <?php if ($map->countMarkers()): ?>
+      <?php $map->showMap(true); ?>
+      <?php else: ?>
+      <?php $map->showMap(false); ?>
+      <?php endif; ?>
     </div>
     <div class="box-content accio-ciutadana" id="accio-ciutadana">
       <?php include_partial('content/actionsList',array('contents'=>$pager_last_citizen_actions->getResults(),'id'=>'accio-ciutadana','url'=>url_for('content/showPage?class=CitizenAction&id=accio-ciutadana&partial=actionsList&limit=5'),'pager'=>$pager_last_citizen_actions))?>
