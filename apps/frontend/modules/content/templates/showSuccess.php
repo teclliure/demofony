@@ -37,9 +37,11 @@
         
         <div class="clear"></div>
         
+        <?php if (isset($map) && $map): ?>
         <div class="map-container">
-          <div class="map"></div>
+          <?php $map->showMap(false)?>
         </div>
+        <?php endif; ?>
         
         <div class="share">
           <!-- AddThis Button BEGIN -->
@@ -80,14 +82,17 @@
       <?php include_partial('opinion/count', array('object' => $content)) ?>
     <?php endif; ?>
   
+    <?php if (isset($mapOpinions) && $mapOpinions): ?>
     <div class="box no-tabs comments-by-area">
       <div class="box-content show">
         <div class="box-title color2">
           <p><?php echo __('Opinions by area')?></p>
         </div>
-        <div class="map"></div>
+        
+        <?php $mapOpinions->showMap(true)?>
       </div>
     </div>
+    <?php endif; ?>
     
     <div class="box no-tabs related-inciatives">
       <div class="box-content show">

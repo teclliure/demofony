@@ -38,6 +38,8 @@
 
 class simpleGMapAPI {
 
+private $mapId = 'gmap_canvas';
+
 /**
 * mapMarkers : array
 * Holds data (coords etc.) of Markers
@@ -226,9 +228,21 @@ private $centerLng = null;
 * @description  constructor
 * @param	$sensor : boolean
 */
-function __construct($sensor = false)
+function __construct($mapId = 'gmap_canvas', $sensor = false)
 {
+    $this->setMapId($mapId);
     $this->setSensor($sensor);
+}
+
+/**
+* @function     setMapId
+* @param        $map_id : string
+* @returns      nothing
+* @description  Tells wich is the html id of the map, it allows more than one map in the same page
+*/
+function setMapId($mapId = 'gmap_canvas')
+{
+    $this->mapId = $mapId;
 }
 
 /**
@@ -711,11 +725,12 @@ function showMap($zoomToBounds = true)
     
     // create div for the map canvas
     echo "\n<!-- DIV container for the map -->";
-    echo "\n<div id=\"gmap_canvas\" style=\"width: ".$this->mapWidth."px; height: ".$this->mapHeight."px;\">\n</div>\n";
+    echo "\n<div id=\"".$this->mapId."\" style=\"width: ".$this->mapWidth."px; height: ".$this->mapHeight."px;\">\n</div>\n";
         
     // create JS to display the map
     echo "\n<!-- Display the Google Map -->";
     echo "\n<script type=\"text/javascript\">\n".
+         "$(function() {".
          "var currentInfoWindow = null;\n".
          "var bounds = new google.maps.LatLngBounds();\n".
 	 "var latlng = new google.maps.LatLng(".$this->centerLat.", ".$this->centerLng.");\n".
@@ -735,13 +750,13 @@ function showMap($zoomToBounds = true)
          "\tscrollwheel: ".$_scrollwheelZoom.",\n".
          "\tdisableDoubleClickZoom: ".$_disableDoubleClickZoom."\n".
          "};\n\n".
-         "function showmap() {\n".
-         "\tvar map = new google.maps.Map(document.getElementById('gmap_canvas'), options);\n\n";
+         "function showmap".$this->mapId."() {\n".
+         "\tvar ".$this->mapId." = new google.maps.Map(document.getElementById('".$this->mapId."'), options);\n\n";
     
     // infoWindowBehaviour
     if ( ($this->infoWindowBehaviour == 'CLOSE_ON_MAPCLICK') OR ($this->infoWindowBehaviour == 'SINGLE_CLOSE_ON_MAPCLICK') )
     {
-        echo "\tgoogle.maps.event.addListener(map, 'click', function() { if (currentInfoWindow != null) { currentInfoWindow.close(); } });\n";
+        echo "\tgoogle.maps.event.addListener(".$this->mapId.", 'click', function() { if (currentInfoWindow != null) { currentInfoWindow.close(); } });\n";
     }
 
     /*
@@ -762,7 +777,7 @@ function showMap($zoomToBounds = true)
         {
              echo "\t clickable: false,\n";
         }
-        echo "\t map: map\n".
+        echo "\t map: ".$this->mapId."\n".
              "\t});\n";
              
         // add an InfoWindow if there is a text to be displayed
@@ -780,7 +795,7 @@ function showMap($zoomToBounds = true)
             {
                 echo "\t if (currentInfoWindow != null) { currentInfoWindow.close(); } \n";
             }
-            echo "\t infowindowM$count.open(map, marker$count);\n".
+            echo "\t infowindowM$count.open(".$this->mapId.", marker$count);\n".
                  "\t currentInfoWindow = infowindowM$count;\n".
                  "\t});\n";
         }
@@ -804,7 +819,7 @@ function showMap($zoomToBounds = true)
         if ( $this->mapCircles[$count]['strokeOpacity'] != "" ) { echo "\t strokeOpacity: ".$this->mapCircles[$count]['strokeOpacity'].",\n"; }
         if ( $this->mapCircles[$count]['strokeWeight'] != "" )  { echo "\t strokeWeight: ".$this->mapCircles[$count]['strokeWeight'].",\n"; }
         if ( $this->mapCircles[$count]['clickable'] == false )  { echo "\t clickable: false,\n"; }
-        echo "\t map: map\n".
+        echo "\t map: ".$this->mapId."\n".
              "\t});\n";
              
         // add an InfoWindow if there is a text to be displayed and circle is clickable
@@ -825,7 +840,7 @@ function showMap($zoomToBounds = true)
             echo "\t var tmplat1 = circle$count.getCenter().lat()+(circle$count.getBounds().getNorthEast().lat() - circle$count.getCenter().lat())/2;\n";
             echo "\t var tmplng1 = circle$count.getCenter().lng()+(circle$count.getBounds().getNorthEast().lng() - circle$count.getCenter().lng())/2;\n";
             echo "\t var newpos = new google.maps.LatLng(tmplat1, tmplng1);\n";
-            echo "\t infowindowC$count.open(map);\n".
+            echo "\t infowindowC$count.open(".$this->mapId.");\n".
                  "\t infowindowC$count.setPosition(newpos);\n".
                  "\t currentInfoWindow = infowindowC$count;\n".
                  "\t});\n";
@@ -853,7 +868,7 @@ function showMap($zoomToBounds = true)
         if ( $this->mapRectangles[$count]['strokeOpacity'] != "" ) { echo "\t strokeOpacity: ".$this->mapRectangles[$count]['strokeOpacity'].",\n"; }
         if ( $this->mapRectangles[$count]['strokeWeight'] != "" )  { echo "\t strokeWeight: ".$this->mapRectangles[$count]['strokeWeight'].",\n"; }
         if ( $this->mapRectangles[$count]['clickable'] == false )  { echo "\t clickable: false,\n"; }
-        echo "\t map: map\n".
+        echo "\t map: ".$this->mapId."\n".
              "\t});\n";
              
         // add an InfoWindow if there is a text to be displayed and rectangle is clickable
@@ -871,7 +886,7 @@ function showMap($zoomToBounds = true)
             {
                 echo "\t if (currentInfoWindow != null) { currentInfoWindow.close(); } \n";
             }
-            echo "\t infowindowR$count.open(map);\n".
+            echo "\t infowindowR$count.open(".$this->mapId.");\n".
                  "\t currentInfoWindow = infowindowR$count;\n".
                  "\t});\n";
         }
@@ -882,10 +897,11 @@ function showMap($zoomToBounds = true)
 
     if ( $zoomToBounds )
     {
-        echo "\tmap.fitBounds(bounds);\n";
+        echo "\t".$this->mapId.".fitBounds(bounds);\n";
     }
     echo "}\n\n".
-         "window.onload = showmap;\n".
+         "window.onload = showmap".$this->mapId."();\n".
+         "});".
 	 "</script>\n";
 }
 

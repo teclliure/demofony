@@ -72,6 +72,28 @@ class Content extends BaseContent
     return $numOpinions;
   }
   
+  public function getOpinionsLocated() {
+    $q =  Doctrine::getTable('Opinion')->createQuery('o')
+    ->leftJoin('o.sfGuardUser u')
+    ->leftJoin('u.Profile up')
+    ->where('o.object_class = ?',get_class($this))
+    ->andWhere('o.object_id = ?',$this->getId())
+    ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
+    return  $q->execute();
+  }
+
+  public function getOpinionsLikeLocated() {
+    $q = Doctrine::getTable('OpinionLike')->createQuery('ol')
+    ->leftJoin('ol.Opinion o')
+    ->leftJoin('ol.sfGuardUser u')
+    ->leftJoin('u.Profile up')
+    ->where('o.object_class = ?',get_class($this))
+    ->andWhere('o.object_id = ?',$this->getId())
+    ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
+    
+    return $q->execute();
+  }
+  
   public function getCategories() {
     $query = $this->getCategoriesQuery();
     return $query->execute();
@@ -188,5 +210,16 @@ class Content extends BaseContent
   
   public function getGmapIcon() {
     return null;
+  }
+  
+  public function getGmap() {
+    if ($this->getLatitude() && $this->getLongitude()) {
+      return GMap::loadMap('100%',100,array($this));
+    }
+    else return null;
+  }
+  
+  public function getGmapOpinions() {
+    return GMap::loadMapOpinions('100%',250,$this);
   }
 }
