@@ -55,12 +55,26 @@
           <p><a href="#" class="toggler">+</a><?php echo __('Newsletter subscription')?></p>
         </div>
         
-        <div class="hide form-toggle-content">
+        <div class="hide form-toggle-content suscriptions">
+          <p>
+Selecciona las categorías y barris que te interesen y te mantendremos informado 
+semanalmente a través del correo electrónico de las novedades. Si más adelante te 
+interesan otras temáticas o barrios siempre puedes acceder a esta pantalla a través de 
+edición de perﬁl y cambiar tus suscripciones</p>
           <?php echo $form['profile']['subscription_email']->renderRow() ?>
           <?php echo $form['profile']['categories_list']->renderRow() ?>
           <?php echo $form['profile']['regions_list']->renderRow() ?>
           <div class="clear"></div>
         </div>
+        
+        <div class="box-title color1">
+          <p><a href="#" class="toggler">+</a><?php echo __('Darse de baja')?></p>
+        </div>
+        
+        <div class="hide form-toggle-content">
+          <button class="button1">Darse de baja</button>
+        </div>
+        
       </div>
     </div>
   </div>

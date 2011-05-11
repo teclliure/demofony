@@ -3,7 +3,7 @@
 <?php include_stylesheets_for_form($form->getCurrentForm()) ?>
 <?php include_javascripts_for_form($form->getCurrentForm()) ?>
 
-<form action="<?php echo url_for('@register') ?>?step=<?php echo $form->getCurrentPageNumber() + 1 ?>" <?php $form->getCurrentForm()->isMultipart() and print 'enctype="multipart/form-data" ' ?> class="form" method="post">
+<form action="<?php echo url_for('@register') ?>?step=<?php echo $form->getCurrentPageNumber() + 1 ?>" <?php $form->getCurrentForm()->isMultipart() and print 'enctype="multipart/form-data" ' ?> class="form" method="post" id="form-profile">
     <?php if (get_class($form->getCurrentForm()) == 'ProfileForm'): ?>
       <?php echo get_partial('user/profileForm', array('form' => $form->getCurrentForm())) ?>
       <?php if($form->getCurrentPageNumber() > 1): ?>
