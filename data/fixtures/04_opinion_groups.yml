@@ -1,38 +1,67 @@
 OpinionPossibilityGroup:
   op_gr_1:
-    name: A favor o en contra
+    name: A favor o en contra iniciativa
     show_stats: 1
   op_gr_2:
+    name: A favor o en contra
+    show_stats: 1
+  op_gr_3:
     name: Apoyo
     can_text_be_added: 0
     show_stats: 0
-  op_gr_3:
+  op_gr_4:
     name: Si, no y intermedio
     show_stats: 0
 
 OpinionPossibility:
   op_po_1:
-    name: A favor
-    gmap_bubble_color: green
+    gmap_bubble_image: green
     icon: icon-thumb-up
     OpinionPossibilityGroup: op_gr_1
+    Translation:
+      en: { name: "I back this initiative" }
+      es: { name: "Apoyo esta iniciativa" }
   op_po_2:
-    name: En contra
-    gmap_bubble_color: red
+    gmap_bubble_image: red
     icon: icon-thumb-down
     OpinionPossibilityGroup: op_gr_1
+    Translation:
+      en: { name: "I oppose to this initiative" }
+      es: { name: "Estoy en contra de esta iniciativa" }
   op_po_3:
-    name: Lo apoyo
-    OpinionPossibilityGroup: op_gr_2
+    OpinionPossibilityGroup: op_gr_3
+    Translation:
+      en: { name: "I back this !" }
+      es: { name: "Lo apoyo !" }
   op_po_4:
-    name: Si
-    OpinionPossibilityGroup: op_gr_3
+    OpinionPossibilityGroup: op_gr_4
+    Translation:
+      en: { name: "Yes" }
+      es: { name: "Si" }
   op_po_5:
-    name: No
-    OpinionPossibilityGroup: op_gr_3
+    OpinionPossibilityGroup: op_gr_4
+    Translation:
+      en: { name: "No" }
+      es: { name: "No" }
   op_po_6:
-    name: No se
-    OpinionPossibilityGroup: op_gr_3
+    OpinionPossibilityGroup: op_gr_4
+    Translation:
+      en: { name: "I don't know" }
+      es: { name: "No se" }
+  op_po_7:
+    gmap_bubble_image: green
+    icon: icon-thumb-up
+    OpinionPossibilityGroup: op_gr_2
+    Translation:
+      en: { name: "I back this" }
+      es: { name: "Lo apoyo" }
+  op_po_8:
+    gmap_bubble_image: red
+    icon: icon-thumb-down
+    OpinionPossibilityGroup: op_gr_2
+    Translation:
+      en: { name: "I oppose to this" }
+      es: { name: "Estoy en contra" }
 
 Opinion:
   op_1:

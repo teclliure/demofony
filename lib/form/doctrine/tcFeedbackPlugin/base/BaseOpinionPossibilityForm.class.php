@@ -16,16 +16,14 @@ abstract class BaseOpinionPossibilityForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                           => new sfWidgetFormInputHidden(),
-      'name'                         => new sfWidgetFormInputText(),
-      'gmap_bubble_color'            => new sfWidgetFormInputText(),
+      'gmap_bubble_image'            => new sfWidgetFormInputText(),
       'icon'                         => new sfWidgetFormInputText(),
       'opinion_possibility_group_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibilityGroup'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'id'                           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'name'                         => new sfValidatorString(array('max_length' => 100)),
-      'gmap_bubble_color'            => new sfValidatorString(array('max_length' => 7, 'required' => false)),
+      'gmap_bubble_image'            => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'icon'                         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'opinion_possibility_group_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibilityGroup'), 'required' => false)),
     ));

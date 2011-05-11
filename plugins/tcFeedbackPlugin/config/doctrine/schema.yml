@@ -47,6 +47,9 @@ Opinion:
       local: opinion_id
       foreign: user_id
 OpinionPossibility:
+  actAs:
+    I18n:
+      fields: [name]
   columns:
     id:
       primary: true
@@ -55,8 +58,8 @@ OpinionPossibility:
     name:
       type: string(100)
       notnull: true
-    gmap_bubble_color:
-      type: string(7)
+    gmap_bubble_image:
+      type: string(255)
     icon:
       type: string(255)
     opinion_possibility_group_id:
