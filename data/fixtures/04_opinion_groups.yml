@@ -1,18 +1,25 @@
 OpinionPossibilityGroup:
   op_gr_1:
     name: A favor o en contra
+    show_stats: 1
   op_gr_2:
     name: Apoyo
     can_text_be_added: 0
+    show_stats: 0
   op_gr_3:
     name: Si, no y intermedio
+    show_stats: 0
 
 OpinionPossibility:
   op_po_1:
     name: A favor
-    OpinionPossibilityGroup: op_gr_1    
+    gmap_bubble_color: green
+    icon: icon-thumb-up
+    OpinionPossibilityGroup: op_gr_1
   op_po_2:
     name: En contra
+    gmap_bubble_color: red
+    icon: icon-thumb-down
     OpinionPossibilityGroup: op_gr_1
   op_po_3:
     name: Lo apoyo

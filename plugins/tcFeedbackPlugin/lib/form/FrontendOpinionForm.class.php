@@ -9,15 +9,39 @@ class FrontendOpinionForm extends OpinionForm {
     $user = $this->getOption('user');
     $object = $this->getOption('object');
     
+    $this->widgetSchema['opinion'] = new sfWidgetFormTextarea();
+    $this->validatorSchema['opinion'] = new sfValidatorString(array('max_length' => 255, 'required' => true));
     $this->widgetSchema['object_class'] = new sfWidgetFormInputHidden();
     $this->widgetSchema['object_id'] = new sfWidgetFormInputHidden();
     $this->setDefault('object_class',get_class($object));
     $this->setDefault('object_id',$object->getId());
     
-    $this->generatePossibilities($object);
+    $this->generatePossibilities();
   }
   
-  protected function generatePossibilities($object) {
+  protected function generatePossibilities() {
+    $group = $this->getGroup();
+    if ($group) {
+      $query = Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$group->getId());
+      $this->widgetSchema['opinion_possibility_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibility'), 'expanded'=>true, 'add_empty' => false,'query'=>$query,'renderer_class'=>'sfWidgetFormSelectRadioAdapted','renderer_options'=>array('class'=>'options')));
+      $this->validatorSchema['opinion_possibility_id'] = new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibility'), 'query'=>$query));
+      if ($group->getCanTextBeAdded()) {
+        $this->validatorSchema['opinion'] = new sfValidatorString(array('max_length' => 255, 'required' => false));
+      }
+      else {
+        unset($this['opinion']);
+      }
+    
+      return true;
+    }
+    else {
+      unset($this['opinion_possibility_id']);
+      return false;
+    }
+  }
+  
+  public function getGroup() {
+    $object = $this->getOption('object');
     $className = get_class($object);
     
     $data = sfYaml::load(sfConfig::get('sf_root_dir').'/config/opinion.yml');
@@ -26,11 +50,7 @@ class FrontendOpinionForm extends OpinionForm {
         if ($key == $className) {
           $group = Doctrine::getTable('OpinionPossibilityGroup')->findOneBy('slug',$config['group']);
           if ($group) {
-            $query = Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$group->getId());
-            if ($query->execute()->count() == 1) unset($this['opinion']);
-            $this->widgetSchema['opinion_possibility_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibility'), 'expanded'=>true, 'add_empty' => false,'query'=>$query));
-          
-            return true;
+            return $group;
           }
           else {
             throw new sfException($config['group'].' doesn\'t exist');
@@ -38,8 +58,11 @@ class FrontendOpinionForm extends OpinionForm {
         }
       }
     }
-    unset($this['opinion_possibility_id']);
-    return false;
+    return null;
+  }
+  
+  public function getPossibilities() {
+    return Doctrine::getTable('OpinionPossibility')->createQuery('o')->innerJoin('o.OpinionPossibilityGroup g')->where('g.id = ?',$this->getGroup()->getId())->execute();
   }
   
   protected function doUpdateObject($values)

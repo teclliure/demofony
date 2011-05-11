@@ -18,6 +18,7 @@ abstract class BaseOpinionPossibilityGroupForm extends BaseFormDoctrine
       'id'                => new sfWidgetFormInputHidden(),
       'name'              => new sfWidgetFormInputText(),
       'can_text_be_added' => new sfWidgetFormInputCheckbox(),
+      'show_stats'        => new sfWidgetFormInputCheckbox(),
       'slug'              => new sfWidgetFormInputText(),
     ));
 
@@ -25,6 +26,7 @@ abstract class BaseOpinionPossibilityGroupForm extends BaseFormDoctrine
       'id'                => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'              => new sfValidatorString(array('max_length' => 100)),
       'can_text_be_added' => new sfValidatorBoolean(array('required' => false)),
+      'show_stats'        => new sfValidatorBoolean(array('required' => false)),
       'slug'              => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 

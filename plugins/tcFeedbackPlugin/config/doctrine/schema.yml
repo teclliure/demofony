@@ -55,6 +55,10 @@ OpinionPossibility:
     name:
       type: string(100)
       notnull: true
+    gmap_bubble_color:
+      type: string(7)
+    icon:
+      type: string(255)
     opinion_possibility_group_id:
       type: integer
   relations:
@@ -79,6 +83,10 @@ OpinionPossibilityGroup:
       notnull: true
     can_text_be_added:
       default: 1
+      type: boolean
+      notnull: true
+    show_stats:
+      default: 0
       type: boolean
       notnull: true
 OpinionLike:

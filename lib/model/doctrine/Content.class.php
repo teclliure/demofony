@@ -94,6 +94,19 @@ class Content extends BaseContent
     return $q->execute();
   }
   
+  public function getJoinsLocated() {
+    if (!is_subclass_of($this,'Action')) return array();
+    else {
+      $q = Doctrine::getTable('ActionHasUser')->createQuery('au')
+      ->leftJoin('au.sfGuardUser u')
+      ->leftJoin('u.Profile up')
+      ->where('au.type = ?',get_class($this))
+      ->andWhere('au.action_id = ?',$this->getId())
+      ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
+    }
+    return $q->execute();
+  }
+  
   public function getCategories() {
     $query = $this->getCategoriesQuery();
     return $query->execute();
@@ -174,7 +187,9 @@ class Content extends BaseContent
   }
   
   public function getPossibilityPercent($possibility) {
-    return round($this->countNumPossibilitiesAdded($possibility)/$this->countAllOpinions()*100,2);
+    $numOpinions = $this->countAllOpinions();
+    if ($numOpinions) return round($this->countNumPossibilitiesAdded($possibility)/$numOpinions*100,2);
+    else return 0;
   }
   
   public function getPossibilities() {

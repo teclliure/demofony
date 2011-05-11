@@ -521,6 +521,12 @@ public function setCenterCoords($lat, $lng)
 {
   $this->centerLat = $lat;
   $this->centerLng = $lng;
+  $this->manuallySetCenter = true;
+}
+
+public function getManuallySetCenter() {
+  if (isset($this->manuallySetCenter) && $this->manuallySetCenter) return true;
+  else return false;
 }
 
 /**

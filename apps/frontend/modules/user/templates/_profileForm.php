@@ -2,6 +2,10 @@
 
 <?php include_stylesheets_for_form($form) ?>
 <?php include_javascripts_for_form($form) ?>
+
+<?php echo $form->renderGlobalErrors() ?>
+
+
 <form action="<?php echo url_for('@profile') ?>" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?> method="post" class="form" id="form-profile">
   <div class="bar-left">
     <div class="box no-tabs no-margin">
@@ -12,6 +16,7 @@
         
         <div class="hide form-toggle-content">
           <?php // echo $form ?>
+          <?php echo $form->renderHiddenFields() ?>
           <?php echo $form['first_name']->renderRow(array('class'=>'wide'))?>
           <?php echo $form['last_name']->renderRow(array('class'=>'wide'))?>
           <?php echo $form['profile']['gmap']->renderRow()?>

@@ -173,6 +173,16 @@ class contentActions extends sfActions {
     $this->forward404Unless($content->getActive());
     $this->forward404Unless($content->hasJoinBox());
     $content->registerUser($this->getUser()->getGuardUser());
+    return $this->renderPartial('content/joinButton',array('object'=>$content));
+  }
+  
+  public function executeJoinBox($request)
+  {
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $content = $table->findOneBy('id',$request->getParameter('id'));
+    $this->forward404Unless($content);
+    $this->forward404Unless($content->getActive());
+    $this->forward404Unless($content->hasJoinBox());
     return $this->renderPartial('content/join',array('object'=>$content));
   }
   
@@ -189,6 +199,6 @@ class contentActions extends sfActions {
     $this->forward404Unless($content->getActive());
     $this->forward404Unless($content->hasJoinBox());
     $content->unregisterUser($this->getUser()->getGuardUser());
-    return $this->renderPartial('content/join',array('object'=>$content));
+    return $this->renderPartial('content/joinButton',array('object'=>$content));
   }
 }

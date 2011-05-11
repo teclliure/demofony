@@ -33,6 +33,7 @@
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="name" required="true" size="100" type="string" unique="true"/>
       <column default="1" name="can_text_be_added" required="true" type="boolean"/>
+      <column default="0" name="show_stats" required="true" type="boolean"/>
       <orm-properties>
         <attribute name="actAs">
           <attribute name="Sluggable">

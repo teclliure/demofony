@@ -1,7 +1,7 @@
 class:
   GovermentConsultation:
+    group: si-no-y-intermedio
+  GovermentProposal:
     group: a-favor-o-en-contra
-  Workshop:
-    group: apoyo
-  CitizenAction:
-    group: apoyo
+  CitizenProposal:
+    group: a-favor-o-en-contra

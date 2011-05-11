@@ -50,9 +50,9 @@
       $classes = array('GovermentNew'=>'News',
                         'CitizenProposal'=>'Citizen initiatives',
                         'GovermentProposal'=>'Goverment initiatives',
-                        'GovermentConsultation'=>'Consultations',
+                        'GovermentConsultation'=>'Opinion polls',
                         'CitizenAction'=>'Citizen actions',
-                        'Workshop'=>'Under demand workshops');
+                        'Workshop'=>'Workshops on demand');
       $url2 = preg_replace('/\/type\/+[a-zA-Z0-9._-]*/i', '', $url);
       ?>
       <ul class="filter">

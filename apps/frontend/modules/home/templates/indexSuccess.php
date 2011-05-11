@@ -28,7 +28,7 @@ $(function() {
         <li><a href="#all"><span></span><b><?php echo __('View all') ?></b></a></li>
         <li><a href="#citizen_proposal"><span class="icon-letter-c">c</span><b style="margin-top: 9.5px;"><?php echo __('Citizen<br /> initiatives') ?></b></a></li>
         <li><a href="#goverment_proposal"><span class="icon-letter-g">g</span><b style="margin-top: 9.5px;"><?php echo __('Goverment<br /> initiatives') ?></b></a></li>
-        <li><a href="#goverment_consultation"><span class="icon-letter-q">?</span><b style="margin-top: 9.5px;"><?php echo __('Consultation') ?></b></a></li>
+        <li><a href="#goverment_consultation"><span class="icon-letter-q">?</span><b style="margin-top: 9.5px;"><?php echo __('Opinion<br /> polls') ?></b></a></li>
       </ul>
       <div class="box-content"  id="all">
         <?php include_partial('content/initiativesList',array('contents'=>$pager_last_proposals->getResults(),'id'=>'all','url'=>url_for('content/showPage?class=Proposal&id=all&partial=initiativesList&limit=5'),'pager'=>$pager_last_proposals))?>
@@ -49,7 +49,7 @@ $(function() {
     <ul class="tabs">
       <li><a href="#mapa"><span class="icon-map inline"></span><b><?php echo __('Map') ?></b></a></li>
       <li><a href="#accio-ciutadana"><span class="icon-pin_yellow inline"></span><b><?php echo __('Citizen<br /> action') ?></b></a></li>
-      <li><a href="#sota-demanda"><span class="icon-pin_blue inline"></span><b><?php echo __('Under demand<br />workshops') ?></b></a></li>
+      <li><a href="#sota-demanda"><span class="icon-pin_blue inline"></span><b><?php echo __('Workshops<br /> on demand') ?></b></a></li>
     </ul>
     <div class="box-content" id="mapa">
       <?php if ($map->countMarkers()): ?>
@@ -69,12 +69,11 @@ $(function() {
 <div class="bar-right">
   <div class="box crear">
       <div class="box-content">
+          <div class="misc misc-people"></div>
+          <p><?php echo __('Do you want participate in create a better <strong>Eivissa</strong>?') ?></p>
           <?php if ($sf_user->isAuthenticated()): ?>
-            <div class="misc misc-people"></div>
             <a href="#" class="select_content button1"><?php echo __('Make your proposal') ?></a>
           <?php else: ?>
-            <div class="misc misc-people"></div>
-            <p><?php echo __('Do you want participate in create a better <strong>Eivissa</strong>?') ?></p>
             <?php echo link_to(__('Create account'),'@register',array('class'=>'button1')) ?>
           <?php endif; ?>
       </div>
