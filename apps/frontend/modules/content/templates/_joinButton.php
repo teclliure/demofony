@@ -1,4 +1,4 @@
-<?php if (!$sf_request->isXmlHttpRequest()): ?>
+<?php if (!$sf_request->isXmlHttpRequest() || isset($not_ajax)): ?>
 <div id="join_button">
 <?php else: ?>
 <script>
@@ -16,7 +16,7 @@
     <a href="#" class="button1" onCLick="$('#join_button').load('<?php echo url_for('content/join?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>')"><?php echo __('Join') ?></a>
   <?php endif; ?>
 <?php endif; ?>
-<?php if (!$sf_request->isXmlHttpRequest()): ?>
+<?php if (!$sf_request->isXmlHttpRequest() || isset($not_ajax)): ?>
 </div>
 <?php endif; ?>
     

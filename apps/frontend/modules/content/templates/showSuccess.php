@@ -88,7 +88,11 @@
           <p><?php echo __('Opinions by area')?></p>
         </div>
         
-        <?php $mapOpinions->showMap(true)?>
+        <?php if (!$mapOpinions->getManuallySetCenter()): ?>
+          <?php $mapOpinions->showMap(true)?>
+        <?php else: ?>
+          <?php $mapOpinions->showMap(false)?>
+        <?php endif; ?>
       </div>
     </div>
     <?php endif; ?>
