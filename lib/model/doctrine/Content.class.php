@@ -174,7 +174,9 @@ class Content extends BaseContent
   }
   
   public function getPossibilityPercent($possibility) {
-    return round($this->countNumPossibilitiesAdded($possibility)/$this->countAllOpinions()*100,2);
+    $numOpinions = $this->countAllOpinions();
+    if ($numOpinions) return round($this->countNumPossibilitiesAdded($possibility)/$numOpinions*100,2);
+    else return 0;
   }
   
   public function getPossibilities() {

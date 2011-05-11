@@ -1,4 +1,4 @@
-<a href="#" onClick="$('#view_comments_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>').fadeToggle('slow'); return false;"><span id="number_view_comments_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>"><strong><?php echo $object->getNbComments() ?></strong></span> <span class="inline misc misc-comments"></span></a>
+<a href="#" onClick="$('#view_comments_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>').fadeToggle('slow'); return false;"><span id="number_view_comments_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>"><strong><?php echo $object->getNbComments() ?></strong></span> <span class="inline misc misc-comments"></span> <?php echo __('Comments') ?></a>
 <div id="view_comments_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId() ?>" class="featured" style="display: none;">
 <?php include_component('comment', 'listAjax', array('object' => $object, 'i' => 0,'crypt'=>$crypt)) ?>
 </div>

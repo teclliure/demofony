@@ -5,7 +5,7 @@
             <a href="<?php echo url_for('content/list?title=last') ?>"><?php echo __('Last') ?></a>
           </li>
           <li class="link">
-            <a href="<?php echo url_for('content/list?title=more_viewed') ?>"><?php echo __('More viewed') ?></a>
+            <a href="<?php echo url_for('content/list?title=more_viewed') ?>"><?php echo __('Most popular') ?></a>
           </li>
           
           <li class="filter">

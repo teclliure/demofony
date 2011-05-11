@@ -319,42 +319,45 @@
 	#form-profile div.form-toggle-content{margin-left:25px;}
 	
 	/* Pagina: FORM INICIATIVAS */
-	
-	/* Pagina: FICHA */
-	
-	.ficha{}
-	.ficha div.title{padding-bottom:10px; margin-bottom:15px; border-bottom:1px dotted #333;}
-	.ficha div.title h1{font-size:16px; font-weight:bold; color:#000; margin-bottom:5px;}
-	.ficha div.title p{font-size:11px; color:#999;}
-	.ficha div.title p.author{float:left; width:300px;}
-	.ficha div.title p.category{float:right; width:300px; text-align:right;}
-	.ficha div.content div.img{width:210px; height:140px; padding:3px; border:1px solid #ccc; margin:0 10px 10px 0; float:left;}
-	.ficha div.content div.text{line-height:16px; font-size:14px;}
-	.ficha div.details{margin-top:25px; margin-bottom:20px;}
-	.ficha div.details div{float:left; margin:0 20px 4px 0; width:30%; font-size:14px;}
-	.ficha div.details div.l{width:60%;}
-	.ficha div.details div strong{color:#BD9C3F;}
-	.ficha div.map-container{ padding:3px; border:1px solid #ccc; margin-top:10px; margin-bottom:30px;}
-	.ficha div.map{height:100px; width:100%;}
-	.ficha div.comment.selected{border:3px solid #194A96;  margin-bottom:20px;}
-	ficha div.comment{padding:1px;}
-	.ficha div.comments-by-area div.map{height:250px;}
-	.ficha div.related-inciatives{}
-	.ficha div.related-inciatives div.item{padding-bottom:5px; margin-bottom:5px; border-bottom:1px dotted #333;}
-	.ficha div.related-inciatives div.item:last-child{border:none;}
-	.ficha div.related-inciatives div.item h1{margin-bottom:4px; font-weight:bold;}
-	.ficha div.related-inciatives div.item h1 a{color:#000;}
-	.ficha div.related-inciatives div.item p{color:#999; font-size:11px;}
-	.ficha div.share{margin-bottom:10px; float:right;}
-	.ficha div.sign p{margin-bottom:10px; color:#BD9C3F; font-size:14px;}
-	.ficha div.sign a{padding:10px; display:block; margin:0 10px 0 10px; background:#7E8A8F;}
-	.ficha div.sign .button1{margin-bottom:15px;}
-	.ficha div.sign div.hdr{height:70px; position:relative;}
-	.ficha div.sign div.hdr span{display:block; top:-60px; position:absolute;}
-	.ficha div.sign div.hdr strong{font-size:30px; color:#fff; text-transform:uppercase; display:block; position:absolute; top:-10px; left:20px;}
-	.ficha div.sign .icon-box-arrow{display:block; position:absolute; left:-50px; bottom:20px;}
-	.ficha div.content{}
-	    
+  
+  /* Pagina: FICHA */  
+  .ficha{}
+  .ficha div.title{padding-bottom:10px; margin-bottom:15px; border-bottom:1px dotted #333;}
+  .ficha div.title h1{font-size:16px; font-weight:bold; color:#000; margin-bottom:5px;}
+  .ficha div.title p{font-size:11px; color:#999;}
+  .ficha div.title p.author{float:left; width:300px;}
+  .ficha div.title p.category{float:right; width:300px; text-align:right;}
+  .ficha div.content div.img{width:210px; height:140px; padding:3px; border:1px solid #ccc; margin:0 10px 10px 0; float:left;}
+  .ficha div.content div.text{line-height:16px; font-size:14px;}
+  .ficha div.details{margin-top:25px; margin-bottom:20px;}
+  .ficha div.details div{float:left; margin:0 20px 4px 0; width:30%; font-size:14px;}
+  .ficha div.details div.l{width:60%;}
+  .ficha div.details div strong{color:#BD9C3F;}
+  .ficha div.map-container{ padding:3px; border:1px solid #ccc; margin-top:10px; margin-bottom:30px;}
+  .ficha div.map{height:100px; width:100%;}
+  .ficha div.comment.selected{border:3px solid #194A96;  margin-bottom:20px;}
+  .ficha div.comment{padding:1px;}
+  .ficha div.comments-by-area div.map{height:250px;}
+  .ficha div.related-inciatives{}
+  .ficha div.related-inciatives div.item{padding-bottom:5px; margin-bottom:5px; border-bottom:1px dotted #333;}
+  .ficha div.related-inciatives div.item:last-child{border:none;}
+  .ficha div.related-inciatives div.item h1{margin-bottom:4px; font-weight:bold;}
+  .ficha div.related-inciatives div.item h1 a{color:#000;}
+  .ficha div.related-inciatives div.item p{color:#999; font-size:11px;}
+  .ficha div.share{margin-bottom:10px; float:right;}
+  .ficha div.participate p{margin-bottom:10px; color:#BD9C3F; font-size:14px;}
+  .ficha div.participate a{padding:10px; display:block; margin:0 10px 0 10px; background:#7E8A8F;}
+  .ficha div.participate .button1{margin-bottom:15px;}
+  .ficha div.participate div.hdr{height:70px; position:relative;}
+  .ficha div.participate div.hdr span{display:block; top:-60px; position:absolute;}
+  .ficha div.participate div.hdr strong{font-size:30px; color:#fff; text-transform:uppercase; display:block; position:absolute; top:-10px; left:20px;}
+  .ficha div.participate .icon-box-arrow{display:block; position:absolute; left:-50px; bottom:20px;}
+  .ficha div.participate div.options{}
+  .ficha div.participate div.options label{display:block; margin-bottom:5px; color:#fff;}
+  .ficha div.participate textarea{width:220px; height:80px;}
+  .ficha div.participate div.stats{color:#fff; padding:15px 5px 0 5px; margin-top:10px; border-top:1px solid #666;}
+  .ficha div.participate div.stats strong{margin-right:10px;}
+      
 	/* Pagina: FICHA TALLER */
 	
 	#ficha-taller div.sign form{text-align:center;}

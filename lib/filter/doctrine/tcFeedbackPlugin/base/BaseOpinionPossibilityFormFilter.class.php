@@ -14,11 +14,15 @@ abstract class BaseOpinionPossibilityFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'name'                         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'gmap_bubble_color'            => new sfWidgetFormFilterInput(),
+      'icon'                         => new sfWidgetFormFilterInput(),
       'opinion_possibility_group_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibilityGroup'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'name'                         => new sfValidatorPass(array('required' => false)),
+      'gmap_bubble_color'            => new sfValidatorPass(array('required' => false)),
+      'icon'                         => new sfValidatorPass(array('required' => false)),
       'opinion_possibility_group_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('OpinionPossibilityGroup'), 'column' => 'id')),
     ));
 
@@ -41,6 +45,8 @@ abstract class BaseOpinionPossibilityFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'                           => 'Number',
       'name'                         => 'Text',
+      'gmap_bubble_color'            => 'Text',
+      'icon'                         => 'Text',
       'opinion_possibility_group_id' => 'ForeignKey',
     );
   }

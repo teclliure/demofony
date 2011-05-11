@@ -8,15 +8,18 @@
  * @property integer $id
  * @property string $name
  * @property boolean $can_text_be_added
+ * @property boolean $show_stats
  * @property Doctrine_Collection $OpinionPossibility
  * 
  * @method integer                 getId()                 Returns the current record's "id" value
  * @method string                  getName()               Returns the current record's "name" value
  * @method boolean                 getCanTextBeAdded()     Returns the current record's "can_text_be_added" value
+ * @method boolean                 getShowStats()          Returns the current record's "show_stats" value
  * @method Doctrine_Collection     getOpinionPossibility() Returns the current record's "OpinionPossibility" collection
  * @method OpinionPossibilityGroup setId()                 Sets the current record's "id" value
  * @method OpinionPossibilityGroup setName()               Sets the current record's "name" value
  * @method OpinionPossibilityGroup setCanTextBeAdded()     Sets the current record's "can_text_be_added" value
+ * @method OpinionPossibilityGroup setShowStats()          Sets the current record's "show_stats" value
  * @method OpinionPossibilityGroup setOpinionPossibility() Sets the current record's "OpinionPossibility" collection
  * 
  * @package    demofony
@@ -42,6 +45,11 @@ abstract class BaseOpinionPossibilityGroup extends sfDoctrineRecord
              ));
         $this->hasColumn('can_text_be_added', 'boolean', null, array(
              'default' => 1,
+             'type' => 'boolean',
+             'notnull' => true,
+             ));
+        $this->hasColumn('show_stats', 'boolean', null, array(
+             'default' => 0,
              'type' => 'boolean',
              'notnull' => true,
              ));

@@ -15,12 +15,14 @@ abstract class BaseOpinionPossibilityGroupFormFilter extends BaseFormFilterDoctr
     $this->setWidgets(array(
       'name'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'can_text_be_added' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'show_stats'        => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'slug'              => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'name'              => new sfValidatorPass(array('required' => false)),
       'can_text_be_added' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'show_stats'        => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'slug'              => new sfValidatorPass(array('required' => false)),
     ));
 
@@ -44,6 +46,7 @@ abstract class BaseOpinionPossibilityGroupFormFilter extends BaseFormFilterDoctr
       'id'                => 'Number',
       'name'              => 'Text',
       'can_text_be_added' => 'Boolean',
+      'show_stats'        => 'Boolean',
       'slug'              => 'Text',
     );
   }

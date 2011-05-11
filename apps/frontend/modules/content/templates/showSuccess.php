@@ -57,11 +57,10 @@
         
         <div class="clear"></div>
         
-        
-        <?php if (!is_subclass_of($content->getRawValue(),'Action')): ?>
+        <?php // if(!$content->hasCountBox()): ?>
           <?php include_component('opinion', 'listSelected', array('object' => $content)) ?>
           <?php include_component('opinion', 'list', array('object' => $content)) ?>
-        <?php endif;?>
+        <?php // endif;?>
       </div>
     </div>
   </div>
@@ -78,9 +77,9 @@
       <?php include_partial('opinion/graph', array('object' => $content)) ?>
     <?php endif; ?>
     
-    <?php if($content->hasCountBox()): ?>
-      <?php include_partial('opinion/count', array('object' => $content)) ?>
-    <?php endif; ?>
+    <?php // if($content->hasCountBox()): ?>
+      <?php // include_partial('opinion/count', array('object' => $content)) ?>
+    <?php // endif; ?>
   
     <?php if (isset($mapOpinions) && $mapOpinions): ?>
     <div class="box no-tabs comments-by-area">
