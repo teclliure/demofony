@@ -47,9 +47,9 @@
 	
 	/* Alerts */
 	
-	.alert{padding:8px; margin-bottom:10px; border-radius:5px; color:#000;}
-	.error{background:#EBCBC8; border:1px solid #C94743;}
-	.success{background:#D5EBA3; border:1px solid #669900;}
+	.alert{}
+	.error{background:#EBCBC8; border:1px solid #C94743; padding:8px; margin-bottom:10px; border-radius:5px; color:#000;}
+	.success{background:#D5EBA3; border:1px solid #669900; padding:8px; margin-bottom:10px; border-radius:5px; color:#000;}
 	
 	/* Pagina */
 	
@@ -308,7 +308,7 @@
 	
 	/* Pagina: FORM SIGNUP */
 	
-	#form-profile label{float:left; margin-right:15px; text-align:center;}
+	#form-profile label{float:left; margin-right:15px ; text-align:center;}
 	#form-profile label span{text-align:left;}
 	#form-profile label input[type=text], input[type=password], #form-signup label select{width:180px;}
 	#form-profile label textarea{width:600px;}
@@ -317,6 +317,13 @@
 	#form-profile button{margin-left:80px;}
 	#form-profile div.line{margin-bottom:15px; border-bottom:1px solid #ccc;}
 	#form-profile div.form-toggle-content{margin-left:25px;}
+	#form-profile div.suscriptions label{border:0 solid red; width:180px; text-align:left !important;}
+	#form-profile div.suscriptions label label{display:block; width:auto; }
+	#form-profile div.suscriptions label li{display:block !important;}
+	#form-profile div.suscriptions p{margin-bottom:15px; line-height:15px;}
+	
+	.radio_list label, .checkbox_list label{float:none !important; margin:0 !important; text-align:left !important; display:inline-block !important;}
+	.radio_list li, .checkbox_list li{width:auto !important; display:inline-block !important;}
 	
 	/* Pagina: FORM INICIATIVAS */
   
