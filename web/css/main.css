@@ -94,10 +94,10 @@
 	
 	/* UI / Elementos comunes */
 	
-	.button1, .form-comment input.submit{border-radius:8px;  text-decoration:none; box-shadow:0 0 5px rgba(0,0,0,.6); color:#fff !important; background:#194A96 !important; font-weight:normal; font-size:20px; font-family:"RNSBARUTABLACKRegular" !important; text-transform:uppercase; padding:2px 7px 2px 7px !important; text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,.6); border:none; cursor:pointer;}
+	.button1, .form-comment input.submit{border-radius:8px; text-decoration:none; box-shadow:0 0 5px rgba(0,0,0,.6); color:#fff !important; background:#194A96 !important; font-weight:normal; font-size:20px; font-family:"RNSBARUTABLACKRegular" !important; text-transform:uppercase; padding:3px 7px 3px 7px !important; text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,.6); border:none; cursor:pointer; border:1px solid #5076AC;}
 	.button1:hover{opacity:.9; text-decoration:none;}
 	.button1:active{box-shadow:inset 0 2px 20px rgba(0,0,0,.5);}
-	.button1.color1{background:#7E8A8F !important;}
+	.button1.color1{background:#7E8A8F !important; border-color:#ccc;}
 	
 	form.form{}
 	form.form label{display:block; margin-bottom:10px;}
