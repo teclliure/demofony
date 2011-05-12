@@ -38,7 +38,7 @@ class ContentTable extends Doctrine_Table
     return $q;
   }
   
-  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = null) {
+  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = 'active = 1') {
     $sql = '';
     $select = $this->select;
     
@@ -110,7 +110,7 @@ class ContentTable extends Doctrine_Table
     return $sql;
   }
   
-  public function getObjectsUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = null) {
+  public function getObjectsUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = 'active = 1') {
     $objects = array();
     $sql = $this->getSqlUnion($order, $inheritedClasses, $categories, $regions, $where);
     $conn = Doctrine_Manager::connection();

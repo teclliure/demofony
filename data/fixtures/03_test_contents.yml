@@ -1,12 +1,13 @@
 GovermentNew:
   new_1:
-    title: Noticia govern 1
+    title: Noticia govern inactiva
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     created_at: '2011-04-10'
     sfGuardUser: User_admin
+    active: 0
   new_2:
     title: Noticia govern 2 lore ipsum
     body: |
@@ -49,13 +50,14 @@ GovermentNew:
     sfGuardUser: User_admin
 GovermentProposal:
   propos_1:
-    title: Proposta de prova
+    title: Proposta inactiva
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     created_at: '2011-04-10'
     sfGuardUser: User_admin
+    active: 0
   propos_2:
     title: Proposta de prova2
     body: |
@@ -133,14 +135,15 @@ GovermentConsultation:
     end_date: '2011-06-15'
     sfGuardUser: User_admin   
   consul_4:
-    title: Consulta futura 2
+    title: Consulta inactiva
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     start_date: '2011-06-10'
     end_date: '2011-06-15'
-    sfGuardUser: User_admin   
+    sfGuardUser: User_admin 
+    active: 0  
   consul_5:
     title: Consulta futura 3
     body: |
@@ -176,7 +179,7 @@ Workshop:
     latitude: 38.9102
     longitude: 1.42
   work_2:
-    title: Workshop activo 2
+    title: Workshop inactivo
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
@@ -188,6 +191,7 @@ Workshop:
     location: Plaça Major
     min_users_allowed: 10
     max_users_allowed: 30
+    active: 0
   work_3:
     title: Workshop activo 3
     body: |
@@ -260,13 +264,14 @@ CitizenProposal:
     tip: Don't publish this
     sfGuardUser: User_admin
   cit_prop_3:
-    title: Proposta ciudadana 3
+    title: Proposta inactiva
     body: |
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
   
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     tip: Don't publish this
     sfGuardUser: User_admin
+    active: 0
   cit_prop_4:
     title: Proposta ciudadana 4
     body: |
@@ -307,7 +312,22 @@ CitizenAction:
     max_users_allowed: 30
     latitude: 38.9102
     longitude: 1.41
-
+  cit_act_2:
+    title: Citizen inactive action
+    body: |
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br />
+  
+      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
+    register_start_date: '2011-03-10'
+    register_end_date: '2011-05-30'
+    action_date: '2011-06-11'
+    sfGuardUser: User_admin
+    location: Plaça Major
+    min_users_allowed: 10
+    max_users_allowed: 30
+    latitude: 38.9102
+    longitude: 1.41
+    active: 0
 VirtualMeeting:
   vm_1:
     title: Encuentro virtual

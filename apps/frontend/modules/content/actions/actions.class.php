@@ -124,11 +124,11 @@ class contentActions extends sfActions {
   }
   
   public function executeList($request) {
-    $where = null;
+    $where = 'active = 1';
     if ($request->getParameter('q'))
     {
       $conn = Doctrine_Manager::connection();
-      $where = ' title LIKE '.$conn->quote('%'.$request->getParameter('q').'%');
+      $where .= ' AND title LIKE '.$conn->quote('%'.$request->getParameter('q').'%');
       $this->title = 'SEARCH';
       $this->searchStr = $request->getParameter('q');
     }
