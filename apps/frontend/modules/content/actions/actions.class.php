@@ -71,6 +71,58 @@ class contentActions extends sfActions {
     }
   }
   
+  public function executeClose($request) {
+    $user = $this->getUser();
+    if (!$user->isAuthenticated())
+    {
+      return $this->renderText('You must be registered and logged in to confirm content');
+    }
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $this->content = $table->findOneBy('slug',$request->getParameter('slug'));
+    $this->forward404Unless($this->content);
+    $this->forward404Unless($this->content->getActive());
+    if (!$this->content->hasEditPerms($this->getUser())) {
+      return $this->renderText('You don\'t have permissions to confirm this action');
+    }
+    if (!$this->content->canBeClosed()) {
+      return $this->renderText('This action can\'t be confirmed');
+    }
+    $this->content->confirm();
+
+    $this->getUser()->setFlash('notice', $this->content.' confirmed. An email was sent to all registered users.');
+    $this->redirect('content/show?class='.$request->getParameter('class').'&slug='.$request->getParameter('slug'));
+  }
+  
+  public function executeEdit($request) {
+    $user = $this->getUser();
+    if (!$user->isAuthenticated())
+    {
+      return $this->renderText('You must be registered and logged in to edit content');
+    }
+    $table = Doctrine::getTable($request->getParameter('class'));
+    $this->content = $table->findOneBy('slug',$request->getParameter('slug'));
+    $this->forward404Unless($this->content);
+    $this->forward404Unless($this->content->getActive());
+    if (!$this->content->hasEditPerms($this->getUser())) {
+      return $this->renderText('You don\'t have permissions to edit this content');
+    }
+    $formName = 'Frontend'.$request->getParameter('class').'Form';
+    $this->form = new $formName($this->content);
+
+    if ($request->isMethod('post'))
+    {
+      $this->form->bind($request->getParameter($this->form->getName()),$request->getFiles($this->form->getName()));
+      if ($this->form->isValid())
+      {
+        $object = $this->form->save();
+        $this->getUser()->setFlash('success', sfInflector::humanize(sfInflector::underscore($this->class)).' edited correctly!');
+        $this->redirect('content/show?class='.$request->getParameter('class').'&slug='.$request->getParameter('slug'));
+        // $this->redirect('content/addedOk?class='.$this->class.'&id='.$object->getId());
+      }
+    }
+    $this->setTemplate('add');
+  }
+  
   public function executeList($request) {
     $where = null;
     if ($request->getParameter('q'))

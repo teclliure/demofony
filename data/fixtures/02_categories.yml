@@ -1,7 +1,49 @@
 Category:
   cat_1:
-    name: Sanitat
+    name: Bienestar Social
   cat_2:
-    name: Economía
+    name: Comercio
   cat_3:
-    name: Comerç
+    name: Comunicación
+  cat_4:
+    name: Cooperación
+  cat_5:
+    name: Cultura
+  cat_6:
+    name: Deportes
+  cat_7:
+    name: Educación
+  cat_8:
+    name: Fiestas
+  cat_9:
+    name: Hacienda
+  cat_10:
+    name: Juventud
+  cat_11:
+    name: Mantenimiento Urbano
+  cat_12:
+    name: Medio ambiente
+  cat_13:
+    name: Movilidad
+  cat_14:
+    name: Normalización Lingüística
+  cat_15:
+    name: Núcleo Histórico
+  cat_16:
+    name: Participación Ciudadana 
+  cat_17:
+    name: Políticas de Igualdad
+  cat_18:
+    name: Recursos Humanos
+  cat_19:
+    name: Salud Pública
+  cat_20:
+    name: Seguridad Ciudadana
+  cat_21:
+    name: Servicios Generales
+  cat_22:
+    name: Turismo
+  cat_23:
+    name: Urbanismo
+  cat_24:
+    name: Vivienda

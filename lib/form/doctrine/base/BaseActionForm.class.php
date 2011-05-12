@@ -37,6 +37,9 @@ abstract class BaseActionForm extends ContentForm
     $this->widgetSchema   ['register_end_date'] = new sfWidgetFormDate();
     $this->validatorSchema['register_end_date'] = new sfValidatorDate(array('required' => false));
 
+    $this->widgetSchema   ['confirmed'] = new sfWidgetFormInputCheckbox();
+    $this->validatorSchema['confirmed'] = new sfValidatorBoolean(array('required' => false));
+
     $this->widgetSchema->setNameFormat('action[%s]');
   }
 

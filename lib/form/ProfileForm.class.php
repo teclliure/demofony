@@ -9,6 +9,9 @@ class ProfileForm extends sfGuardRegisterForm {
     $this->widgetSchema->addFormFormatter('custom', $decorator);
     $this->widgetSchema->setFormFormatterName('custom');
     
+    $this->validatorSchema['first_name']->setOption('required', true);
+    $this->validatorSchema['last_name']->setOption('required', true);
+    
     $profileForm = new sfGuardUserProfileForm($this->getObject()->getProfile());
     unset($profileForm['user_id']);
     $profileForm->widgetSchema->addFormFormatter('custom', $decorator);

@@ -173,6 +173,11 @@ class Content extends BaseContent
     else return false;
   }
   
+  public function hasEditPerms($user) {
+    if ($user->isAuthenticated() && ($user->getGuardUser()->getId() == $this->getUserId() || $user->hasCredential('admin')) && is_subclass_of($this,'Action')) return true;
+    else return false;
+  }
+  
   public function hasCountBox() {
     if ($this->getPossibilities() && $this->getPossibilities()->count() == 1) return true;
     else return false;
@@ -213,10 +218,6 @@ class Content extends BaseContent
     return $this->possibilities;
   }
   
-  public function hasRegistered($user) {
-    $query = Doctrine::getTable('ActionHasUser')->createQuery('au')->where('au.type = ?',get_class($this))->andWhere('au.action_id = ?',$this->getId())->andWhere('au.user_id = ?',$user->getId());
-    return $query->count();
-  }
   
   public function getGmapHtml() {
     SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));

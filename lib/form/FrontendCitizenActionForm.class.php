@@ -13,7 +13,7 @@ class FrontendCitizenActionForm extends CitizenActionForm {
   
   protected function doUpdateObject($values)
   {
-    $values['active'] = 0;
+    if ($this->getObject()->isNew()) $values['active'] = 0;
     $values['user_id'] = sfContext::getInstance()->getUser()->getGuardUser()->getId();
     
     parent::doUpdateObject($values);

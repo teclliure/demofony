@@ -185,13 +185,16 @@ Response:
     body:
       type: clob
       notnull: true
-    initiative_id:
+    content_id:
       type: integer
-  relations:
-    Content:
-      onDelete: CASCADE
-      local: initiative_id
-      foreign: id
+      notnull: true
+    content_type:
+      type: string(100)
+      notnull: true
+  indexes:
+    IX_Response_1:
+      fields: [content_id, content_type]
+      type: unique
 VirtualMeeting:
   columns:
     id:
@@ -359,6 +362,10 @@ Action:
       notnull: true
     register_end_date:
       type: date
+    confirmed:
+      default: 0
+      type: boolean
+      notnull: true
   inheritance:
     extends: Content
     type: concrete

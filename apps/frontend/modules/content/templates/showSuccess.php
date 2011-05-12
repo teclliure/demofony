@@ -77,6 +77,10 @@
       <?php include_partial('opinion/graph', array('object' => $content)) ?>
     <?php endif; ?>
     
+    <?php if($content->hasEditPerms($sf_user)): ?>
+      <?php include_partial('content/editBox', array('object' => $content)) ?>
+    <?php endif; ?>
+    
     <?php // if($content->hasCountBox()): ?>
       <?php // include_partial('opinion/count', array('object' => $content)) ?>
     <?php // endif; ?>

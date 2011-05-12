@@ -13,6 +13,7 @@
  * @property integer $max_users_allowed
  * @property date $register_start_date
  * @property date $register_end_date
+ * @property boolean $confirmed
  * 
  * @method integer getId()                  Returns the current record's "id" value
  * @method string  getAuthor()              Returns the current record's "author" value
@@ -22,6 +23,7 @@
  * @method integer getMaxUsersAllowed()     Returns the current record's "max_users_allowed" value
  * @method date    getRegisterStartDate()   Returns the current record's "register_start_date" value
  * @method date    getRegisterEndDate()     Returns the current record's "register_end_date" value
+ * @method boolean getConfirmed()           Returns the current record's "confirmed" value
  * @method Action  setId()                  Sets the current record's "id" value
  * @method Action  setAuthor()              Sets the current record's "author" value
  * @method Action  setActionDate()          Sets the current record's "action_date" value
@@ -30,6 +32,7 @@
  * @method Action  setMaxUsersAllowed()     Sets the current record's "max_users_allowed" value
  * @method Action  setRegisterStartDate()   Sets the current record's "register_start_date" value
  * @method Action  setRegisterEndDate()     Sets the current record's "register_end_date" value
+ * @method Action  setConfirmed()           Sets the current record's "confirmed" value
  * 
  * @package    demofony
  * @subpackage model
@@ -72,6 +75,11 @@ abstract class BaseAction extends Content
              ));
         $this->hasColumn('register_end_date', 'date', null, array(
              'type' => 'date',
+             ));
+        $this->hasColumn('confirmed', 'boolean', null, array(
+             'default' => 0,
+             'type' => 'boolean',
+             'notnull' => true,
              ));
     }
 
