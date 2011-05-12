@@ -82,10 +82,7 @@
         <p><?php echo __('Users joined') ?> (<?php echo $form->getObject()->getNumberUsersRegistered() ?>)</p>
       </div>
       <?php $usersJoined = $form->getObject()->getUsersRegistered() ?>
-      <?php foreach ($usersJoined as $i=>$user): ?>
-        <?php if ($i): ?>, <?php endif;?>
-        <?php echo link_to($user,'user/showProfile?username='.$user->getUsername()) ?>
-      <?php endforeach ?>
+      <?php foreach ($usersJoined as $i=>$user): ?><?php if ($i): ?>, <?php endif;?><?php echo link_to($user,'user/showProfile?username='.$user->getUsername()) ?><?php endforeach ?>
     </div>
 </div>
 <?php endif; ?>
