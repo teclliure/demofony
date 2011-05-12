@@ -35,6 +35,9 @@ abstract class BaseActionFormFilter extends ContentFormFilter
     $this->widgetSchema   ['register_end_date'] = new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate()));
     $this->validatorSchema['register_end_date'] = new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false))));
 
+    $this->widgetSchema   ['confirmed'] = new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no')));
+    $this->validatorSchema['confirmed'] = new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0)));
+
     $this->widgetSchema->setNameFormat('action_filters[%s]');
   }
 
@@ -53,6 +56,7 @@ abstract class BaseActionFormFilter extends ContentFormFilter
       'max_users_allowed' => 'Number',
       'register_start_date' => 'Date',
       'register_end_date' => 'Date',
+      'confirmed' => 'Boolean',
     ));
   }
 }

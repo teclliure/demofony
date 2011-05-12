@@ -13,26 +13,23 @@
  * @property integer $views
  * @property integer $user_id
  * @property sfGuardUser $sfGuardUser
- * @property Doctrine_Collection $Response
  * 
- * @method integer             getId()          Returns the current record's "id" value
- * @method string              getTitle()       Returns the current record's "title" value
- * @method clob                getBody()        Returns the current record's "body" value
- * @method string              getVideo()       Returns the current record's "video" value
- * @method boolean             getActive()      Returns the current record's "active" value
- * @method integer             getViews()       Returns the current record's "views" value
- * @method integer             getUserId()      Returns the current record's "user_id" value
- * @method sfGuardUser         getSfGuardUser() Returns the current record's "sfGuardUser" value
- * @method Doctrine_Collection getResponse()    Returns the current record's "Response" collection
- * @method Content             setId()          Sets the current record's "id" value
- * @method Content             setTitle()       Sets the current record's "title" value
- * @method Content             setBody()        Sets the current record's "body" value
- * @method Content             setVideo()       Sets the current record's "video" value
- * @method Content             setActive()      Sets the current record's "active" value
- * @method Content             setViews()       Sets the current record's "views" value
- * @method Content             setUserId()      Sets the current record's "user_id" value
- * @method Content             setSfGuardUser() Sets the current record's "sfGuardUser" value
- * @method Content             setResponse()    Sets the current record's "Response" collection
+ * @method integer     getId()          Returns the current record's "id" value
+ * @method string      getTitle()       Returns the current record's "title" value
+ * @method clob        getBody()        Returns the current record's "body" value
+ * @method string      getVideo()       Returns the current record's "video" value
+ * @method boolean     getActive()      Returns the current record's "active" value
+ * @method integer     getViews()       Returns the current record's "views" value
+ * @method integer     getUserId()      Returns the current record's "user_id" value
+ * @method sfGuardUser getSfGuardUser() Returns the current record's "sfGuardUser" value
+ * @method Content     setId()          Sets the current record's "id" value
+ * @method Content     setTitle()       Sets the current record's "title" value
+ * @method Content     setBody()        Sets the current record's "body" value
+ * @method Content     setVideo()       Sets the current record's "video" value
+ * @method Content     setActive()      Sets the current record's "active" value
+ * @method Content     setViews()       Sets the current record's "views" value
+ * @method Content     setUserId()      Sets the current record's "user_id" value
+ * @method Content     setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    demofony
  * @subpackage model
@@ -85,10 +82,6 @@ abstract class BaseContent extends sfDoctrineRecord
              'local' => 'user_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
-
-        $this->hasMany('Response', array(
-             'local' => 'id',
-             'foreign' => 'initiative_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $sluggable0 = new Doctrine_Template_Sluggable(array(

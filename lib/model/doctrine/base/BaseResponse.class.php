@@ -7,17 +7,17 @@
  * 
  * @property integer $id
  * @property clob $body
- * @property integer $initiative_id
- * @property Content $Content
+ * @property integer $content_id
+ * @property string $content_type
  * 
- * @method integer  getId()            Returns the current record's "id" value
- * @method clob     getBody()          Returns the current record's "body" value
- * @method integer  getInitiativeId()  Returns the current record's "initiative_id" value
- * @method Content  getContent()       Returns the current record's "Content" value
- * @method Response setId()            Sets the current record's "id" value
- * @method Response setBody()          Sets the current record's "body" value
- * @method Response setInitiativeId()  Sets the current record's "initiative_id" value
- * @method Response setContent()       Sets the current record's "Content" value
+ * @method integer  getId()           Returns the current record's "id" value
+ * @method clob     getBody()         Returns the current record's "body" value
+ * @method integer  getContentId()    Returns the current record's "content_id" value
+ * @method string   getContentType()  Returns the current record's "content_type" value
+ * @method Response setId()           Sets the current record's "id" value
+ * @method Response setBody()         Sets the current record's "body" value
+ * @method Response setContentId()    Sets the current record's "content_id" value
+ * @method Response setContentType()  Sets the current record's "content_type" value
  * 
  * @package    demofony
  * @subpackage model
@@ -38,19 +38,30 @@ abstract class BaseResponse extends sfDoctrineRecord
              'type' => 'clob',
              'notnull' => true,
              ));
-        $this->hasColumn('initiative_id', 'integer', null, array(
+        $this->hasColumn('content_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
+             ));
+        $this->hasColumn('content_type', 'string', 100, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 100,
+             ));
+
+
+        $this->index('IX_Response_1', array(
+             'fields' => 
+             array(
+              0 => 'content_id',
+              1 => 'content_type',
+             ),
+             'type' => 'unique',
              ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Content', array(
-             'local' => 'initiative_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
-
         $sluggable0 = new Doctrine_Template_Sluggable(array(
              'unique' => true,
              ));

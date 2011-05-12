@@ -1,0 +1,13 @@
+ActionHasUser:
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  Action_has_user<?php echo $i ?>:
+    sfGuardUser:    User_test<?php echo $i."\n" ?>
+    action_id:      1
+    type:           'CitizenAction'
+   
+    
+<?php endfor ?>
+  Action_has_user200:
+    sfGuardUser:    User_test200
+    action_id:      1
+    type:           'CitizenAction'

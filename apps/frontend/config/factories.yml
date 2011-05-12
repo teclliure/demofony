@@ -7,7 +7,9 @@ prod:
     param:
       level:   err
       loggers: ~
-
+  mailer:
+    param:
+      delivery_strategy: spool
 test:
   storage:
     class: sfSessionTestStorage
@@ -26,7 +28,8 @@ test:
 dev:
   mailer:
     param:
-      delivery_strategy: none
+      delivery_strategy: single_address
+      delivery_address: marc@teclliure.net
 
 all:
   routing:

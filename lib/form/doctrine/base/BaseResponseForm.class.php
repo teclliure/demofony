@@ -15,21 +15,26 @@ abstract class BaseResponseForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'            => new sfWidgetFormInputHidden(),
-      'body'          => new sfWidgetFormTextarea(),
-      'initiative_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Content'), 'add_empty' => true)),
-      'slug'          => new sfWidgetFormInputText(),
+      'id'           => new sfWidgetFormInputHidden(),
+      'body'         => new sfWidgetFormTextarea(),
+      'content_id'   => new sfWidgetFormInputText(),
+      'content_type' => new sfWidgetFormInputText(),
+      'slug'         => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'body'          => new sfValidatorString(),
-      'initiative_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Content'), 'required' => false)),
-      'slug'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'body'         => new sfValidatorString(),
+      'content_id'   => new sfValidatorInteger(),
+      'content_type' => new sfValidatorString(array('max_length' => 100)),
+      'slug'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Response', 'column' => array('slug')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'Response', 'column' => array('content_id', 'content_type'))),
+        new sfValidatorDoctrineUnique(array('model' => 'Response', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('response[%s]');

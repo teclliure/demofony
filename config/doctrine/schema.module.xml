@@ -92,7 +92,12 @@
     <table name="Response" visPositionX="339" visPositionY="16" visSizeX="0" visSizeX2="70" visSizeY="0" visSizeY2="59">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="body" required="true" type="clob"/>
-      <column name="initiative_id" type="integer"/>
+      <column name="content_id" required="true" type="integer"/>
+      <column name="content_type" required="true" size="100" type="string"/>
+      <index name="IX_Response_1" unique="true">
+        <index-column name="content_id"/>
+        <index-column name="content_type"/>
+      </index>
     </table>
     <table name="VirtualMeeting" visPositionX="778" visPositionY="482" visSizeX="0" visSizeX2="126" visSizeY="0" visSizeY2="101">
       <column auto-increment="true" name="id" primary="true" type="integer"/>
@@ -152,6 +157,7 @@
       <column name="max_users_allowed" type="integer"/>
       <column name="register_start_date" required="true" type="date"/>
       <column name="register_end_date" type="date"/>
+      <column default="0" name="confirmed" required="true" type="boolean"/>
       <inheritance-parent type="concrete"/>
       <inheritance-child derived-from="Content" visCenterX="0" visCenterY="0"/>
     </table>
@@ -217,12 +223,6 @@
     </foreign-key>
     <foreign-key from="ContentHasCategory" name="FK_ProposalHasCategory_Category_id" to="Category" visCenterX="0" visCenterY="0">
       <foreign-key-column from="category_id" to="id"/>
-      <orm-properties>
-        <attribute name="onDelete">CASCADE</attribute>
-      </orm-properties>
-    </foreign-key>
-    <foreign-key from="Response" name="FK_Response_Proposal_id" to="Content" visCenterX="0" visCenterY="0">
-      <foreign-key-column from="initiative_id" to="id"/>
       <orm-properties>
         <attribute name="onDelete">CASCADE</attribute>
       </orm-properties>

@@ -35,6 +35,26 @@ sfGuardUser:
     password:       test3
     is_super_admin: false
 
+# Starts at the beginning of the line (no whitespace before)
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  User_test<?php echo $i ?>:
+    first_name:     Name<?php echo $i."\n" ?>
+    last_name:      Lastname<?php echo $i."\n" ?>
+    email_address:  test<?php echo $i ?>@teclliure.net
+    username:       test<?php echo $i."\n" ?>
+    password:       test<?php echo $i."\n" ?>
+    is_super_admin: false
+    
+<?php endfor ?>
+
+  User_test200:
+    first_name:     Marc
+    last_name:      Ma
+    email_address:  marc@teclliure.net
+    username:       marc
+    password:       marc
+    is_super_admin: false
+
 sfGuardGroup:
   Group_admin:
     name:           admin

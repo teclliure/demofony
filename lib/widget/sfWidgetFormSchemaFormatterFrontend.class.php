@@ -6,7 +6,7 @@ class sfWidgetFormSchemaFormatterFrontend extends sfWidgetFormSchemaFormatter
                          %hidden_fields%\n\n",
     $errorRowFormat  = "<div class=\"field_error\">%errors%</div>",
     $helpFormat      = '<small>%help%</small>',
-    $errorListFormatInARow     = "  <div class=\"div_error_list error\">\n%errors%</div>\n",
+    $errorListFormatInARow     = "  <div class=\"msg div_error_list error\">\n%errors%</div>\n",
     $errorRowFormatInARow      = "    - %error%\n",
     $namedErrorRowFormatInARow = "    - %name%: %error%<br />\n",
     $decoratorFormat = "\n  %content%";

@@ -2,6 +2,6 @@ class:
   GovermentConsultation:
     group: si-no-y-intermedio
   GovermentProposal:
-    group: a-favor-o-en-contra
+    group: a-favor-o-en-contra-iniciativa
   CitizenProposal:
-    group: a-favor-o-en-contra
+    group: a-favor-o-en-contra-iniciativa
