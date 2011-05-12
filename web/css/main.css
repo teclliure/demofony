@@ -94,10 +94,10 @@
 	
 	/* UI / Elementos comunes */
 	
-	.button1{border-radius:8px;  text-decoration:none; box-shadow:0 0 5px rgba(0,0,0,.6); color:#fff !important; background:#194A96 !important; font-weight:normal; font-size:20px; font-family:"RNSBARUTABLACKRegular" !important; text-transform:uppercase; padding:2px 7px 2px 7px !important; text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,.6); border:none; cursor:pointer;}
+	.button1, .form-comment input.submit{border-radius:8px; text-decoration:none; box-shadow:0 0 5px rgba(0,0,0,.6); color:#fff !important; background:#194A96 !important; font-weight:normal; font-size:20px; font-family:"RNSBARUTABLACKRegular" !important; text-transform:uppercase; padding:3px 7px 3px 7px !important; text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,.6); border:none; cursor:pointer; border:1px solid #5076AC;}
 	.button1:hover{opacity:.9; text-decoration:none;}
 	.button1:active{box-shadow:inset 0 2px 20px rgba(0,0,0,.5);}
-	.button1.color1{background:#7E8A8F !important;}
+	.button1.color1{background:#7E8A8F !important; border-color:#ccc;}
 	
 	form.form{}
 	form.form label{display:block; margin-bottom:10px;}
@@ -142,7 +142,20 @@
 	.box div.pagination{padding:5px; text-align:center; color:#666;}
 	.box div.pagination a{margin:0 5px 0 5px;}
 	.box div.pagination strong{margin:0 5px 0 5px;}
-	.box.color1{background:#194A96;}
+	.box.color1{background:#194A96; }
+	
+	/**/
+	.box.color1{
+		background: #528dc9; /* Old browsers */
+		background: -moz-linear-gradient(top, #528dc9 0%, #1d5c8e 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#528dc9), color-stop(100%,#1d5c8e)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #528dc9 0%,#1d5c8e 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #528dc9 0%,#1d5c8e 100%); /* Opera11.10+ */
+		background: -ms-linear-gradient(top, #528dc9 0%,#1d5c8e 100%); /* IE10+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#528DC9', endColorstr='#1D5C8E',GradientType=0 ); /* IE6-9 */
+		background: linear-gradient(top, #528dc9 0%,#1d5c8e 100%); /* W3C */
+}
+	/**/
 	
 	.trobada{padding:10px; position:relative;}
 	.trobada div.icon{float:left; padding-right:10px; margin-right:10px; border-right:1px solid #ccc; height:45px; line-height:45px;}
@@ -285,6 +298,12 @@
 	form.add-comment button{margin-right:20px;}
 	form.add-comment{}
 	
+	.form-comment{margin-bottom:20px;}
+	.form-comment th{vertical-align:top; }
+	.form-comment th label{display:block; margin-top:10px; margin-right:10px;}
+	.form-comment textarea{width:500px; height:70px; margin-top:10px;}
+	.form-comment td.submit{padding-left:55px; padding-top:10px;}
+	
 	/* Pagina: BUSQUEDA */
 	
 	#busqueda div.title span{float:right; margin-top:-12px;}
@@ -358,7 +377,7 @@
   .ficha div.participate div.hdr{height:70px; position:relative;}
   .ficha div.participate div.hdr span{display:block; top:-60px; position:absolute;}
   .ficha div.participate div.hdr strong{font-size:30px; color:#fff; text-transform:uppercase; display:block; position:absolute; top:-10px; left:20px;}
-  .ficha div.participate .icon-box-arrow{display:block; position:absolute; left:-50px; bottom:20px;}
+  .ficha div.participate .icon-box-arrow{display:block; position:absolute; left:-50px; bottom:20px; display:none;}
   .ficha div.participate div.options{}
   .ficha div.participate div.options label{display:block; margin-bottom:5px; color:#fff;}
   .ficha div.participate textarea{width:220px; height:80px;}
