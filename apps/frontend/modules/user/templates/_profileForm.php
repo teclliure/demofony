@@ -19,7 +19,7 @@
           <?php echo $form->renderHiddenFields() ?>
           <?php echo $form['first_name']->renderRow(array('class'=>'wide'))?>
           <?php echo $form['last_name']->renderRow(array('class'=>'wide'))?>
-          <?php echo $form['profile']['gmap']->renderRow()?>
+          
           <div class="clear"></div>
           <div class="line"></div>
           
@@ -124,8 +124,17 @@
         
         <?php echo $form['profile']['image']->renderRow()?>
         <?php // echo $form['profile']['image']->renderRow(array('width'=>'190px'))?>
+        
+        <div class="box-title color1">
+		  <p><?php echo __('Mapa') ?></p>
+		</div>
+		<?php echo $form['profile']['gmap']->renderRow()?>
+		<div class="clear"></div>
+        
         <button type="submit" class="button1"><?php echo __('Done')?></button>
+ 
       </div>
+
     </div>
   </div>
   <div class="clear"></div>
