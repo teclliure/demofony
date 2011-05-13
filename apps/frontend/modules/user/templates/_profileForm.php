@@ -128,10 +128,10 @@
         <?php // echo $form['profile']['image']->renderRow(array('width'=>'190px'))?>
         
         <div class="box-title color1">
-		  <p><?php echo __('Mapa') ?></p>
-		</div>
-		<?php echo $form['profile']['gmap']->renderRow()?>
-		<div class="clear"></div>
+		      <p><?php echo __('Map') ?></p>
+		    </div>
+		    <?php echo $form['profile']['gmap']->renderRow()?>
+		    <div class="clear"></div>
         
         <button type="submit" class="button1"><?php echo __('Done')?></button>
  

@@ -1,3 +1,4 @@
 add:
   is_secure: true
-  credentials: [admin, owner]
+edit:
+  is_secure: true

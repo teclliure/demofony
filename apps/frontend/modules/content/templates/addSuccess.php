@@ -56,11 +56,18 @@
   <div class="box no-tabs no-margin">
     <div class="box-content show">
       <div class="box-title color1">
-        <p><?php echo __('Inlcude a photo or a video') ?></p>
+        <p><?php echo __('Include a photo or a video') ?></p>
       </div>
       
       <?php echo $form['image']->renderRow() ?>
       <?php echo $form['video']->renderRow() ?>
+      
+      <div class="box-title color1">
+        <p><?php echo __('Map') ?></p>
+      </div>
+      <?php echo $form['gmap']->renderRow()?>
+        
+      <div class="clear"></div>
       
       <button type="submit" class="button1"><?php echo __('Send')?></button>
     </div>

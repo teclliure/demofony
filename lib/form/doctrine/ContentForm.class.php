@@ -17,7 +17,8 @@ class ContentForm extends BaseContentForm
     $this->setWidget('longitude',new sfWidgetFormInputHidden());
     $this->setWidget('gmap', new sfWidgetFormGMap(array(
       'bind_latitude'=>$this->widgetSchema->generateId($this->widgetSchema->generateName('latitude')),
-      'bind_longitude'=>$this->widgetSchema->generateId($this->widgetSchema->generateName('longitude'))
+      'bind_longitude'=>$this->widgetSchema->generateId($this->widgetSchema->generateName('longitude')),
+      'map.width'=>'200px'
     )));
     $this->setValidator('gmap', new sfValidatorGMap(array(
       'bind_latitude'=>$this->widgetSchema->generateId($this->widgetSchema->generateName('latitude')),
