@@ -439,6 +439,33 @@ VirtualMeeting:
     sfGuardUser: User_admin
     archived: 1
     active: 1
+
+VirtualMeetingQuestion:
+  vmq_1:
+    VirtualMeeting: vm_3
+    sfGuardUser: User_admin
+    question: '¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ?'
+  vmq_2:
+    VirtualMeeting: vm_3
+    sfGuardUser: User_admin
+    question: '¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ?'
+  vmq_3:
+    VirtualMeeting: vm_3
+    sfGuardUser: User_admin
+    question: '¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ?'
+  vmq_4:
+    VirtualMeeting: vm_3
+    sfGuardUser: User_admin
+    question: '¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ? ¿ Por que ?'
+
+VirtualMeetingAnswer:
+  vma_1:
+    VirtualMeetingQuestion: vmq_1
+    answer: Por que si 
+  vma_2:
+    VirtualMeetingQuestion: vmq_2
+    answer: Por que no
+     
 ContentHasCategory:
   cc_1:
     content_id: 1

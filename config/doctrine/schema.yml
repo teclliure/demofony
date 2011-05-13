@@ -230,19 +230,26 @@ VirtualMeeting:
       local: user_id
       foreign: id
 VirtualMeetingAnswer:
+  actAs:
+    Timestampable: 
   columns:
     id:
       primary: true
       type: integer
+      notnull: true
       autoincrement: true
     answer:
       type: string(1000)
       notnull: true
     virtual_meeting_question_id:
+      unique: true
       type: integer
       notnull: true
   relations:
     VirtualMeetingQuestion:
+      onDelete: cascade
+      type: one
+      foreignType: one
       local: virtual_meeting_question_id
       foreign: id
 SubscriptionCategory:
@@ -427,12 +434,15 @@ Proposal:
     extends: Content
     type: concrete
 VirtualMeetingQuestion:
+  actAs:
+    Timestampable: 
   columns:
     id:
       primary: true
       unique: true
       type: integer
       notnull: true
+      autoincrement: true
     user_id:
       type: integer
       notnull: true
@@ -451,8 +461,15 @@ VirtualMeetingQuestion:
       local: user_id
       foreign: id
     VirtualMeeting:
+      onDelete: cascade
       local: virtual_meeting_id
       foreign: id
+    VirtualMeetingAnswer:
+      onDelete: cascade
+      type: one
+      foreignType: one
+      local: id
+      foreign: virtual_meeting_question_id
 actAs:
   Sluggable:
     unique: true

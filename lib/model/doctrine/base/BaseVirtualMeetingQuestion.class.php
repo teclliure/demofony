@@ -12,7 +12,7 @@
  * @property integer $virtual_meeting_id
  * @property sfGuardUser $sfGuardUser
  * @property VirtualMeeting $VirtualMeeting
- * @property Doctrine_Collection $VirtualMeetingAnswer
+ * @property VirtualMeetingAnswer $VirtualMeetingAnswer
  * 
  * @method integer                getId()                   Returns the current record's "id" value
  * @method integer                getUserId()               Returns the current record's "user_id" value
@@ -21,7 +21,7 @@
  * @method integer                getVirtualMeetingId()     Returns the current record's "virtual_meeting_id" value
  * @method sfGuardUser            getSfGuardUser()          Returns the current record's "sfGuardUser" value
  * @method VirtualMeeting         getVirtualMeeting()       Returns the current record's "VirtualMeeting" value
- * @method Doctrine_Collection    getVirtualMeetingAnswer() Returns the current record's "VirtualMeetingAnswer" collection
+ * @method VirtualMeetingAnswer   getVirtualMeetingAnswer() Returns the current record's "VirtualMeetingAnswer" value
  * @method VirtualMeetingQuestion setId()                   Sets the current record's "id" value
  * @method VirtualMeetingQuestion setUserId()               Sets the current record's "user_id" value
  * @method VirtualMeetingQuestion setQuestion()             Sets the current record's "question" value
@@ -29,7 +29,7 @@
  * @method VirtualMeetingQuestion setVirtualMeetingId()     Sets the current record's "virtual_meeting_id" value
  * @method VirtualMeetingQuestion setSfGuardUser()          Sets the current record's "sfGuardUser" value
  * @method VirtualMeetingQuestion setVirtualMeeting()       Sets the current record's "VirtualMeeting" value
- * @method VirtualMeetingQuestion setVirtualMeetingAnswer() Sets the current record's "VirtualMeetingAnswer" collection
+ * @method VirtualMeetingQuestion setVirtualMeetingAnswer() Sets the current record's "VirtualMeetingAnswer" value
  * 
  * @package    demofony
  * @subpackage model
@@ -45,6 +45,7 @@ abstract class BaseVirtualMeetingQuestion extends sfDoctrineRecord
              'primary' => true,
              'unique' => true,
              'type' => 'integer',
+             'autoincrement' => true,
              ));
         $this->hasColumn('user_id', 'integer', null, array(
              'type' => 'integer',
@@ -77,13 +78,12 @@ abstract class BaseVirtualMeetingQuestion extends sfDoctrineRecord
              'local' => 'virtual_meeting_id',
              'foreign' => 'id'));
 
-        $this->hasMany('VirtualMeetingAnswer', array(
+        $this->hasOne('VirtualMeetingAnswer', array(
              'local' => 'id',
-             'foreign' => 'virtual_meeting_question_id'));
+             'foreign' => 'virtual_meeting_question_id',
+             'onDelete' => 'cascade'));
 
-        $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'unique' => true,
-             ));
-        $this->actAs($sluggable0);
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

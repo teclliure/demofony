@@ -43,4 +43,18 @@ class VirtualMeeting extends BaseVirtualMeeting
       $query = Doctrine_Core::getTable('VirtualMeetingAnswer')->createQuery('vma')->leftJoin('vma.VirtualMeetingQuestion vmq')->where('vmq.virtual_meeting_id = ?',$this->getId());
       return $query->count();
     }
+    
+    public function getAnsweredQuestions() {
+      $query = Doctrine_Core::getTable('VirtualMeetingQuestion')->createQuery('vmq')->innerJoin('vmq.VirtualMeetingAnswer vma')->where('vmq.virtual_meeting_id = ?',$this->getId());
+      return $query->execute();
+    }
+    
+    public function getNotAnsweredQuestions() {
+      $query = Doctrine_Core::getTable('VirtualMeetingQuestion')
+      ->createQuery('vmq')
+      ->leftJoin('vmq.VirtualMeetingAnswer vma')
+      ->where('vmq.virtual_meeting_id = ?',$this->getId())
+      ->andWhere('vma.virtual_meeting_question_id IS NULL');
+      return $query->execute();
+    }
 }

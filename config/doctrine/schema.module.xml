@@ -110,9 +110,14 @@
       <column default="0" name="active" required="true" type="boolean"/>
     </table>
     <table name="VirtualMeetingAnswer" visPositionX="792" visPositionY="761" visSizeX="0" visSizeX2="167" visSizeY="0" visSizeY2="73">
-      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="answer" required="true" size="1000" type="string"/>
-      <column name="virtual_meeting_question_id" required="true" type="integer"/>
+      <column name="virtual_meeting_question_id" required="true" type="integer" unique="true"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
     </table>
     <table name="SubscriptionCategory" visPositionX="258" visPositionY="656" visSizeX="0" visSizeX2="157" visSizeY="0" visSizeY2="60">
       <column name="user_id" primary="true" required="true" type="integer"/>
@@ -190,12 +195,17 @@
       <inheritance-parent type="concrete"/>
       <inheritance-child derived-from="Content"/>
     </table>
-    <table name="VirtualMeetingQuestion" visPositionX="926" visPositionY="608" visSizeX="0" visSizeX2="112" visSizeY="0" visSizeY2="73">
-      <column name="id" primary="true" required="true" type="integer" unique="true"/>
+    <table name="VirtualMeetingQuestion" visPositionX="926" visPositionY="608" visSizeX="0" visSizeX2="130" visSizeY="0" visSizeY2="87">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
       <column name="user_id" required="true" type="integer"/>
       <column name="question" required="true" size="1000" type="string"/>
       <column default="1" name="active" required="true" type="boolean"/>
       <column name="virtual_meeting_id" required="true" type="integer"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Timestampable"/>
+        </attribute>
+      </orm-properties>
     </table>
     <orm-properties>
       <attribute name="actAs">
@@ -243,6 +253,16 @@
     </foreign-key>
     <foreign-key caption="VirtualMeetingQuestion VirtualMeetingAnswer" from="VirtualMeetingAnswer" name="FK_VirtualMeetingAnswer_VirtualMeetingQuestion_id" to="VirtualMeetingQuestion">
       <foreign-key-column from="virtual_meeting_question_id" to="id"/>
+      <orm-properties>
+        <attribute name="side-inverse">
+          <attribute name="type">one</attribute>
+        </attribute>
+        <attribute name="side-owning">
+          <attribute name="type">one</attribute>
+          <attribute name="cascade"></attribute>
+        </attribute>
+        <attribute name="onDelete">cascade</attribute>
+      </orm-properties>
     </foreign-key>
     <foreign-key caption="sfGuardUserProfile SubscriptionCategory" from="SubscriptionCategory" name="FK_SubscriptionCategory_sfGuardUserProfile_user_id" to="sfGuardUserProfile">
       <foreign-key-column from="user_id" to="user_id"/>
@@ -276,6 +296,9 @@
     </foreign-key>
     <foreign-key caption="VirtualMeeting VirtualMeetingQuestion" from="VirtualMeetingQuestion" name="FK_VirtualMeetingQuestion_VirtualMeeting_id" to="VirtualMeeting">
       <foreign-key-column from="virtual_meeting_id" to="id"/>
+      <orm-properties>
+        <attribute name="onDelete">cascade</attribute>
+      </orm-properties>
     </foreign-key>
     <many-to-many-relation mn-table="SubscriptionCategory">
       <many-to-many-foreign-key foreign-key="FK_SubscriptionCategory_sfGuardUserProfile_user_id" relation-alias="Profiles"/>

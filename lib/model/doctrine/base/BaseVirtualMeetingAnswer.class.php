@@ -40,6 +40,7 @@ abstract class BaseVirtualMeetingAnswer extends sfDoctrineRecord
              'length' => 1000,
              ));
         $this->hasColumn('virtual_meeting_question_id', 'integer', null, array(
+             'unique' => true,
              'type' => 'integer',
              'notnull' => true,
              ));
@@ -50,11 +51,10 @@ abstract class BaseVirtualMeetingAnswer extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('VirtualMeetingQuestion', array(
              'local' => 'virtual_meeting_question_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'cascade'));
 
-        $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'unique' => true,
-             ));
-        $this->actAs($sluggable0);
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

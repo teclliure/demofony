@@ -20,7 +20,8 @@ abstract class BaseVirtualMeetingQuestionForm extends BaseFormDoctrine
       'question'           => new sfWidgetFormTextarea(),
       'active'             => new sfWidgetFormInputCheckbox(),
       'virtual_meeting_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeeting'), 'add_empty' => false)),
-      'slug'               => new sfWidgetFormInputText(),
+      'created_at'         => new sfWidgetFormDateTime(),
+      'updated_at'         => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -29,14 +30,12 @@ abstract class BaseVirtualMeetingQuestionForm extends BaseFormDoctrine
       'question'           => new sfValidatorString(array('max_length' => 1000)),
       'active'             => new sfValidatorBoolean(array('required' => false)),
       'virtual_meeting_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeeting'))),
-      'slug'               => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'created_at'         => new sfValidatorDateTime(),
+      'updated_at'         => new sfValidatorDateTime(),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'VirtualMeetingQuestion', 'column' => array('id'))),
-        new sfValidatorDoctrineUnique(array('model' => 'VirtualMeetingQuestion', 'column' => array('slug'))),
-      ))
+      new sfValidatorDoctrineUnique(array('model' => 'VirtualMeetingQuestion', 'column' => array('id')))
     );
 
     $this->widgetSchema->setNameFormat('virtual_meeting_question[%s]');
