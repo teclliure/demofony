@@ -5,7 +5,7 @@ class sfWidgetFormGMap extends sfWidgetForm
   {
     $this->addOption('bind_latitude', false);
     $this->addOption('bind_longitude', false);
-    $this->addOption('address.options', array('style' => 'width:400px'));
+    $this->addOption('address.options', array('style' => 'width:200px'));
  
     $this->setOption('default', array(
       'address' => '',

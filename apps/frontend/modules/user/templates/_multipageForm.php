@@ -5,7 +5,7 @@
 
 <form action="<?php echo url_for('@register') ?>?step=<?php echo $form->getCurrentPageNumber() + 1 ?>" <?php $form->getCurrentForm()->isMultipart() and print 'enctype="multipart/form-data" ' ?> class="form" method="post" id="form-profile">
     <?php if (get_class($form->getCurrentForm()) == 'ProfileForm'): ?>
-      <?php echo get_partial('user/profileForm', array('form' => $form->getCurrentForm())) ?>
+      <?php echo get_partial('user/profileForm', array('form' => $form->getCurrentForm(),'hide_unsubscribe'=>true)) ?>
       <?php if($form->getCurrentPageNumber() > 1): ?>
           <!-- navigation doesn't work with post persistance strategy -->
           <br />

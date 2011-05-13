@@ -44,7 +44,7 @@ $(function() {
       <div class="box has-tabs has-title questions" id="questions_div">
         <h1 class="hdr"><span class="inline icon-microphone"></span><?php echo __('Questions') ?></h1>
         
-        <?php if ($sf_user->isAuthenticated()): ?>
+        <?php if ($sf_user->isAuthenticated() && $interview->isOpened()): ?>
           <div id="form_question" style="margin: 30px">
             <form action="<?php echo url_for ('virtualMeeting/addQuestion?id='.$interview->getId()) ?>" class="form" method="post" >
             <?php echo $form ?>

@@ -103,9 +103,11 @@
           <div class="clear"></div>
         </div>
         
+        <?php if(!isset($hide_unsubscribe) && !$hide_unsubscribe): ?>
         <div class="box-title color1">
           <p><a href="#" class="toggler">+</a><?php echo __('Unsubscribe')?></p>
         </div>
+        <?php endif; ?>
         
         <div class="hide form-toggle-content">
           <button class="button1"><?php echo __('Unsubscribe')?></button>
