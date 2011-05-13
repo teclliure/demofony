@@ -4,7 +4,7 @@
           <h1 class="hdr"><span class="inline icon-man_user"></span><?php echo __('Profile') ?></h1>
           <div class="box-content show">
               <div class="info">
-                  <div class="img profile"></div>
+                  <div class="img profile"><img src="<?php echo $userProfile->getProfile()->getImageSrcWithDefault('image','main') ?>" alt="<?php echo $userProfile ?> image" /></div>
                   <div class="user">
                     <h1><?php echo $userProfile->getName() ?></h1>
                     <div>

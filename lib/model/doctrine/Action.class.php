@@ -14,10 +14,20 @@ class Action extends BaseAction
 {
   
   public function isOpened() {
-    if (strtotime($this->getActionDate()) >= time() && !$this->isFull()) {
+    if (strtotime($this->getActionDate()) >= time() && !$this->isFull() && !$this->getConfirmed()) {
       return true;
     }
     else return false;
+  }
+  
+  public function getState() {
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+    if ($this->isOpened()) {
+      return __('Open meeting');
+    }
+    else {
+      return __('Closed meeting');
+    }
   }
   
   public function getNumberUsersRegistered() {
@@ -60,11 +70,11 @@ class Action extends BaseAction
   }
   
   public function confirm() {
-    $i18n = sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
     $action = sfContext::getInstance()->getActionStack()->getFirstEntry()->getActionInstance();
     $message = Swift_Message::newInstance()
     ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
-    ->setTo($this->getSfGuardUser()->getEmailAddress())
+    ->setTo($this->getSfGuardUser()->getEmailAddress(),$user)
     ->setSubject(sfInflector::humanize(sfInflector::underscore(get_class($this))).' '.__('confirmed !!'))
     ->setBody($action->getPartial('mails/confirmHtmlEmail', array('object' => $this)), 'text/html');
     

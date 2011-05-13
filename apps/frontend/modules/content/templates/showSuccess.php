@@ -20,7 +20,7 @@
         </div>
         
         <div class="content">
-          <div class="img"></div>
+          <div class="img"><img src="<?php echo $content->getImageSrcWithDefault('image','main') ?>" alt="<?php echo sfInflector::humanize(sfInflector::underscore(get_class($content->getRawValue()))) ?> image" /></div>
           <div class="text">
             <?php echo nl2br($content->getBody(),true)?>
           </div>
@@ -110,7 +110,7 @@
         <?php $related = $content->getRelatedContent() ?>
         <?php foreach ($related as $subcontent): ?>
         <div class="item">
-            <h1><?php echo link_to ($subcontent->getTitle(),'content/show?class='.get_class($subcontent->getRawValue()).'&slug='.$subcontent->getSlug())?></h1>
+            <h1><?php echo link_to ($subcontent->getTitle(),$subcontent->getRawValue()->getUrl())?></h1>
             <p class="date"><?php echo format_date($subcontent->getCreatedAt()) ?></p>
         </div>
         <? endforeach; ?>

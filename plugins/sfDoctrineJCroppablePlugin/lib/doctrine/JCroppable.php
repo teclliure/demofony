@@ -266,7 +266,7 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
       $img->saveAs($dir . DIRECTORY_SEPARATOR . $original);
     }
     
-    $img->resize(400, null,true, true);
+    $img->resize(250, null,true, true);
     
     $img->saveAs($dir . DIRECTORY_SEPARATOR . $editable);
     
@@ -358,9 +358,7 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
     $this->loadImage($fieldName, 'original');
     
     foreach ($imageConfig['sizes'] as $size => $dims) {
-      
       $this->createCropForSize($fieldName, $size);
-      
     }
     
     return true;

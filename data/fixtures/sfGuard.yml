@@ -6,11 +6,7 @@ sfGuardUser:
     username:       admin
     password:       admin
     is_super_admin: true
-    Groups:         [Group_admin]
-    Profile:
-      latitude: 38.9102
-      longitude: 1.4324
-    
+   
   User_test1:
     first_name:     Name
     last_name:      Lastname
@@ -55,6 +51,29 @@ sfGuardUser:
     password:       marc
     is_super_admin: false
 
+SfGuardUserProfile:
+  profile1:
+    user_id: 1
+    subscription_email: 1
+    latitude: 38.9102
+    longitude: 1.4324
+    
+SubscriptionCategory:
+  subs_cat1:
+    user_id: 1
+    category_id: 1
+  subs_cat2:
+    user_id: 1
+    category_id: 2
+
+SubscriptionRegion:
+  subs_reg1:
+    user_id: 1
+    region_id: 1
+  subs_reg2:
+    user_id: 1    
+    region_id: 2
+    
 sfGuardGroup:
   Group_admin:
     name:           admin
@@ -65,3 +84,8 @@ sfGuardPermission:
   Permission_admin:
     name:           admin
     description:    Administrator permission
+
+sfGuardUserGroup:
+  user_group_1:
+    User: User_admin
+    Group: Group_admin

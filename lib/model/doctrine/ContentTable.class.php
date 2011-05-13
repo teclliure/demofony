@@ -38,7 +38,7 @@ class ContentTable extends Doctrine_Table
     return $q;
   }
   
-  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = 'active = 1') {
+  public function getSqlUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = 'active = 1', $or = false) {
     $sql = '';
     $select = $this->select;
     
@@ -64,7 +64,12 @@ class ContentTable extends Doctrine_Table
     
     if ($regions && $categories) {
       //$subQuery = array_intersect_assoc($subQueryCat,$subQueryReg);
-      $subQuery = $this->array_intersect_assoc_recursive($subQueryCat,$subQueryReg);
+      // We want all contents that are in categories or in regions
+      if ($or) {
+        $subQuery = array_merge($subQueryCat,$subQueryReg);
+      }
+      // We want all contents that are in categories and in regions at the same time
+      else $subQuery = $this->array_intersect_assoc_recursive($subQueryCat,$subQueryReg);
     }
     elseif ($categories) {
       $subQuery = $subQueryCat;
@@ -110,9 +115,9 @@ class ContentTable extends Doctrine_Table
     return $sql;
   }
   
-  public function getObjectsUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = 'active = 1') {
+  public function getObjectsUnion($order = null, $inheritedClasses = null, $categories = null, $regions = null, $where = 'active = 1', $or = false) {
     $objects = array();
-    $sql = $this->getSqlUnion($order, $inheritedClasses, $categories, $regions, $where);
+    $sql = $this->getSqlUnion($order, $inheritedClasses, $categories, $regions, $where, $or);
     $conn = Doctrine_Manager::connection();
     $pdo = $conn->execute($sql);
     $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);

@@ -12,11 +12,4 @@
  */
 class GovermentNew extends BaseGovermentNew
 {
-  public function getImageSrcWithDefault($fieldName, $size = 'thumb') {
-    if (!$this->getImage() && $size = 'thumb') {
-      $relative_url = sfContext::getInstance()->getRequest()->getRelativeUrlRoot();
-      return $relative_url.'/images/news-icon.jpg';
-    }
-    else return $this->getImageSrc($fieldName,$size);
-  }
 }

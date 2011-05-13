@@ -1,0 +1,6 @@
+addSuccess:
+  stylesheets:
+    - jquery.Jcrop.css
+
+  javascripts:
+    - jquery.Jcrop.min.js

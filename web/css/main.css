@@ -302,7 +302,7 @@
 	.form-comment th{vertical-align:top; }
 	.form-comment th label{display:block; margin-top:10px; margin-right:10px;}
 	.form-comment textarea{width:500px; height:70px; margin-top:10px;}
-	.form-comment td.submit{padding-left:55px; padding-top:10px;}
+	.form-comment td.submit{padding-top:10px;}
 	
 	/* Pagina: BUSQUEDA */
 	

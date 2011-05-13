@@ -115,7 +115,7 @@ class contentActions extends sfActions {
       if ($this->form->isValid())
       {
         $object = $this->form->save();
-        $this->getUser()->setFlash('success', sfInflector::humanize(sfInflector::underscore($this->class)).' edited correctly!');
+        $this->getUser()->setFlash('success', sfInflector::humanize(sfInflector::underscore($request->getParameter('class'))).' edited correctly!');
         $this->redirect('content/show?class='.$request->getParameter('class').'&slug='.$request->getParameter('slug'));
         // $this->redirect('content/addedOk?class='.$this->class.'&id='.$object->getId());
       }

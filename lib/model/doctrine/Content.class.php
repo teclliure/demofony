@@ -50,24 +50,24 @@ class Content extends BaseContent
   }
   
   public function getNonSelectedOpinions() {
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.selected = 0 OR o.selected IS NULL');
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.selected = 0 OR o.selected IS NULL')->andWhere('o.innapropiate = 0');
     return $query->execute();
   }
   
   public function getSelectedOpinions() {
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.selected = 1');
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.selected = 1')->andWhere('o.innapropiate = 0');
     return $query->execute();
   }
   
   public function countOpinions() {
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.innapropiate = 0');
     return $query->count();
   }
   
   public function countAllOpinions() {
-    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.innapropiate = 0');
     $numOpinions = $query->count();
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId());
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.innapropiate = 0');
     $numOpinions += $query->count();
     return $numOpinions;
   }
@@ -77,6 +77,7 @@ class Content extends BaseContent
     ->leftJoin('o.sfGuardUser u')
     ->leftJoin('u.Profile up')
     ->where('o.object_class = ?',get_class($this))
+    ->andWhere('o.innapropiate = 0')
     ->andWhere('o.object_id = ?',$this->getId())
     ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
     return  $q->execute();
@@ -88,6 +89,7 @@ class Content extends BaseContent
     ->leftJoin('ol.sfGuardUser u')
     ->leftJoin('u.Profile up')
     ->where('o.object_class = ?',get_class($this))
+    ->andWhere('o.innapropiate = 0')
     ->andWhere('o.object_id = ?',$this->getId())
     ->andWhere('up.latitude != \'\' AND up.latitude IS NOT NULL');
     
@@ -218,7 +220,6 @@ class Content extends BaseContent
     return $this->possibilities;
   }
   
-  
   public function getGmapHtml() {
     SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
     return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('added').' '.link_to ($this->getTitle(),'content/show?class='.get_class($this).'&slug='.$this->getSlug());
@@ -237,5 +238,30 @@ class Content extends BaseContent
   
   public function getGmapOpinions() {
     return GMap::loadMapOpinions('100%',250,$this);
+  }
+  
+  public function getImageSrcWithDefault($fieldName, $size = 'thumb') {
+    if (!$this->getImage()) {
+      $relative_url = sfContext::getInstance()->getRequest()->getRelativeUrlRoot();
+      return $relative_url.'/images/no-pic-'.$size.'.gif';
+    }
+    else return $this->getImageSrc($fieldName,$size);
+  }
+  
+  public function getUrl() {
+    return 'content/show?class='.get_class($this).'&slug='.$this->getSlug();
+  }
+  
+  /* RSS Methods */
+  public function getAuthorName() {
+    return $this->getSfGuardUser()->__toString();
+  }
+  
+  public function getFeedPubdate() {
+    return strtotime($this->getCreatedAt());
+  }
+  
+  public function getDescription() {
+    return $this->getStrippedBody();
   }
 }
