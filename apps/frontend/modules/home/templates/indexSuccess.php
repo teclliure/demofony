@@ -86,18 +86,31 @@ $(function() {
     </div>
   </div>
   
+  
   <div class="box has-title entrevistas">
-      <h1 class="hdr"><span class="inline icon-microphone"></span>E-ntrevistas</h1>
+      <h1 class="hdr"><span class="inline icon-microphone"></span><?php echo __('I-nterview') ?></h1>
+      <?php if ($virtualMeetings && count($virtualMeetings)): ?>
+        <?php foreach ($virtualMeetings as $virtualMeeting): ?>
+        <div class="box-content">
+            <div class="img"></div>
+            <h1><?php echo __('Ask a question') ?> <?php echo $virtualMeeting->getsfGuardUser()?></h1>
+            <p><?php echo $virtualMeeting->getTitle()?></p>
+            <div class="bottom">
+              <a href="<?php echo url_for('virtualMeeting/view?id='.$virtualMeeting->getId()) ?>" class="button1 inline"><?php echo __('Enter') ?></a>
+              <strong><span class="misc misc-<?php if($virtualMeeting->isOpened()): ?>unlock<?php else: ?>lock<?php endif; ?> inline"></span><?php echo $virtualMeeting->getState() ?></strong>
+              <div class="clear"></div>
+            </div>
+        </div>
+      <?php endforeach ?>
+      <?php else: ?>
       <div class="box-content">
-          <div class="img"></div>
-          <h1>Haz tus preguntas a Don Jose</h1>
-          <p>Consejal de Medio ambiente</p>
-          <div class="bottom">
-            <a href="#" class="button1 inline">Entrar</a>
-            <strong><span class="misc misc-unlock inline"></span>Entrevista abierta</strong>
-            <div class="clear"></div>
-          </div>
+        <h1><?php echo __('No virtual meeting avaliable') ?></h1>
       </div>
+      <?php endif; ?>
+      <div class="clear"></div>
+      <center><a href="<?php echo url_for('virtualMeeting/index') ?>" class="button1 inline"><?php echo __('View all interviews') ?></a></center>
+      <div class="clear"></div><br />
   </div>
+  
   <div class="clear"></div>
 </div>

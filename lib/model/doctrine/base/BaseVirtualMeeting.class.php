@@ -11,22 +11,31 @@
  * @property integer $user_id
  * @property date $answers_start_date
  * @property date $answers_end_date
+ * @property boolean $archived
+ * @property boolean $active
  * @property sfGuardUser $sfGuardUser
+ * @property Doctrine_Collection $VirtualMeetingQuestion
  * 
- * @method integer        getId()                 Returns the current record's "id" value
- * @method string         getTitle()              Returns the current record's "title" value
- * @method clob           getBody()               Returns the current record's "body" value
- * @method integer        getUserId()             Returns the current record's "user_id" value
- * @method date           getAnswersStartDate()   Returns the current record's "answers_start_date" value
- * @method date           getAnswersEndDate()     Returns the current record's "answers_end_date" value
- * @method sfGuardUser    getSfGuardUser()        Returns the current record's "sfGuardUser" value
- * @method VirtualMeeting setId()                 Sets the current record's "id" value
- * @method VirtualMeeting setTitle()              Sets the current record's "title" value
- * @method VirtualMeeting setBody()               Sets the current record's "body" value
- * @method VirtualMeeting setUserId()             Sets the current record's "user_id" value
- * @method VirtualMeeting setAnswersStartDate()   Sets the current record's "answers_start_date" value
- * @method VirtualMeeting setAnswersEndDate()     Sets the current record's "answers_end_date" value
- * @method VirtualMeeting setSfGuardUser()        Sets the current record's "sfGuardUser" value
+ * @method integer             getId()                     Returns the current record's "id" value
+ * @method string              getTitle()                  Returns the current record's "title" value
+ * @method clob                getBody()                   Returns the current record's "body" value
+ * @method integer             getUserId()                 Returns the current record's "user_id" value
+ * @method date                getAnswersStartDate()       Returns the current record's "answers_start_date" value
+ * @method date                getAnswersEndDate()         Returns the current record's "answers_end_date" value
+ * @method boolean             getArchived()               Returns the current record's "archived" value
+ * @method boolean             getActive()                 Returns the current record's "active" value
+ * @method sfGuardUser         getSfGuardUser()            Returns the current record's "sfGuardUser" value
+ * @method Doctrine_Collection getVirtualMeetingQuestion() Returns the current record's "VirtualMeetingQuestion" collection
+ * @method VirtualMeeting      setId()                     Sets the current record's "id" value
+ * @method VirtualMeeting      setTitle()                  Sets the current record's "title" value
+ * @method VirtualMeeting      setBody()                   Sets the current record's "body" value
+ * @method VirtualMeeting      setUserId()                 Sets the current record's "user_id" value
+ * @method VirtualMeeting      setAnswersStartDate()       Sets the current record's "answers_start_date" value
+ * @method VirtualMeeting      setAnswersEndDate()         Sets the current record's "answers_end_date" value
+ * @method VirtualMeeting      setArchived()               Sets the current record's "archived" value
+ * @method VirtualMeeting      setActive()                 Sets the current record's "active" value
+ * @method VirtualMeeting      setSfGuardUser()            Sets the current record's "sfGuardUser" value
+ * @method VirtualMeeting      setVirtualMeetingQuestion() Sets the current record's "VirtualMeetingQuestion" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -64,6 +73,16 @@ abstract class BaseVirtualMeeting extends sfDoctrineRecord
              'type' => 'date',
              'notnull' => true,
              ));
+        $this->hasColumn('archived', 'boolean', null, array(
+             'default' => 0,
+             'type' => 'boolean',
+             'notnull' => true,
+             ));
+        $this->hasColumn('active', 'boolean', null, array(
+             'default' => 0,
+             'type' => 'boolean',
+             'notnull' => true,
+             ));
     }
 
     public function setUp()
@@ -73,6 +92,10 @@ abstract class BaseVirtualMeeting extends sfDoctrineRecord
              'local' => 'user_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasMany('VirtualMeetingQuestion', array(
+             'local' => 'id',
+             'foreign' => 'virtual_meeting_id'));
 
         $sluggable0 = new Doctrine_Template_Sluggable(array(
              'unique' => true,

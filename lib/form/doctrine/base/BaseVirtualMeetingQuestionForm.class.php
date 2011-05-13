@@ -1,48 +1,45 @@
 <?php
 
 /**
- * VirtualMeeting form base class.
+ * VirtualMeetingQuestion form base class.
  *
- * @method VirtualMeeting getObject() Returns the current form's model object
+ * @method VirtualMeetingQuestion getObject() Returns the current form's model object
  *
  * @package    demofony
  * @subpackage form
  * @author     Marc Montañés <marc@teclliure.net>
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
-abstract class BaseVirtualMeetingForm extends BaseFormDoctrine
+abstract class BaseVirtualMeetingQuestionForm extends BaseFormDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
       'id'                 => new sfWidgetFormInputHidden(),
-      'title'              => new sfWidgetFormInputText(),
-      'body'               => new sfWidgetFormTextarea(),
       'user_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
-      'answers_start_date' => new sfWidgetFormDate(),
-      'answers_end_date'   => new sfWidgetFormDate(),
-      'archived'           => new sfWidgetFormInputCheckbox(),
+      'question'           => new sfWidgetFormTextarea(),
       'active'             => new sfWidgetFormInputCheckbox(),
+      'virtual_meeting_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeeting'), 'add_empty' => false)),
       'slug'               => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'title'              => new sfValidatorString(array('max_length' => 255)),
-      'body'               => new sfValidatorString(),
       'user_id'            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
-      'answers_start_date' => new sfValidatorDate(),
-      'answers_end_date'   => new sfValidatorDate(),
-      'archived'           => new sfValidatorBoolean(array('required' => false)),
+      'question'           => new sfValidatorString(array('max_length' => 1000)),
       'active'             => new sfValidatorBoolean(array('required' => false)),
+      'virtual_meeting_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeeting'))),
       'slug'               => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'VirtualMeeting', 'column' => array('slug')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'VirtualMeetingQuestion', 'column' => array('id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'VirtualMeetingQuestion', 'column' => array('slug'))),
+      ))
     );
 
-    $this->widgetSchema->setNameFormat('virtual_meeting[%s]');
+    $this->widgetSchema->setNameFormat('virtual_meeting_question[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -53,7 +50,7 @@ abstract class BaseVirtualMeetingForm extends BaseFormDoctrine
 
   public function getModelName()
   {
-    return 'VirtualMeeting';
+    return 'VirtualMeetingQuestion';
   }
 
 }

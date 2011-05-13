@@ -13,17 +13,15 @@ abstract class BaseVirtualMeetingAnswerFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'answer'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'opinion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Opinion'), 'add_empty' => true)),
-      'user_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
-      'slug'       => new sfWidgetFormFilterInput(),
+      'answer'                      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'virtual_meeting_question_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeetingQuestion'), 'add_empty' => true)),
+      'slug'                        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'answer'     => new sfValidatorPass(array('required' => false)),
-      'opinion_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Opinion'), 'column' => 'id')),
-      'user_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
-      'slug'       => new sfValidatorPass(array('required' => false)),
+      'answer'                      => new sfValidatorPass(array('required' => false)),
+      'virtual_meeting_question_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('VirtualMeetingQuestion'), 'column' => 'id')),
+      'slug'                        => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('virtual_meeting_answer_filters[%s]');
@@ -43,11 +41,10 @@ abstract class BaseVirtualMeetingAnswerFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'         => 'Number',
-      'answer'     => 'Text',
-      'opinion_id' => 'ForeignKey',
-      'user_id'    => 'ForeignKey',
-      'slug'       => 'Text',
+      'id'                          => 'Number',
+      'answer'                      => 'Text',
+      'virtual_meeting_question_id' => 'ForeignKey',
+      'slug'                        => 'Text',
     );
   }
 }

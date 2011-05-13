@@ -18,7 +18,6 @@
  * @property Doctrine_Collection $Users
  * @property Doctrine_Collection $OpinionLike
  * @property Doctrine_Collection $OpinionMarkedAsSpam
- * @property Doctrine_Collection $VirtualMeetingAnswer
  * 
  * @method integer             getId()                     Returns the current record's "id" value
  * @method string              getOpinion()                Returns the current record's "opinion" value
@@ -33,7 +32,6 @@
  * @method Doctrine_Collection getUsers()                  Returns the current record's "Users" collection
  * @method Doctrine_Collection getOpinionLike()            Returns the current record's "OpinionLike" collection
  * @method Doctrine_Collection getOpinionMarkedAsSpam()    Returns the current record's "OpinionMarkedAsSpam" collection
- * @method Doctrine_Collection getVirtualMeetingAnswer()   Returns the current record's "VirtualMeetingAnswer" collection
  * @method Opinion             setId()                     Sets the current record's "id" value
  * @method Opinion             setOpinion()                Sets the current record's "opinion" value
  * @method Opinion             setOpinionPossibilityId()   Sets the current record's "opinion_possibility_id" value
@@ -47,7 +45,6 @@
  * @method Opinion             setUsers()                  Sets the current record's "Users" collection
  * @method Opinion             setOpinionLike()            Sets the current record's "OpinionLike" collection
  * @method Opinion             setOpinionMarkedAsSpam()    Sets the current record's "OpinionMarkedAsSpam" collection
- * @method Opinion             setVirtualMeetingAnswer()   Sets the current record's "VirtualMeetingAnswer" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -129,10 +126,6 @@ abstract class BaseOpinion extends sfDoctrineRecord
              'foreign' => 'opinion_id'));
 
         $this->hasMany('OpinionMarkedAsSpam', array(
-             'local' => 'id',
-             'foreign' => 'opinion_id'));
-
-        $this->hasMany('VirtualMeetingAnswer', array(
              'local' => 'id',
              'foreign' => 'opinion_id'));
 

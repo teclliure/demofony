@@ -15,19 +15,17 @@ abstract class BaseVirtualMeetingAnswerForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'answer'     => new sfWidgetFormTextarea(),
-      'opinion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Opinion'), 'add_empty' => false)),
-      'user_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
-      'slug'       => new sfWidgetFormInputText(),
+      'id'                          => new sfWidgetFormInputHidden(),
+      'answer'                      => new sfWidgetFormTextarea(),
+      'virtual_meeting_question_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeetingQuestion'), 'add_empty' => false)),
+      'slug'                        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'answer'     => new sfValidatorString(),
-      'opinion_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Opinion'))),
-      'user_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
-      'slug'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'id'                          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'answer'                      => new sfValidatorString(array('max_length' => 1000)),
+      'virtual_meeting_question_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('VirtualMeetingQuestion'))),
+      'slug'                        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(

@@ -18,6 +18,8 @@ abstract class BaseVirtualMeetingFormFilter extends BaseFormFilterDoctrine
       'user_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'answers_start_date' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'answers_end_date'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'archived'           => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'active'             => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'slug'               => new sfWidgetFormFilterInput(),
     ));
 
@@ -27,6 +29,8 @@ abstract class BaseVirtualMeetingFormFilter extends BaseFormFilterDoctrine
       'user_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
       'answers_start_date' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'answers_end_date'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
+      'archived'           => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'active'             => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'slug'               => new sfValidatorPass(array('required' => false)),
     ));
 
@@ -53,6 +57,8 @@ abstract class BaseVirtualMeetingFormFilter extends BaseFormFilterDoctrine
       'user_id'            => 'ForeignKey',
       'answers_start_date' => 'Date',
       'answers_end_date'   => 'Date',
+      'archived'           => 'Boolean',
+      'active'             => 'Boolean',
       'slug'               => 'Text',
     );
   }

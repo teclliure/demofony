@@ -57,5 +57,7 @@ class homeActions extends sfActions
     $this->pager_last_news->setQuery(Doctrine_Core::getTable('GovermentNew')->getActiveQuery());
     $this->pager_last_news->setPage(1);
     $this->pager_last_news->init();
+    
+    $this->virtualMeetings = Doctrine_Core::getTable('VirtualMeeting')->getActiveAndNotArchivedQuery()->execute();
   }
 }

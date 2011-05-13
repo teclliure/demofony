@@ -216,6 +216,14 @@ VirtualMeeting:
     answers_end_date:
       type: date
       notnull: true
+    archived:
+      default: 0
+      type: boolean
+      notnull: true
+    active:
+      default: 0
+      type: boolean
+      notnull: true
   relations:
     sfGuardUser:
       onDelete: CASCADE
@@ -228,22 +236,14 @@ VirtualMeetingAnswer:
       type: integer
       autoincrement: true
     answer:
-      type: clob
+      type: string(1000)
       notnull: true
-    opinion_id:
-      type: integer
-      notnull: true
-    user_id:
+    virtual_meeting_question_id:
       type: integer
       notnull: true
   relations:
-    Opinion:
-      onDelete: CASCADE
-      local: opinion_id
-      foreign: id
-    sfGuardUser:
-      onDelete: CASCADE
-      local: user_id
+    VirtualMeetingQuestion:
+      local: virtual_meeting_question_id
       foreign: id
 SubscriptionCategory:
   columns:
@@ -426,6 +426,33 @@ Proposal:
   inheritance:
     extends: Content
     type: concrete
+VirtualMeetingQuestion:
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    question:
+      type: string(1000)
+      notnull: true
+    active:
+      default: 1
+      type: boolean
+      notnull: true
+    virtual_meeting_id:
+      type: integer
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+    VirtualMeeting:
+      local: virtual_meeting_id
+      foreign: id
 actAs:
   Sluggable:
     unique: true
