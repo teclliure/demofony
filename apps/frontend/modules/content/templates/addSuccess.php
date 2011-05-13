@@ -1,7 +1,7 @@
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
 <?php slot('pageId') ?>id="form-taller"<?php end_slot() ?>
-<form action="<?php if ($form->getObject()->isNew()) echo url_for ('@contentAdd?class='.$class); else echo url_for ('content/edit?class='.get_class($form->getObject()).'&slug='.$form->getObject()->getSlug());?>" class="form" method="post">
+<form action="<?php if ($form->getObject()->isNew()) echo url_for ('@contentAdd?class='.$class); else echo url_for ('content/edit?class='.get_class($form->getObject()).'&slug='.$form->getObject()->getSlug());?>"  <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?> class="form" method="post" >
 <div class="bar-left">
   <div class="box no-tabs no-margin">
     <div class="box-content show">

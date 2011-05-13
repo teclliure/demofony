@@ -17,4 +17,13 @@ class PluginOpinionLike extends BaseOpinionLike
     sfContext::getInstance()->getConfiguration()->loadHelpers('I18N');
     return $this->getOpinion().' '.__('like').' '.$this->getOpinion()->getSfGuardUser();
   }
+  
+  public function getGmapHtml() {
+    SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
+    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('opinated like').' '.$this->getOpinion()->getSfGuardUser();
+  }
+  
+  public function getGmapIcon() {
+    return null;
+  }
 }

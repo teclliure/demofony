@@ -68,6 +68,8 @@ class userActions extends sfActions {
     }
 
     $this->form = new ProfileForm($this->getUser()->getGuardUser());
+    $validatorSchema = $this->form->getValidatorSchema();
+    $validatorSchema['password']->setOption('required', false);
 
     if ($request->isMethod('post'))
     {

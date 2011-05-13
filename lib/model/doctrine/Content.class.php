@@ -240,6 +240,14 @@ class Content extends BaseContent
     return GMap::loadMapOpinions('100%',250,$this);
   }
   
+  public function getImageSrcWithDefault($fieldName, $size = 'thumb') {
+    if (!$this->getImage()) {
+      $relative_url = sfContext::getInstance()->getRequest()->getRelativeUrlRoot();
+      return $relative_url.'/images/no-pic-'.$size.'.gif';
+    }
+    else return $this->getImageSrc($fieldName,$size);
+  }
+  
   public function getUrl() {
     return 'content/show?class='.get_class($this).'&slug='.$this->getSlug();
   }

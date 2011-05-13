@@ -15,8 +15,8 @@ all:
           image:
             ratio:      1.5
             sizes:
-              thumb:    { width: 160 }
-              main:     { width: 210 }
+              thumb:    { width: 50, height: 45 }
+              main:     { width: 210, height: 140 }
       SfGuardUserProfile:
         directory:    images/user
         images:

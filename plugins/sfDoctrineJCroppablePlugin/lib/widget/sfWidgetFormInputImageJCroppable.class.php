@@ -39,7 +39,8 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
   protected function configure($options = array(), $attributes = array())
   {
     parent::configure($options, $attributes);
-
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+    
     $this->setOption('type', 'file');
     $this->setOption('needs_multipart', true);
     
@@ -50,7 +51,7 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
     $this->addOption('image_field', null);
     $this->addOption('image_ratio', null);
     $this->addOption('invoker', null);
-    $this->addOption('template', '<table><tr><td>%file%</td><td>%preview%</td></tr></table>%input%<br />%delete% %delete_label%');
+    $this->addOption('template', '<table><tr><td>%file%</td></tr><tr><td>'.__('Selection preview').': %preview%</td></tr></table>%input%<br />%delete% %delete_label%');
     $this->addOption('form', null);
     $this->addOption('preview', null);
   }
@@ -109,7 +110,7 @@ class sfWidgetFormInputFileInputImageJCroppable extends sfWidgetFormInputFile
       $image_config_size_width = $image_config['sizes'][$this->getOption('preview')]['width'];
       $image_config_size_height = $image_config_size_width*$image_config['ratio'];
       $preview = '
-      <div style="width: '.$image_config_size_width.'px; height: '.$image_config_size_height.'px; overflow: hidden; float: left; margin-left: 5px;">
+      <div style="width: '.$image_config_size_width.'px; height: '.$image_config_size_height.'px; overflow: hidden; margin-left: 5px;">
       <img id="'.$this->getIdStub().'_img_preview" src="'.$this->getOption('file_src').'" >
       </div>
       ';

@@ -123,6 +123,7 @@
         </div>
         
         <?php echo $form['profile']['image']->renderRow()?>
+        <?php // echo $form['profile']['image']->renderRow(array('width'=>'190px'))?>
         <button type="submit" class="button1"><?php echo __('Done')?></button>
       </div>
     </div>

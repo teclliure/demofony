@@ -13,10 +13,9 @@
 class sfGuardUserProfile extends BasesfGuardUserProfile
 {
   public function getImageSrcWithDefault($fieldName, $size = 'thumb') {
-    
-    if (!$this->getImage() && $size = 'thumb') {
+    if (!$this->getImage()) {
       $relative_url = sfContext::getInstance()->getRequest()->getRelativeUrlRoot();
-      return $relative_url.'/'.$this->getImageDirWeb().'/default_avatar.gif';
+      return $relative_url.'/images/no-profile-'.$size.'.gif';
     }
     else return $this->getImageSrc($fieldName,$size);
   }

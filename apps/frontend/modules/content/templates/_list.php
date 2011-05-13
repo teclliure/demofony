@@ -13,7 +13,7 @@
         <div class="col1">
             <p><strong><?php echo __('Location')?>:</strong> <?php echo $result->getLocation() ?></p>
             <p><strong><?php echo __('Date')?>:</strong> <?php echo format_date($result->getActionDate()) ?></p>
-            <p class="estat"><strong><?php echo __('Status')?>:</strong> Trobada abierta <span class="misc misc-<?php if($result->isOpened()): ?>unlock<?php else: ?>lock<?php endif;?> inline"></span></p>
+            <p class="estat"><strong><?php echo __('Status')?>:</strong> <?php echo $result->getState() ?> <span class="misc misc-<?php if($result->isOpened()): ?>unlock<?php else: ?>lock<?php endif;?> inline"></span></p>
         </div>
         <div class="col2">
             <p><strong><?php echo __('Participants') ?>:</strong></p>

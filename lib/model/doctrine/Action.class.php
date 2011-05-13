@@ -14,10 +14,20 @@ class Action extends BaseAction
 {
   
   public function isOpened() {
-    if (strtotime($this->getActionDate()) >= time() && !$this->isFull()) {
+    if (strtotime($this->getActionDate()) >= time() && !$this->isFull() && !$this->getConfirmed()) {
       return true;
     }
     else return false;
+  }
+  
+  public function getState() {
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+    if ($this->isOpened()) {
+      return __('Open meeting');
+    }
+    else {
+      return __('Closed meeting');
+    }
   }
   
   public function getNumberUsersRegistered() {
