@@ -373,7 +373,7 @@
   .ficha div.share{margin-bottom:10px; float:right;}
   .ficha div.participate p{margin-bottom:10px; color:#BD9C3F; font-size:14px;}
   .ficha div.participate a{padding:10px; display:block; margin:0 10px 0 10px; background:#7E8A8F;}
-  .ficha div.participate .button1{margin-bottom:15px;}
+  .ficha div.participate .button1{margin:5px 30px 15px 30px !important; background:#7a868c !important;}
   .ficha div.participate div.hdr{height:70px; position:relative;}
   .ficha div.participate div.hdr span{display:block; top:-60px; position:absolute;}
   .ficha div.participate div.hdr strong{font-size:30px; color:#fff; text-transform:uppercase; display:block; position:absolute; top:-10px; left:20px;}
