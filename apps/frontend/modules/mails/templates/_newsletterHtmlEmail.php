@@ -4,7 +4,7 @@
 
 <?php foreach ($contents as $object): ?>
   <div class="title">
-  <h1><?php echo __('Check full information in') ?> <?php echo link_to ($object->getTitle(),'content/show?class='.get_class($object->getRawValue()).'&slug='.$object->getSlug())?></h1>
+  <h1><?php echo __('Check full information in') ?> <?php echo link_to ($object->getTitle(),$object->getRawValue()->getUrl())?></h1>
   <p class="author">
     <?php echo __('by') ?> <?php echo link_to($object->getSfGuardUser(),'user/showProfile?username='.$object->getSfGuardUser()->getUsername()) ?>, <?php echo format_date($object->getCreatedAt()) ?>
   </p>

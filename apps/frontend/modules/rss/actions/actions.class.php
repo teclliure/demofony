@@ -12,13 +12,14 @@ class rssActions extends sfActions
 {
   public function executeLastContents(sfWebRequest $request)
   {
-    $feed = new sfAtom1Feed();
+    $this->getContext()->getConfiguration()->loadHelpers('Url');
+    $feed = new sfRss201Feed();
 
     $feed->initialize(array(
-      'title'       => 'The mouse blog',
-      'link'        => 'http://www.myblog.com/',
-      'authorEmail' => 'pclive@myblog.com',
-      'authorName'  => 'Peter Clive'
+      'title'       => 'Demofony',
+      'link'        => url_for('@homepage', true),
+      'authorEmail' => sfConfig::get('app_info_email', 'info@noreply.com'),
+      'authorName'  => sfConfig::get('app_info_author', 'Info')
     ));
     
     $sql = Doctrine_Core::getTable('Content')->getSqlUnion();
@@ -28,6 +29,29 @@ class rssActions extends sfActions
     $contentsPager->init();
     $contents = $contentsPager->getResults();
   
+    $contentsItems = sfFeedPeer::convertObjectsToItems($contents);
+    $feed->addItems($contentsItems);
+  
+    $this->feed = $feed;
+    $this->setTemplate('rss');
+  }
+  
+  public function executeLastOpinions(sfWebRequest $request)
+  {
+    $this->getContext()->getConfiguration()->loadHelpers('Url');
+    $feed = new sfRss201Feed();
+
+    
+    $feed->initialize(array(
+      'title'       => 'Demofony',
+      'link'        => url_for('@homepage', true),
+      'authorEmail' => sfConfig::get('app_info_email', 'info@noreply.com'),
+      'authorName'  => sfConfig::get('app_info_author', 'Info')
+    ));
+    
+    
+    $contents = Doctrine::getTable('Opinion')->createQuery('o')->andWhere('o.innapropiate = 0')->orderBy('o.created_at desc')->limit(10)->execute();
+    
     $contentsItems = sfFeedPeer::convertObjectsToItems($contents);
     $feed->addItems($contentsItems);
   

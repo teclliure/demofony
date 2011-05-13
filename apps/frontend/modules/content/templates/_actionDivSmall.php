@@ -3,7 +3,7 @@
 <div class="col1">
     <div class="img"></div>
     <div class="img"><img src="<?php echo $action->getSfGuardUser()->getProfile()->getImageSrcWithDefault('image', 'thumb')?>" alt="profile_image" /></div>
-    <h1><?php echo link_to ($action->getTitle(),'content/show?class='.get_class($action->getRawValue()).'&slug='.$action->getSlug())?></h1>
+    <h1><?php echo link_to ($action->getTitle(),$action->getRawValue()->getUrl())?></h1>
     <p class="author"><?php echo ('by')?> <?php echo link_to($action->getSfGuardUser(),'user/showProfile?username='.$action->getSfGuardUser()->getUsername()) ?></p>
     <p class="date"><?php echo __('on')?> <?php echo format_date($action->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$action->getCategories()))?></p>
 </div>
@@ -19,6 +19,6 @@
     <?php if($action->getMaxUsersAllowed()): ?><p><strong>Max:</strong> <?php echo $action->getMaxUsersAllowed() ?></p><?php endif; ?>
 </div>
 <div class="col4">
-  <a href="<?php echo url_for('content/show?class='.get_class($action->getRawValue()).'&slug='.$action->getSlug()) ?>" class="button1 enter"><?php echo __('Enter')?></a>
+  <a href="<?php echo url_for($action->getRawValue()->getUrl()) ?>" class="button1 enter"><?php echo __('Enter')?></a>
 </div>
 <div class="clear"></div>

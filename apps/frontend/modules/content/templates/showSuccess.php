@@ -110,7 +110,7 @@
         <?php $related = $content->getRelatedContent() ?>
         <?php foreach ($related as $subcontent): ?>
         <div class="item">
-            <h1><?php echo link_to ($subcontent->getTitle(),'content/show?class='.get_class($subcontent->getRawValue()).'&slug='.$subcontent->getSlug())?></h1>
+            <h1><?php echo link_to ($subcontent->getTitle(),$subcontent->getRawValue()->getUrl())?></h1>
             <p class="date"><?php echo format_date($subcontent->getCreatedAt()) ?></p>
         </div>
         <? endforeach; ?>

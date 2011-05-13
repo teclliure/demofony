@@ -90,7 +90,7 @@ class contentActions extends sfActions {
     $this->content->confirm();
 
     $this->getUser()->setFlash('notice', $this->content.' confirmed. An email was sent to all registered users.');
-    $this->redirect('content/show?class='.$request->getParameter('class').'&slug='.$request->getParameter('slug'));
+    $this->redirect($this->content->getUrl());
   }
   
   public function executeEdit($request) {
@@ -116,7 +116,7 @@ class contentActions extends sfActions {
       {
         $object = $this->form->save();
         $this->getUser()->setFlash('success', sfInflector::humanize(sfInflector::underscore($this->class)).' edited correctly!');
-        $this->redirect('content/show?class='.$request->getParameter('class').'&slug='.$request->getParameter('slug'));
+        $this->redirect($object->getUrl());
         // $this->redirect('content/addedOk?class='.$this->class.'&id='.$object->getId());
       }
     }

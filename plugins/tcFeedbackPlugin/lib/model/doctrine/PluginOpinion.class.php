@@ -43,4 +43,27 @@ class PluginOpinion extends BaseOpinion
   public function getGmapIcon() {
     return null;
   }
+  
+  /* RSS Methods */
+  public function getTitle() {
+    $content = $this->getObject();
+    return $content. ' :'.$this->__toString();
+  }
+  
+  public function getUrl() {
+    $content = $this->getObject();
+    return 'content/show?class='.get_class($content).'&slug='.$content->getSlug();
+  }
+  
+  public function getAuthorName() {
+    return $this->getSfGuardUser()->__toString();
+  }
+  
+  public function getFeedPubdate() {
+    return strtotime($this->getCreatedAt());
+  }
+  
+  public function getDescription() {
+    return $this->getOpinion();
+  }
 }
