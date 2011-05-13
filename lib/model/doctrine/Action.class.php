@@ -60,11 +60,11 @@ class Action extends BaseAction
   }
   
   public function confirm() {
-    $i18n = sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
     $action = sfContext::getInstance()->getActionStack()->getFirstEntry()->getActionInstance();
     $message = Swift_Message::newInstance()
     ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
-    ->setTo($this->getSfGuardUser()->getEmailAddress())
+    ->setTo($this->getSfGuardUser()->getEmailAddress(),$user)
     ->setSubject(sfInflector::humanize(sfInflector::underscore(get_class($this))).' '.__('confirmed !!'))
     ->setBody($action->getPartial('mails/confirmHtmlEmail', array('object' => $this)), 'text/html');
     

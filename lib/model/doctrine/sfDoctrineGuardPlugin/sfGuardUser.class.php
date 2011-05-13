@@ -19,7 +19,7 @@ class sfGuardUser extends PluginsfGuardUser
   }
   
   public function getOpinions() {
-    return Doctrine_core::getTable('Opinion')->createQuery('o')->leftJoin('o.OpinionLike ol')->where('o.user_id = ?',$this->getId())->orWhere('ol.user_id = ?',$this->getId())->execute();
+    return Doctrine_core::getTable('Opinion')->createQuery('o')->leftJoin('o.OpinionLike ol')->where('o.user_id = ?',$this->getId())->andWhere('o.innapropiate = 0')->orWhere('ol.user_id = ?',$this->getId())->execute();
   }
   
   public function getNumberComments() {
@@ -31,36 +31,11 @@ class sfGuardUser extends PluginsfGuardUser
   }
 
   public function getInitiatives() {
-    return Doctrine_core::getTable('CitizenProposal')->createQuery('cp')->where('cp.user_id = ?',$this->getId())->execute();
+    return Doctrine_core::getTable('CitizenProposal')->createQuery('cp')->where('cp.user_id = ?',$this->getId())->andWhere('cp.active = 1')->execute();
   }
   
   public function getActions() {
-    $inheritedClasses = array('CitizenAction','Workshop');
-    $sql = '';
-    $selectFieldsQuery = Doctrine::getTable('Action')->getColumns();
-    $select = '';
-    foreach ($selectFieldsQuery as $key=>$selectField) {
-      $select .= ','.$key;
-    }
-    foreach ($inheritedClasses as $key=>$class) {
-      if ($key) $sql .= ' UNION ';
-      $sql .= "( SELECT '$class' as class".$select.' FROM '.Doctrine::getTable($class)->getTableName().' where user_id = '.$this->getId().')';
-    }
-    $conn = Doctrine_Manager::connection();
-    
-    $pdo = $conn->execute($sql);
-    $pdo->setFetchMode(Doctrine_Core::FETCH_ASSOC);
-    $items = $pdo->fetchAll();
-    
-    $objects = array();
-    foreach ($items as $item) {
-      $class = $item['class'];
-      unset ($item['class']);
-      $object = new $class;
-      $object->fromArray($item);
-      $objects[] = $object;
-    }
-    return $objects;
+    return Doctrine::getTable('Action')->getObjectsUnion('ORDER BY action_date desc', null, null, null, $where = 'active = 1 AND user_id='.$this->getId());
   }
   
   public function getNumberActions() {

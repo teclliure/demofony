@@ -218,7 +218,6 @@ class Content extends BaseContent
     return $this->possibilities;
   }
   
-  
   public function getGmapHtml() {
     SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
     return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('added').' '.link_to ($this->getTitle(),'content/show?class='.get_class($this).'&slug='.$this->getSlug());

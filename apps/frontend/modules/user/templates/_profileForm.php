@@ -62,22 +62,53 @@
         
         <div class="hide form-toggle-content suscriptions">
           <p>
-Selecciona las categorías y barris que te interesen y te mantendremos informado 
-semanalmente a través del correo electrónico de las novedades. Si más adelante te 
-interesan otras temáticas o barrios siempre puedes acceder a esta pantalla a través de 
-edición de perﬁl y cambiar tus suscripciones</p>
+          Selecciona las categorías y barris que te interesen y te mantendremos informado
+          semanalmente a través del correo electrónico de las novedades. Si más adelante te
+          interesan otras temáticas o barrios siempre puedes acceder a esta pantalla a través de
+          edición de perﬁl y cambiar tus suscripciones</p>
+          <script type="text/javascript">
+          /* <![CDATA[ */
+          $(document).ready(function()
+          {
+            $("#cats_all").click(function()
+            {
+              var checked_status = this.checked;
+              $(".batch_cats").each(function()
+              {
+              this.checked = checked_status;
+              });
+            });
+
+            $("#regs_all").click(function()
+            {
+              var checked_status = this.checked;
+              $(".batch_regs").each(function()
+              {
+              this.checked = checked_status;
+              });
+            });
+          });
+           
+          /* ]]> */
+          </script>
+          
+          
           <?php echo $form['profile']['subscription_email']->renderRow() ?>
-          <?php echo $form['profile']['categories_list']->renderRow() ?>
-          <?php echo $form['profile']['regions_list']->renderRow() ?>
+          <div class="clear"></div>
+          <?php echo $form['profile']['categories_list']->renderRow(array('class'=>'batch_cats')) ?>
+          <input type="checkbox" id="cats_all"> <?php echo __('Select all categories') ?>
+          <div class="clear"></div>
+          <?php echo $form['profile']['regions_list']->renderRow(array('class'=>'batch_regs')) ?>
+          <input type="checkbox" id="regs_all"> <?php echo __('Select all categories') ?>
           <div class="clear"></div>
         </div>
         
         <div class="box-title color1">
-          <p><a href="#" class="toggler">+</a><?php echo __('Darse de baja')?></p>
+          <p><a href="#" class="toggler">+</a><?php echo __('Unsubscribe')?></p>
         </div>
         
         <div class="hide form-toggle-content">
-          <button class="button1">Darse de baja</button>
+          <button class="button1"><?php echo __('Unsubscribe')?></button>
         </div>
         
       </div>
