@@ -20,6 +20,7 @@ default:
     - icons.css
     - fonts.css
     - /jquery/ui/css/overcast/jquery-ui-1.8.11.custom.css
+    - /jquery/qtip2/jquery.qtip.min.css
     - main.css
     - ie.css { condition: IE }
     
@@ -28,6 +29,7 @@ default:
     - /jquery/jquery-1.5.1.min.js
     - /jquery/ui/jquery-ui-1.8.11.custom.min.js
     - /jquery/jquery.form.js
+    - /jquery/qtip2/jquery.qtip.pack.js
     - frontend.js
 
   has_layout:     true

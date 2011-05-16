@@ -32,6 +32,10 @@ dev:
       delivery_address: marc@teclliure.net
 
 all:
+  user:
+    class: myUser
+    param:
+      timeout: 3600
   routing:
     class: sfPatternRouting
     param:

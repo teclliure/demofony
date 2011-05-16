@@ -26,9 +26,9 @@ $(function() {
       <h1 class="hdr"><span class="inline icon-altavoz_announcements"></span><?php echo __('Initiatives') ?></h1>
       <ul class="tabs">
         <li><a href="#all"><span></span><b><?php echo __('View all') ?></b></a></li>
-        <li><a href="#citizen_proposal"><span class="icon-letter-c">c</span><b style="margin-top: 9.5px;"><?php echo __('Citizen<br /> initiatives') ?></b></a></li>
-        <li><a href="#goverment_proposal"><span class="icon-letter-g">g</span><b style="margin-top: 9.5px;"><?php echo __('Goverment<br /> initiatives') ?></b></a></li>
-        <li><a href="#goverment_consultation"><span class="icon-letter-q">?</span><b style="margin-top: 9.5px;"><?php echo __('Opinion<br /> polls') ?></b></a></li>
+        <li><a href="#citizen_proposal" class="qtip_launch" qtip-content="<?php echo __('Use your inventiveness to create a better Eivissa. The initiatives with more support will be studied by the Government.') ?>"><span class="icon-letter-c">c</span><b style="margin-top: 9.5px;"><?php echo __('Citizen<br /> initiatives') ?></b></a></li>
+        <li><a href="#goverment_proposal" class="qtip_launch" qtip-content="<?php echo __('Give us your opinion about initiatives proposed by the Government.') ?>"><span class="icon-letter-g">g</span><b style="margin-top: 9.5px;"><?php echo __('Goverment<br /> initiatives') ?></b></a></li>
+        <li><a href="#goverment_consultation"  class="qtip_launch" qtip-content="<?php echo __('Give us your opinion about issues of public interest.') ?>"><span class="icon-letter-q">?</span><b style="margin-top: 9.5px;"><?php echo __('Opinion<br /> polls') ?></b></a></li>
       </ul>
       <div class="box-content"  id="all">
         <?php include_partial('content/initiativesList',array('contents'=>$pager_last_proposals->getResults(),'id'=>'all','url'=>url_for('content/showPage?class=Proposal&id=all&partial=initiativesList&limit=5'),'pager'=>$pager_last_proposals))?>
@@ -48,8 +48,8 @@ $(function() {
     <h1 class="hdr"><span class="inline icon-meeting_point"></span><?php echo __('Meetings') ?></h1>
     <ul class="tabs">
       <li><a href="#mapa"><span class="icon-map inline"></span><b><?php echo __('Map') ?></b></a></li>
-      <li><a href="#accio-ciutadana"><span class="icon-pin_yellow inline"></span><b><?php echo __('Citizen<br /> action') ?></b></a></li>
-      <li><a href="#sota-demanda"><span class="icon-pin_blue inline"></span><b><?php echo __('Workshops<br /> on demand') ?></b></a></li>
+      <li><a href="#accio-ciutadana" class="qtip_launch" qtip-content="<?php echo __('Summon other citizens to a gathering in order to actively improve Eivissa.') ?>"><span class="icon-pin_yellow inline"></span><b><?php echo __('Citizen<br /> action') ?></b></a></li>
+      <li><a href="#sota-demanda" class="qtip_launch" qtip-content="<?php echo __('Offer your knowledge to other Citizens. Publish your conditions.') ?>"><span class="icon-pin_blue inline"></span><b><?php echo __('Workshops<br /> on demand') ?></b></a></li>
     </ul>
     <div class="box-content" id="mapa">
       <?php if ($map->countMarkers()): ?>
