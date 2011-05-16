@@ -24,6 +24,10 @@
               </div>
               <div class="map">
                   <p><?php echo __('Location') ?>: <strong><?php echo $userProfile->getProfile()->getLocation() ?></strong></p>
+                  <?php if ($map): ?>
+                    <br />
+                    <?php $map->showMap(false)?>
+                  <?php endif; ?>
                   <div id="profile-map"></div>
               </div>
           </div>

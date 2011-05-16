@@ -13,10 +13,7 @@
           <?php endif; ?>
           </li>
           <li class="language">
-          <select class="line">
-            <option><?php echo __('Català') ?></option>
-            <option><?php echo __('Castellano') ?></option>
-          </select>
+          <?php include_component('language', 'language') ?>
           </li>
          </ul>
       </div>

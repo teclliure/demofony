@@ -89,5 +89,9 @@ class userActions extends sfActions {
     $this->section = $request->getParameter('section');
     if (!$this->section) $this->section = 'opinions';
     $this->forward404Unless($this->userProfile);
+    $this->map = $this->userProfile->getProfile()->getGmap();
+    if ($this->map) {
+      $this->getResponse()->addJavascript($this->map->getGMapsJSUrl());
+    }
   }
 }

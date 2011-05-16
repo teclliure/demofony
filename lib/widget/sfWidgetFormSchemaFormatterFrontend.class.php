@@ -8,8 +8,10 @@ class sfWidgetFormSchemaFormatterFrontend extends sfWidgetFormSchemaFormatter
     $helpFormat      = '<small>%help%</small>',
     $errorListFormatInARow     = "  <div class=\"msg div_error_list error\">\n%errors%</div>\n",
     $errorRowFormatInARow      = "    - %error%\n",
+    $requiredTemplate= '&nbsp;<pow class="requiredFormItem">*</pow>',
     $namedErrorRowFormatInARow = "    - %name%: %error%<br />\n",
-    $decoratorFormat = "\n  %content%";
+    $decoratorFormat = "\n  %content%",
+    $validatorSchema = null;
  
   /*public function formatRow($label, $field, $errors = array(), $help = '', $hiddenFields = null)
   {
@@ -25,7 +27,17 @@ class sfWidgetFormSchemaFormatterFrontend extends sfWidgetFormSchemaFormatter
       '%row_class%' => (count($errors) > 0) ? ' form_row_error' : '',
     ));
   }*/
-  
+  /**
+   * Constructor
+   *
+   * @param sfWidgetFormSchema $widgetSchema
+   */
+  public function __construct(sfWidgetFormSchema $widgetSchema, sfValidatorSchema $validatorSchema)
+  {
+    $this->setWidgetSchema($widgetSchema);
+    $this->setValidatorSchema($validatorSchema);
+  }
+    
    /**
    * Generates a label for the given field name.
    *
@@ -39,5 +51,29 @@ class sfWidgetFormSchemaFormatterFrontend extends sfWidgetFormSchemaFormatter
     $labelName = $this->generateLabelName($name);
     return $this->widgetSchema->renderContentTag('span', $labelName, $attributes);
   }
-  
+
+  /**
+   * Generates the label name for the given field name.
+   *
+   * @param  string $name  The field name
+   * @return string The label name
+   */
+  public function generateLabelName($name)
+  {
+    $label = parent::generateLabelName($name);
+
+    $fields = $this->validatorSchema->getFields();
+    if(isset($fields[$name]) && $fields[$name] != null) {
+      $field = $fields[$name];
+      if($field->hasOption('required') && $field->getOption('required')) {
+        $label .= $this->requiredTemplate;
+      }
+    }
+    return $label;
+  }
+
+  public function setValidatorSchema(sfValidatorSchema $validatorSchema)
+  {
+    $this->validatorSchema = $validatorSchema;
+  }
 }

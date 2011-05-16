@@ -19,4 +19,20 @@ class sfGuardUserProfile extends BasesfGuardUserProfile
     }
     else return $this->getImageSrc($fieldName,$size);
   }
+  
+  public function getGmap() {
+    if ($this->getLatitude() && $this->getLongitude()) {
+      return GMap::loadMap('100%',200,array($this));
+    }
+    else return null;
+  }
+  
+  public function getGmapHtml() {
+    sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+    return $this->getUser()->__toString().' '.__('lives here');
+  }
+  
+  public function getGmapIcon() {
+    return null;
+  }
 }

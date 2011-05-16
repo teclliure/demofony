@@ -3,6 +3,11 @@
 
 # default values
 all:
+  cultures:
+    enabled:
+      en: English
+      es: Español
+      ca: Català
   sf_guard_plugin:
     signin_form: sfGuardFormSigninFrontend
     remember_key_expiration_age:  2592000   # 30 days in seconds
