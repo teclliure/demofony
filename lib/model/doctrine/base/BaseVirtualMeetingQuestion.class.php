@@ -76,7 +76,8 @@ abstract class BaseVirtualMeetingQuestion extends sfDoctrineRecord
 
         $this->hasOne('VirtualMeeting', array(
              'local' => 'virtual_meeting_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'cascade'));
 
         $this->hasOne('VirtualMeetingAnswer', array(
              'local' => 'id',

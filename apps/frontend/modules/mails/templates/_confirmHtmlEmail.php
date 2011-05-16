@@ -1,6 +1,6 @@
 <?php use_helper('Date') ?>
 <div class="box-title color2">
-  <p><?php echo __('Remember to participe on') ?> <?php echo sfInflector::humanize(sfInflector::underscore(get_class($object->getRawValue()))) ?></p>
+  <p><?php echo __('Remember to participe on') ?> <?php echo __(sfInflector::humanize(sfInflector::underscore(get_class($object->getRawValue())))) ?></p>
   <h2><?php echo __('Date') ?>: <?php echo format_date($object->getActionDate()) ?></h2>
   <h2><?php echo __('Location') ?>: <?php echo $object->getLocation() ?></h2>
 </div>

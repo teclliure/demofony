@@ -453,6 +453,10 @@
 	/* --- MISC --- */
 
 	/* --- Graph --- */
+	.rating {
+	 margin-top:10px;
+	}
+  
   .graphcont {
 	padding-top:10px;
 	color:#000;
@@ -462,7 +466,7 @@
 	
 	.graph {
 	float:left;
-	margin-top:10px;
+	margin-top:3px;
 	background-color:#cecece;
 	position:relative;
 	width:230px;

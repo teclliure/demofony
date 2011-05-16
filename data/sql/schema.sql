@@ -65,7 +65,7 @@ ALTER TABLE subscription_region ADD CONSTRAINT subscription_region_user_id_sf_gu
 ALTER TABLE subscription_region ADD CONSTRAINT subscription_region_region_id_region_id FOREIGN KEY (region_id) REFERENCES region(id) ON DELETE CASCADE;
 ALTER TABLE virtual_meeting ADD CONSTRAINT virtual_meeting_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE virtual_meeting_answer ADD CONSTRAINT vvvi FOREIGN KEY (virtual_meeting_question_id) REFERENCES virtual_meeting_question(id) ON DELETE CASCADE;
-ALTER TABLE virtual_meeting_question ADD CONSTRAINT virtual_meeting_question_virtual_meeting_id_virtual_meeting_id FOREIGN KEY (virtual_meeting_id) REFERENCES virtual_meeting(id);
+ALTER TABLE virtual_meeting_question ADD CONSTRAINT virtual_meeting_question_virtual_meeting_id_virtual_meeting_id FOREIGN KEY (virtual_meeting_id) REFERENCES virtual_meeting(id) ON DELETE CASCADE;
 ALTER TABLE virtual_meeting_question ADD CONSTRAINT virtual_meeting_question_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id);
 ALTER TABLE workshop ADD CONSTRAINT workshop_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE sf_guard_forgot_password ADD CONSTRAINT sf_guard_forgot_password_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;

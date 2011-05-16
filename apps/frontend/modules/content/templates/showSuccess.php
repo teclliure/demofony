@@ -5,7 +5,7 @@
     <div class="box">
       <div class="box-content show">
         <div class="box-title color2">
-          <p><?php echo sfInflector::humanize(sfInflector::underscore(get_class($content->getRawValue()))) ?></p>
+          <p><?php echo __(sfInflector::humanize(sfInflector::underscore(get_class($content->getRawValue())))) ?></p>
         </div>
         
         <div class="title">

@@ -16,6 +16,6 @@ class CitizenProposalForm extends BaseCitizenProposalForm
   public function configure()
   {
     parent::configure();
-    $this->widgetSchema->setHelp('tip','Comments to administrator. This text will NOT be shown to other users');
+    $this->widgetSchema->setLabel('tip','Comments to Administrator (This text will NOT be published)');
   }
 }

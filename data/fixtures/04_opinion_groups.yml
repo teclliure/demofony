@@ -19,15 +19,15 @@ OpinionPossibility:
     icon: icon-thumb-up
     OpinionPossibilityGroup: op_gr_1
     Translation:
-      en: { name: "I back this initiative" }
-      es: { name: "Apoyo esta iniciativa" }
+      en: { name: "Back initiative" }
+      es: { name: "Apoyo la iniciativa" }
   op_po_2:
     gmap_bubble_image: red
     icon: icon-thumb-down
     OpinionPossibilityGroup: op_gr_1
     Translation:
-      en: { name: "I oppose to this initiative" }
-      es: { name: "Estoy en contra de esta iniciativa" }
+      en: { name: "Oppose initiative" }
+      es: { name: "Me opongo a la iniciativa" }
   op_po_3:
     OpinionPossibilityGroup: op_gr_3
     Translation:

@@ -7,9 +7,9 @@
     <div class="box-content show">
       <div class="box-title color1">
         <?php if (isset($class)): ?>
-        <p><?php echo __('Add your') ?> <?php echo sfInflector::humanize(sfInflector::underscore($class)) ?></p>
+        <p><?php echo __('Add your') ?> <?php echo __(sfInflector::humanize(sfInflector::underscore($class))) ?></p>
         <?php else: ?>
-        <p><?php echo __('Edit your') ?> <?php echo sfInflector::humanize(sfInflector::underscore(get_class($form->getObject()))) ?></p>
+        <p><?php echo __('Edit your') ?> <?php echo __(sfInflector::humanize(sfInflector::underscore(get_class($form->getObject())))) ?></p>
         <?php endif; ?>
       </div>
       <?php echo $form->renderGlobalErrors() ?>

@@ -70,7 +70,7 @@ $(function() {
   <div class="box crear">
       <div class="box-content">
           <div class="misc misc-people"></div>
-          <p><?php echo __('Do you want participate in create a better <strong>Eivissa</strong>?') ?></p>
+          <p><?php echo __('Do you want to participate in creating a better <strong>Eivissa</strong>?') ?></p>
           <?php if ($sf_user->isAuthenticated()): ?>
             <a href="#" class="select_content button1"><?php echo __('Make your proposal') ?></a>
           <?php else: ?>
