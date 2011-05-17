@@ -94,4 +94,17 @@ class userActions extends sfActions {
       $this->getResponse()->addJavascript($this->map->getGMapsJSUrl());
     }
   }
+  
+  public function executeUnsubscribe() {
+    if (!$this->getUser()->isAuthenticated())
+    {
+      $this->getUser()->setFlash('error', 'You must be signed in to unsubscribe');
+      $this->redirect('@homepage');
+    }
+    $guardUser = $this->getUser()->getGuardUser();
+    $guardUser->setIsActive(0);
+    $this->getUser()->signOut();
+    $this->getUser()->setFlash('msg', 'You have been correctly unsubscribed.');
+    $this->redirect('@homepage');
+  }
 }

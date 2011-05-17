@@ -74,7 +74,7 @@
           </form>
         <?php endif; ?>
       <?php else: ?>
-        <?php echo link_to(__('Register'),'@register',array('class'=>"button1")) ?>
+        <?php echo link_to(__('Register'),'@register',array('class'=>"button1 login_opener")) ?>
         <!-- <div id="notlogged"><?php echo __('Please log in to opinate') ?></div> -->
       <?php endif ?>
       <?php if ($form->getGroup() && $form->getGroup()->getShowStats()): ?>

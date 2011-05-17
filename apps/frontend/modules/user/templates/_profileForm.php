@@ -110,7 +110,7 @@
         <?php endif; ?>
         
         <div class="hide form-toggle-content">
-          <button class="button1"><?php echo __('Unsubscribe')?></button>
+          <?php echo button_to(__('Unsubscribe'),'user/unsubscribe',array('class'=>'button1','confirm'=>__('Are you sure ?'))) ?>
         </div>
         
       </div>

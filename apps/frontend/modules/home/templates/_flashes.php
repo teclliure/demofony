@@ -20,6 +20,13 @@
   </div>
 <?php endif; ?>
 
+<?php if ($sf_user->hasFlash('msg')): ?>
+  <div class="info ui-corner-all">
+    <span class="ui-icon ui-icon-info">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <?php echo __($sf_user->getFlash('msg')) ?>
+  </div>
+<?php endif; ?>
+
 <?php if ($sf_user->hasFlash('success')): ?>
   <div class="success ui-corner-all">
     <span class="ui-icon ui-icon-circle-check">&nbsp;&nbsp;&nbsp;&nbsp;</span>

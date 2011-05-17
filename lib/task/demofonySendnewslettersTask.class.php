@@ -44,7 +44,7 @@ EOF;
     $this->logSection('error', 'End date '.$endDate);
     
     // add your code here
-    $query = Doctrine_Core::getTable('sfGuardUser')->createQuery('u')->leftJoin('u.Profile p')->where('p.subscription_email = 1');
+    $query = Doctrine_Core::getTable('sfGuardUser')->createQuery('u')->leftJoin('u.Profile p')->where('p.subscription_email = 1')->andWhere('u.is_active = 1');
     $this->logSection('error', 'Number users with subscription '.$query->count());
     
     $users = $query->execute();

@@ -334,11 +334,11 @@
       </trans-unit>
       <trans-unit id="83">
         <source>Admin</source>
-        <target>Admin</target>
+        <target>Administra</target>
       </trans-unit>
       <trans-unit id="84">
         <source>already confirmed</source>
-        <target>ya han confirmado</target>
+        <target>ya confirmado/a</target>
       </trans-unit>
       <trans-unit id="85">
         <source>Edit</source>
@@ -581,6 +581,10 @@
         <target>Noticias</target>
       </trans-unit>
       <trans-unit id="138">
+        <source>Citizen action</source>
+        <target>Acción ciudadana</target>
+      </trans-unit>
+      <trans-unit id="138">
         <source>Add your</source>
         <target>Añade tu</target>
       </trans-unit>
@@ -683,7 +687,23 @@
       <trans-unit id="154">
         <source>Required.</source>
         <target>Obligatorio.</target>
-      </trans-unit>     
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Register and start participating right away</source>
+        <target>Registrarse y emepezar a participar ahora mismo</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Are you sure ?</source>
+        <target>¿ Estas seguro ?</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Are you sure ? You may not change your</source>
+        <target>¿ Estas seguro ? No debes cambiar tu</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>after it is confirmed</source>
+        <target>despues de confirmarlo/a</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
