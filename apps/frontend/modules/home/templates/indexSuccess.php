@@ -102,6 +102,9 @@ $(function() {
             </div>
         </div>
       <?php endforeach ?>
+      <div class="nav">
+      	<a href="#" class="prev"><<</a><span></span><a href="#" class="next">>></a>
+      </div>
       <?php else: ?>
       <div class="box-content">
         <h1><?php echo __('No virtual meeting avaliable') ?></h1>

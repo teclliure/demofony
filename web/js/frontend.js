@@ -73,4 +73,28 @@ $(function() {
     }
     // content: 'I\'m using HTML5 to set my style... so so trendy.'
   });
+  
+	var interviewsDivs = $("#home div.entrevistas div.box-content");
+		interviewsDivs.eq(0).show();
+	var interviewsNavStatus = $("#home div.entrevistas div.nav span").html("1/" + interviewsDivs.length);
+	$("#home div.entrevistas a").click(function(){
+		var prev = $(this).hasClass("prev");
+		var curr = interviewsDivs.index(interviewsDivs.filter(":visible"));
+		if(prev){
+			if(curr == 0)
+				return false;
+			curr--;
+		}else{
+			if(curr == (interviewsDivs.length - 1))
+				return false;
+			curr++;
+		}	
+		interviewsNavStatus.html((curr + 1) + "/" + interviewsDivs.length);
+		interviewsDivs.hide().eq(curr).show();
+		return false;
+	})
+  
 });
+
+
+
