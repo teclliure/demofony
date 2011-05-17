@@ -84,6 +84,15 @@
     <?php // if($content->hasCountBox()): ?>
       <?php // include_partial('opinion/count', array('object' => $content)) ?>
     <?php // endif; ?>
+    
+    <div class="box no-tabs comments-by-area">
+      <div class="box-content show">
+        <div class="box-title color2">
+          <p><?php echo __('Video')?></p>
+        </div>
+        
+      </div>
+    </div>
   
     <?php if (isset($mapOpinions) && $mapOpinions): ?>
     <div class="box no-tabs comments-by-area">
