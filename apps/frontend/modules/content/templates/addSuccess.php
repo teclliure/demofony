@@ -79,7 +79,7 @@
 
 <?php if($form->getObject()->isNew()): ?>
 <div class="note">
-  <?php echo __('Esta propuesta será filtrada antes de su publicación. En caso de incluir insultos, vejaciones o contenido que consideremos inapropiado no será publicada. Para más información visita las') ?> <a href="<?php echo ('static?page=use_conditions') ?>"><?php echo __('Use conditions') ?></a>
+  <?php echo __('This proposal will be filtered before publication. If it includes insults, harassment or content that we consider as inapropiate it will not be published. For more information visit') ?> <a href="<?php echo ('static?page=use_conditions') ?>"><?php echo __('Use conditions') ?></a>
 </div>
 <?php elseif(is_subclass_of($form, 'ActionForm')): ?>
 <br />

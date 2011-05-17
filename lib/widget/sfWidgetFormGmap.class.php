@@ -17,7 +17,8 @@ class sfWidgetFormGMap extends sfWidgetForm
     $this->addOption('map.height', '300px');
     $this->addOption('map.width', '500px');
     $this->addOption('map.style', "");
-    $this->addOption('lookup.name', "Lookup");
+    sfContext::getInstance()->getConfiguration()->loadHelpers('I18N');
+    $this->addOption('lookup.name', __("Lookup"));
  
     $this->addOption('template.html', '
       <div id="{div.id}" class="{div.class}">

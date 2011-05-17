@@ -1,593 +1,689 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2011-05-16T12:50:15Z" product-name="messages">
+  <file source-language="EN" target-language="es" datatype="plaintext" original="messages" date="2011-05-17T10:38:20Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
         <source>Last</source>
-        <target/>
+        <target>Última</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Most popular</source>
-        <target/>
+        <target>Lo más leído</target>
       </trans-unit>
       <trans-unit id="3">
         <source>Login</source>
-        <target/>
+        <target>Iniciar sesión</target>
       </trans-unit>
       <trans-unit id="4">
         <source>Select wich content do you want add</source>
-        <target/>
+        <target>Seleccione el contenido que desea añadir</target>
       </trans-unit>
       <trans-unit id="5">
         <source>Initiatives</source>
-        <target/>
+        <target>Iniciativas</target>
       </trans-unit>
       <trans-unit id="6">
         <source>View all</source>
-        <target/>
+        <target>Ver todos</target>
       </trans-unit>
       <trans-unit id="7">
         <source>Use your inventiveness to create a better Eivissa. The initiatives with more support will be studied by the Government.</source>
-        <target/>
+        <target>Usa tu ingenio para crear una Ibiza mejor. Las iniciativas con más apoyo serán estudiadas por el Gobierno.</target>
       </trans-unit>
       <trans-unit id="8">
         <source>Citizen&lt;br /&gt; initiatives</source>
-        <target/>
+        <target>Iniciativas &lt;br /&gt; ciudadanas</target>
       </trans-unit>
       <trans-unit id="9">
         <source>Give us your opinion about initiatives proposed by the Government.</source>
-        <target/>
+        <target>Danos tu opinión sobre las iniciativas propuestas por el Gobierno.</target>
       </trans-unit>
       <trans-unit id="10">
         <source>Goverment&lt;br /&gt; initiatives</source>
-        <target/>
+        <target>Iniciativas &lt;br /&gt; gobierno</target>
       </trans-unit>
       <trans-unit id="11">
         <source>Give us your opinion about issues of public interest.</source>
-        <target/>
+        <target>Danos tu opinión sobre asuntos de interés público.</target>
       </trans-unit>
       <trans-unit id="12">
         <source>Opinion&lt;br /&gt; polls</source>
-        <target/>
+        <target>Consultas</target>
       </trans-unit>
       <trans-unit id="13">
         <source>Meetings</source>
-        <target/>
+        <target>Reuniones</target>
       </trans-unit>
       <trans-unit id="14">
         <source>Map</source>
-        <target/>
+        <target>Mapa</target>
       </trans-unit>
       <trans-unit id="15">
         <source>Summon other citizens to a gathering in order to actively improve Eivissa.</source>
-        <target/>
+        <target>Convoca a los demás ciudadanos a una reunión con el fin de mejorar la forma activa de Ibiza.</target>
       </trans-unit>
       <trans-unit id="16">
         <source>Citizen&lt;br /&gt; action</source>
-        <target/>
+        <target>Acción &lt;br /&gt; ciudadana</target>
       </trans-unit>
       <trans-unit id="17">
         <source>Offer your knowledge to other Citizens. Publish your conditions.</source>
-        <target/>
+        <target>Ofrezca su conocimiento a los demás ciudadanos. Publique sus condiciones.</target>
       </trans-unit>
       <trans-unit id="18">
         <source>Workshops&lt;br /&gt; on demand</source>
-        <target/>
+        <target>Talleres &lt;br /&gt; bajo demanda</target>
       </trans-unit>
       <trans-unit id="19">
         <source>Do you want participate in create a better &lt;strong&gt;Eivissa&lt;/strong&gt;?</source>
-        <target/>
+        <target>¿ Quieres participar en crear una &lt;strong&gt;Ibiza&lt;/strong&gt; mejor ?</target>
       </trans-unit>
       <trans-unit id="20">
         <source>Make your proposal</source>
-        <target/>
+        <target>Haz tu propuesta</target>
       </trans-unit>
       <trans-unit id="21">
         <source>Create account</source>
-        <target/>
+        <target>Crear cuenta</target>
       </trans-unit>
       <trans-unit id="22">
         <source>News</source>
-        <target/>
+        <target>Noticias</target>
       </trans-unit>
       <trans-unit id="23">
         <source>I-nterview</source>
-        <target/>
+        <target>E-ntrevista</target>
       </trans-unit>
       <trans-unit id="24">
         <source>Ask a question</source>
-        <target/>
+        <target>Haz una pregunta</target>
       </trans-unit>
       <trans-unit id="25">
         <source>Enter</source>
-        <target/>
+        <target>Entrar</target>
       </trans-unit>
       <trans-unit id="26">
         <source>No virtual meeting avaliable</source>
-        <target/>
+        <target>Ninguna reunión virtual disponible</target>
       </trans-unit>
       <trans-unit id="27">
         <source>View all interviews</source>
-        <target/>
+        <target>Ver todas las entrevistas</target>
       </trans-unit>
       <trans-unit id="28">
         <source>of</source>
-        <target/>
+        <target>de</target>
       </trans-unit>
       <trans-unit id="29">
         <source>Register information</source>
-        <target/>
+        <target>Información registro</target>
       </trans-unit>
       <trans-unit id="30">
         <source>Change password</source>
-        <target/>
+        <target>Cambiar la contraseña</target>
       </trans-unit>
       <trans-unit id="31">
         <source>Newsletter subscription</source>
-        <target/>
+        <target>Suscripción boletín</target>
       </trans-unit>
       <trans-unit id="32">
         <source>Select all categories</source>
-        <target/>
+        <target>Seleccione todas las categorías</target>
       </trans-unit>
       <trans-unit id="33">
         <source>Unsubscribe</source>
-        <target/>
+        <target>Darse de baja</target>
       </trans-unit>
       <trans-unit id="34">
         <source>Include photo</source>
-        <target/>
+        <target>Incluir foto</target>
       </trans-unit>
       <trans-unit id="35">
         <source>Done</source>
-        <target/>
+        <target>Hecho</target>
       </trans-unit>
       <trans-unit id="36">
         <source>Back</source>
-        <target/>
+        <target>Volver</target>
       </trans-unit>
       <trans-unit id="37">
         <source>Register</source>
-        <target/>
+        <target>Registrarse</target>
       </trans-unit>
       <trans-unit id="38">
         <source>Send</source>
-        <target/>
+        <target>Enviar</target>
       </trans-unit>
       <trans-unit id="39">
         <source>Profile</source>
-        <target/>
+        <target>Perfil</target>
       </trans-unit>
       <trans-unit id="40">
         <source>Opinions</source>
-        <target/>
+        <target>Opiniones</target>
       </trans-unit>
       <trans-unit id="41">
         <source>Comments</source>
-        <target/>
+        <target>Comentarios</target>
       </trans-unit>
       <trans-unit id="42">
         <source>Edit profile</source>
-        <target/>
+        <target>Editar perfil</target>
       </trans-unit>
       <trans-unit id="43">
         <source>Location</source>
-        <target/>
+        <target>Localización</target>
       </trans-unit>
       <trans-unit id="44">
         <source>Participation of</source>
-        <target/>
+        <target>La participación de</target>
       </trans-unit>
       <trans-unit id="45">
         <source>Inapropiate notification sent successfully.</source>
-        <target/>
+        <target>Notificación sobre contenido innapropiado enviada con éxito.</target>
       </trans-unit>
       <trans-unit id="46">
         <source>Error in form report as inadecuate</source>
-        <target/>
+        <target>Error en el formulario</target>
       </trans-unit>
       <trans-unit id="47">
         <source>send</source>
-        <target/>
+        <target>enviar</target>
       </trans-unit>
       <trans-unit id="48">
         <source>Delete the reply</source>
-        <target/>
+        <target>Eliminar la respuesta</target>
       </trans-unit>
       <trans-unit id="49">
         <source>Please log in to comment</source>
-        <target/>
+        <target>Inicia sesión para comentar</target>
       </trans-unit>
       <trans-unit id="50">
         <source>Add comment</source>
-        <target/>
+        <target>Agregar un comentario</target>
       </trans-unit>
       <trans-unit id="51">
         <source>No comments yet.</source>
-        <target/>
+        <target>No hay comentarios todavía.</target>
       </trans-unit>
       <trans-unit id="52">
         <source>First page of comments</source>
-        <target/>
+        <target>Primera página de comentarios</target>
       </trans-unit>
       <trans-unit id="53">
         <source>Previous page of comments</source>
-        <target/>
+        <target>Página anterior de los comentarios</target>
       </trans-unit>
       <trans-unit id="54">
         <source>Next page of comments</source>
-        <target/>
+        <target>Página siguiente de comentarios</target>
       </trans-unit>
       <trans-unit id="55">
         <source>Last page of comments</source>
-        <target/>
+        <target>Última página de comentarios</target>
       </trans-unit>
       <trans-unit id="56">
         <source>Comment deleted by moderator</source>
-        <target/>
+        <target>Comentario eliminado por el moderador</target>
       </trans-unit>
       <trans-unit id="57">
         <source>Report as inadecuate</source>
-        <target/>
+        <target>Reportar como inadecuado</target>
       </trans-unit>
       <trans-unit id="58">
         <source>Reply to this comment</source>
-        <target/>
+        <target>Responder a este comentario</target>
       </trans-unit>
       <trans-unit id="59">
         <source>on</source>
-        <target/>
+        <target>en</target>
       </trans-unit>
       <trans-unit id="60">
         <source>in</source>
-        <target/>
+        <target>en</target>
       </trans-unit>
       <trans-unit id="61">
         <source>Joined</source>
-        <target/>
+        <target>Unido</target>
       </trans-unit>
       <trans-unit id="62">
         <source>users joined</source>
-        <target/>
+        <target>usuarios unidos</target>
       </trans-unit>
       <trans-unit id="63">
         <source>Maximum registered users archieved.</source>
-        <target/>
+        <target>Máximo número de usuarios registrados alcanzado.</target>
       </trans-unit>
       <trans-unit id="64">
         <source>Add your</source>
-        <target/>
+        <target>Añade tu</target>
       </trans-unit>
       <trans-unit id="65">
         <source>Edit your</source>
-        <target/>
+        <target>Edita tus</target>
       </trans-unit>
       <trans-unit id="66">
         <source>Features</source>
-        <target/>
+        <target>Características</target>
       </trans-unit>
       <trans-unit id="67">
         <source>Include a photo or a video</source>
-        <target/>
+        <target>Incluir una foto o un vídeo</target>
       </trans-unit>
       <trans-unit id="68">
-        <source>Esta propuesta será filtrada antes de su publicación. En caso de incluir insultos, vejaciones o contenido que consideremos inapropiado no será publicada. Para más información visita las</source>
-        <target/>
+        <source>This proposal will be filtered before publication. If it includes insults, harassment or content that we consider as inapropiate it will not be published. For more information visit</source>
+        <target>Esta propuesta será filtrada antes de su publicación. En caso de incluir insultos, vejaciones o contenido que consideremos inapropiado no será publicada. Para más información visita las</target>
       </trans-unit>
       <trans-unit id="69">
         <source>Use conditions</source>
-        <target/>
+        <target>Condiciones de uso</target>
       </trans-unit>
       <trans-unit id="70">
         <source>Users joined</source>
-        <target/>
+        <target>Usuarios unidos</target>
       </trans-unit>
       <trans-unit id="71">
         <source>What type of proposal do you want add ?</source>
-        <target/>
+        <target>¿ Qué tipo de propuesta quieres agregar ?</target>
       </trans-unit>
       <trans-unit id="72">
         <source>Iniciative</source>
-        <target/>
+        <target>Iniciativa</target>
       </trans-unit>
       <trans-unit id="73">
         <source>Action</source>
-        <target/>
+        <target>Acción</target>
       </trans-unit>
       <trans-unit id="74">
         <source>Workshop</source>
-        <target/>
+        <target>Taller</target>
       </trans-unit>
       <trans-unit id="75">
         <source>by</source>
-        <target/>
+        <target>por</target>
       </trans-unit>
       <trans-unit id="76">
         <source>Listed in</source>
-        <target/>
+        <target>Listados en</target>
       </trans-unit>
       <trans-unit id="77">
         <source>Where</source>
-        <target/>
+        <target>Cuando</target>
       </trans-unit>
       <trans-unit id="78">
         <source>Minimum participants</source>
-        <target/>
+        <target>Mínimo participantes</target>
       </trans-unit>
       <trans-unit id="79">
         <source>When</source>
-        <target/>
+        <target>Cuando</target>
       </trans-unit>
       <trans-unit id="80">
         <source>Maximum participants</source>
-        <target/>
+        <target>Máximo participantes</target>
       </trans-unit>
       <trans-unit id="81">
         <source>Opinions by area</source>
-        <target/>
+        <target>Opiniones por área</target>
       </trans-unit>
       <trans-unit id="82">
         <source>Related</source>
-        <target/>
+        <target>Relacionados</target>
       </trans-unit>
       <trans-unit id="83">
         <source>Admin</source>
-        <target/>
+        <target>Admin</target>
       </trans-unit>
       <trans-unit id="84">
         <source>already confirmed</source>
-        <target/>
+        <target>ya han confirmado</target>
       </trans-unit>
       <trans-unit id="85">
         <source>Edit</source>
-        <target/>
+        <target>Editar</target>
       </trans-unit>
       <trans-unit id="86">
         <source>There must be at least the minimum of users subscribed and location filled by you to allow confirm the</source>
-        <target/>
+        <target>Debe haber por lo menos el mínimo de usuarios suscritos y la ubicación rellenada para que se pueda confirmar el</target>
       </trans-unit>
       <trans-unit id="87">
         <source>When you confirm an email is sent to all subscribed users whith the</source>
-        <target/>
+        <target>Cuando confirme un correo electrónico se enviará a todos los usuarios suscritos un con la</target>
       </trans-unit>
       <trans-unit id="88">
         <source>information and the register is closed.</source>
-        <target/>
+        <target>información y se cierra la posibilidad de registrarse.</target>
       </trans-unit>
       <trans-unit id="89">
         <source>Confirm</source>
-        <target/>
+        <target>Confirmar</target>
       </trans-unit>
       <trans-unit id="90">
         <source>Date</source>
-        <target/>
+        <target>Fecha</target>
       </trans-unit>
       <trans-unit id="91">
         <source>Status</source>
-        <target/>
+        <target>Estado</target>
       </trans-unit>
       <trans-unit id="92">
         <source>Participants</source>
-        <target/>
+        <target>Participantes</target>
       </trans-unit>
       <trans-unit id="93">
         <source>No results</source>
-        <target/>
+        <target>No hay resultados</target>
       </trans-unit>
       <trans-unit id="94">
         <source>You are already registered.</source>
-        <target/>
+        <target>Usted ya está registrado.</target>
       </trans-unit>
       <trans-unit id="95">
         <source>Remove myself</source>
-        <target/>
+        <target>Borrarme</target>
       </trans-unit>
       <trans-unit id="96">
         <source>Join</source>
-        <target/>
+        <target>Únete</target>
       </trans-unit>
       <trans-unit id="97">
         <source>results</source>
-        <target/>
+        <target>resultados</target>
       </trans-unit>
       <trans-unit id="98">
         <source>FILTERS</source>
-        <target/>
+        <target>FILTROS</target>
       </trans-unit>
       <trans-unit id="99">
         <source>Filter by category</source>
-        <target/>
+        <target>Filtrar por categoría</target>
       </trans-unit>
       <trans-unit id="100">
         <source>Filter by type</source>
-        <target/>
+        <target>Filtrar por tipo</target>
       </trans-unit>
       <trans-unit id="101">
         <source>Filter by neighborhood</source>
-        <target/>
+        <target>Filtrar por barrio</target>
       </trans-unit>
       <trans-unit id="102">
         <source>Hi</source>
-        <target/>
+        <target>Hola</target>
       </trans-unit>
       <trans-unit id="103">
         <source>Check full information in</source>
-        <target/>
+        <target>Consulta la información completa en</target>
       </trans-unit>
       <trans-unit id="104">
         <source>Remember to participe on</source>
-        <target/>
+        <target>Recuerda participar en</target>
       </trans-unit>
       <trans-unit id="105">
         <source>Interview with</source>
-        <target/>
+        <target>Entrevista con</target>
       </trans-unit>
       <trans-unit id="106">
         <source>Questions</source>
-        <target/>
+        <target>Preguntas</target>
       </trans-unit>
       <trans-unit id="107">
         <source>Answers</source>
-        <target/>
+        <target>Respuestas</target>
       </trans-unit>
       <trans-unit id="108">
         <source>Answered</source>
-        <target/>
+        <target>Respondido</target>
       </trans-unit>
       <trans-unit id="109">
         <source>Not answered</source>
-        <target/>
+        <target>Sin respuesta</target>
       </trans-unit>
       <trans-unit id="110">
         <source>Answers start date</source>
-        <target/>
+        <target>Fecha de inicio preguntas</target>
       </trans-unit>
       <trans-unit id="111">
         <source>Answers end date</source>
-        <target/>
+        <target>Fecha de finalización preguntas</target>
       </trans-unit>
       <trans-unit id="112">
         <source>Number of Participants</source>
-        <target/>
+        <target>Número de participantes</target>
       </trans-unit>
       <trans-unit id="113">
         <source>Number of Questions</source>
-        <target/>
+        <target>Número de preguntas</target>
       </trans-unit>
       <trans-unit id="114">
         <source>Number of Answers</source>
-        <target/>
+        <target>Número de respuestas</target>
       </trans-unit>
       <trans-unit id="115">
         <source>Answer</source>
-        <target/>
+        <target>Respuesta</target>
       </trans-unit>
       <trans-unit id="116">
         <source>I-nterviews</source>
-        <target/>
+        <target>E-ntrevistas</target>
       </trans-unit>
       <trans-unit id="117">
         <source>Archived</source>
-        <target/>
+        <target>Archivado</target>
       </trans-unit>
       <trans-unit id="118">
         <source>Not archived</source>
-        <target/>
+        <target>No archivados</target>
       </trans-unit>
       <trans-unit id="119">
         <source>Logout</source>
-        <target/>
+        <target>Desconectarse</target>
       </trans-unit>
       <trans-unit id="120">
         <source>Forgot your password?</source>
-        <target/>
+        <target>¿ Olvidaste tu contraseña ?</target>
       </trans-unit>
       <trans-unit id="121">
         <source>Remember me</source>
-        <target/>
+        <target>Recordarme</target>
       </trans-unit>
       <trans-unit id="122">
         <source>New on PensaEivissa?</source>
-        <target/>
+        <target>¿ Nuevo en PensaEivissa ?</target>
       </trans-unit>
       <trans-unit id="123">
         <source>Start</source>
-        <target/>
+        <target>Inicio</target>
       </trans-unit>
       <trans-unit id="124">
         <source>Signin</source>
-        <target/>
+        <target>SIGNIN</target>
       </trans-unit>
       <trans-unit id="125">
         <source>Hi %first_name%</source>
-        <target/>
+        <target>Hola %first_name%</target>
       </trans-unit>
       <trans-unit id="126">
-        <source>Below you will your username and new password:</source>
-        <target/>
+        <source>Below you will see your username and new password:</source>
+        <target>A continuación verá su nombre de usuario y contraseña nueva:</target>
       </trans-unit>
       <trans-unit id="127">
         <source>Username</source>
-        <target/>
+        <target>Nombre de usuario</target>
       </trans-unit>
       <trans-unit id="128">
         <source>Password</source>
-        <target/>
+        <target>Contraseña</target>
       </trans-unit>
       <trans-unit id="129">
         <source>This e-mail is being sent because you requested information on how to reset your password.</source>
-        <target/>
+        <target>Esta correo está siendo enviado ya que solicitó información sobre cómo restablecer la contraseña.</target>
       </trans-unit>
       <trans-unit id="130">
         <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
-        <target/>
+        <target>Usted puede cambiar su contraseña haciendo clic en el enlace de abajo, este sólo es válido durante 24 horas:</target>
       </trans-unit>
       <trans-unit id="131">
         <source>Click to change password</source>
-        <target/>
+        <target>Haga clic para cambiar la contraseña</target>
       </trans-unit>
       <trans-unit id="132">
         <source>Hello %name%</source>
-        <target/>
+        <target>Hola %name%</target>
       </trans-unit>
       <trans-unit id="133">
         <source>Enter your new password in the form below.</source>
-        <target/>
+        <target>Ingrese su nueva contraseña en el formulario de abajo.</target>
       </trans-unit>
       <trans-unit id="134">
         <source>Change</source>
-        <target/>
+        <target>Cambiar</target>
       </trans-unit>
       <trans-unit id="135">
         <source>Do not worry, we can help you get back in to your account safely!</source>
-        <target/>
+        <target>No se preocupe, podemos ayudarle a volver a su cuenta de forma segura!</target>
       </trans-unit>
       <trans-unit id="136">
         <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
-        <target/>
+        <target>Rellene el siguiente formulario para solicitar un e-mail con información sobre cómo restablecer la contraseña.</target>
       </trans-unit>
       <trans-unit id="137">
         <source>Request</source>
-        <target/>
+        <target>Solicitud</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Proposal</source>
-        <target>Initiative</target>
+        <target>Iniciativa</target>
       </trans-unit>
       <trans-unit id="139">
         <source>Consultation</source>
-        <target>Opinion Poll</target>
+        <target>Consulta</target>
       </trans-unit>
       <trans-unit id="140">
         <source>Thinks</source>
-        <target></target>
+        <target>Piensa</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Goverment proposal</source>
-        <target>Goverment initiative</target>
+        <target>Iniciativa gobierno</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Citizen proposal</source>
-        <target>Citizen initiative</target>
+        <target>Iniciativa ciudadana</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Goverment consultation</source>
-        <target>Opinion poll</target>
+        <target>Consulta</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Goverment new</source>
-        <target>News</target>
+        <target>Noticias</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Add your</source>
-        <target></target>
+        <target>Añade tu</target>
       </trans-unit>
       <trans-unit id="138">
         <source>Edit your</source>
-        <target></target>
+        <target>Edita tu</target>
       </trans-unit>
+      <trans-unit id="141">
+        <source>Do you want to participate in creating a better &lt;strong&gt;Eivissa&lt;/strong&gt;?</source>
+        <target>¿ Quieres participar en la creación de una &lt;strong&gt;Ibiza?&lt;/strong&gt; mejor ?</target>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Comments to Administrator (This text will NOT be published)</source>
+        <target>Comentarios al Administrador (Este texto NO será publicado)</target>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>Title</source>
+        <target>Título</target>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Image</source>
+        <target>Imagén</target>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>You can include a URL from a YouTube video</source>
+        <target>Puedes incluir una URL de un video de YouTube</target>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>You can click on map or search a location to geolocate the content</source>
+        <target>Puedes hacer click sobre el mapa o buscar una dirección para localizar el contenido</target>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>By category:</source>
+        <target>Por categoría:</target>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>By neighborhood:</source>
+        <target>Por región:</target>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>Lookup</source>
+        <target>Buscar</target>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Action date</source>
+        <target>Fecha de la acción</target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Register start date</source>
+        <target>Fecha inicio registro</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Register end date</source>
+        <target>Fecha final registro</target>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>Min users allowed</source>
+        <target>Mínimo usuarios permitidos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Max users allowed</source>
+        <target>Máximo usuarios permitidos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You must be registered and logged in to add content</source>
+        <target>Debes estar registrado y loggeado para añadir contenido</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>added correctly! It will be revised and published by administrator.</source>
+        <target>añadido correctamente! El contenido será revisado y publicado por un administrador</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You must be registered and logged in to confirm content</source>
+        <target>Debes estar registrado y loggeado para confirmar contenido</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>You don't have permissions to confirm this action</source>
+        <target>No tienes permisos para confirmar esta acción</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>This action can't be confirmed</source>
+        <target>Esta acción no se puede confirmar</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>confirmed. An email was sent to all registered users.</source>
+        <target>confirmado. Un email ha sido enviado a todos los usuarios registrados.</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>You must be registered and logged in to edit content</source>
+        <target>Debes estar registrado y loggeado para editar contenido</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>You don't have permissions to edit this content</source>
+        <target>No tienes permisos para editar este contenido</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>You must be registered and logged in to join</source>
+        <target>Debes estar registrado y loggeado para sumarte</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>Required.</source>
+        <target>Obligatorio.</target>
+      </trans-unit>     
     </body>
   </file>
 </xliff>

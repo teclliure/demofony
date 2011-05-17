@@ -2,7 +2,7 @@
 class sfWidgetFormSchemaFormatterFrontend extends sfWidgetFormSchemaFormatter
 {
   protected
-    $rowFormat       = "%error%\n<label>\n%label% %field% %help%</label>\n
+    $rowFormat       = "<label>%error%\n%label% %field% %help%</label>\n
                          %hidden_fields%\n\n",
     $errorRowFormat  = "<div class=\"field_error\">%errors%</div>",
     $helpFormat      = '<small>%help%</small>',

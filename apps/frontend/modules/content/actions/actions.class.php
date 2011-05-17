@@ -20,7 +20,8 @@ class contentActions extends sfActions {
     $user = $this->getUser();
     if (!$user->isAuthenticated())
     {
-      return $this->renderText('You must be registered and logged in to add content');
+      $this->getContext()->getConfiguration()->loadHelpers('I18N');
+      return $this->renderText(__('You must be registered and logged in to add content'));
     }
   }
   
@@ -49,10 +50,11 @@ class contentActions extends sfActions {
   }
   
   public function executeAdd($request) {
+    $this->getContext()->getConfiguration()->loadHelpers('I18N');
     $user = $this->getUser();
     if (!$user->isAuthenticated())
     {
-      return $this->renderText('You must be registered and logged in to add content');
+      return $this->renderText(__('You must be registered and logged in to add content'));
     }
     $this->class = $request->getParameter('class');
     $formName = 'Frontend'.$this->class.'Form';
@@ -64,7 +66,7 @@ class contentActions extends sfActions {
       if ($this->form->isValid())
       {
         $object = $this->form->save();
-        $this->getUser()->setFlash('success', sfInflector::humanize(sfInflector::underscore($this->class)).' added correctly! It will be revised and published by administrator.');
+        $this->getUser()->setFlash('success', __(sfInflector::humanize(sfInflector::underscore($this->class))).' '.__('added correctly! It will be revised and published by administrator.'));
         $this->redirect('@homepage');
         // $this->redirect('content/addedOk?class='.$this->class.'&id='.$object->getId());
       }
@@ -72,39 +74,41 @@ class contentActions extends sfActions {
   }
   
   public function executeClose($request) {
+    $this->getContext()->getConfiguration()->loadHelpers('I18N');
     $user = $this->getUser();
     if (!$user->isAuthenticated())
     {
-      return $this->renderText('You must be registered and logged in to confirm content');
+      return $this->renderText(__('You must be registered and logged in to confirm content'));
     }
     $table = Doctrine::getTable($request->getParameter('class'));
     $this->content = $table->findOneBy('slug',$request->getParameter('slug'));
     $this->forward404Unless($this->content);
     $this->forward404Unless($this->content->getActive());
     if (!$this->content->hasEditPerms($this->getUser())) {
-      return $this->renderText('You don\'t have permissions to confirm this action');
+      return $this->renderText(__("You don't have permissions to confirm this action"));
     }
     if (!$this->content->canBeClosed()) {
-      return $this->renderText('This action can\'t be confirmed');
+      return $this->renderText(__("This action can't be confirmed"));
     }
     $this->content->confirm();
 
-    $this->getUser()->setFlash('notice', $this->content.' confirmed. An email was sent to all registered users.');
+    $this->getUser()->setFlash('notice', __($this->content).' '.__('confirmed. An email was sent to all registered users.'));
     $this->redirect('content/show?class='.$request->getParameter('class').'&slug='.$request->getParameter('slug'));
   }
   
   public function executeEdit($request) {
+    $this->getContext()->getConfiguration()->loadHelpers('I18N');
     $user = $this->getUser();
     if (!$user->isAuthenticated())
     {
-      return $this->renderText('You must be registered and logged in to edit content');
+      return $this->renderText(__('You must be registered and logged in to edit content'));
     }
     $table = Doctrine::getTable($request->getParameter('class'));
     $this->content = $table->findOneBy('slug',$request->getParameter('slug'));
     $this->forward404Unless($this->content);
     $this->forward404Unless($this->content->getActive());
     if (!$this->content->hasEditPerms($this->getUser())) {
-      return $this->renderText('You don\'t have permissions to edit this content');
+      return $this->renderText(__("You don't have permissions to edit this content"));
     }
     $formName = 'Frontend'.$request->getParameter('class').'Form';
     $this->form = new $formName($this->content);
@@ -217,7 +221,8 @@ class contentActions extends sfActions {
     $user = $this->getUser();
     if (!$user->isAuthenticated())
     {
-      return $this->renderText('You must be registered and logged in to join');
+      $this->getContext()->getConfiguration()->loadHelpers('I18N');
+      return $this->renderText(__('You must be registered and logged in to join'));
     }
     $table = Doctrine::getTable($request->getParameter('class'));
     $content = $table->findOneBy('id',$request->getParameter('id'));
@@ -243,7 +248,8 @@ class contentActions extends sfActions {
     $user = $this->getUser();
     if (!$user->isAuthenticated())
     {
-      return $this->renderText('You must be registered and logged in to join');
+      $this->getContext()->getConfiguration()->loadHelpers('I18N');
+      return $this->renderText(__('You must be registered and logged in to join'));
     }
     $table = Doctrine::getTable($request->getParameter('class'));
     $content = $table->findOneBy('id',$request->getParameter('id'));

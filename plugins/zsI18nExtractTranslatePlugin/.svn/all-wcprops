@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/!svn/ver/25466/plugins/zsI18nExtractTranslatePlugin/trunk
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/21112/plugins/zsI18nExtractTranslatePlugin/trunk/LICENSE
+END
+package.xml.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/25466/plugins/zsI18nExtractTranslatePlugin/trunk/package.xml.tmpl
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/25466/plugins/zsI18nExtractTranslatePlugin/trunk/README
+END
