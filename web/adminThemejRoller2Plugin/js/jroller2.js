@@ -101,7 +101,7 @@ jQuery().ready(function(){
 	{
     // tabs for form edition
     // $('#sf_admin_form_tab_menu').tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
-	$('#sf_admin_form_tab_menu').tabs().addClass('ui-helper-clearfix');
+	$('#sf_admin_form_tab_menu.admin_tabs').tabs().addClass('ui-helper-clearfix');
     // $('#sf_admin_form_tab_menu li').removeClass('ui-corner-top').addClass('ui-corner-all');
 
     // default size for input

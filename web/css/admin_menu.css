@@ -76,3 +76,12 @@ button.fg-button {
 #login_box tbody tr:nth-child(2n) td, #login_box tbody tr.even td {
     background: none;
 }
+
+.checkbox_list {
+	clear: both;
+}
+.checkbox_list li {
+	display: inline;
+	width: 20%;
+	float: left;
+}

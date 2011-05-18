@@ -13,11 +13,9 @@ abstract class BaseContentHasRegionFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'slug'       => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'slug'       => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('content_has_region_filters[%s]');
@@ -40,7 +38,6 @@ abstract class BaseContentHasRegionFormFilter extends BaseFormFilterDoctrine
       'content_id' => 'Number',
       'region_id'  => 'Number',
       'type'       => 'Text',
-      'slug'       => 'Text',
     );
   }
 }

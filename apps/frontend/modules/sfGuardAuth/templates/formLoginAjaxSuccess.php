@@ -24,7 +24,7 @@
   <div class="column signup">
     <h1 class="modal-title"><?php echo __('New on PensaEivissa?') ?></h1>
     <div>
-      <p><?php echo ('Register and start participating right away') ?>.</p>
+      <p><?php echo __('Register and start participating right away') ?>.</p>
       <?php if (isset($routes['register'])): ?>
       <a href="<?php echo url_for('@register') ?>" class="button1 start"><?php echo __('Start') ?> ></a>
       <?php endif; ?>

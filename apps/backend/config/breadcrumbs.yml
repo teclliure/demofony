@@ -5,3 +5,28 @@ sf_orm_breadcrumbs:
   _separator: '>'
   _lost: 'somewhere...'
   _default_case: 'ucfirst'
+  home:
+    index:
+      - { name: Summary, route: homepage }
+  goverment_new:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List news }
+    filter:
+      - { name: Content, route: goverment_new }
+      - { name: Filtered news }
+    new:
+      - { name: Content, route: goverment_new }
+      - { name: Create new }
+    create:
+      - { name: Content, route: goverment_new }
+      - { name: Create new }
+    edit:
+      - { name: Content, route: goverment_new }
+      - { name: Edit new "%title%", model: true }
+    update:
+      - { name: Content, route: goverment_new }
+      - { name: Edit new "%title%" }
+    show:
+      - { name: Content, route: goverment_new }
+      - { name: Show new "%title%" }

@@ -17,20 +17,22 @@ generator:
         _state:           { label: State }
         state:            { label: State }
         reason:           { label: Reason }
-        created_at:       { label: Send the }
+        created_at:       { label: Created at }
         comment_link:     { label: Link }
       list:
         title:            Comment's Reports list
-        display:          [_state, _comment_link, reason, created_at]
+        # display:          [_state, _comment_link, reason, created_at]
+        display:          [_comment_link, reason, created_at]
         actions:          {}
         object_actions:
           _delete:        { label: Remove the report }
           edit_comment:   { label: Edit the comment, action: editComment }
           delete_comment: { label: Remove the comment, action: deleteComment }
-          validate:       { label: Validate, action: validate }
-          invalidate:     { label: Invalidate, action: invalidate }
+          # validate:       { label: Validate, action: validate }
+          # invalidate:     { label: Invalidate, action: invalidate }
       filter:
-        display:          [reason, state, created_at]
+        # display:          [reason, state, created_at]
+        display:          [reason, created_at]
       form:    ~
       edit:    ~
       new:     ~

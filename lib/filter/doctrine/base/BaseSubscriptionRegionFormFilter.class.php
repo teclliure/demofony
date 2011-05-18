@@ -13,11 +13,9 @@ abstract class BaseSubscriptionRegionFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'slug'      => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'slug'      => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('subscription_region_filters[%s]');
@@ -39,7 +37,6 @@ abstract class BaseSubscriptionRegionFormFilter extends BaseFormFilterDoctrine
     return array(
       'user_id'   => 'Number',
       'region_id' => 'Number',
-      'slug'      => 'Text',
     );
   }
 }

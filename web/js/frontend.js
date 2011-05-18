@@ -77,7 +77,7 @@ $(function() {
 	var interviewsDivs = $("#home div.entrevistas div.box-content");
 		interviewsDivs.eq(0).show();
 	var interviewsNavStatus = $("#home div.entrevistas div.nav span").html("1/" + interviewsDivs.length);
-	$("#home div.entrevistas a").click(function(){
+	$("#home div.entrevistas div.nav a").click(function(){
 		var prev = $(this).hasClass("prev");
 		var curr = interviewsDivs.index(interviewsDivs.filter(":visible"));
 		if(prev){

@@ -19,6 +19,7 @@ generator:
         display: [=title, sfGuardUser, created_at, updated_at, active]
       filter:  ~
       form:    ~
-      edit:    ~
+      edit:
+        title: 'Edit new "%%title%%"'
       new:     ~
       show:    ~

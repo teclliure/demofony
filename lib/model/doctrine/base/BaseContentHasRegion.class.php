@@ -62,10 +62,5 @@ abstract class BaseContentHasRegion extends sfDoctrineRecord
              'local' => 'region_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
-
-        $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'unique' => true,
-             ));
-        $this->actAs($sluggable0);
     }
 }

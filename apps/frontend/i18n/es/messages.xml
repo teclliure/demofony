@@ -708,6 +708,10 @@
         <source>Add comment</source>
         <target>Añadir comentario</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Opined</source>
+        <target>Opinó</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

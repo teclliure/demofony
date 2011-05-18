@@ -1,0 +1,2 @@
+<?php use_helper('JavascriptBase','Text') ?>
+<?php echo link_to(image_tag('/vjCommentAdaptedPlugin/images/magnifier.png', array('alt' => __('Show content'))).__('Show origin content'),$opinion->getFrontendUrl(),array('target'=>'_blank')); ?>&nbsp;

@@ -21,7 +21,7 @@ generator:
         edition_reason:     { label: Reason }
       list:
         title:              Comments list
-        display:            [author, _body, is_delete, created_at]
+        display:            [_comment_link, author, _body, is_delete, created_at]
         sort:               [created_at, desc]
         actions:            {}
         table_method:       getAdminQuery

@@ -25,7 +25,7 @@
 		?]
 
 
-        <div id="sf_admin_form_tab_menu">
+    <div id="sf_admin_form_tab_menu" [?php if ($count > 1): ?]class="admin_tabs"[?php endif ?]>
 			[?php if ($count > 1): ?]
 			<ul>
 	    [?php foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): ?]

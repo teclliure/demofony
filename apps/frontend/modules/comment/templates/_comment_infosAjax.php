@@ -49,5 +49,5 @@
         <?php if(commentTools::isGravatarAvailable() && !$obj->is_delete): ?>
           <?php echo gravatar_image_tag($obj->getEmail()) ?>
         <?php endif ?>
-        <div id="report_dialog_<?php echo $obj->getId() ?>"><?php include_component('comment','formReportAjax',array('id_comment'=>$obj->getId(),'num'=>$i))?></div>
+        <div id="report_dialog_<?php echo $obj->getId() ?>"><?php include_component('comment','formReportAjax',array('id_comment'=>$obj->getId(),'num'=>$i, 'url'=>$parentObject->getUrl()))?></div>
       </div>

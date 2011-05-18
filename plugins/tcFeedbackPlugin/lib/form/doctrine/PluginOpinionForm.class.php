@@ -10,9 +10,4 @@
  */
 class PluginOpinionForm extends BaseOpinionForm
 {
-  public function setup()
-  {
-    parent::setup();
-    unset($this['created_at'],$this['updated_at']);
-  }
 }

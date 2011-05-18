@@ -23,5 +23,6 @@
         [?php echo $form[$name]->renderError() ?]
       </div>
     [?php endif; ?]
+    <div style="clear: both"></div>
   </div>
 [?php endif; ?]

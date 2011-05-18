@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Opinion
+    theme:                 jroller2
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          opinion
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    # extra: [show, print, export]
+
+    config:
+      actions: ~
+      fields:
+        user_id:          { label: Author }
+      fields:  ~
+      list:
+        display: [_opinion_link, opinion, sfGuardUser, selected, innapropiate, created_at]
+        object_actions:
+          _edit:            { label: Edit }
+          _delete:          { label: Delete }
+      filter:
+        display: [opinion, user_id, selected, innapropiate, created_at]
+      form:    ~
+      edit:    ~
+      new:     ~
+      show:    ~

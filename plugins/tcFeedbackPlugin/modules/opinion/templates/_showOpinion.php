@@ -12,7 +12,7 @@
           <p class="date"><?php echo format_date($opinion->getCreatedAt()) ?></p>
           <p class="opinion">
           <?php if ($opinion->getOpinionPossibilityId()): ?>
-            <?php echo __('Opinate') ?> <strong><?php echo __($opinion->__toString()) ?></strong>
+            <?php echo __('Opined') ?> <strong><?php echo __($opinion->__toString()) ?></strong>
           <?php else: ?>
             <?php echo __('Thinks') ?>
           <?php endif; ?>

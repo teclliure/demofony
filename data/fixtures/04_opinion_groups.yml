@@ -19,15 +19,15 @@ OpinionPossibility:
     icon: icon-thumb-up
     OpinionPossibilityGroup: op_gr_1
     Translation:
-      en: { name: "Back initiative" }
-      es: { name: "Apoyo la iniciativa" }
+      en: { name: "In favor" }
+      es: { name: "A favor" }
   op_po_2:
     gmap_bubble_image: red
     icon: icon-thumb-down
     OpinionPossibilityGroup: op_gr_1
     Translation:
-      en: { name: "Oppose initiative" }
-      es: { name: "Me opongo a la iniciativa" }
+      en: { name: "Against" }
+      es: { name: "En contra" }
   op_po_3:
     OpinionPossibilityGroup: op_gr_3
     Translation:
@@ -69,7 +69,7 @@ Opinion:
     OpinionPossibility: op_po_1
     opinion: Por esto y lo otro
     object_class: GovermentConsultation
-    object_id: 1    
+    object_id: 1
   op_2:
     sfGuardUser: User_test3
     OpinionPossibility: op_po_2

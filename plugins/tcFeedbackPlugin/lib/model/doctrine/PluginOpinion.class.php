@@ -44,6 +44,9 @@ class PluginOpinion extends BaseOpinion
     return null;
   }
   
+  public function getFrontendUrl() {
+    return sfContext::getInstance()->getConfiguration()->generateFrontendUrl($this->getUrl());
+  }
   /* RSS Methods */
   public function getTitle() {
     $content = $this->getObject();

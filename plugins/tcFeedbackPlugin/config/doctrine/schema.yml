@@ -118,6 +118,10 @@ OpinionMarkedAsSpam:
   actAs:
     Timestampable: 
   columns:
+    id:
+      primary: true
+      type: integer
+      autoincrement: true 
     user_id:
       primary: true
       type: integer
@@ -126,10 +130,6 @@ OpinionMarkedAsSpam:
       primary: true
       type: integer
       notnull: true
-  indexes:
-    IX_OpinionMarkedAsSpam_1:
-      fields: [user_id, opinion_id]
-      type: unique
   relations:
     sfGuardUser:
       local: user_id

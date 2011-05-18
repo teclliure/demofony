@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           OpinionMarkedAsSpam
+    theme:                 jroller2
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          opinion_marked_as_spam
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    # extra: [show, print, export]
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [_opinion, SfGuardUser, created_at]
+        object_actions:
+          spam:            { label: Set as spam }
+          not_spam:        { label: Set as NO spam }
+      filter:
+        display: [user_id, opinion_id, created_at]
+      form:    ~
+      edit:    ~
+      new:     ~
+      show:    ~

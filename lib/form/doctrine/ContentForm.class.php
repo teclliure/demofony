@@ -36,6 +36,9 @@ class ContentForm extends BaseContentForm
     $this->setValidator('categories', new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Category', 'required' => false)));
     $this->setValidator('regions', new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Region', 'required' => false)));
     
+    $this->widgetSchema->moveField('image', sfWidgetFormSchema::BEFORE, 'video');
+    $this->widgetSchema->moveField('gmap', sfWidgetFormSchema::LAST);
+    $this->widgetSchema->moveField('active', sfWidgetFormSchema::FIRST);
     $this->widgetSchema->setHelp('video','You can include a URL from a YouTube video');
     $this->widgetSchema->setHelp('gmap','You can click on map or search a location to geolocate the content');
   }

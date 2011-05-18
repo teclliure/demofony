@@ -60,12 +60,9 @@
       </index>
     </table>
     <table name="OpinionMarkedAsSpam" visPositionX="32" visPositionY="379" visSizeX="0" visSizeX2="125" visSizeY="0" visSizeY2="74">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
       <column name="user_id" primary="true" required="true" type="integer"/>
       <column name="opinion_id" primary="true" required="true" type="integer"/>
-      <index name="IX_OpinionMarkedAsSpam_1" unique="true">
-        <index-column name="user_id"/>
-        <index-column name="opinion_id"/>
-      </index>
       <orm-properties>
         <attribute name="actAs">
           <attribute name="Timestampable"/>

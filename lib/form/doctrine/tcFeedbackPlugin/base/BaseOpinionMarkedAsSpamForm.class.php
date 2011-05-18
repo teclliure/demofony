@@ -15,6 +15,7 @@ abstract class BaseOpinionMarkedAsSpamForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'id'         => new sfWidgetFormInputHidden(),
       'user_id'    => new sfWidgetFormInputHidden(),
       'opinion_id' => new sfWidgetFormInputHidden(),
       'created_at' => new sfWidgetFormDateTime(),
@@ -22,15 +23,12 @@ abstract class BaseOpinionMarkedAsSpamForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
+      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'user_id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
       'opinion_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('opinion_id')), 'empty_value' => $this->getObject()->get('opinion_id'), 'required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'OpinionMarkedAsSpam', 'column' => array('user_id', 'opinion_id')))
-    );
 
     $this->widgetSchema->setNameFormat('opinion_marked_as_spam[%s]');
 

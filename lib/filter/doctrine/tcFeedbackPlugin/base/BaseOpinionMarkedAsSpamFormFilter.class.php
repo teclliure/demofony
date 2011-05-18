@@ -39,6 +39,7 @@ abstract class BaseOpinionMarkedAsSpamFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
+      'id'         => 'Number',
       'user_id'    => 'Number',
       'opinion_id' => 'Number',
       'created_at' => 'Date',

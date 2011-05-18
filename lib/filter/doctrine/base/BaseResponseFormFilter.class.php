@@ -16,14 +16,12 @@ abstract class BaseResponseFormFilter extends BaseFormFilterDoctrine
       'body'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'content_id'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'content_type' => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'slug'         => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'body'         => new sfValidatorPass(array('required' => false)),
       'content_id'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'content_type' => new sfValidatorPass(array('required' => false)),
-      'slug'         => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('response_filters[%s]');
@@ -47,7 +45,6 @@ abstract class BaseResponseFormFilter extends BaseFormFilterDoctrine
       'body'         => 'Text',
       'content_id'   => 'Number',
       'content_type' => 'Text',
-      'slug'         => 'Text',
     );
   }
 }

@@ -1,0 +1,17 @@
+opinion_marked_as_spam:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OpinionMarkedAsSpam
+    module:               opinionsSpamAdmin
+    prefix_path:          /opinionsSpamAdmin
+    column:               id
+    with_wildcard_routes: true
+
+opinion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Opinion
+    module:               opinionsAdmin
+    prefix_path:          /opinionsAdmin
+    column:               id
+    with_wildcard_routes: true

@@ -62,10 +62,5 @@ abstract class BaseContentHasCategory extends sfDoctrineRecord
              'local' => 'category_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
-
-        $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'unique' => true,
-             ));
-        $this->actAs($sluggable0);
     }
 }

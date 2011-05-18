@@ -1,8 +1,8 @@
 name:     Admin menu
 attributes: {id: admin_menu, class: sf-menu}
 children:
-  site_content:
-    label:         Content
+  site_content_admin:
+    label:         Content published by admin
     requires_auth: true
     route:   ''
     attributes: {class: ui-corner-left}
@@ -23,23 +23,29 @@ children:
         label:   Goverment news
         route:   @goverment_new
         credentials: [Permission_admin]
-      manage_workshops:
-        label:   Workshops
-        route:   @workshop
+      manage_virtual_meeting:
+        label:   Virtual meetings
+        route:   @virtual_meeting
         credentials: [Permission_admin]
+  site_content:
+    label:         Content published by users
+    requires_auth: true
+    route:   ''
+    attributes: {class: ui-corner-left}
+    children:
       manage_citizen_proposals:
         label:   Citizen proposals
         route:   @citizen_proposal
+        credentials: [Permission_admin]
+      manage_workshops:
+        label:   Workshops
+        route:   @workshop
         credentials: [Permission_admin]
       manage_citizen_actions:
         label:   Citizen actions
         route:   @citizen_action
         credentials: [Permission_admin]
-      manage_virtual_meeting:
-        label:   Virtual meetings
-        route:   @virtual_meeting
-        credentials: [Permission_admin]
-  comments_opionions:
+  comments_opinions:
     label:          Comments and opinions
     requires_auth: true
     route:   ''
@@ -51,6 +57,14 @@ children:
       manage_comments_reports:
         label:   Manage comments reports
         route:   commentReportAdmin/index
+        credentials: [Permission_admin]
+      manage_opinions:
+        label:   Manage opinions
+        route:   opinionsAdmin/index
+        credentials: [Permission_admin]
+      manage_opinions_reports:
+        label:   Manage opinions reports
+        route:   opinionsSpamAdmin/index
         credentials: [Permission_admin]
   site_admin:
     label:          Site admin

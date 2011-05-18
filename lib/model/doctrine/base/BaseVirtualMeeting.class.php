@@ -96,10 +96,5 @@ abstract class BaseVirtualMeeting extends sfDoctrineRecord
         $this->hasMany('VirtualMeetingQuestion', array(
              'local' => 'id',
              'foreign' => 'virtual_meeting_id'));
-
-        $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'unique' => true,
-             ));
-        $this->actAs($sluggable0);
     }
 }

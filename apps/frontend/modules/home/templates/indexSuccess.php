@@ -96,7 +96,7 @@ $(function() {
             <h1><?php echo __('Ask a question') ?> <?php echo $virtualMeeting->getsfGuardUser()?></h1>
             <p><?php echo $virtualMeeting->getTitle()?></p>
             <div class="bottom">
-              <a href="<?php echo url_for('virtualMeeting/view?id='.$virtualMeeting->getId()) ?>" class="button1 inline"><?php echo __('Enter') ?></a>
+              <a href="<?php echo url_for('virtualMeeting/show?id='.$virtualMeeting->getId()) ?>" class="button1 inline"><?php echo __('Enter') ?></a>
               <strong><span class="misc misc-<?php if($virtualMeeting->isOpened()): ?>unlock<?php else: ?>lock<?php endif; ?> inline"></span><?php echo $virtualMeeting->getState() ?></strong>
               <div class="clear"></div>
             </div>

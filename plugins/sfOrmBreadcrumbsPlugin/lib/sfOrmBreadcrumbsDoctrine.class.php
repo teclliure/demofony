@@ -27,9 +27,9 @@ class sfOrmBreadcrumbsDoctrine extends sfOrmBreadcrumbs
       {
         $route_object = $object;
       }
-
       $name = preg_replace('/%(\w+)%/e', '$object->get("$1")', $item['name']);
-      $breadcrumb = array('name' => $name, 'url' => $routing->generate($item['route'], $route_object));
+      if (isset($item['route']) && $item['route']) $breadcrumb = array('name' => $name, 'url' => $routing->generate($item['route'], $route_object));
+      else $breadcrumb = array('name' => $name, 'url'=>null);
     }
     else 
     {

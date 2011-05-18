@@ -21,7 +21,7 @@ $('#number_view_comments_<?php echo get_class($object->getRawValue()) ?>_<?php e
   <?php endif ?>
   <div id="view_list_comments_<?php echo get_class($object->getRawValue()) ?>_<?php echo $object->getId()?>" style="<?php if ($pager->haveToPaginate()): ?>min-height: 200px;<?php endif;?>">
     <?php foreach($pager->getResults() as $c): ?>
-    <?php include_partial("comment/commentAjax", array('obj' => $c, 'i' => (++$i + $cpt), 'first_line' => ($i == 1), 'form_name' => $form_name)) ?>
+    <?php include_partial("comment/commentAjax", array('obj' => $c, 'i' => (++$i + $cpt), 'first_line' => ($i == 1), 'object'=>$object, 'form_name' => $form_name)) ?>
     <?php endforeach; ?>
   </div>
   <?php if ($pager->haveToPaginate()): ?>

@@ -4,9 +4,8 @@
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="<?php echo $sf_request->getRelativeUrlRoot() ?>/images/favicon.ico" />
     <?php include_stylesheets() ?>
-
     <?php include_javascripts() ?>
   </head>
   <body>
