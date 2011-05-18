@@ -6,7 +6,7 @@
     <body>
       <trans-unit id="1">
         <source>Last</source>
-        <target>Última</target>
+        <target>Últimos</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Most popular</source>

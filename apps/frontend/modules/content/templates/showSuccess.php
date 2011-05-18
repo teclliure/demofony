@@ -85,14 +85,28 @@
       <?php // include_partial('opinion/count', array('object' => $content)) ?>
     <?php // endif; ?>
     
+    <?php if ($content->getVideo() && $content->getVideoId()): ?>
     <div class="box no-tabs comments-by-area">
       <div class="box-content show">
         <div class="box-title color2">
           <p><?php echo __('Video')?></p>
         </div>
         
+        <?php use_javascript('/jquery/jyoutube/jyoutube.min.js')?>
+        <?php use_javascript('/jquery/jyoutube/jquery.youtubepopup.min.js')?>
+        <script type="text/javascript">
+        $(document).ready(function(){
+          imgUrl = $.jYoutube('<?php echo $content->getVideoId() ?>', 'small');
+          //alert(imgUrl);
+          // Now append this image to <div id="thumbs">
+          $('#video_thumbs').html('<a class="youtube" href="#" rel="<?php echo $content->getVideoId() ?>" title="<?php echo __('YouTube Video') ?>"><img src="'+imgUrl+'" alt="<?php echo __('YouTube Video') ?>" /></a>');
+          $("a.youtube").YouTubePopup({ autoplay: 1, draggable: false });
+        });
+        </script>
+        <div id="video_thumbs" style="text-align: center"></div>
       </div>
     </div>
+    <?php endif; ?>
   
     <?php if (isset($mapOpinions) && $mapOpinions): ?>
     <div class="box no-tabs comments-by-area">

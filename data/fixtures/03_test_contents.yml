@@ -24,6 +24,7 @@ GovermentNew:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     created_at: '2011-04-10'
     sfGuardUser: User_admin
+    video: 'http://www.youtube.com/watch?v=rSUfWXcNAOw'
   new_4:
     title: Noticia govern 4 lore ipsum
     body: |
@@ -115,7 +116,7 @@ GovermentConsultation:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     start_date: '2011-03-10'
     end_date: '2011-05-30'
-    sfGuardUser: User_admin    
+    sfGuardUser: User_admin
   consul_2:
     title: Consulta pasada
     body: |
@@ -133,7 +134,7 @@ GovermentConsultation:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     start_date: '2011-06-10'
     end_date: '2011-06-15'
-    sfGuardUser: User_admin   
+    sfGuardUser: User_admin
   consul_4:
     title: Consulta inactiva
     body: |
@@ -142,8 +143,8 @@ GovermentConsultation:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     start_date: '2011-06-10'
     end_date: '2011-06-15'
-    sfGuardUser: User_admin 
-    active: 0  
+    sfGuardUser: User_admin
+    active: 0
   consul_5:
     title: Consulta futura 3
     body: |
@@ -161,7 +162,7 @@ GovermentConsultation:
       The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.dsadsa ddsak jaskj daklsdj
     start_date: '2011-06-10'
     end_date: '2011-06-15'
-    sfGuardUser: User_admin      
+    sfGuardUser: User_admin
 Workshop:
   work_1:
     title: Workshop activo
@@ -461,7 +462,7 @@ VirtualMeetingQuestion:
 VirtualMeetingAnswer:
   vma_1:
     VirtualMeetingQuestion: vmq_1
-    answer: Por que si 
+    answer: Por que si
   vma_2:
     VirtualMeetingQuestion: vmq_2
     answer: Por que no
