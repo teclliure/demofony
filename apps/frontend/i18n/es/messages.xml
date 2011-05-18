@@ -594,7 +594,7 @@
       </trans-unit>
       <trans-unit id="141">
         <source>Do you want to participate in creating a better &lt;strong&gt;Eivissa&lt;/strong&gt;?</source>
-        <target>¿ Quieres participar en la creación de una &lt;strong&gt;Ibiza?&lt;/strong&gt; mejor ?</target>
+        <target>¿ Quieres participar en la creación de una &lt;strong&gt;Ibiza&lt;/strong&gt; mejor ?</target>
       </trans-unit>
       <trans-unit id="142">
         <source>Comments to Administrator (This text will NOT be published)</source>
@@ -703,6 +703,10 @@
       <trans-unit id="154">
         <source>after it is confirmed</source>
         <target>despues de confirmarlo/a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Add comment</source>
+        <target>Añadir comentario</target>
       </trans-unit>
     </body>
   </file>

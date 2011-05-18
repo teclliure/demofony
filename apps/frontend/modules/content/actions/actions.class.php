@@ -188,7 +188,7 @@ class contentActions extends sfActions {
           $url = 'region='.$form->getValue('regions');
         }
         if ($form->getValue('categories')) {
-          $url = 'categories='.$form->getValue('categories');
+          $url = 'category='.$form->getValue('categories');
         }
         $this->redirect('content/list?title=filter&'.$url);
       }

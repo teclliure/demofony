@@ -1,1 +1,1 @@
-<?php foreach ($categories as $key=>$category): ?><?php if ($key): ?>, <?php endif; ?><?php echo $category ?><?php endforeach ?>
+<?php foreach ($categories as $key=>$category): ?><?php if ($key): ?>, <?php endif; ?><?php echo link_to($category,'content/list?title=filter&categories='.$category->getId()) ?><?php endforeach ?>
