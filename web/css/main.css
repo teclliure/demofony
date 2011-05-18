@@ -31,10 +31,10 @@
 	
 	.icon-letter-c, 
 	.icon-letter-g, 
-	.icon-letter-q{font:normal 26px "RNSBARUTABLACKRegular"; text-shadow:0 0 2px rgba(0,0,0,.7);}
-	.icon-letter-c{color:#CE9B00;}
-	.icon-letter-g{color:#194A96;}
-	.icon-letter-q{color:#fff;}
+	.icon-letter-q{font:normal 22px "RNSBARUTABLACKRegular"; border:0 solid #999; width:30px; height:30px; line-height:30px; text-align:center; color:#fff; border-radius:15px; text-shadow:1px 1px 1px rgba(0,0,0,.5);}
+	.icon-letter-c{background:#CE9B00;}
+	.icon-letter-g{background:#194A96;}
+	.icon-letter-q{background:#666;}
 	
 	.img{ overflow:hidden; background-image:url(../images/no-pic.gif); background-repeat:no-repeat; background-position:50% 50%;}
 	.profile{ background-image:url(../images/no-profile.gif);}
@@ -209,7 +209,7 @@
 	.iniciative p a{text-decoration:none;}
 	.iniciative div.comments{position:absolute; right:10px; bottom:10px; font-size:9px; color:#666;}
 	.iniciative div.comments span{margin-right:3px;}
-	.iniciative div.letter{float:left; padding-right:10px; margin-right:10px; border-right:1px solid #ccc; height:45px; line-height:45px;}
+	.iniciative div.letter{float:left; margin-right:15px; margin-top:5px;}
 	
 	.result{padding:10px; position:relative; border-bottom: 1px solid #ccc;}
 	.result:last-child{border:none;}
@@ -446,7 +446,7 @@
 	div.modal_alpha{display:none; top:0; left:0; width:100%; height:100%; position:fixed; z-index:1000; background-color:#000; opacity:.4;}
 	div.modal_div{display:none; position:fixed; background-color:#fff; top:50%; left:50%; border:10px solid #194A96; border-radius:6px; padding:15px; z-index:1001; }
 	h1.modal-title{margin-bottom:15px; padding-bottom:5px; text-transform:uppercase; color:#194A96; border-bottom:1px solid #999; font-weight:bold; font-size:14px;}
-	a.dialog-close{position:absolute; right:-30px; top:-10px; font-weight:bold; background:#194A96; display:block; font-size:14px; color:#fff; padding:4px;}
+	a.dialog-close{position:absolute; right:-10px; top:-10px; font-weight:bold; background:#194A96; display:block; font-size:14px; color:#fff; padding:4px;}
 	a.dalog-close:hover{text-decotion:none;}
 	
 	/* --- JQUERY UI DIALOG --- */
