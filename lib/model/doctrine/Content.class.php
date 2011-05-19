@@ -186,9 +186,9 @@ class Content extends BaseContent
   }
   
   public function countNumPossibilitiesAdded($possibility) {
-    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.opinion_possibility_id = ?',$possibility->getId())->andWhere('o.object_id = ?',$this->getId());
+    $query = Doctrine::getTable('OpinionLike')->createQuery('ol')->leftJoin('ol.Opinion o')->where('o.object_class = ?',get_class($this))->andWhere('o.opinion_possibility_id = ?',$possibility->getId())->andWhere('o.object_id = ?',$this->getId())->andWhere('o.innapropiate = 0');
     $num = $query->count();
-    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.opinion_possibility_id = ?',$possibility->getId());
+    $query = Doctrine::getTable('Opinion')->createQuery('o')->where('o.object_class = ?',get_class($this))->andWhere('o.object_id = ?',$this->getId())->andWhere('o.opinion_possibility_id = ?',$possibility->getId())->andWhere('o.innapropiate = 0');
     $num += $query->count();
     return $num;
   }

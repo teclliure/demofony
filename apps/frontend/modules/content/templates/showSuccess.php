@@ -99,8 +99,8 @@
           imgUrl = $.jYoutube('<?php echo $content->getVideoId() ?>', 'small');
           //alert(imgUrl);
           // Now append this image to <div id="thumbs">
-          $('#video_thumbs').html('<a class="youtube" href="#" rel="<?php echo $content->getVideoId() ?>" title="<?php echo __('YouTube Video') ?>"><img src="'+imgUrl+'" alt="<?php echo __('YouTube Video') ?>" /></a>');
-          $("a.youtube").YouTubePopup({ autoplay: 1, draggable: false });
+          $('#video_thumbs').html('<a class="youtube" href="#" rel="<?php echo $content->getVideoId() ?>" title="<?php echo __('YouTube Video') ?>"><img class="youtube" src="'+imgUrl+'" alt="<?php echo __('YouTube Video') ?>" /></a>');
+          $("a.youtube").YouTubePopup();
         });
         </script>
         <div id="video_thumbs" style="text-align: center"></div>

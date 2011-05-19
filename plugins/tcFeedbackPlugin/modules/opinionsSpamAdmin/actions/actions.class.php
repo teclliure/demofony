@@ -10,4 +10,21 @@
  */
 class opinionsSpamAdminActions extends autoOpinionsSpamAdminActions
 {
+  public function executeListSpam($request) {
+    $this->opinion_marked_as_spam = $this->getRoute()->getObject();
+    $opinion = $this->opinion_marked_as_spam->getOpinion();
+    $opinion->setAsSpam();
+    $this->getUser()->setFlash('notice', 'The item was marked as spam successfully.');
+
+    $this->redirect('@opinion_marked_as_spam');
+  }
+  
+  public function executeListNotSpam($request) {
+    $this->opinion_marked_as_spam = $this->getRoute()->getObject();
+    $opinion = $this->opinion_marked_as_spam->getOpinion();
+    $opinion->setAsNotSpam();
+    $this->getUser()->setFlash('notice', 'The item was marked as NOT spam successfully.');
+
+    $this->redirect('@opinion_marked_as_spam');
+  }
 }

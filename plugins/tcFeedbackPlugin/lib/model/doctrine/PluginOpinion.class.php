@@ -34,6 +34,23 @@ class PluginOpinion extends BaseOpinion
     $query = Doctrine::getTable('OpinionMarkedAsSpam')->createQuery('os')->where('os.opinion_id = ?',$this->getId())->andWhere('os.user_id = ?',$user->getId());
     return $query->count();
   }
+  
+  public function setAsSpam() {
+    $this->cleanOpinionMarkedAsSpam();
+    $this->setInnapropiate(1);
+    $this->save();
+  }
+  
+  public function setAsNotSpam() {
+    $this->cleanOpinionMarkedAsSpam();
+    $this->setInnapropiate(0);
+    $this->save();
+  }
+  
+  protected function cleanOpinionMarkedAsSpam() {
+    $query = Doctrine::getTable('OpinionMarkedAsSpam')->createQuery('os')->where('os.opinion_id = ?',$this->getId());
+    return $query->delete()->execute();
+  }
 
   public function getGmapHtml() {
     SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
