@@ -244,5 +244,7 @@ class sfGuardUserProfileForm extends BasesfGuardUserProfileForm
     )));
     $this->setWidget('categories_list', new sfWidgetFormDoctrineChoice(array('multiple' => true, 'expanded'=>true, 'model' => 'Category')));
     $this->setWidget('regions_list', new sfWidgetFormDoctrineChoice(array('multiple' => true,'expanded'=>true, 'model' => 'Region')));
+    $this->getWidgetSchema()->setLabel('location','Town');
+    $this->getWidgetSchema()->setDefault('country',160);
   }
 }

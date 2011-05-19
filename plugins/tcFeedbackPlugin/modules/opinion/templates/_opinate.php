@@ -30,7 +30,7 @@
         <?php endif; ?>
         <?php if($sf_user->isAuthenticated()): ?>
           <?php if($object->hasOpinated($sf_user->getGuardUser())):?>
-            <div id="alreadyopinated"><?php echo __('You have already opinated:') ?><br />
+            <div id="alreadyopinated"><?php echo __('You have already opinated') ?>:<br />
             <h3><?php echo $object->getOpinion($sf_user->getGuardUser())?></h3>
             </div>
           <?php else: ?>

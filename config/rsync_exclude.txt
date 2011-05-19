@@ -1,4 +1,5 @@
 # Project files
+/config/databases.yml
 /cache/*
 /log/*
 /web/*_dev.php

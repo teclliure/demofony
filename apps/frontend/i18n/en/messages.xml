@@ -106,7 +106,7 @@
       </trans-unit>
       <trans-unit id="26">
         <source>No virtual meeting avaliable</source>
-        <target/>
+        <target>No avaliable interview</target>
       </trans-unit>
       <trans-unit id="27">
         <source>View all interviews</source>

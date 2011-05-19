@@ -54,7 +54,7 @@
       </trans-unit>
       <trans-unit id="13">
         <source>Meetings</source>
-        <target>Reuniones</target>
+        <target>Encuentros</target>
       </trans-unit>
       <trans-unit id="14">
         <source>Map</source>
@@ -106,7 +106,7 @@
       </trans-unit>
       <trans-unit id="26">
         <source>No virtual meeting avaliable</source>
-        <target>Ninguna reunión virtual disponible</target>
+        <target>Ninguna entrevista disponible</target>
       </trans-unit>
       <trans-unit id="27">
         <source>View all interviews</source>
@@ -715,6 +715,94 @@
       <trans-unit id="154">
         <source>Opined</source>
         <target>Opinó</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Participate</source>
+        <target>Participa</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Closed</source>
+        <target>Cerrado</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You have already opinated</source>
+        <target>Ya has opinado</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Participation results</source>
+        <target>Resultados participación</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>First name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Last name</source>
+        <target>Apellidos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Born date</source>
+        <target>Fecha de nacimiento</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Gender</source>
+        <target>Sexo</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Male</source>
+        <target>Hombre</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Female</source>
+        <target>Mujer</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>About</source>
+        <target>Acerca de ti</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Telephone</source>
+        <target>Teléfono</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Web</source>
+        <target>Web</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Address</source>
+        <target>Dirección</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Postal code</source>
+        <target>Código postal</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Province</source>
+        <target>Provincia</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Country</source>
+        <target>Pais</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Subscription email</source>
+        <target>Suscripción email</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Categories list</source>
+        <target>Listado de categorias</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Regions list</source>
+        <target>Listado de regiones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Town</source>
+        <target>Pueblo/ciudad</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source></source>
+        <target></target>
       </trans-unit>
     </body>
   </file>
