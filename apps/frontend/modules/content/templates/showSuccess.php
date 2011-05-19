@@ -52,6 +52,16 @@
           <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4da393350f4bddf1"></script>
           <!-- AddThis Button END -->
         </div>
+        
+        <?php if ($content->getResponse()): ?>
+        <div class="clear"></div>
+        <br />
+        <div class="gobern-response">
+          <div class="box-title"><p><?php echo __('Goverment response') ?></p></div>
+          <?php echo $content->getResponse()->getBody() ?>
+        </div>
+        <?php endif; ?>
+        
         <br />
         <?php include_component('comment', 'commentBoxAjax', array('object' => $content)) ?>
         

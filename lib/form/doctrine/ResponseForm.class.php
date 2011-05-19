@@ -12,5 +12,7 @@ class ResponseForm extends BaseResponseForm
 {
   public function configure()
   {
+    $this->setWidget('content_type',new sfWidgetFormInputHidden ());
+    $this->setWidget('content_id',new sfWidgetFormInputHidden ());
   }
 }

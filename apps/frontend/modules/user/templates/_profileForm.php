@@ -105,12 +105,12 @@
         
         <?php if(!isset($hide_unsubscribe) || !$hide_unsubscribe): ?>
         <div class="box-title color1">
-          <p><a href="#" class="toggler">+</a><?php echo __('Unsubscribe')?></p>
+          <p><a href="#" class="toggler">+</a><?php echo __('Delete account')?></p>
         </div>
         <?php endif; ?>
         
         <div class="hide form-toggle-content">
-          <?php echo button_to(__('Unsubscribe'),'user/unsubscribe',array('class'=>'button1','confirm'=>__('Are you sure ?'))) ?>
+          <?php echo button_to(__('Delete account'),'user/unsubscribe',array('class'=>'button1','confirm'=>__('Are you sure ?'))) ?>
         </div>
         
       </div>

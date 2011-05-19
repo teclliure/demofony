@@ -133,7 +133,7 @@
         <target>Seleccione todas las categorías</target>
       </trans-unit>
       <trans-unit id="33">
-        <source>Unsubscribe</source>
+        <source>Delete account</source>
         <target>Darse de baja</target>
       </trans-unit>
       <trans-unit id="34">
@@ -515,6 +515,10 @@
       <trans-unit id="128">
         <source>Password</source>
         <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Password again</source>
+        <target>Repite la contraseña</target>
       </trans-unit>
       <trans-unit id="129">
         <source>This e-mail is being sent because you requested information on how to reset your password.</source>

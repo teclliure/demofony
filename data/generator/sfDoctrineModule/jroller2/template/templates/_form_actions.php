@@ -39,4 +39,5 @@
 <?php endforeach; ?>
 <?php endforeach; ?>
 [?php endif; ?]
+[?php include_partial('<?php echo $this->getModuleName() ?>/form_custom_actions', array('object' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
 </ul>

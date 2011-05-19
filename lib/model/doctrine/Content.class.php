@@ -192,6 +192,16 @@ class Content extends BaseContent
     $num += $query->count();
     return $num;
   }
+
+  public function getResponse() {
+    $query = Doctrine::getTable('Response')->createQuery('r')->where('r.content_type = ?',get_class($this))->andWhere('r.content_id = ?',$this->getId());
+    return $query->execute()->getFirst();
+  }
+  
+  public function getHasResponse() {
+    $query = Doctrine::getTable('Response')->createQuery('r')->where('r.content_type = ?',get_class($this))->andWhere('r.content_id = ?',$this->getId());
+    return $query->count();
+  }
   
   public function getPossibilityPercent($possibility) {
     $numOpinions = $this->countAllOpinions();
