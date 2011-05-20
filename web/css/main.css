@@ -246,6 +246,20 @@
 	.comment div.footer div.stats{position:absolute; right:0; top:0;}
 	.comment div.footer div.stats strong{margin-left:10px;}
 	
+	.question{padding:1px; margin-bottom:10px; border-bottom:1px dotted #666; position:relative; min-height:110px;}
+	.question:last-child{border:none;}
+	.question a{text-decoration:none;}
+	.question span.quote.quote-left{left:0; top:-1px;}
+	.question span.quote.quote-right{right:0; bottom:-1px;}
+	.question div.left{position:absolute; top:10px; left:10px; z-index:2; width:120px;}
+	.question div.left h2{font-weight:bold; color:#194A96; margin-bottom:2px;}
+	.question div.left p.date{font-size:11px; color:#666; margin-bottom:10px;}
+	.question div.left p.opinion{color:#666; text-transform:uppercase; font-style:italic;}
+	.question div.left p.opinion strong{color:#BD9C3F;}
+	.question div.right{margin-left:130px;}
+	.question div.text{margin-bottom:5px; margin-right:100px; position:relative;}
+	.question div.question{color:#999; padding:0; border:none; min-height:0;}
+	
 	/* Pagina: HOME */
 	
 	#home #main{padding-top:30px;}
@@ -281,6 +295,11 @@
 	#home div.mapa div.map{height:300px; background:#ccc;}
 	
 	#home .accio-ciutadana{}
+	
+	/* questions */
+	div.question{margin-bottom:10px;}
+	div.question div.left{float:left; width:150px;}
+	div.question div.right{padding-left:160px;}
 	
 	/* Pagina: PERFIL */
 	
