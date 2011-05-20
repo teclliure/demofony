@@ -8,6 +8,17 @@ sf_orm_breadcrumbs:
   home:
     index:
       - { name: Summary, route: homepage }
+  sfGuardAuth:
+    signin:
+      - { name: Login }
+  opinionsSpamAdmin:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: Opinions reports }
+  commentReportAdmin:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: Comments reports }
   response:
     add:
       - { name: Summary, route: homepage }
@@ -20,20 +31,379 @@ sf_orm_breadcrumbs:
       - { name: Summary, route: homepage }
       - { name: List news }
     filter:
-      - { name: Content, route: goverment_new }
+      - { name: Summary, route: homepage }
       - { name: Filtered news }
     new:
-      - { name: Content, route: goverment_new }
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_new }
       - { name: Create new }
     create:
-      - { name: Content, route: goverment_new }
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_new }
       - { name: Create new }
     edit:
-      - { name: Content, route: goverment_new }
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_new }
       - { name: Edit new "%title%", model: true }
     update:
-      - { name: Content, route: goverment_new }
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_new }
       - { name: Edit new "%title%" }
     show:
-      - { name: Content, route: goverment_new }
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_new }
       - { name: Show new "%title%" }
+  goverment_consultation:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List consultations }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered consultations }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_consultation }
+      - { name: Create consultation }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List news, route: goverment_consultation }
+      - { name: Create consultation }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List consultations, route: goverment_consultation }
+      - { name: Edit consultation "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List consultations, route: goverment_consultation }
+      - { name: Edit consultation "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List consultations, route: goverment_consultation }
+      - { name: Show consultation "%title%" }
+  goverment_proposal:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered goverment proposals }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Create goverment proposal }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Create goverment proposal }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Edit goverment proposal "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Edit goverment proposal "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Show goverment proposal "%title%" }
+  citizen_action:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List citizen actions }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered citizen actions }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List citizen actions, route: citizen_action }
+      - { name: Create citizen action }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List citizen actions, route: citizen_action }
+      - { name: Create citizen action }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List citizen actions, route: citizen_action }
+      - { name: Edit citizen action "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List citizen actions, route: citizen_action }
+      - { name: Edit citizen action "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List citizen actions, route: citizen_action }
+      - { name: Show citizen action "%title%" }
+  citizen_proposal:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List citizen proposal }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered citizen proposal }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: Create citizen proposal }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: Create citizen proposal }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: Edit citizen proposal "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: Edit citizen proposal "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: Show citizen proposal "%title%" }
+  goverment_proposal:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposal }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered goverment proposal }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Create goverment proposal }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Create goverment proposal }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Edit goverment proposal "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Edit goverment proposal "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: Show goverment proposal "%title%" }
+  virtual_meeting:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List virtual meeting }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered virtual meeting }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List virtual meetings, route: virtual_meeting }
+      - { name: Create virtual meeting }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List virtual meetings, route: virtual_meeting }
+      - { name: Create virtual meeting }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List virtual meetings, route: virtual_meeting }
+      - { name: Edit virtual meeting "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List virtual meetings, route: virtual_meeting }
+      - { name: Edit virtual meeting "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List virtual meetings, route: virtual_meeting }
+      - { name: Show virtual meeting "%title%" }
+  workshop:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List workshops }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered workshops }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List workshops, route: workshop }
+      - { name: Create workshop }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List workshops, route: workshop }
+      - { name: Create workshop }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List workshops, route: workshop }
+      - { name: Edit workshop "%title%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List workshops, route: workshop }
+      - { name: Edit workshop "%title%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List workshops, route: workshop }
+      - { name: Show workshop "%title%" }
+  commentAdmin:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List comments }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered comments }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List comments, route: commentAdmin }
+      - { name: Create comment }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List comments, route: commentAdmin }
+      - { name: Create comment }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List comments, route: commentAdmin }
+      - { name: Edit comment, model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List comments, route: commentAdmin }
+      - { name: Edit comment }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List comments, route: commentAdmin }
+      - { name: Show comment }
+  opinionsAdmin:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List opinions }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered opinions }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List opinions, route: opinionsAdmin }
+      - { name: Create opinion }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List opinions, route: opinionsAdmin }
+      - { name: Create opinion }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List opinions, route: opinionsAdmin }
+      - { name: Edit opinion, model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List opinions, route: opinionsAdmin }
+      - { name: Edit opinion }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List opinions, route: opinionsAdmin }
+      - { name: Show opinion }
+  region:
+    nested:
+      - { name: Summary, route: homepage }
+      - { name: Regions admin }
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List regions }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered regions }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List regions, route: region }
+      - { name: Create region }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List regions, route: region }
+      - { name: Create region }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List regions, route: region }
+      - { name: Edit region, model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List regions, route: region }
+      - { name: Edit region }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List regions, route: region }
+      - { name: Show region }
+  category:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List categories }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered categories }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List categorys, route: category }
+      - { name: Create category }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List categorys, route: category }
+      - { name: Create category }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List categorys, route: category }
+      - { name: Edit category, model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List categorys, route: category }
+      - { name: Edit category }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List categorys, route: category }
+      - { name: Show category }
+  sfGuardUser:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List users }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered users }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List users, route: sf_guard_user }
+      - { name: Create user }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List users, route: sf_guard_user }
+      - { name: Create user }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List users, route: sf_guard_user }
+      - { name: Edit user "%username%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List users, route: sf_guard_user }
+      - { name: Edit user "%username%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List users, route: sf_guard_user }
+      - { name: Show user "%username%" }
+  sfGuardPermission:
+    index:
+      - { name: Summary, route: homepage }
+      - { name: List permissions }
+    filter:
+      - { name: Summary, route: homepage }
+      - { name: Filtered permissions }
+    new:
+      - { name: Summary, route: homepage }
+      - { name: List permissions, route: sf_guard_permission }
+      - { name: Create permission }
+    create:
+      - { name: Summary, route: homepage }
+      - { name: List permissions,route: sf_guard_permission }
+      - { name: Create permission }
+    edit:
+      - { name: Summary, route: homepage }
+      - { name: List permissions, route: sf_guard_permission }
+      - { name: Edit permission "%name%", model: true }
+    update:
+      - { name: Summary, route: homepage }
+      - { name: List permissions, route: sf_guard_permission }
+      - { name: Edit permission "%name%" }
+    show:
+      - { name: Summary, route: homepage }
+      - { name: List permissions, route: sf_guard_permission }
+      - { name: Show permission "%name%" }

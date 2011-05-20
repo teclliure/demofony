@@ -77,4 +77,8 @@ abstract class PluginComment extends BaseComment
     {
       return !is_null($this->getUserId());
     }
+    
+    public function getAssociatedObject() {
+      return Doctrine::getTable($this->getRecordModel())->findOneBy('id',$this->getRecordId());
+    }
 }

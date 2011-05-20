@@ -801,6 +801,19 @@
         <target>Pueblo/ciudad</target>
       </trans-unit>
       <trans-unit id="154">
+        <source>Express your opinion !</source>
+        <target>¡ Expresa tu opinión !</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>of 250 characters used</source>
+        <target>de 250 carácteres usados</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>What do you think about this</source>
+        <target>¿ Que piensas acerca de esta/s</target>
+      </trans-unit>
+      
+      <trans-unit id="154">
         <source></source>
         <target></target>
       </trans-unit>

@@ -42,7 +42,7 @@
 
     <tfoot>
       <tr>
-        <th colspan="5">
+        <th colspan="7">
           <div class="ui-state-default ui-th-column ui-corner-bottom">
             <?php include_partial('commentAdmin/pagination', array('pager' => $pager)) ?>
           </div>
