@@ -19,6 +19,7 @@ generator:
         record_id:          { label: Record }
         created_at:         { label: Posted the }
         edition_reason:     { label: Reason }
+        comment_link:       { label: Original content }
       list:
         title:              Comments list
         display:            [_comment_link, author, _body, is_delete, created_at]

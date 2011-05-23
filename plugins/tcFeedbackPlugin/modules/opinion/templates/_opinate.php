@@ -54,7 +54,7 @@
               <div id="opinion_textarea" <?php if (isset($form['opinion_possibility_id'])): ?>style="display: none"<?php endif; ?>>
                 <?php echo $form['opinion']->renderError() ?>
                 <?php echo $form['opinion']->render() ?>
-                <div id="charCount"><?php echo __('0 of 250 characters used') ?></div>
+                <div id="charCount">0 <?php echo __('of 250 characters used') ?></div>
                 <script>
                 // controls character input/counter
                 $('#opinion_textarea textarea').keyup(function() {

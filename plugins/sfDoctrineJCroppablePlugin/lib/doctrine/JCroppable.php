@@ -198,7 +198,8 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
     $fileDir = $this->getImageDirWeb();
     
     if (!file_exists($fileDir)) {
-      print("image upload directory <strong>$fileDir</strong> doesn't exist");
+      mkdir($this->getImageDir(),0775,true);
+      // print("image upload directory <strong>$fileDir</strong> doesn't exist");
     }
     if (!is_writable($fileDir)) {
       print("image upload directory <strong>$fileDir</strong> is not writable");

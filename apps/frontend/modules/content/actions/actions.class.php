@@ -162,7 +162,7 @@ class contentActions extends sfActions {
       $regions=array($request->getParameter('region'));
     }
     $sql = Doctrine_Core::getTable('Content')->getSqlUnion($order,$type,$categories,$regions, $where);
-    $this->pager = new sfPdoUnionPager ('Content',6);
+    $this->pager = new sfPdoUnionPager ('Content',12);
     $this->pager->setSql($sql);
     $this->pager->setPage($request->getParameter('page',1));
     $this->pager->init();

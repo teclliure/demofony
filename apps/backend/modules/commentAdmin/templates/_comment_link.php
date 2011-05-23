@@ -1,3 +1,5 @@
 <?php use_helper('JavascriptBase','Text') ?>
 <?php use_stylesheet("/vjCommentAdaptedPlugin/css/commentReportAdmin.min.css", 'last') ?>
-<?php if ($comment) echo link_to(image_tag('/vjCommentAdaptedPlugin/images/magnifier.png', array('alt' => __('Show content'))).truncate_text( strip_tags($comment->getBodyCleanQuotes(ESC_RAW)), sfConfig::get('app_commentAdmin_max_length', 50), '...', true),$comment_report->getReferer(),array('target'=>'_blank')); ?>&nbsp;
+<?php if ($comment): ?>
+  <a href="<?php echo url_for(sfContext::getInstance()->getConfiguration()->generateFrontendUrl($comment->getAssociatedObject()->getUrl())) ?>" target="_blank"><?php echo image_tag('/vjCommentAdaptedPlugin/images/magnifier.png', array('alt' => __('Show content'))).__('Show content') ?></a>
+<?php endif; ?>
