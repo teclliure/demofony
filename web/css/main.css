@@ -74,7 +74,7 @@
 	#header ul li:last-child{border-right:none;}
 	#header ul li.link a{display:block; font-size:16px; text-decoration:none; height:60px; line-height:60px; padding:0 10px 0 10px; color:#fff; text-transform:uppercase; text-shadow:0 2px 1px rgba(0,0,0,.5);}
 	#header ul li.filter{text-align:center;}
-	#header ul li.filter select{margin-top:8px; display:block; width:120px; border:1px solid #666; font-size:11px;}
+	#header ul li.filter select{margin-top:8px; display:block; width:180px; border:1px solid #666; font-size:11px;}
 	#header ul li form{margin-top:20px;}
 	#header ul li form input{ background:#fff; width:140px; padding:5px; border:none !important; background:none; }
 	#header ul li form button{width:35px; height:25px; background:none; border:none; font-size:0; cursor:pointer; float:right;}
