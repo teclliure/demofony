@@ -7,7 +7,7 @@
           <p class="date"><?php echo format_date($question->getCreatedAt()) ?></p>
       </div>
       <div class="right">
-          <div class="text question">
+          <div class="text q">
             <?php echo $question->getQuestion() ?>
           </div>
           <?php if ($question->getVirtualMeetingAnswer()) :?>
