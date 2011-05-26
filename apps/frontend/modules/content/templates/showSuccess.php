@@ -53,24 +53,39 @@
           <!-- AddThis Button END -->
         </div>
         
-        <?php if ($content->getResponse()): ?>
-        <div class="clear"></div>
-        <br />
-        <div class="gobern-response">
-          <div class="box-title"><p><?php echo __('Goverment response') ?></p></div>
-          <?php echo $content->getResponse()->getBody() ?>
-        </div>
-        <?php endif; ?>
         
         <br />
         <?php include_component('comment', 'commentBoxAjax', array('object' => $content)) ?>
         
         <div class="clear"></div>
         
-        <?php // if(!$content->hasCountBox()): ?>
-          <?php include_component('opinion', 'listSelected', array('object' => $content)) ?>
-          <?php include_component('opinion', 'list', array('object' => $content)) ?>
-        <?php // endif;?>
+        <?php if ($content->getResponse()): ?>
+          <script type="text/javascript">
+          $(function() {
+            $("#response_tabs").tabs();
+          });
+          </script>
+          <div id="response_tabs" class="box has_tabs">
+          <ul>
+            <li><a href="#response_tab"><?php echo __('Goverment response') ?></a></li>
+            <li><a href="#opinions_tab"><?php echo __('Opinions') ?></a></li>
+          </ul>
+          <div id="response_tab" class="gobern-response">
+            <div class="box-title"><span class="inline icon-ayunt"></span><p><?php echo __('Goverment response') ?></p></div>
+            <?php echo $content->getResponse()->getBody() ?>
+          </div>
+          <div id="opinions_tab">
+        <?php endif; ?>
+        
+          <?php // if(!$content->hasCountBox()): ?>
+            <?php include_component('opinion', 'listSelected', array('object' => $content)) ?>
+            <?php include_component('opinion', 'list', array('object' => $content)) ?>
+          <?php // endif;?>
+        
+        <?php if ($content->getResponse()): ?>
+          </div>
+        </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
