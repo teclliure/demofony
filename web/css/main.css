@@ -193,9 +193,9 @@
 	.result h1 a{color:#333;}
 	.result p{color:#666; margin-bottom:15px; font-size:11px;}
 	.result p a{text-decoration:none;}
-	.result div.comments{position:absolute; right:10px; top:40px; font-size:9px; color:#666;}
+	.result div.comments{position:absolute; right:15px; bottom:10px; font-size:9px; color:#666;}
 	.result div.comments span{margin-right:3px;}
-	.result div.letter{position:absolute; right:15px; top:0;}
+	.result div.letter{position:absolute; right:15px; top:10px;}
 	.result div.text{margin-right:30px; line-height:15px;}
 	.result.color{background:#f3f3f3;}
 	
@@ -453,7 +453,7 @@
 	
 	/* --- BROWSERS --- */
 	
-	.icon-letter-c, .icon-letter-g, .icon-letter-q{-webkit-text-shadow:0 0 2px rgba(0,0,0,.7); -moz-text-shadow:0 0 2px rgba(0,0,0,.7); }
+	.icon-letter-c, .icon-letter-g, .icon-letter-q{-webkit-text-shadow:0 0 3px rgba(0,0,0,.4); -moz-text-shadow:0 0 3px rgba(0,0,0,.4); text-shadow:0 0 3px rgba(0,0,0,.4);}
 	.error{-webkit-border-radius:5px; -moz-border-radius:5px; }
 	.success{-webkit-border-radius:5px; -moz-border-radius:5px; }
 	#container{-webkit-box-shadow:0 2px 20px rgba(0,0,0,.5); -moz-box-shadow:0 2px 20px rgba(0,0,0,.5); }
