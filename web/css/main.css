@@ -94,9 +94,6 @@
 	
 	/* UI / Elementos comunes */
 	
-		
-	
-	
 	form.form{}
 	form.form label{display:block; margin-bottom:10px;}
 	form.form label span, form.form .hdr{display:block; margin-bottom:4px; text-transform:uppercase; color:#666;}
@@ -477,6 +474,8 @@
 	.ui-widget-overlay{-webkit-opacity:.4; -moz-opacity:.4; }
 		
 	/* --- MISC --- */
+	
+	div.gobern-response{line-height:17px;}
 
 	/* --- Graph --- */
 	.rating {
