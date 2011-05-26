@@ -228,7 +228,7 @@
 	.question div.left p.date{font-size:11px; color:#666; margin-bottom:10px;}
 	.question div.left p.opinion{color:#666; text-transform:uppercase; font-style:italic;}
 	.question div.left p.opinion strong{color:#BD9C3F;}
-	.question div.right{margin-left:130px;}
+	/*.question div.right{margin-left:130px;}*/
 	.question div.text{margin-bottom:5px; margin-right:100px; position:relative;}
 	.question div.question{color:#999; padding:0; border:none; min-height:0;}
 	
