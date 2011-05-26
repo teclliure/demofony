@@ -9,7 +9,7 @@
         <div class="icon-pin_<?php echo $result->getColor() ?> letter"></div>
         <div class="img"></div>
         <h1><?php echo link_to ($result->getTitle(),$result->getRawValue()->getUrl())?></h1>
-        <p class="author"><?php echo ('by')?> <?php echo link_to($result->getSfGuardUser(),'user/showProfile?username='.$result->getSfGuardUser()->getUsername()) ?>, <?php echo __('on')?> <?php echo format_date($result->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$result->getCategories()))?></p>
+        <p class="author"><?php echo __('by')?> <?php echo link_to($result->getSfGuardUser(),'user/showProfile?username='.$result->getSfGuardUser()->getUsername()) ?>, <?php echo __('on')?> <?php echo format_date($result->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$result->getCategories()))?></p>
         <div class="col1">
             <p><strong><?php echo __('Location')?>:</strong> <?php echo $result->getLocation() ?></p>
             <p><strong><?php echo __('Date')?>:</strong> <?php echo format_date($result->getActionDate()) ?></p>
@@ -35,7 +35,7 @@
         <?php endif; ?>
         <div class="img"></div>
         <h1><?php echo link_to ($result->getTitle(),$result->getRawValue()->getUrl())?></h1>
-        <p class="author"><?php echo ('by')?> <?php echo link_to($result->getSfGuardUser(),'user/showProfile?username='.$result->getSfGuardUser()->getUsername()) ?>, <?php echo __('on')?> <?php echo format_date($result->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$result->getCategories()))?></p>
+        <p class="author"><?php echo __('by')?> <?php echo link_to($result->getSfGuardUser(),'user/showProfile?username='.$result->getSfGuardUser()->getUsername()) ?>, <?php echo __('on')?> <?php echo format_date($result->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$result->getCategories()))?></p>
         <div class="text">
           <?php echo $result->getStrippedBody() ?>
         </div>

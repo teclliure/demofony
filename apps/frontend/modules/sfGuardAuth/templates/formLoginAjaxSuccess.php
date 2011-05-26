@@ -11,7 +11,7 @@
       <?php $routes = $sf_context->getRouting()->getRoutes() ?>
       <?php if (isset($routes['sf_guard_forgot_password'])): ?>
       <div>
-        <a href="<?php echo url_for('@sf_guard_forgot_password') ?>" class="remember"><?php echo __('Forgot your password?', null, 'sf_guard') ?></a>
+        <a href="<?php echo url_for('@sf_guard_forgot_password') ?>" class="remember"><?php echo __('Forgot your password?') ?></a>
       </div>
       <?php endif; ?>
       <div>
@@ -26,7 +26,7 @@
     <div>
       <p><?php echo __('Register and start participating right away') ?>.</p>
       <?php if (isset($routes['register'])): ?>
-      <a href="<?php echo url_for('@register') ?>" class="button1 start"><?php echo __('Start') ?> ></a>
+      <a href="<?php echo url_for('@register') ?>" class="button1 start"><?php echo __('Create account') ?> ></a>
       <?php endif; ?>
     </div>
   </div>

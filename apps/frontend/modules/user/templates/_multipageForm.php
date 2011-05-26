@@ -15,7 +15,7 @@
     <div class="box no-tabs no-margin">
       <div class="box-content show">
         <div class="box-title">
-          <p><?php echo __('Register', null, 'sf_guard') ?></p>
+          <p><?php echo __('Register') ?></p>
         </div>
         <?php echo $form ->getCurrentForm()?>
         <div class="clear"></div>

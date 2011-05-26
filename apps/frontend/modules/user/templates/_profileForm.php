@@ -62,10 +62,8 @@
         
         <div class="hide form-toggle-content suscriptions">
           <p>
-          Selecciona las categorías y barris que te interesen y te mantendremos informado
-          semanalmente a través del correo electrónico de las novedades. Si más adelante te
-          interesan otras temáticas o barrios siempre puedes acceder a esta pantalla a través de
-          edición de perﬁl y cambiar tus suscripciones</p>
+          <?php echo __('Select the categories and neighbourhoods that you are interested in, and you will receive a weekly email with the newsletter. You can access this page anytime in the future to change your subscription settings.') ?>
+          </p>
           <script type="text/javascript">
           /* <![CDATA[ */
           $(document).ready(function()
@@ -99,7 +97,7 @@
           <input type="checkbox" id="cats_all"> <?php echo __('Select all categories') ?>
           <div class="clear"></div>
           <?php echo $form['profile']['regions_list']->renderRow(array('class'=>'batch_regs')) ?>
-          <input type="checkbox" id="regs_all"> <?php echo __('Select all categories') ?>
+          <input type="checkbox" id="regs_all"> <?php echo __('Select all neighborhoods') ?>
           <div class="clear"></div>
         </div>
         

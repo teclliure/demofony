@@ -6,7 +6,7 @@
     <body>
       <trans-unit id="1">
         <source>Last</source>
-        <target>Últimos</target>
+        <target>Lo último</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Most popular</source>
@@ -62,7 +62,7 @@
       </trans-unit>
       <trans-unit id="15">
         <source>Summon other citizens to a gathering in order to actively improve Eivissa.</source>
-        <target>Convoca a los demás ciudadanos a una reunión con el fin de mejorar la forma activa de Ibiza.</target>
+        <target>Convoca a otros ciudadanos en un encuentro con el propósito mejorar Ibiza activamente.</target>
       </trans-unit>
       <trans-unit id="16">
         <source>Citizen&lt;br /&gt; action</source>
@@ -70,7 +70,7 @@
       </trans-unit>
       <trans-unit id="17">
         <source>Offer your knowledge to other Citizens. Publish your conditions.</source>
-        <target>Ofrezca su conocimiento a los demás ciudadanos. Publique sus condiciones.</target>
+        <target>Ofrece tu conocimiento a otros ciudadanos. Publica tus condiciones.</target>
       </trans-unit>
       <trans-unit id="18">
         <source>Workshops&lt;br /&gt; on demand</source>
@@ -86,7 +86,7 @@
       </trans-unit>
       <trans-unit id="21">
         <source>Create account</source>
-        <target>Crear cuenta</target>
+        <target>Crea tu cuenta</target>
       </trans-unit>
       <trans-unit id="22">
         <source>News</source>
@@ -97,8 +97,8 @@
         <target>E-ntrevista</target>
       </trans-unit>
       <trans-unit id="24">
-        <source>Ask a question</source>
-        <target>Haz una pregunta</target>
+        <source>Ask a question to</source>
+        <target>Haz una pregunta a</target>
       </trans-unit>
       <trans-unit id="25">
         <source>Enter</source>
@@ -131,6 +131,10 @@
       <trans-unit id="32">
         <source>Select all categories</source>
         <target>Seleccione todas las categorías</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Select all neighborhoods</source>
+        <target>Seleccione todos los barrios</target>
       </trans-unit>
       <trans-unit id="33">
         <source>Delete account</source>
@@ -174,7 +178,7 @@
       </trans-unit>
       <trans-unit id="43">
         <source>Location</source>
-        <target>Localización</target>
+        <target>Lugar</target>
       </trans-unit>
       <trans-unit id="44">
         <source>Participation of</source>
@@ -306,11 +310,11 @@
       </trans-unit>
       <trans-unit id="76">
         <source>Listed in</source>
-        <target>Listados en</target>
+        <target>Listado en</target>
       </trans-unit>
       <trans-unit id="77">
         <source>Where</source>
-        <target>Cuando</target>
+        <target>Dónde</target>
       </trans-unit>
       <trans-unit id="78">
         <source>Minimum participants</source>
@@ -345,16 +349,17 @@
         <target>Editar</target>
       </trans-unit>
       <trans-unit id="86">
-        <source>There must be at least the minimum of users subscribed and location filled by you to allow confirm the</source>
-        <target>Debe haber por lo menos el mínimo de usuarios suscritos y la ubicación rellenada para que se pueda confirmar el</target>
+        <source>There must be at least the minimum of registered users and location filled so you can confirm the</source>
+        <target>Debe haber al menos el mínimo de usuarios inscritos y la ubicación rellenada para que se pueda confirmar el/la</target>
       </trans-unit>
       <trans-unit id="87">
-        <source>When you confirm an email is sent to all subscribed users whith the</source>
-        <target>Cuando confirme un correo electrónico se enviará a todos los usuarios suscritos un con la</target>
+        <source>When you confirm an email will be sent to all registered users whith the</source>
+        <target>Al confirmar, un correo electrónico se enviará a todos los usuarios inscritos a el/la</target>
       </trans-unit>
       <trans-unit id="88">
-        <source>information and the register is closed.</source>
-        <target>información y se cierra la posibilidad de registrarse.</target>
+        <source>information and the register will be closed.</source>
+        <target>con la información confirmada y se cerrará la
+posibilidad de registrarse.</target>
       </trans-unit>
       <trans-unit id="89">
         <source>Confirm</source>
@@ -482,7 +487,7 @@
       </trans-unit>
       <trans-unit id="120">
         <source>Forgot your password?</source>
-        <target>¿ Olvidaste tu contraseña ?</target>
+        <target>¿ Has olvidado tu contraseña ?</target>
       </trans-unit>
       <trans-unit id="121">
         <source>Remember me</source>
@@ -626,7 +631,7 @@
       </trans-unit>
       <trans-unit id="148">
         <source>By neighborhood:</source>
-        <target>Por región:</target>
+        <target>Por barrio:</target>
       </trans-unit>
       <trans-unit id="149">
         <source>Lookup</source>
@@ -694,7 +699,7 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Register and start participating right away</source>
-        <target>Registrarse y emepezar a participar ahora mismo</target>
+        <target>Regístrate y empieza a participar ahora mismo</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Are you sure ?</source>
@@ -794,7 +799,7 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Regions list</source>
-        <target>Listado de regiones</target>
+        <target>Listado de barrios</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Town</source>
@@ -812,10 +817,73 @@
         <source>What do you think about this</source>
         <target>¿ Que piensas acerca de esta/s</target>
       </trans-unit>
-      
       <trans-unit id="154">
-        <source></source>
-        <target></target>
+        <source>search</source>
+        <target>buscar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Terms and license</source>
+        <target>Terminos y licencia</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Site map</source>
+        <target>Mapa del sitio</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Subscribe</source>
+        <target>Suscripción</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Contact us</source>
+        <target>Contactanos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Closed meeting</source>
+        <target>Encuentro cerrado</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Open meeting</source>
+        <target>Encuentro abierto</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Open Interview</source>
+        <target>Entrevista abierta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Closed Interview</source>
+        <target>Entrevista abierta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Email address</source>
+        <target>Dirección de email</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Enter your email address. This can be used as login name like username.</source>
+        <target>Introduce tu dirección de email. Esta puede ser usada en el login como el nombre de usuario.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Username or E-Mail</source>
+        <target>Nombre de usuario o Email</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Select the categories and neighbourhoods that you are interested in, and you will receive a weekly email with the newsletter. You can access this page anytime in the future to change your subscription settings.</source>
+        <target>Selecciona las categorías y barrios que te interesen y te mantendremos
+informado semanalmente a través del correo electrónico de las
+novedades. Si más adelante te interesan otras temáticas o barrios
+siempre puedes acceder a esta pantalla a través de edición de perfil y
+cambiar tus suscripciones.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Sign Up</source>
+        <target>Inscríbete</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>Enrolled in this</source>
+        <target>Inscritos en este/a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>users enrolled in</source>
+        <target>usuarios inscritos en este/a</target>
       </trans-unit>
     </body>
   </file>

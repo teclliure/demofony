@@ -13,7 +13,7 @@
       <a href="#" class="button1" onCLick="$('#join_button').load('<?php echo url_for('content/unjoin?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>')"><?php echo __('Remove myself') ?></a>
     <?php else: ?>
       <br />
-      <a href="#" class="button1" onCLick="$('#join_button').load('<?php echo url_for('content/join?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>')"><?php echo __('Join') ?></a>
+      <a href="#" class="button1" onCLick="$('#join_button').load('<?php echo url_for('content/join?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>')"><?php echo __('Sign Up') ?></a>
     <?php endif; ?>
   <?php if (!$sf_request->isXmlHttpRequest() || isset($not_ajax)): ?>
   </div>

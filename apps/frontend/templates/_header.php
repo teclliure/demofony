@@ -26,7 +26,7 @@
           </li>
           <li class="search">
             <form action="<?php echo url_for ('content/filter') ?>" method="get" class="misc misc-search">
-              <input name="q" />
+              <input name="q" value="<?php echo strtoupper(__('search')) ?>" onFocus="this.value='';" />
               <button></button>
             </form>
           </li>
