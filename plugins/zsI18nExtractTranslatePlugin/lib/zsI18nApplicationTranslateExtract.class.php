@@ -11,25 +11,27 @@ class zsI18nApplicationTranslateExtract extends sfI18nApplicationExtract
     parent::saveNewMessages();
   }
 
-  public function doTranslate($dest, $force_all = false)
+  public function doTranslate($dest, $force_all = false, $orig = null)
   {
-    print $dest;
-
   //get translation source
     $source = $this->getTranslationSource();
 
-    if ($force_all)
-      $this->messages = $this->getAllSeenMessages();
+    $source->load();
+    $this->messages = $source->read();
+    $this->messages = array_shift($this->messages);
 
+    if (!$orig) $orig = 'en';
+    
     if ($this->messages)
     {
       echo "Starting translation\n";
 
       //loop thru messages
-      foreach ($this->messages as $message)
+      foreach ($this->messages as $key=>$message)
       {
-        $source->update($message, $this->translate($message, 'en',$dest),null);
-        echo ".";
+        $translated = $this->translate($message[0], $orig, $dest);
+        $source->update($key, $translated, null);
+        echo $message[0]." -- ".$translated;
       }
       echo "\n";
     }

@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="ca" datatype="plaintext" original="messages" date="2011-05-27T07:50:25Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Last</source>
+        <target>L'últim</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Most popular</source>
+        <target>El més llegit</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Login</source>
+        <target>Inicia sessió</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Select wich content do you want add</source>
+        <target>Seleccioneu el contingut que voleu afegir</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Initiatives</source>
+        <target>Iniciatives</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>View all</source>
+        <target>Veure tots</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Use your inventiveness to create a better Eivissa. The initiatives with more support will be studied by the Government.</source>
+        <target>Utilitza el teu enginy per crear una Eivissa millor. Les iniciatives amb més suport seran estudiades pel Govern.</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Citizen&lt;br /&gt; initiatives</source>
+        <target>Iniciatives &lt;br /&gt; ciutadanes</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Give us your opinion about initiatives proposed by the Government.</source>
+        <target>Dóna'ns la teva opinió sobre les iniciatives proposades pel Govern.</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Goverment&lt;br /&gt; initiatives</source>
+        <target>Iniciatives &lt;br /&gt; govern</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Give us your opinion about issues of public interest.</source>
+        <target>Dóna'ns la teva opinió sobre assumptes d'interès públic.</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Opinion&lt;br /&gt; polls</source>
+        <target>Consultes</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Meetings</source>
+        <target>Trobades</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Map</source>
+        <target>Mapa</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Summon other citizens to a gathering in order to actively improve Eivissa.</source>
+        <target>Convoca a altres ciutadans en una trobada amb el propòsit millorar Eivissa activament.</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Citizen&lt;br /&gt; action</source>
+        <target>Acció &lt;br /&gt; ciutadana</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Offer your knowledge to other Citizens. Publish your conditions.</source>
+        <target>Ofereix el teu coneixement a altres ciutadans. Publica els teus condicions.</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Workshops&lt;br /&gt; on demand</source>
+        <target>Tallers &lt;br /&gt; sota demanda</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Do you want participate in create a better &lt;strong&gt;Eivissa&lt;/strong&gt;?</source>
+        <target>Vols participar a crear una &lt;strong&gt;Eivissa&lt;/strong&gt; millor?</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Make your proposal</source>
+        <target>Fes la teva proposta</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Create account</source>
+        <target>Crea un compte</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>News</source>
+        <target>Notícies</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>I-nterview</source>
+        <target>E-Entrevista</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Ask a question to</source>
+        <target>Fes una pregunta a</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Enter</source>
+        <target>Entrar</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>No virtual meeting avaliable</source>
+        <target>Cap entrevista disponible</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>View all interviews</source>
+        <target>Veure totes les entrevistes</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>of</source>
+        <target>de</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Register information</source>
+        <target>Informació registre</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Change password</source>
+        <target>Canviar la contrasenya</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Newsletter subscription</source>
+        <target>Subscripció butlletí</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Select all categories</source>
+        <target>Seleccioneu totes les categories</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Select all neighborhoods</source>
+        <target>Seleccioneu tots els barris</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Delete account</source>
+        <target>Donar-se de baixa</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Include photo</source>
+        <target>Incloure fotografia</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Done</source>
+        <target>Fet</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Back</source>
+        <target>Tornar</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Register</source>
+        <target>Registra't</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Send</source>
+        <target>Enviar</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Profile</source>
+        <target>Perfil</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Opinions</source>
+        <target>Opinions</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Comments</source>
+        <target>Comentaris</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Edit profile</source>
+        <target>Edita el teu perfil</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>Location</source>
+        <target>Lloc</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Participation of</source>
+        <target>La participació de</target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Inapropiate notification sent successfully.</source>
+        <target>Notificació sobre contingut innapropiado enviada amb èxit.</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Error in form report as inadecuate</source>
+        <target>Error en el formulari</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>send</source>
+        <target>enviar</target>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Delete the reply</source>
+        <target>Eliminar la resposta</target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Please log in to comment</source>
+        <target>Inicia sessió per comentar</target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Add comment</source>
+        <target>Afegeix un comentari</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>No comments yet.</source>
+        <target>No hi ha comentaris encara.</target>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>First page of comments</source>
+        <target>Primera pàgina de comentaris</target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>Previous page of comments</source>
+        <target>Pàgina anterior dels comentaris</target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Next page of comments</source>
+        <target>Pàgina següent de comentaris</target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>Last page of comments</source>
+        <target>Última pàgina de comentaris</target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Comment deleted by moderator</source>
+        <target>Comentari eliminat pel moderador</target>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Report as inadecuate</source>
+        <target>Reportar com a inadequat</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Reply to this comment</source>
+        <target>Respondre a aquest comentari</target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>on</source>
+        <target>el</target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>in</source>
+        <target>a</target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Joined</source>
+        <target>Unit</target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>users joined</source>
+        <target>usuaris units</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>Maximum registered users archieved.</source>
+        <target>Màxim nombre d'usuaris registrats assolit.</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Add your</source>
+        <target>Afegeix la teva</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Edit your</source>
+        <target>Edita les teves</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Features</source>
+        <target>Característiques</target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>Include a photo or a video</source>
+        <target>Incloure una foto o un vídeo</target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>This proposal will be filtered before publication. If it includes insults, harassment or content that we consider as inapropiate it will not be published. For more information visit</source>
+        <target>Aquesta proposta serà filtrada abans de la publicació. En cas d'incloure insults, vexacions o contingut que considerem inapropiat no serà publicada. Per a més informació visita les</target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>Use conditions</source>
+        <target>Condicions d'ús</target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>Users joined</source>
+        <target>Usuaris units</target>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>What type of proposal do you want add ?</source>
+        <target>Quin tipus de proposta vols afegir?</target>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>Iniciative</source>
+        <target>Iniciativa</target>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>Action</source>
+        <target>Acció</target>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>Workshop</source>
+        <target>Taller</target>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>by</source>
+        <target>per</target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Listed in</source>
+        <target>Llistat en</target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>Where</source>
+        <target>On</target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>Minimum participants</source>
+        <target>Mínim participants</target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>When</source>
+        <target>Quan</target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Maximum participants</source>
+        <target>Màxim participants</target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>Opinions by area</source>
+        <target>Opinions per àrea</target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Related</source>
+        <target>Relacionats</target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Admin</source>
+        <target>Administració</target>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>already confirmed</source>
+        <target>ja confirmat / a</target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>Edit</source>
+        <target>Edita</target>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>There must be at least the minimum of registered users and location filled so you can confirm the</source>
+        <target>Hi ha d'haver almenys el mínim d'usuaris inscrits i la ubicació emplenada perquè es pugui confirmar el / la</target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>When you confirm an email will be sent to all registered users whith the</source>
+        <target>En confirmar, un correu electrònic s'enviarà a tots els usuaris inscrits al / la</target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>information and the register will be closed.</source>
+        <target>amb la informació confirmada i es tancarà la possibilitat de registrar-se.</target>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>Confirm</source>
+        <target>Confirmar</target>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>Date</source>
+        <target>Data</target>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>Status</source>
+        <target>Estat</target>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Participants</source>
+        <target>Participants</target>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>No results</source>
+        <target>No hi ha resultats</target>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>You are already registered.</source>
+        <target>Vostè ja està registrat.</target>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Remove myself</source>
+        <target>Esborrar</target>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>Join</source>
+        <target>Uneix-te</target>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>results</source>
+        <target>resultats</target>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>FILTERS</source>
+        <target>FILTRES</target>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>Filter by category</source>
+        <target>Filtrar per categoria</target>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>Filter by type</source>
+        <target>Filtrar per tipus</target>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>Filter by neighborhood</source>
+        <target>Filtrar per barri</target>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Hi</source>
+        <target>Hola</target>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>Check full information in</source>
+        <target>Consulta la informació completa a</target>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>Remember to participe on</source>
+        <target>Recorda participar en</target>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>Interview with</source>
+        <target>Entrevista amb</target>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Questions</source>
+        <target>Preguntes</target>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Answers</source>
+        <target>Respostes</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Answered</source>
+        <target>Respost</target>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>Not answered</source>
+        <target>Sense resposta</target>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Answers start date</source>
+        <target>Data d'inici preguntes</target>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Answers end date</source>
+        <target>Data de finalització preguntes</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>Number of Participants</source>
+        <target>Nombre de participants</target>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>Number of Questions</source>
+        <target>Nombre de preguntes</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Number of Answers</source>
+        <target>Nombre de respostes</target>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>Answer</source>
+        <target>Resposta</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>I-nterviews</source>
+        <target>E-Entrevista</target>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>Archived</source>
+        <target>Arxivat</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Not archived</source>
+        <target>No arxivats</target>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>Logout</source>
+        <target>Desconnectar</target>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>Forgot your password?</source>
+        <target>Has oblidat la teva contrasenya?</target>
+      </trans-unit>
+      <trans-unit id="121">
+        <source>Remember me</source>
+        <target>Recordar</target>
+      </trans-unit>
+      <trans-unit id="122">
+        <source>New on PensaEivissa?</source>
+        <target>Nou en PensaEivissa?</target>
+      </trans-unit>
+      <trans-unit id="123">
+        <source>Start</source>
+        <target>Inici</target>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Signin</source>
+        <target>SIGNIN</target>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Hi %first_name%</source>
+        <target>Hola% first_names%</target>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>Below you will see your username and new password:</source>
+        <target>A continuació veurà el seu nom d'usuari i contrasenya nova:</target>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>Username</source>
+        <target>Nom d'usuari</target>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Password</source>
+        <target>Contrasenya</target>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Password again</source>
+        <target>Repeteix la contrasenya</target>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>This e-mail is being sent because you requested information on how to reset your password.</source>
+        <target>Aquesta correu està sent enviat ja que va demanar informació sobre com restablir la contrasenya.</target>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
+        <target>Vostè pot canviar la contrasenya fent clic a l'enllaç de sota, aquest només és vàlid durant 24 hores:</target>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>Click to change password</source>
+        <target>Feu clic per canviar la contrasenya</target>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Hello %name%</source>
+        <target>Hola% name%</target>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>Enter your new password in the form below.</source>
+        <target>Introduïu la nova contrasenya en el formulari de sota.</target>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>Change</source>
+        <target>Canviar</target>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>Do not worry, we can help you get back in to your account safely!</source>
+        <target>No es preocupi, nosaltres t'ajudem a tornar al seu compte de forma segura!</target>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
+        <target>Ompli el següent formulari per demanar un correu electrònic amb informació sobre com restablir la contrasenya.</target>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Request</source>
+        <target>Sol.licitud</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Proposal</source>
+        <target>Iniciativa</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>Consultation</source>
+        <target>Consulta</target>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>Thinks</source>
+        <target>Pensa</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Goverment proposal</source>
+        <target>Iniciativa govern</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Citizen proposal</source>
+        <target>Iniciativa ciutadana</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Goverment consultation</source>
+        <target>Consulta</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Goverment new</source>
+        <target>Notícies</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Citizen action</source>
+        <target>Acció ciutadana</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Add your</source>
+        <target>Afegeix el teu</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Edit your</source>
+        <target>Edita el teu</target>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Do you want to participate in creating a better &lt;strong&gt;Eivissa&lt;/strong&gt;?</source>
+        <target>Vols participar en la creació d'una &lt;strong&gt;Eivissa&lt;/strong&gt; millor?</target>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Comments to Administrator (This text will NOT be published)</source>
+        <target>Comentaris a l'Administrador (Aquest text NO serà publicat)</target>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>Title</source>
+        <target>Títol</target>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Image</source>
+        <target>Imagén</target>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>You can include a URL from a YouTube video</source>
+        <target>Pots incloure una URL d'un vídeo de YouTube</target>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>You can click on map or search a location to geolocate the content</source>
+        <target>Pots fer clic sobre el mapa o buscar una adreça per localitzar el contingut</target>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>By category:</source>
+        <target>Per categoria:</target>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>By neighborhood:</source>
+        <target>Per barri:</target>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>Lookup</source>
+        <target>Cerca</target>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Action date</source>
+        <target>Data de l'acció</target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Register start date</source>
+        <target>Inici període d'inscripció</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Register end date</source>
+        <target>Final període inscripció</target>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>Min users allowed</source>
+        <target>Mínim usuaris permesos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Max users allowed</source>
+        <target>Màxim usuaris permesos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You must be registered and logged in to add content</source>
+        <target>Has d'estar registrat i loggejat per afegir contingut</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>added correctly! It will be revised and published by administrator.</source>
+        <target>afegit correctament! El contingut serà revisat i publicat per un administrador</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You must be registered and logged in to confirm content</source>
+        <target>Has d'estar registrat i loggejat per confirmar contingut</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You don't have permissions to confirm this action</source>
+        <target>No tens permís per confirmar aquesta acció</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>This action can't be confirmed</source>
+        <target>Aquesta acció no es pot confirmar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>confirmed. An email was sent to all registered users.</source>
+        <target>confirmat. Un e-mail ha estat enviat a tots els usuaris registrats.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You must be registered and logged in to edit content</source>
+        <target>Has d'estar registrat i loggejat per editar contingut</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You don't have permissions to edit this content</source>
+        <target>No tens permís per editar aquest contingut</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You must be registered and logged in to join</source>
+        <target>Has d'estar registrat i loggejat per sumar-te</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Required.</source>
+        <target>Obligatori.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Register and start participating right away</source>
+        <target>Registra't i comença a participar ara mateix</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Are you sure ?</source>
+        <target>Estàs segur ?</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Are you sure ? You may not change your</source>
+        <target>Estàs segur? No has de canviar la teva</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>after it is confirmed</source>
+        <target>després de confirmar-ho</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Add comment</source>
+        <target>Afegir comentari</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Opined</source>
+        <target>Ha opinat</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Participate</source>
+        <target>Participa</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Closed</source>
+        <target>Tancat</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You have already opinated</source>
+        <target>Ja has opinat</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Participation results</source>
+        <target>Resultats participació</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>First name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Last name</source>
+        <target>Cognoms</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Born date</source>
+        <target>Data de naixement</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Gender</source>
+        <target>Sexe</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Male</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Female</source>
+        <target>Dona</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>About</source>
+        <target>Sobre tu</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Telephone</source>
+        <target>Telèfon</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Web</source>
+        <target>Web</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Address</source>
+        <target>Direcció</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Postal code</source>
+        <target>Codi postal</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Province</source>
+        <target>Província</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Country</source>
+        <target>País</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Subscription email</source>
+        <target>Subscripció email</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Categories list</source>
+        <target>Llistat de categories</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Regions list</source>
+        <target>Llistat de barris</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Town</source>
+        <target>Poble/Ciutat</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Express your opinion !</source>
+        <target>Expressa la teva opinió !</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>of 250 characters used</source>
+        <target>de 250 caràcters usats</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>What do you think about</source>
+        <target>Què penses sobre</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>search</source>
+        <target>cercar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Terms and license</source>
+        <target>Termes i llicència</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Site map</source>
+        <target>Mapa del lloc</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Subscribe</source>
+        <target>Subscripció</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Contact us</source>
+        <target>Contacta'ns</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Closed meeting</source>
+        <target>Trobada tancat</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Open meeting</source>
+        <target>Trobada obert</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Open Interview</source>
+        <target>Entrevista oberta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Closed Interview</source>
+        <target>Entrevista oberta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Email address</source>
+        <target>Direcció de correu electrònic</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Enter your email address. This can be used as login name like username.</source>
+        <target>Introdueix la teva adreça de correu electrònic. Aquesta pot ser usada en el login com el nom d'usuari.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Username or E-Mail</source>
+        <target>Nom d'usuari o Email</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Select the categories and neighbourhoods that you are interested in, and you will receive a weekly email with the newsletter. You can access this page anytime in the future to change your subscription settings.</source>
+        <target>Selecciona les categories i barris que t'interessin i et mantindrem informat setmanalment a través del correu electrònic de les novetats. Si més endavant t'interessen altres temàtiques o barris sempre pots accedir a aquesta pantalla a través d'edició de perfil i canviar les subscripcions.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Sign Up</source>
+        <target>Inscriu-te</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Enrolled in this</source>
+        <target>Inscrits a aquest/a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>users enrolled in</source>
+        <target>usuaris inscrits a aquest/a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Citizen proposal</source>
+        <target>aquesta iniciativa ciutadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Goverment proposal</source>
+        <target>aquesta iniciativa de Govern</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Goverment new</source>
+        <target>aquesta notícia</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Citizen action</source>
+        <target>aquesta acció ciutadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Workshop</source>
+        <target>aquest taller</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
