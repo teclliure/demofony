@@ -38,7 +38,7 @@
             <?php if (get_class($object->getRawValue()) == 'GovermentConsultation'): ?>
             <p><?php echo __('Express your opinion !') ?></p>
             <?php else: ?>
-            <p><?php echo __('What do you think about this') ?> <?php echo __(sfInflector::humanize(sfInflector::underscore(get_class($object->getRawValue())))) ?> ?</p>
+            <p><?php echo __('What do you think about') ?> <?php echo __('this '.sfInflector::humanize(sfInflector::underscore(get_class($object->getRawValue())))) ?> ?</p>
             <?php endif; ?>
             
             <form id="submit_opinion_<?php echo get_class($object->getRawValue())?>_<?php echo $object->getId()?>_form" action="<?php echo url_for ('opinion/addOpinion?class='.get_class($object->getRawValue()).'&id='.$object->getId()) ?>" method="post">

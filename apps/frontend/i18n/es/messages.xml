@@ -643,11 +643,11 @@ posibilidad de registrarse.</target>
       </trans-unit>
       <trans-unit id="151">
         <source>Register start date</source>
-        <target>Fecha inicio registro</target>
+        <target>Inicio periodo de inscripción</target>
       </trans-unit>
       <trans-unit id="152">
         <source>Register end date</source>
-        <target>Fecha final registro</target>
+        <target>Final periodo inscripción</target>
       </trans-unit>
       <trans-unit id="153">
         <source>Min users allowed</source>
@@ -814,8 +814,8 @@ posibilidad de registrarse.</target>
         <target>de 250 carácteres usados</target>
       </trans-unit>
       <trans-unit id="154">
-        <source>What do you think about this</source>
-        <target>¿ Que piensas acerca de esta/s</target>
+        <source>What do you think about</source>
+        <target>¿ Que piensas acerca de</target>
       </trans-unit>
       <trans-unit id="154">
         <source>search</source>
@@ -884,6 +884,26 @@ cambiar tus suscripciones.</target>
       <trans-unit id="154">
         <source>users enrolled in</source>
         <target>usuarios inscritos en este/a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Citizen proposal</source>
+        <target>esta iniciativa ciudadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Goverment proposal</source>
+        <target>esta iniciativa de Gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Goverment new</source>
+        <target>esta noticia</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Citizen action</source>
+        <target>esta acción ciudadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>this Workshop</source>
+        <target>este taller</target>
       </trans-unit>
     </body>
   </file>

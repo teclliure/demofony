@@ -588,6 +588,22 @@
         <source>Edit your</source>
         <target></target>
       </trans-unit>
+      <trans-unit id="138">
+        <source>Regions list</source>
+        <target>Neighborhoods list</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Region</source>
+        <target>Neighborhood</target>
+      </trans-unit>
+       <trans-unit id="151">
+        <source>Register start date</source>
+        <target>Registration period opens</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Register end date</source>
+        <target>Registration period ends</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
