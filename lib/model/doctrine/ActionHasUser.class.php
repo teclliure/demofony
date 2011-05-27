@@ -23,6 +23,7 @@ class ActionHasUser extends BaseActionHasUser
   }
   
   public function getGmapIcon() {
-    return null;
+    SfContext::getInstance()->getConfiguration()->loadHelpers(array('Asset'));
+    return image_path('gmap_icons/mm_20_purple.png');
   }
 }

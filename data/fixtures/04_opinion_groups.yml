@@ -15,48 +15,52 @@ OpinionPossibilityGroup:
 
 OpinionPossibility:
   op_po_1:
-    gmap_bubble_image: green
+    gmap_bubble_image: mm_20_green.png
     icon: icon-thumb-up
     OpinionPossibilityGroup: op_gr_1
     Translation:
       en: { name: "In favor" }
       es: { name: "A favor" }
   op_po_2:
-    gmap_bubble_image: red
+    gmap_bubble_image: mm_20_red.png
     icon: icon-thumb-down
     OpinionPossibilityGroup: op_gr_1
     Translation:
       en: { name: "Against" }
       es: { name: "En contra" }
   op_po_3:
+    gmap_bubble_image: mm_20_green.png
     OpinionPossibilityGroup: op_gr_3
     Translation:
       en: { name: "I back this !" }
       es: { name: "Lo apoyo !" }
   op_po_4:
+    gmap_bubble_image: mm_20_green.png
     OpinionPossibilityGroup: op_gr_4
     Translation:
       en: { name: "Yes" }
       es: { name: "Si" }
   op_po_5:
+    gmap_bubble_image: mm_20_red.png
     OpinionPossibilityGroup: op_gr_4
     Translation:
       en: { name: "No" }
       es: { name: "No" }
   op_po_6:
+    gmap_bubble_image: mm_20_yellow.png
     OpinionPossibilityGroup: op_gr_4
     Translation:
       en: { name: "I don't know" }
       es: { name: "No se" }
   op_po_7:
-    gmap_bubble_image: green
+    gmap_bubble_image: mm_20_green.png
     icon: icon-thumb-up
     OpinionPossibilityGroup: op_gr_2
     Translation:
       en: { name: "I back this" }
       es: { name: "Lo apoyo" }
   op_po_8:
-    gmap_bubble_image: red
+    gmap_bubble_image: mm_20_red.png
     icon: icon-thumb-down
     OpinionPossibilityGroup: op_gr_2
     Translation:

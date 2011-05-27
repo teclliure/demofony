@@ -58,6 +58,12 @@ class PluginOpinion extends BaseOpinion
   }
   
   public function getGmapIcon() {
+    if ($this->getOpinionPossibility()) {
+      if ($this->getOpinionPossibility()->getGmapBubbleImage()) {
+        SfContext::getInstance()->getConfiguration()->loadHelpers(array('Asset'));
+        return image_path('gmap_icons/'.$this->getOpinionPossibility()->getGmapBubbleImage());
+      }
+    }
     return null;
   }
   

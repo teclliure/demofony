@@ -912,6 +912,14 @@
         <source>Message</source>
         <target>Missatge</target>
       </trans-unit>
+          <trans-unit id="154">
+        <source>Contact form received</source>
+        <target>Formulari de contacte rebut</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>has contacted you with the following message</source>
+        <target>ha contactat amb el següent missatge</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

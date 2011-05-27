@@ -20,10 +20,16 @@ class PluginOpinionLike extends BaseOpinionLike
   
   public function getGmapHtml() {
     SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
-    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('opinated like').' '.$this->getOpinion()->getSfGuardUser();
+    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('opined like').' '.$this->getOpinion()->getSfGuardUser();
   }
   
   public function getGmapIcon() {
+    if ($this->getOpinion()->getOpinionPossibility()) {
+      if ($this->getOpinion()->getOpinionPossibility()->getGmapBubbleImage()) {
+        SfContext::getInstance()->getConfiguration()->loadHelpers(array('Asset'));
+        return image_path('gmap_icons/'.$this->getOpinion()->getOpinionPossibility()->getGmapBubbleImage());
+      }
+    }
     return null;
   }
 }

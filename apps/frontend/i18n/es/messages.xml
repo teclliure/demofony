@@ -917,6 +917,14 @@ cambiar tus suscripciones.</target>
         <source>Message</source>
         <target>Mensaje</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Contact form received</source>
+        <target>Formulario de contacto recibido</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>has contacted you with the following message</source>
+        <target>ha contactado con el siguiente mensaje</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
