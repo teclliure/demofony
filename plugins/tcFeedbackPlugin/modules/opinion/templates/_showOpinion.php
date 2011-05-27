@@ -29,11 +29,13 @@
             <div class="stats">
                 <strong><?php echo $opinion->countOpinionsLike() ?> <span class="inline icon-thumb-up"></span></strong>
                 <a href="#" onClick="$('#view_comments_Opinion_<?php echo $opinion->getId() ?>').fadeToggle('slow'); return false;"><span id="number_view_comments_Opinion_<?php echo $opinion->getId() ?>"><strong><?php echo $opinion->getNbComments() ?></strong></span> <span class="inline misc misc-comments"></span></a>
-                <strong>
+                
                 <?php if ($sf_user->isAuthenticated() && !$opinion->hasMarkedAsSpam($sf_user->getGuardUser())): ?>
-                  <a href="#" title="<?php echo __('Report as innadecuate') ?>" onClick="$('#opinions_list').load('<?php echo url_for('opinion/markAsSpam?id='.$opinion->getId()) ?>'); return false; "><span class="inline icon-banned"></span></a>
+                  <strong><a href="#" title="<?php echo __('Report as innadecuate') ?>" onClick="$('#opinions_list').load('<?php echo url_for('opinion/markAsSpam?id='.$opinion->getId()) ?>'); return false; "><span class="inline icon-banned"></span></a></strong>
                 <?php endif; ?>
-                </strong>
+                <?php if ($sf_user->isAuthenticated() && $sf_user->hasCredential('admin') && !$opinion->getSelected()): ?>
+                  <strong><a href="#" title="<?php echo __('Mark as selected') ?>" onClick="$('#opinions_list').load('<?php echo url_for('opinion/markAsSelected?id='.$opinion->getId()) ?>'); return false; "><span class="inline icon-markAsSelected"></span></a></strong>
+                <?php endif; ?>
             </div>
           </div>
       </div>

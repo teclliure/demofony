@@ -905,6 +905,18 @@ cambiar tus suscripciones.</target>
         <source>this Workshop</source>
         <target>este taller</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Name</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Contact send correctly.</source>
+        <target>Contacto enviado correctamente.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Message</source>
+        <target>Mensaje</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

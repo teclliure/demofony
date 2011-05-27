@@ -60,4 +60,27 @@ class homeActions extends sfActions
     
     $this->virtualMeetings = Doctrine_Core::getTable('VirtualMeeting')->getActiveAndNotArchivedQuery()->execute();
   }
+  
+  public function executeContact($request)
+  {
+    $this->form = new FrontendContactForm();
+ 
+    if ($request->isMethod('post'))
+    {
+      $this->form->bind($request->getParameter($this->form->getName()));
+      if ($this->form->isValid())
+      {
+        sfContext::getInstance()->getConfiguration()->loadHelpers(array('I18N'));
+        $message = Swift_Message::newInstance()
+        ->setFrom(sfConfig::get('app_sf_guard_plugin_default_from_email', 'from@noreply.com'))
+        ->setTo(sfConfig::get('app_mail_admin', 'mail@teclliure.net'),'Admin')
+        ->setSubject(__('Contact form received'))
+        ->setBody($this->getPartial('mails/contactHtmlEmail', array('values' => $this->form->getValues())), 'text/html');
+        $this->getMailer()->send($message);
+        
+        $this->getUser()->setFlash('notice', __('Contact send correctly.'));
+        $this->redirect('@homepage');
+      }
+    }
+  }
 }

@@ -70,6 +70,18 @@ class opinionActions extends sfActions
     $opinionSpam->save();
   }
   
+  public function executeMarkAsSelected($request) {
+    if (!$this->getUser()->isAuthenticated() || !$this->getUser()->hasCredential('admin')) {
+      return $this->renderText('You must be logged in and have admin rights');
+    }
+    $this->opinion = Doctrine::getTable('Opinion')->findOneBy('id',$request->getParameter('id'));
+    $this->forward404Unless($this->opinion);
+    $this->object = $this->opinion->getObject();
+    $this->opinion->setSelected(1);
+    $this->opinion->save();
+    $this->setTemplate('markAsSpam');
+  }
+  
   public function executeCount($request)
   {
     $table = Doctrine::getTable($request->getParameter('class'));
