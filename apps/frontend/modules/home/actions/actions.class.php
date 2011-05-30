@@ -40,7 +40,7 @@ class homeActions extends sfActions
     $this->pager_last_goverment_consultations->init();
     
     $contents = Doctrine_Core::getTable('Action')->getObjectsUnion(null,null,null,null, 'latitude != \'\' AND latitude IS NOT NULL AND action_date > \''.date('Y-m-d',time()).'\' AND active=1');
-    $this->map = GMap::loadMap('100%',300,$contents);
+    $this->map = GMap::loadMap('100%',450,$contents);
     $this->getResponse()->addJavascript($this->map->getGMapsJSUrl());
     
     $this->pager_last_workshops = new sfDoctrinePager('Workshop', '5');
