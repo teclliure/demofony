@@ -545,7 +545,8 @@
 	}
   
 	.button1.color1, 
-	.ficha div.participate .login_opener
+	.ficha div.participate .login_opener,
+	.ficha div.participate .button1
 	{
 		background: #7a868c; /* Old browsers */
 		background: -moz-linear-gradient(top, #7a868c 0%, #a8b6bf 50%, #9aa6af 51%, #697377 100%) !important; /* FF3.6+ */
