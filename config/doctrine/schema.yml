@@ -1,7 +1,7 @@
 sfGuardUserProfile:
   actAs:
-    Timestampable:
-    Geographical:
+    Timestampable: 
+    Geographical: 
     JCroppable:
       images: [image]
   columns:
@@ -71,16 +71,16 @@ Category:
       foreign: user_id
 Content:
   actAs:
-    Timestampable:
+    Timestampable: 
     Sluggable:
       alias: slug
       unique: true
       fields: [title]
       uniqueBy: [title]
-    Geographical:
+    Geographical: 
     JCroppable:
       images: [image]
-    Commentable:
+    Commentable: 
   columns:
     id:
       primary: true
@@ -231,7 +231,7 @@ VirtualMeeting:
       foreign: id
 VirtualMeetingAnswer:
   actAs:
-    Timestampable:
+    Timestampable: 
   columns:
     id:
       primary: true
@@ -342,9 +342,15 @@ GovermentConsultation:
       notnull: true
     end_date:
       type: date
+    opinion_possibility_group_id:
+      type: integer
   inheritance:
     extends: Proposal
     type: concrete
+  relations:
+    OpinionPossibilityGroup:
+      local: opinion_possibility_group_id
+      foreign: id
 Action:
   columns:
     id:
@@ -401,7 +407,7 @@ CitizenAction:
     type: concrete
 ActionHasUser:
   actAs:
-    Timestampable:
+    Timestampable: 
   columns:
     action_id:
       primary: true
@@ -435,7 +441,7 @@ Proposal:
     type: concrete
 VirtualMeetingQuestion:
   actAs:
-    Timestampable:
+    Timestampable: 
   columns:
     id:
       primary: true
@@ -470,3 +476,6 @@ VirtualMeetingQuestion:
       foreignType: one
       local: id
       foreign: virtual_meeting_question_id
+actAs:
+  Sluggable:
+    unique: true

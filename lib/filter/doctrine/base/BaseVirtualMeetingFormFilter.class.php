@@ -20,6 +20,7 @@ abstract class BaseVirtualMeetingFormFilter extends BaseFormFilterDoctrine
       'answers_end_date'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'archived'           => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'active'             => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'slug'               => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -30,6 +31,7 @@ abstract class BaseVirtualMeetingFormFilter extends BaseFormFilterDoctrine
       'answers_end_date'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'archived'           => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'active'             => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'slug'               => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('virtual_meeting_filters[%s]');
@@ -57,6 +59,7 @@ abstract class BaseVirtualMeetingFormFilter extends BaseFormFilterDoctrine
       'answers_end_date'   => 'Date',
       'archived'           => 'Boolean',
       'active'             => 'Boolean',
+      'slug'               => 'Text',
     );
   }
 }

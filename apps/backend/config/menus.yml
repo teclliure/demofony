@@ -79,6 +79,10 @@ children:
         label:   Manage categories
         route:   @category
         credentials: [Permission_admin]
+      manage_opg:
+        label:   Manage opinions groups
+        route:   @opinion_possibility_group
+        credentials: [Permission_admin]
   user_admin:
     label:          User Admin
     requires_auth: true

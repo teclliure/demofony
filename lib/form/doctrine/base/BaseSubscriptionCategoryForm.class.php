@@ -17,15 +17,20 @@ abstract class BaseSubscriptionCategoryForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'user_id'     => new sfWidgetFormInputHidden(),
       'category_id' => new sfWidgetFormInputHidden(),
+      'slug'        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'user_id'     => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
       'category_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('category_id')), 'empty_value' => $this->getObject()->get('category_id'), 'required' => false)),
+      'slug'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('user_id', 'category_id')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('user_id', 'category_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionCategory', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('subscription_category[%s]');

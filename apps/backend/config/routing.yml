@@ -1,3 +1,21 @@
+opinion_possibility:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OpinionPossibility
+    module:               opinion_possibility
+    prefix_path:          /opinion_possibility
+    column:               id
+    with_wildcard_routes: true
+
+opinion_possibility_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OpinionPossibilityGroup
+    module:               opinion_possibility_group
+    prefix_path:          /opinion_possibility_group
+    column:               id
+    with_wildcard_routes: true
+
 virtual_meeting:
   class: sfDoctrineRouteCollection
   options:

@@ -23,6 +23,7 @@ abstract class BaseVirtualMeetingForm extends BaseFormDoctrine
       'answers_end_date'   => new sfWidgetFormDate(),
       'archived'           => new sfWidgetFormInputCheckbox(),
       'active'             => new sfWidgetFormInputCheckbox(),
+      'slug'               => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -34,7 +35,12 @@ abstract class BaseVirtualMeetingForm extends BaseFormDoctrine
       'answers_end_date'   => new sfValidatorDate(),
       'archived'           => new sfValidatorBoolean(array('required' => false)),
       'active'             => new sfValidatorBoolean(array('required' => false)),
+      'slug'               => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'VirtualMeeting', 'column' => array('slug')))
+    );
 
     $this->widgetSchema->setNameFormat('virtual_meeting[%s]');
 

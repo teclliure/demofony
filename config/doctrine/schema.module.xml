@@ -135,12 +135,12 @@
         <index-column name="region_id"/>
       </index>
     </table>
-    <table name="CitizenProposal" visPositionX="59" visPositionY="287" visSizeX="0" visSizeX2="77" visSizeY="0" visSizeY2="45">
+    <table name="CitizenProposal" visPositionX="-22" visPositionY="288" visSizeX="0" visSizeX2="77" visSizeY="0" visSizeY2="45">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="tip" type="clob"/>
       <inheritance-child derived-from="Proposal"/>
     </table>
-    <table name="GovermentProposal" visPositionX="150" visPositionY="286" visSizeX="0" visSizeX2="100" visSizeY="0" visSizeY2="45">
+    <table name="GovermentProposal" visPositionX="65" visPositionY="287" visSizeX="0" visSizeX2="93" visSizeY="0" visSizeY2="31">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <inheritance-child derived-from="Proposal"/>
     </table>
@@ -148,10 +148,11 @@
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <inheritance-child derived-from="Content"/>
     </table>
-    <table name="GovermentConsultation" visPositionX="255" visPositionY="286" visSizeX="0" visSizeX2="109" visSizeY="0" visSizeY2="59">
+    <table name="GovermentConsultation" visPositionX="168" visPositionY="287" visSizeX="0" visSizeX2="162" visSizeY="0" visSizeY2="73">
       <column auto-increment="true" name="id" primary="true" required="true" type="integer"/>
       <column name="start_date" required="true" type="date"/>
       <column name="end_date" type="date"/>
+      <column name="opinion_possibility_group_id" type="integer"/>
       <inheritance-child derived-from="Proposal"/>
     </table>
     <table name="Action" visPositionX="381" visPositionY="289" visSizeX="0" visSizeX2="135" visSizeY="0" visSizeY2="129">
@@ -287,6 +288,9 @@
       <orm-properties>
         <attribute name="onDelete">CASCADE</attribute>
       </orm-properties>
+    </foreign-key>
+    <foreign-key caption="OpinionPossibilityGroup GovermentConsultation" from="GovermentConsultation" name="FK_GovermentConsultation_OpinionPossibilityGroup_id" to="OpinionPossibilityGroup">
+      <foreign-key-column from="opinion_possibility_group_id" to="id"/>
     </foreign-key>
     <foreign-key caption="sfGuardUser ActionHasUser" from="ActionHasUser" name="FK_ActionHasUser_sfGuardUser_id" to="sfGuardUser">
       <foreign-key-column from="user_id" to="id"/>

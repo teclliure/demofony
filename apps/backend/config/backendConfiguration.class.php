@@ -8,6 +8,7 @@ class backendConfiguration extends sfApplicationConfiguration
   {
     $this->dispatcher->connect('routing.load_configuration', array('vjCommentRouting', 'addRouteForAdminComments'));
     $this->dispatcher->connect('routing.load_configuration', array('vjCommentRouting', 'addRouteForAdminReportedComments'));
+    //sfWidgetFormSchema::setDefaultFormFormatterName('Div');
   }
  
   public function generateFrontendUrl($url)

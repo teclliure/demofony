@@ -17,15 +17,20 @@ abstract class BaseSubscriptionRegionForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'user_id'   => new sfWidgetFormInputHidden(),
       'region_id' => new sfWidgetFormInputHidden(),
+      'slug'      => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'user_id'   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
       'region_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('region_id')), 'empty_value' => $this->getObject()->get('region_id'), 'required' => false)),
+      'slug'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('user_id', 'region_id')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('user_id', 'region_id'))),
+        new sfValidatorDoctrineUnique(array('model' => 'SubscriptionRegion', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('subscription_region[%s]');

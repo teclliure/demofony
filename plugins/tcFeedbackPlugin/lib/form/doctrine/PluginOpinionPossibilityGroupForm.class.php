@@ -8,6 +8,28 @@
  * @author     ##AUTHOR_NAME##
  * @version    SVN: $Id: sfDoctrineFormPluginTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-abstract class PluginOpinionPossibilityGroupForm extends BaseOpinionPossibilityGroupForm
+class PluginOpinionPossibilityGroupForm extends BaseOpinionPossibilityGroupForm
 {
+   public function setup() {
+     parent::setup();
+     unset($this['slug'],$this['can_text_be_added']);
+     
+     $this->embedRelations(array(
+       'OpinionPossibility' => array(
+         'considerNewFormEmptyFields' => array('name'),
+         'newFormAfterExistingRelations' => true,
+         'multipleNewForms'=>true,
+         'newFormsInitialCount'=>1,
+         'formFormatter' => 'Div',
+         'newRelationButtonLabel'        => '+',
+         'newRelationAddByCloning'       => true,
+         'newRelationUseJSFramework'     => 'jQuery',
+       )
+     ));
+    
+     $this->getWidgetSchema()->setHelp('show_stats','Must stats graphs be shown under opinions');
+     $decorator = new sfWidgetFormSchemaFormatterDiv($this->widgetSchema, $this->validatorSchema);
+     $this->widgetSchema->addFormFormatter('custom', $decorator);
+     $this->widgetSchema->setFormFormatterName('custom');
+   }
 }

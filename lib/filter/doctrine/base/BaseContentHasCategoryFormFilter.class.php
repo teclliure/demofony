@@ -13,9 +13,11 @@ abstract class BaseContentHasCategoryFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'slug'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
+      'slug'        => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('content_has_category_filters[%s]');
@@ -38,6 +40,7 @@ abstract class BaseContentHasCategoryFormFilter extends BaseFormFilterDoctrine
       'content_id'  => 'Number',
       'category_id' => 'Number',
       'type'        => 'Text',
+      'slug'        => 'Text',
     );
   }
 }

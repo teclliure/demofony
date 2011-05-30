@@ -15,12 +15,14 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description'   => new sfWidgetFormFilterInput(),
+      'slug'          => new sfWidgetFormFilterInput(),
       'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
     ));
 
     $this->setValidators(array(
       'name'          => new sfValidatorPass(array('required' => false)),
       'description'   => new sfValidatorPass(array('required' => false)),
+      'slug'          => new sfValidatorPass(array('required' => false)),
       'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
     ));
 
@@ -62,6 +64,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'id'            => 'Number',
       'name'          => 'Text',
       'description'   => 'Text',
+      'slug'          => 'Text',
       'profiles_list' => 'ManyKey',
     );
   }

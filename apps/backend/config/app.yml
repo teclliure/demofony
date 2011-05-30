@@ -3,6 +3,13 @@
 
 # default values
 all:
+  mail:
+    admin: marc@teclliure.net
+  cultures:
+    enabled:
+      en: English
+      es: Español
+      ca: Català
   sfImageTransformPlugin:
     default_adapter: GD
     mime_type:
@@ -11,6 +18,38 @@ all:
   sf_guard_plugin:
     remember_key_expiration_age:  2592000   # 30 days in seconds
     remember_cookie_name:         demofonyAdminRememberMe
+  sfDoctrineJCroppablePlugin:
+    models:
+      Content:
+        directory:    images/content
+        images:
+          image:
+            ratio:      1.5
+            sizes:
+              thumb:    { width: 50, height: 45 }
+              main:     { width: 210, height: 140 }
+      SfGuardUserProfile:
+        directory:    images/user
+        images:
+          image:
+            ratio:      1
+            sizes:
+              thumb:    { width: 50, height: 40 }
+              main:     { width: 120, height: 115 }
+            preview:   thumb
+  vjCommentPlugin:
+    #false by default
+    pagination_active: true
+    #10 by default
+    max_per_page: 5
+    restricted: true
+  purifier:
+    #set to false use only your allowed tags
+    merge: false
+    #by default, [blockquote,strong,div,br] are allowed
+    #set to [i,u] with merge to true allows [blockquote,strong,div,br,i,u]
+    #set to [] with merge to false disables allowed tags
+    allowed_tags: [i,u, a, blockquote, strong]
   sf_admin_theme_jroller_plugin:
     # icons for each buttons
     # icon class as: ui-icon-value
@@ -29,21 +68,3 @@ all:
       previous: seek-prev
       next: seek-next
       last: seek-end
-  sfDoctrineJCroppablePlugin:
-    models:
-      Content:
-        directory:    images/content
-        images:
-          image:
-            ratio:      1.5
-            sizes:
-              thumb:    { width: 160 }
-              main:     { width: 210 }
-      SfGuardUserProfile:
-        directory:    images/user
-        images:
-          image:
-            ratio:      1
-            sizes:
-              thumb:    { width: 50, height: 40 }
-              main:     { width: 120, height: 115 }

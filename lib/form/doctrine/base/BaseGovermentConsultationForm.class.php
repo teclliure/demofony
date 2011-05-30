@@ -22,6 +22,9 @@ abstract class BaseGovermentConsultationForm extends ProposalForm
     $this->widgetSchema   ['end_date'] = new sfWidgetFormDate();
     $this->validatorSchema['end_date'] = new sfValidatorDate(array('required' => false));
 
+    $this->widgetSchema   ['opinion_possibility_group_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibilityGroup'), 'add_empty' => true));
+    $this->validatorSchema['opinion_possibility_group_id'] = new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('OpinionPossibilityGroup'), 'required' => false));
+
     $this->widgetSchema->setNameFormat('goverment_consultation[%s]');
   }
 

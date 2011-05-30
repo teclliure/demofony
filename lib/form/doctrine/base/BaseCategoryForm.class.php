@@ -18,6 +18,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'id'            => new sfWidgetFormInputHidden(),
       'name'          => new sfWidgetFormInputText(),
       'description'   => new sfWidgetFormInputText(),
+      'slug'          => new sfWidgetFormInputText(),
       'profiles_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile')),
     ));
 
@@ -25,8 +26,13 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'          => new sfValidatorString(array('max_length' => 100)),
       'description'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'slug'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'profiles_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardUserProfile', 'required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'Category', 'column' => array('slug')))
+    );
 
     $this->widgetSchema->setNameFormat('category[%s]');
 

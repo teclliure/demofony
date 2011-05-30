@@ -18,16 +18,21 @@ abstract class BaseContentHasRegionForm extends BaseFormDoctrine
       'content_id' => new sfWidgetFormInputHidden(),
       'region_id'  => new sfWidgetFormInputHidden(),
       'type'       => new sfWidgetFormInputHidden(),
+      'slug'       => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'content_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('content_id')), 'empty_value' => $this->getObject()->get('content_id'), 'required' => false)),
       'region_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('region_id')), 'empty_value' => $this->getObject()->get('region_id'), 'required' => false)),
       'type'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('type')), 'empty_value' => $this->getObject()->get('type'), 'required' => false)),
+      'slug'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'ContentHasRegion', 'column' => array('region_id', 'content_id', 'type')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'ContentHasRegion', 'column' => array('region_id', 'content_id', 'type'))),
+        new sfValidatorDoctrineUnique(array('model' => 'ContentHasRegion', 'column' => array('slug'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('content_has_region[%s]');

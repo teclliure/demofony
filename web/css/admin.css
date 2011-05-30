@@ -1,0 +1,27 @@
+table {
+	margin-bottom: 0px;
+}
+
+.radio_list li {
+	display: block;
+	float: left;
+	width: 10%;
+}
+
+.sf_admin_form_field_OpinionPossibility {	
+	margin: 1em;
+}
+
+.sf_admin_form_field_OpinionPossibility .form_row,  .sf_admin_form_field_new_OpinionPossibility .form_row {
+  background: url("images/ui-bg_fine-grain_10_f8f7f6_60x60.png") repeat scroll 50% 50% #F8F7F6;
+  border: 1px solid #CBC7BD;
+  margin: 1em;
+  padding: 1em;
+}
+
+.sf_admin_form_field_OpinionPossibility .form_row .form_row,  .sf_admin_form_field_new_OpinionPossibility .form_row .form_row {
+  background: noe;
+  border: none;
+  margin: 0;
+  padding: 0;
+}

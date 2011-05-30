@@ -1,0 +1,28 @@
+# TODO #
+
+## Version 1.4 ##
+
+    * try improving and abstracting the functionality to ignore empty "add new" forms so this does not have 
+      to be managed in the embedding form class anymore
+        - 1st option is to add a `considerEmptyFields` method to the embedded form class (easy to implement, no need to 
+          update the embedding form class when the embedded form's model changes (add/remove fields), which could be forgotten
+        - 2nd option is trying to figure out after submit if the form to add a new related record can be considered empty:
+            * remove all validators that are optional and are empty (needs to be both because the user can also enter something non-required!)
+            * if the form then has the maximum errors that can exist in the form then the form is empty because the user 
+              did not change anything or filled in any information
+            Example:
+              * sfGuardUser model
+              * fields: username, firstname, lastname, gender, zip, city
+              * username, firstname, and lastname are mandatory
+              * gender, zip, and city are optional
+              * on submit:
+                * the optional fields are all tested for emptiness ($validator->isEmpty()), 
+                  if one is not empty, form is considered "not empty"
+                * the rest is tested for number of errors so I need to know the maximum number of errors 
+                  that can be thrown from there; if this number is equal to the number of errors the form has thrown 
+                  after validation then - bingo! - the form is considered "empty"
+            
+      => URLS:
+          * http://www.symfony-project.org/more-with-symfony/1_4/en/05-Custom-Widgets-and-Validators
+          * http://www.symfony-project.org/more-with-symfony/1_4/en/06-Advanced-Forms#chapter_06_sub_rendering_each_form_field_with_sfformfield
+          * http://www.symfony-project.org/forms/1_2/en/02-Form-Validation#chapter_02_global_validators

@@ -10,17 +10,20 @@
  * @property boolean $can_text_be_added
  * @property boolean $show_stats
  * @property Doctrine_Collection $OpinionPossibility
+ * @property Doctrine_Collection $GovermentConsultation
  * 
- * @method integer                 getId()                 Returns the current record's "id" value
- * @method string                  getName()               Returns the current record's "name" value
- * @method boolean                 getCanTextBeAdded()     Returns the current record's "can_text_be_added" value
- * @method boolean                 getShowStats()          Returns the current record's "show_stats" value
- * @method Doctrine_Collection     getOpinionPossibility() Returns the current record's "OpinionPossibility" collection
- * @method OpinionPossibilityGroup setId()                 Sets the current record's "id" value
- * @method OpinionPossibilityGroup setName()               Sets the current record's "name" value
- * @method OpinionPossibilityGroup setCanTextBeAdded()     Sets the current record's "can_text_be_added" value
- * @method OpinionPossibilityGroup setShowStats()          Sets the current record's "show_stats" value
- * @method OpinionPossibilityGroup setOpinionPossibility() Sets the current record's "OpinionPossibility" collection
+ * @method integer                 getId()                    Returns the current record's "id" value
+ * @method string                  getName()                  Returns the current record's "name" value
+ * @method boolean                 getCanTextBeAdded()        Returns the current record's "can_text_be_added" value
+ * @method boolean                 getShowStats()             Returns the current record's "show_stats" value
+ * @method Doctrine_Collection     getOpinionPossibility()    Returns the current record's "OpinionPossibility" collection
+ * @method Doctrine_Collection     getGovermentConsultation() Returns the current record's "GovermentConsultation" collection
+ * @method OpinionPossibilityGroup setId()                    Sets the current record's "id" value
+ * @method OpinionPossibilityGroup setName()                  Sets the current record's "name" value
+ * @method OpinionPossibilityGroup setCanTextBeAdded()        Sets the current record's "can_text_be_added" value
+ * @method OpinionPossibilityGroup setShowStats()             Sets the current record's "show_stats" value
+ * @method OpinionPossibilityGroup setOpinionPossibility()    Sets the current record's "OpinionPossibility" collection
+ * @method OpinionPossibilityGroup setGovermentConsultation() Sets the current record's "GovermentConsultation" collection
  * 
  * @package    demofony
  * @subpackage model
@@ -59,6 +62,10 @@ abstract class BaseOpinionPossibilityGroup extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('OpinionPossibility', array(
+             'local' => 'id',
+             'foreign' => 'opinion_possibility_group_id'));
+
+        $this->hasMany('GovermentConsultation', array(
              'local' => 'id',
              'foreign' => 'opinion_possibility_group_id'));
 

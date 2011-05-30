@@ -1,0 +1,11 @@
+# ahDoctrineEasyEmbeddedRelations plugin: UPGRADE GUIDE #
+
+Here I'll document things that need to be done to get from one version of the plugin to another.
+
+ATTENTION: I'll only describe changes here when there was a BC break either because of a new feature or because of a bug!
+
+## Version 1.4.0 ##
+
+  * `newFormClassArgs` option had a bug so it didn't work the way it was described in the README – it does now! :)
+    For the curious; this didn't work: "'newFormClassArgs' => array(array('sf_user' => $this->getOption('sf_user')))" 
+    but this: "'newFormClassArgs' => array('sf_user' => $this->getOption('sf_user'))" – this option was wrongly automatically wrapped in an array.

@@ -8,13 +8,19 @@
  * @property integer $id
  * @property date $start_date
  * @property date $end_date
+ * @property integer $opinion_possibility_group_id
+ * @property OpinionPossibilityGroup $OpinionPossibilityGroup
  * 
- * @method integer               getId()         Returns the current record's "id" value
- * @method date                  getStartDate()  Returns the current record's "start_date" value
- * @method date                  getEndDate()    Returns the current record's "end_date" value
- * @method GovermentConsultation setId()         Sets the current record's "id" value
- * @method GovermentConsultation setStartDate()  Sets the current record's "start_date" value
- * @method GovermentConsultation setEndDate()    Sets the current record's "end_date" value
+ * @method integer                 getId()                           Returns the current record's "id" value
+ * @method date                    getStartDate()                    Returns the current record's "start_date" value
+ * @method date                    getEndDate()                      Returns the current record's "end_date" value
+ * @method integer                 getOpinionPossibilityGroupId()    Returns the current record's "opinion_possibility_group_id" value
+ * @method OpinionPossibilityGroup getOpinionPossibilityGroup()      Returns the current record's "OpinionPossibilityGroup" value
+ * @method GovermentConsultation   setId()                           Sets the current record's "id" value
+ * @method GovermentConsultation   setStartDate()                    Sets the current record's "start_date" value
+ * @method GovermentConsultation   setEndDate()                      Sets the current record's "end_date" value
+ * @method GovermentConsultation   setOpinionPossibilityGroupId()    Sets the current record's "opinion_possibility_group_id" value
+ * @method GovermentConsultation   setOpinionPossibilityGroup()      Sets the current record's "OpinionPossibilityGroup" value
  * 
  * @package    demofony
  * @subpackage model
@@ -39,11 +45,21 @@ abstract class BaseGovermentConsultation extends Proposal
         $this->hasColumn('end_date', 'date', null, array(
              'type' => 'date',
              ));
+        $this->hasColumn('opinion_possibility_group_id', 'integer', null, array(
+             'type' => 'integer',
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('OpinionPossibilityGroup', array(
+             'local' => 'opinion_possibility_group_id',
+             'foreign' => 'id'));
+
+        $sluggable0 = new Doctrine_Template_Sluggable(array(
+             'unique' => true,
+             ));
+        $this->actAs($sluggable0);
     }
 }

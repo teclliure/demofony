@@ -121,7 +121,7 @@ OpinionMarkedAsSpam:
     id:
       primary: true
       type: integer
-      autoincrement: true 
+      autoincrement: true
     user_id:
       primary: true
       type: integer
