@@ -76,7 +76,8 @@
 	#header ul li.filter{text-align:center;}
 	#header ul li.filter select{margin-top:8px; display:block; width:180px; border:1px solid #666; font-size:11px;}
 	#header ul li form{margin-top:20px;}
-	#header ul li form input{ background:#fff; width:140px; padding:5px; border:none !important; background:none; }
+	#header ul li form input{ background:#fff; width:140px; color:#BD9C3F; padding:5px; border:none !important; background:none; }
+	#header ul li form input:focus{color:#333;}
 	#header ul li form button{width:35px; height:25px; background:none; border:none; font-size:0; cursor:pointer; float:right;}
 	
 	#main{ background:#C7CED1; padding:15px 15px 120px 15px;}
