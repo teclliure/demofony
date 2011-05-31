@@ -94,7 +94,7 @@ children:
         credentials: [Permission_admin]
       manage_groups:
         label:   Manage groups
-        route:   @sf_guard_permission
+        route:   @sf_guard_group
         credentials: [Permission_admin]
       manage_permissions:
         label:   Manage permissions

@@ -26,6 +26,7 @@ generator:
       filter:
         display: [opinion, user_id, selected, innapropiate, created_at]
       form:    ~
-      edit:    ~
+      edit:
+        title: Edit opinion
       new:     ~
       show:    ~

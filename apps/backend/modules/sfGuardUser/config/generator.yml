@@ -30,3 +30,5 @@ generator:
 
       new:
         title: New User
+      filter:
+        display: [username, email_address, is_active, last_login]

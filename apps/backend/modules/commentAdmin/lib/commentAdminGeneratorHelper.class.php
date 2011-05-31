@@ -21,7 +21,7 @@ class commentAdminGeneratorHelper extends BaseCommentAdminGeneratorHelper
   {
     $params['ui-icon'] = $this->getIcon('delete', $params);
     $params['params'] = UIHelper::addClasses($params, '');
-    return '<li class="sf_admin_action_delete">'.link_to(UIHelper::addIcon($params).__($params['label'], array(), 'sf_admin'), 'commentAdmin/isDelete?id='.$object->getId(),$params['params']).'</li>';
+    return '<li class="sf_admin_action_delete">'.link_to(UIHelper::addIcon($params).__($params['label']), 'commentAdmin/isDelete?id='.$object->getId(),$params['params']).'</li>';
   }
 
   public function linkToRestore($object, $params)

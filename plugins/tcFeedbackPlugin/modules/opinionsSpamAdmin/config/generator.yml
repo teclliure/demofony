@@ -23,6 +23,7 @@ generator:
           not_spam:        { label: Set as NO spam }
         actions: {}
         batch_actions: {}
+        title: List opinions reports
       filter:
         display: [user_id, opinion_id, created_at]
       form:    ~

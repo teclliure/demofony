@@ -12,7 +12,7 @@ class commentAdminGeneratorHelper extends BaseCommentAdminGeneratorHelper
 {
   public function linkToIsDelete($object, $params)
   {
-    return '<li class="sf_admin_action_delete">'.link_to(__($params['label'], array(), 'sf_admin'), 'commentAdmin/isDelete?id='.$object->getId()).'</li>';
+    return '<li class="sf_admin_action_delete">'.link_to(__($params['label']), 'commentAdmin/isDelete?id='.$object->getId()).'</li>';
   }
 
   public function linkToRestore($object, $params)

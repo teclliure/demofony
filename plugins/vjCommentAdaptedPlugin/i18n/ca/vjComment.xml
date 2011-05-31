@@ -6,11 +6,11 @@
     <body>
       <trans-unit>
         <source>Add new comment</source>
-        <target>Enviar un comentario</target>
+        <target>Enviar un comentari</target>
       </trans-unit>
       <trans-unit>
         <source>Deleted</source>
-        <target>Eliminar</target>
+        <target>Esborrar</target>
       </trans-unit>
       <trans-unit>
         <source>send</source>
@@ -18,131 +18,131 @@
       </trans-unit>
       <trans-unit>
         <source>Report a comment</source>
-        <target>Reportar un comentario</target>
+        <target>Reportar un comentari</target>
       </trans-unit>
       <trans-unit>
         <source>Comments list</source>
-        <target>Lista de comentarios</target>
+        <target>Llistat de comentaris</target>
       </trans-unit>
       <trans-unit>
         <source>at</source>
-        <target>en</target>
+        <target>a</target>
       </trans-unit>
       <trans-unit>
         <source>Comment deleted by moderator</source>
-        <target>Comentario eliminado por moderador</target>
+        <target>Comentari eliminat per el moderador</target>
       </trans-unit>
       <trans-unit>
         <source>Be the first to post</source>
-        <target>Haz el primer comentario!</target>
+        <target>Fes el primer comentari!</target>
       </trans-unit>
       <trans-unit>
         <source>Report this comment - New window</source>
-        <target>Reportar este comentario - Nueva ventana</target>
+        <target>Reportar aquest comentari - Nova finestra</target>
       </trans-unit>
       <trans-unit>
         <source>Reply to this comment</source>
-        <target>Responder a este comentario</target>
+        <target>Respondre a aquest comentari</target>
       </trans-unit>
       <trans-unit>
         <source>Report sent.</source>
-        <target>Reporte enviado</target>
+        <target>Reporte enviat</target>
       </trans-unit>
       <trans-unit>
         <source>The moderation team has been notified.</source>
-        <target>El equipo de moderación ha sido notificado</target>
+        <target>El equip de moderació ha sigut notificat</target>
       </trans-unit>
       <trans-unit>
         <source>Close the popup</source>
-        <target>Cerrar el popup</target>
+        <target>Tancar el popup</target>
       </trans-unit>
       <trans-unit>
         <source>Delete the reply</source>
-        <target>Eliminar la respuesta</target>
+        <target>Eliminar la resposta</target>
       </trans-unit>
       <!-- FORM MESSAGES -->
       <trans-unit>
         <source>Required</source>
-        <target>Requerido</target>
+        <target>Requerit</target>
       </trans-unit>
       <trans-unit>
         <source>Invalid Url</source>
-        <target>URL inválido</target>
+        <target>URL invàlida</target>
       </trans-unit>
       <trans-unit>
         <source>Required message</source>
-        <target>Mensaje obligatorio</target>
+        <target>Missatge obligatori</target>
       </trans-unit>
       <trans-unit>
         <source>Invalid Mail</source>
-        <target>Email inválido</target>
+        <target>Email invàlid</target>
       </trans-unit>
       <trans-unit>
         <source>The captcha is not valid (%error%).</source>
-        <target>El captcha no es válido (%error%).</target>
+        <target>El captcha no es vàlid (%error%).</target>
       </trans-unit>
       <trans-unit>
         <source>Unable to check the captcha from the server (%error%).</source>
-        <target>No fue posible verificar el captcha del servidor (%error%).</target>
+        <target>No ha sigut possible verificar el captcha al servidor (%error%).</target>
       </trans-unit>
       <!-- FORM LABELS -->
       <trans-unit>
         <source>Name</source>
-        <target>Nombre</target>
+        <target>Nom</target>
       </trans-unit>
       <trans-unit>
         <source>Website</source>
-        <target>Sitio/Blog</target>
+        <target>Web/Blog</target>
       </trans-unit>
       <trans-unit>
         <source>Reason</source>
-        <target>Razón</target>
+        <target>Raó</target>
       </trans-unit>
       <trans-unit>
         <source>Reply to</source>
-        <target>Responder </target>
+        <target>Respondre </target>
       </trans-unit>
       <!-- FORM HELPS -->
       <trans-unit>
         <source>Why this message should be moderated ?</source>
-        <target>Porque este mensaje debe ser moderado</target>
+        <target>Perque aquest missatge deu ser moderat ?</target>
       </trans-unit>
       <trans-unit>
         <source>Your email will never be published</source>
-        <target>Su email no será publicado</target>
+        <target>El seu mail no serà publicat</target>
       </trans-unit>
       <trans-unit>
         <source>Must start with http:// or https://</source>
-        <target>Debe empezar con  http:// o https://</target>
+        <target>Deu començar per  http:// o https://</target>
       </trans-unit>
       <trans-unit>
         <source>Please log in to comment</source>
-        <target>Por favor ingrese o registrese para comentar</target>
+        <target>Si us plau entri o registres per poder comentar</target>
       </trans-unit>
       <!-- Pagination -->
       <trans-unit>
         <source>First page of comments</source>
-        <target>Primera página de comentarios</target>
+        <target>Primera pàgina de comentaris</target>
       </trans-unit>
       <trans-unit>
         <source>Previous page of comments</source>
-        <target>Página anterior de comentarios</target>
+        <target>Pàgina anterior de comentaris</target>
       </trans-unit>
       <trans-unit>
         <source>Next page of comments</source>
-        <target>Siguiente página de comentarios</target>
+        <target>Següent pàgina de comentaris</target>
       </trans-unit>
       <trans-unit>
         <source>Last page of comments</source>
-        <target>Última página de comentarios</target>
+        <target>Darreta pàgina de comentaris</target>
       </trans-unit>
       <trans-unit>
         <source>(page %%page%%/%%nb_pages%%)</source>
-        <target>(page %%page%%/%%nb_pages%%)</target>
+        <target>(pàgina %%page%%/%%nb_pages%%)</target>
       </trans-unit>
       <trans-unit>
         <source>Back to top</source>
-        <target>Regresar arriba</target>
+        <target>Tornar a dalt</target>
       </trans-unit>
     </body>
   </file>
