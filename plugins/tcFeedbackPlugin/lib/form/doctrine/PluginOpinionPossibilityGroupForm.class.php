@@ -13,10 +13,15 @@ class PluginOpinionPossibilityGroupForm extends BaseOpinionPossibilityGroupForm
    public function setup() {
      parent::setup();
      unset($this['slug'],$this['can_text_be_added']);
-     
+    
+     $cultures = sfConfig::get('app_cultures_enabled');
+     $emptyFields = array();
+     foreach($cultures as $key=>$culture) {
+       $emptyFields[] = array($key=>'name');
+     }
      $this->embedRelations(array(
        'OpinionPossibility' => array(
-         'considerNewFormEmptyFields' => array('name'),
+         'considerNewFormEmptyFields' => $emptyFields,
          'newFormAfterExistingRelations' => true,
          'multipleNewForms'=>true,
          'newFormsInitialCount'=>1,
