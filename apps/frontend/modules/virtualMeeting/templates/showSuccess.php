@@ -22,7 +22,7 @@ $(function() {
                   <h1 class="interviewed" style="top: 25px"><?php echo $interview->getsfGuardUser()->getName() ?></h1>
                   <div class="img profile"><img src="<?php echo $interview->getsfGuardUser()->getProfile()->getImageSrcWithDefault('image','main') ?>" alt="<?php echo $interview->getsfGuardUser() ?> image" /></div>
                   <div class="user">
-                    <h1><?php echo $interview->getTitle() ?></h1>
+                    <h1><?php echo $interview->getTitle() ?>fdgsdfg</h1>
                     <div style="height: 50px">
                       <p><?php echo __('Participants') ?>: <strong><?php echo $interview->getNumUsers()?></strong></p>
                       <p><?php echo __('Questions') ?>: <strong><?php echo $interview->getNumQuestions()?></strong></p>
@@ -33,6 +33,9 @@ $(function() {
               </div>
               <div class="about">
                 <?php echo $interview->getBody() ?>
+              </div>
+              <div class="answer-own">
+              	<a href="#" class="button1">Answer your own question</a>
               </div>
           </div>
       </div>
