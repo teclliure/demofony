@@ -920,6 +920,14 @@
         <source>has contacted you with the following message</source>
         <target>ha contactat amb el següent missatge</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Ask your question</source>
+        <target>Fes la teua pregunta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Question</source>
+        <target>Pregunta</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

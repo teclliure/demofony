@@ -925,6 +925,14 @@ cambiar tus suscripciones.</target>
         <source>has contacted you with the following message</source>
         <target>ha contactado con el siguiente mensaje</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Ask your question</source>
+        <target>Haz tu pregunta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Question</source>
+        <target>Pregunta</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

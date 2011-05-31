@@ -13,7 +13,7 @@
 class VirtualMeeting extends BaseVirtualMeeting
 {
     public function isOpened() {
-      if (strtotime($this->getAnswersStartDate()) >= time() && strtotime($this->getAnswersEndDate()) <= time() && !$this->getArchived()) {
+      if (strtotime($this->getAnswersStartDate()) <= time() && strtotime($this->getAnswersEndDate()) >= time() && !$this->getArchived()) {
         return true;
       }
       else return false;
