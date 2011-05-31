@@ -13,8 +13,8 @@
           <td colspan="2">
             <div style="text-align:right">
               [?php echo $form->renderHiddenFields() ?]
-              [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post', 'class' =>  'fg-button ui-state-default ui-corner-all', 'id' => 'sf_admin_filter_reset')) ?]
-              <input type="submit" value="TEST [?php echo __('Filter', array(), 'sf_admin') ?]" class="fg-button ui-state-default ui-corner-all" id="sf_admin_filter_submit" />
+              [?php echo link_to(__('Reset'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post', 'class' =>  'fg-button ui-state-default ui-corner-all', 'id' => 'sf_admin_filter_reset')) ?]
+              <input type="submit" value="TEST [?php echo __('Filter') ?]" class="fg-button ui-state-default ui-corner-all" id="sf_admin_filter_submit" />
             </div>
           </td>
         </tr>

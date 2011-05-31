@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2011-05-16T12:50:15Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Last</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Most popular</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Login</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Select wich content do you want add</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Initiatives</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>View all</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Use your inventiveness to create a better Eivissa. The initiatives with more support will be studied by the Government.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Citizen&lt;br /&gt; initiatives</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Give us your opinion about initiatives proposed by the Government.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Goverment&lt;br /&gt; initiatives</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Give us your opinion about issues of public interest.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Opinion&lt;br /&gt; polls</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Meetings</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Map</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Summon other citizens to a gathering in order to actively improve Eivissa.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Citizen&lt;br /&gt; action</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Offer your knowledge to other Citizens. Publish your conditions.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Workshops&lt;br /&gt; on demand</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Do you want participate in create a better &lt;strong&gt;Eivissa&lt;/strong&gt;?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Make your proposal</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Create account</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>News</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>I-nterview</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Ask a question</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Enter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>No virtual meeting avaliable</source>
+        <target>No avaliable interview</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>View all interviews</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>of</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Register information</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Change password</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Newsletter subscription</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Select all categories</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Delete account</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Include photo</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Done</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Back</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Register</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Send</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Profile</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Opinions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Comments</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Edit profile</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>Location</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Participation of</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Inapropiate notification sent successfully.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Error in form report as inadecuate</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>send</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Delete the reply</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Please log in to comment</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Add comment</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>No comments yet.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>First page of comments</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>Previous page of comments</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Next page of comments</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>Last page of comments</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Comment deleted by moderator</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Report as inadecuate</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Reply to this comment</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>on</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>in</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Joined</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>users joined</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>Maximum registered users archieved.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Add your</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Edit your</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Features</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>Include a photo or a video</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>Esta propuesta será filtrada antes de su publicación. En caso de incluir insultos, vejaciones o contenido que consideremos inapropiado no será publicada. Para más información visita las</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>Use conditions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>Users joined</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>What type of proposal do you want add ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>Iniciative</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>Action</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>Workshop</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>by</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Listed in</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>Where</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>Minimum participants</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>When</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Maximum participants</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>Opinions by area</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Related</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Admin</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>already confirmed</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>Edit</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>There must be at least the minimum of users subscribed and location filled by you to allow confirm the</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>When you confirm an email is sent to all subscribed users whith the</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>information and the register is closed.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>Confirm</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>Date</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>Status</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Participants</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>No results</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>You are already registered.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Remove myself</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>Join</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>results</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>FILTERS</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>Filter by category</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>Filter by type</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>Filter by neighborhood</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Hi</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>Check full information in</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>Remember to participe on</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>Interview with</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Questions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Answers</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Answered</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>Not answered</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Answers start date</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Answers end date</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>Number of Participants</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>Number of Questions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Number of Answers</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>Answer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>I-nterviews</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>Archived</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Not archived</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>Logout</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>Forgot your password?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="121">
+        <source>Remember me</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="122">
+        <source>New on PensaEivissa?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="123">
+        <source>Start</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Signin</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Hi %first_name%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>Below you will your username and new password:</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>Username</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Password</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>This e-mail is being sent because you requested information on how to reset your password.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>Click to change password</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Hello %name%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>Enter your new password in the form below.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>Change</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>Do not worry, we can help you get back in to your account safely!</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Request</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Proposal</source>
+        <target>Initiative</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>Consultation</source>
+        <target>Opinion Poll</target>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>Thinks</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Goverment proposal</source>
+        <target>Goverment initiative</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Citizen proposal</source>
+        <target>Citizen initiative</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Goverment consultation</source>
+        <target>Opinion poll</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Goverment new</source>
+        <target>News</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Add your</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Edit your</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Regions list</source>
+        <target>Neighborhoods list</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Region</source>
+        <target>Neighborhood</target>
+      </trans-unit>
+       <trans-unit id="151">
+        <source>Register start date</source>
+        <target>Registration period opens</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Register end date</source>
+        <target>Registration period ends</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

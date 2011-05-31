@@ -12,7 +12,7 @@ class ContentForm extends BaseContentForm
 {
   public function configure()
   {
-    unset($this['created_at'],$this['updated_at'],$this['slug'],$this['views']);
+    unset($this['created_at'],$this['updated_at'],$this['slug'],$this['user_id'],$this['views']);
     $this->setWidget('latitude',new sfWidgetFormInputHidden());
     $this->setWidget('longitude',new sfWidgetFormInputHidden());
     $this->setWidget('gmap', new sfWidgetFormGMap(array(

@@ -19,6 +19,7 @@
       <form action="[?php echo url_for('<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'batch')) ?]" method="post" id="sf_admin_content_form">
     <?php endif; ?>
 
+      <?php if ($actions = $this->configuration->getValue('list.actions')): ?>
       <div class="sf_admin_actions_block float<?php echo sfConfig::get('app_sf_admin_theme_jroller_plugin_list_actions_position') ?>">
       	<a tabindex="0" href="#sf_admin_actions_menu" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="sf_admin_actions_button">
       	  <span class="ui-icon ui-icon-triangle-1-s"></span>
@@ -30,7 +31,7 @@
       		</ul>
       	</div>
       </div>
-
+      <?php endif; ?>
       [?php include_partial('<?php echo $this->getModuleName() ?>/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper, 'hasFilters' => $hasFilters)) ?]
 
       <ul class="sf_admin_actions">

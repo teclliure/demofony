@@ -10,7 +10,10 @@
   </head>
   <body>
    <div class="container">
-     <div id="header" class="span-24 last"><h1>Demofony</h1></div>
+     <div id="header" class="span-24 last">
+      <div id="lang_select" style="float: right"><?php include_component('language', 'language') ?></div>
+      <h1><?php echo link_to('Demofony','@homepage') ?></h1>
+     </div>
      <div id="top_menu" class="span-24 last"><?php include_component('home', 'menu'); ?></div>
      <div id="breadcrumbs" class="span-24 last"><?php include_component('sfDoctrineBreadcrumbs', 'breadcrumbs'); ?></div>
      <div class="span-24 last">

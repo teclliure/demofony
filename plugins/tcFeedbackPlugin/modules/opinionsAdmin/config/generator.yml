@@ -15,13 +15,14 @@ generator:
     config:
       actions: ~
       fields:
-        user_id:          { label: Author }
-      fields:  ~
+        sfGuardUser: { label: Author }
       list:
         display: [_opinion_link, opinion, sfGuardUser, selected, innapropiate, created_at]
         object_actions:
           _edit:            { label: Edit }
           _delete:          { label: Delete }
+        title: List opinions
+        actions: {}
       filter:
         display: [opinion, user_id, selected, innapropiate, created_at]
       form:    ~

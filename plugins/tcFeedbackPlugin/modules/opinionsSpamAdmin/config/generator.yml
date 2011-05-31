@@ -14,12 +14,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        SfGuardUser: { label: Author }
       list:
         display: [_opinion, SfGuardUser, created_at]
         object_actions:
           spam:            { label: Set as spam }
           not_spam:        { label: Set as NO spam }
+        actions: {}
+        batch_actions: {}
       filter:
         display: [user_id, opinion_id, created_at]
       form:    ~
