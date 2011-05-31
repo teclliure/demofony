@@ -10,11 +10,11 @@
       </trans-unit>
       <trans-unit>
         <source>Body</source>
-        <target>Mensaje</target>
+        <target>Missatge</target>
       </trans-unit>
       <trans-unit>
         <source>Edition</source>
-        <target>Edición</target>
+        <target>Edició</target>
       </trans-unit>
     </body>
   </file>

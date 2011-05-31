@@ -1096,7 +1096,303 @@ cambiar tus suscripciones.</target>
       <trans-unit id="154">
         <source>from %from_date%&lt;br /&gt;to %to_date%</source>
         <target>desde %from_date%&lt;br /&gt;hasta %to_date%</target>
-      </trans-unit>      
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Show origin content</source>
+        <target>Mostrar contenido origén</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit opinion</source>
+        <target>Editar opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List comments</source>
+        <target>Listar comentarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Comments list</source>
+        <target>Listado comentarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Original content</source>
+        <target>Contenido original</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Show content</source>
+        <target>Mostrar contenido</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Disable</source>
+        <target>Deshabilitar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Disabled</source>
+        <target>Deshabilitado</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Posted the</source>
+        <target>Publicado el</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit comment</source>
+        <target>Editar comentario</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Reason</source>
+        <target>Razón</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Comments reports</source>
+        <target>Informes comentarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Link</source>
+        <target>Enlace</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Remove the report</source>
+        <target>Eliminar el informe</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit the comment</source>
+        <target>Editar el comentario</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Remove the comment</source>
+        <target>Eliminar el comentario</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Opinion possibility</source>
+        <target>Posibilidad escogida</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Set as spam</source>
+        <target>Marcar como inadecuada</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Set as NO spam</source>
+        <target>Marcar como NO inadecuada</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Opinions reports</source>
+        <target>Informes opiniones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List opinions reports</source>
+        <target>Listado informes opiniones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Filter</source>
+        <target>Filtar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Reset</source>
+        <target>Inicializar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Show stats</source>
+        <target>Mostrar gráficos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>OpinionPossibility</source>
+        <target>Posibilidades opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New OpinionPossibility</source>
+        <target>Nueva posibilidad opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Gmap bubble image</source>
+        <target>Imagén para google maps</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Image to show on map. If you want to choose a new image you should previously upload image to web/images/gmap_icons/ in png format.</source>
+        <target>Imagén que se mostrará sobre el mapa. Si quieres poder añadir nuevas imágenes subelas a web/images/gmap_icons/ en formato png.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Opinion possibility group</source>
+        <target>Editar grupo de posibilidades opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit opinion group "%name%"</source>
+        <target>Editar grupo de posibilidades opinión "%name%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create opinion group</source>
+        <target>Crear grupo posibilidades opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List opinion groups</source>
+        <target>Listar grupos posibilidades opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Must stats graphs be shown under opinions</source>
+        <target>Debe mostrarse un gráfico de las opciones seleccionadas debajo de la caja de opinión</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Regions admin</source>
+        <target>Administrar barrios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Category List</source>
+        <target>Listado categorías</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List categorys</source>
+        <target>Listado categorías</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Category</source>
+        <target>Editar categoría</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit category</source>
+        <target>Editar categoría</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Description</source>
+        <target>Descripción</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Category</source>
+        <target>Editar categoria</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Last login</source>
+        <target>Último login</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List Users</source>
+        <target>Listado usuarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List users</source>
+        <target>Listado usuarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit user "%username%"</source>
+        <target>Editar usuario "%username%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Editing User "%%username%%"</source>
+        <target>Editando usuario "%%username%%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Password (again)</source>
+        <target>Contraseña (repetir)</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Users list</source>
+        <target>Listado usuarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Is active</source>
+        <target>Está activo</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>is empty</source>
+        <target>está vacio</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Permissions and groups</source>
+        <target>Grupos y permisos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Is super admin</source>
+        <target>És superusuario</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Groups</source>
+        <target>Grupos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Permissions</source>
+        <target>Permisos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List permissions</source>
+        <target>Listado permisos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Permission list</source>
+        <target>Listado permisos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Users</source>
+        <target>Usuarios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Editing Permission "%%name%%"</source>
+        <target>Editar permiso "%%name%%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit permission "%name%"</source>
+        <target>Editar permiso "%name%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Editing Group "%%name%%"</source>
+        <target>Editar grupo "%%name%%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit group "%name%"</source>
+        <target>Editar grupo "%name%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List groups</source>
+        <target>Listado grupos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Group list</source>
+        <target>Listado grupos</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Active</source>
+        <target>Activo/a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Views</source>
+        <target>Visualizaciones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List news</source>
+        <target>Listado notícias</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Goverment new List</source>
+        <target>Listado notícias</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Add goverment response</source>
+        <target>Añadir respuesta gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit goverment response</source>
+        <target>Editar respuesta gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Categories</source>
+        <target>Categorías</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Regions</source>
+        <target>Barrios</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit new "%title%"</source>
+        <target>Editar noticia "%title%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit new "%%title%%"</source>
+        <target>Editar noticia "%%title%%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create new</source>
+        <target>Crear noticia</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New Goverment new</source>
+        <target>Crear noticia</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

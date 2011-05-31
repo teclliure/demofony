@@ -17,6 +17,7 @@ generator:
       fields:  ~
       list:
         display: [=name, show_stats]
+        title: List opinion groups
       filter:  ~
       form:    ~
       edit:    ~

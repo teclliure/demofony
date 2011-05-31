@@ -20,7 +20,7 @@ generator:
         created_at:       { label: Created at }
         comment_link:     { label: Link }
       list:
-        title:            Comment's Reports list
+        title:            Comments reports
         # display:          [_state, _comment_link, reason, created_at]
         display:          [_comment_link, reason, created_at]
         actions:          {}

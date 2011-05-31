@@ -14,7 +14,7 @@ generator:
     config:
       actions: ~
       fields:
-        is_delete:          { label: Disable }
+        is_delete:          { label: Disabled }
         record_model:       { label: Model }
         record_id:          { label: Record }
         created_at:         { label: Posted the }
@@ -24,7 +24,6 @@ generator:
         title:              Comments list
         display:            [_comment_link, author, _body, is_delete, created_at]
         sort:               [created_at, desc]
-        actions:            {}
         table_method:       getAdminQuery
         object_actions:
           _edit:            { label: Edit }
@@ -34,6 +33,7 @@ generator:
         batch_actions:
           _delete: ~
           restore:          { label: Restore }
+        actions: {}
       filter:
         display:            [id, is_delete, record_model, user_id, author_name, author_email, author_website, body, created_at]
       form:
