@@ -2,7 +2,7 @@
 <div class="col1">
     <div class="img"><img src="<?php echo $meeting->getSfGuardUser()->getProfile()->getImageSrcWithDefault('image', 'thumb')?>" alt="profile_image" /></div>
     <h1><?php echo link_to ($meeting->getTitle(),$meeting->getRawValue()->getUrl())?></h1>
-    <p class="author"><?php echo ('Interview with')?> <?php echo link_to($meeting->getSfGuardUser(),'user/showProfile?username='.$meeting->getSfGuardUser()->getUsername()) ?></p>
+    <p class="author"><?php echo __('Interview with')?> <?php echo link_to($meeting->getSfGuardUser(),'user/showProfile?username='.$meeting->getSfGuardUser()->getUsername()) ?></p>
 </div>
 
 <div class="col2">

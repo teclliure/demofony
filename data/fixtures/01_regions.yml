@@ -1,145 +1,145 @@
 Region:
   region_1:
-    name: DALT VILA
+    name: Dalt Vila
     children: []
   region_2:
-    name: SA PENYA
+    name: Sa Penya
     children: []
   region_3:
-    name: LA MARINA
+    name: La Marina
     children: []
   region_4:
-    name: S’ALAMERA
+    name: S'Alamera
     children: []
   region_5:
-    name: SA CAPALLETA
+    name: Sa Capalleta
     children: []
   region_6:
-    name: ES SOTO
+    name: Es Soto
     children: []
   region_7:
-    name: CAN PARTIT
+    name: Can Partit
     children: []
   region_8:
-    name: ES PUIG D’ES MOLINS
+    name: Es Puig D'es Molins
     children: []
   region_9:
-    name: SES FIGUERETES
+    name: Ses Figueretes
     children: []
   region_10:
-    name: ES VIVER
+    name: Es Viver
     children: []
   region_11:
-    name: LA PUNTA
+    name: La Punta
     children: []
   region_12:
-    name: CA LES ANIMES
+    name: Ca Les Animes
     children: []
   region_13:
-    name: CAN BOSSA
+    name: Can Bossa
     children: []
   region_14:
-    name: S’HORT DEL BISBE
+    name: S'Hort Del Bisbe
     children: []
   region_15:
-    name: SES CANYES
+    name: Ses Canyes
     children: []
   region_16:
-    name: SA BODEGA
+    name: Sa Bodega
     children: []
   region_17:
-    name: ES CLOT
+    name: Es Clot
     children: []
   region_18:
-    name: CAN BELLET
+    name: Can Bellet
     children: []
   region_19:
-    name: ES PALMER
+    name: Es Palmer
     children: []
   region_20:
-    name: SA COLOMINA
+    name: Sa Colomina
     children: []
   region_21:
-    name:  ES LLIMONERS
+    name:  Es Llimoners
     children: []
   region_22:
-    name:  SA REAL
+    name:  Sa Real
     children: []
   region_23:
-    name:  ES PRATTET
+    name:  Es Prattet
     children: []
   region_24:
-    name:  ES PRAT DE VILA
+    name:  Es Prat De Vila
     children: []
   region_25:
-    name:  PÀSSEIG MARITIM
+    name:  Pàsseig Maritim
     children: []
   region_26:
-    name:  S’ILLA PLANA
+    name:  S'Illa Plana
     children: []
   region_27:
-    name:  S’ILLA GROSA
+    name:  S'Illa Grosa
     children: []
   region_28:
-    name:  TALAMANCA
+    name:  Talamanca
     children: []
   region_29:
-    name:  ES PRAT DE SES MONGES
+    name:  Es Prat De Ses Monges
     children: []
   region_30:
-    name:  ES CLOT D’EN LLAUDIS
+    name:  Es Clot D'En Llaudis
     children: []
   region_31:
-    name:  CAN BERNAT
+    name:  Can Bernat
     children: []
   region_32:
-    name:  ES GORG
+    name:  Es Gorg
     children: []
   region_33:
-    name:  CA NA GLAUDIS
+    name:  Ca Na Glaudis
     children: []
   region_34:
-    name:  CAS FERRO
+    name:  Cas Ferro
     children: []
   region_35:
-    name:  CAS DOMINGUETS
+    name:  Cas Dominguets
     children: []
   region_36:
-    name:  SA JOVERIA
+    name:  Sa Joveria
     children: []
   region_37:
-    name:  CAN MISSES
+    name:  Can Misses
     children: []
   region_38:
-    name:  ES PUTXET
+    name:  Es Putxet
     children: []
   region_39:
-    name:  CAN CANTÓ
+    name:  Can Cantó
     children: []
   region_40:
-    name:  CA N’ESCANDELL
+    name:  Ca N'Escandell
     children: []
   region_41:
-    name:  CAN SANT
+    name:  Can Sant
     children: []
   region_42:
-    name:  CAS SERRES
+    name:  Cas Serres
     children: []
   region_43:
-    name:  CAN SIFRE
+    name:  Can Sifre
     children: []
   region_44:
-    name:  CAS MUT
+    name:  Cas Mut
     children: []
   region_45:
-    name:  CAS ESCANDELLS
+    name:  Cas Escandells
     children: []
   region_46:
-    name:  CAN BOFI
+    name:  Can Bofi
     children: []
   region_47:
-    name:  SA BLANCA DONA
+    name:  Sa Blanca Dona
     children: []
   region_48:
-    name:  ES RASPALLAR
+    name:  Es Raspallar
     children: []

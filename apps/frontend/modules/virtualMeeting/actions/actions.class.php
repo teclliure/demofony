@@ -63,7 +63,7 @@ class virtualMeetingActions extends sfActions
     {
       $object = $this->form->save();
       $this->getUser()->setFlash('success', 'Question added correctly!');
-      $this->redirect('virtualMeeting/show?id='.$this->interview->getId());
+      $this->redirect('virtualMeeting/show?id='.$this->interview->getId().'&not_responded=true');
     }
     else $this->setTemplate('show');
   }
@@ -79,7 +79,7 @@ class virtualMeetingActions extends sfActions
     {
       $object = $form->save();
       $this->getUser()->setFlash('success', 'Answer added correctly!');
-      $this->redirect('virtualMeeting/show?id='.$this->interview->getId());
+      $this->redirect('virtualMeeting/show?id='.$this->interview->getId().'&not_responded=true');
     }
     else {
       $this->getUser()->setFlash('error', 'Error saving answer. Not saved !');

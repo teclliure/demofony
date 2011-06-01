@@ -258,7 +258,7 @@
       </trans-unit>
       <trans-unit id="63">
         <source>Maximum registered users archieved.</source>
-        <target>Máximo número de usuarios registrados alcanzado.</target>
+        <target>Máximo número de participantes alcanzado.</target>
       </trans-unit>
       <trans-unit id="64">
         <source>Add your</source>
@@ -439,7 +439,11 @@ posibilidad de registrarse.</target>
       </trans-unit>
       <trans-unit id="108">
         <source>Answered</source>
-        <target>Respondido</target>
+        <target>Respondidas</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Selected opinions</source>
+        <target>Opiniones seleccionadas</target>
       </trans-unit>
       <trans-unit id="109">
         <source>Not answered</source>
@@ -475,11 +479,23 @@ posibilidad de registrarse.</target>
       </trans-unit>
       <trans-unit id="117">
         <source>Archived</source>
-        <target>Archivado</target>
+        <target>Archivada</target>
       </trans-unit>
       <trans-unit id="118">
         <source>Not archived</source>
-        <target>No archivados</target>
+        <target>No archivadas</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Interview with</source>
+        <target>Entrevista con</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Interview</source>
+        <target>Entrevista</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Price</source>
+        <target>Precio</target>
       </trans-unit>
       <trans-unit id="119">
         <source>Logout</source>
@@ -727,7 +743,11 @@ posibilidad de registrarse.</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Closed</source>
-        <target>Cerrado</target>
+        <target>Cerrada</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Goverment response</source>
+        <target>Respuesta del gobierno</target>
       </trans-unit>
       <trans-unit id="154">
         <source>You have already opinated</source>
@@ -878,12 +898,16 @@ cambiar tus suscripciones.</target>
         <target>Inscríbete</target>
       </trans-unit>      
       <trans-unit id="154">
-        <source>Enrolled in this</source>
-        <target>Inscritos en este/a</target>
+        <source>Enrolled in</source>
+        <target>Inscritos en</target>
       </trans-unit>
       <trans-unit id="154">
         <source>users enrolled in</source>
-        <target>usuarios inscritos en este/a</target>
+        <target>usuarios inscritos en</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>opined</source>
+        <target>opina</target>
       </trans-unit>
       <trans-unit id="154">
         <source>this Citizen proposal</source>

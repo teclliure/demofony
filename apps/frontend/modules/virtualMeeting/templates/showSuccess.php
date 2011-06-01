@@ -2,7 +2,7 @@
 <script type="text/javascript">
 <!--
 $(function() {
-  $("div.box:has(ul.tabs)").tabs();
+  $("div.box:has(ul.tabs)").tabs(<?php if($sf_request->getParameter('not_responded')):?>{selected: 1}<?php endif;?>);
   
   $("div.box ul.tabs li").each(function(){
   var b = $(this).find("b")
@@ -10,7 +10,6 @@ $(function() {
   });
   
   $("ul.tabs").css({top: -40});
-  
 });
 //-->
 </script>

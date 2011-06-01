@@ -54,7 +54,7 @@ class PluginOpinion extends BaseOpinion
 
   public function getGmapHtml() {
     SfContext::getInstance()->getConfiguration()->loadHelpers(array('Tag','I18N','Url'));
-    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('opinated').' '.$this->__toString();
+    return link_to($this->getSfGuardUser(),'user/showProfile?username='.$this->getSfGuardUser()->getUsername()).' '.__('opined').' '.$this->__toString();
   }
   
   public function getGmapIcon() {

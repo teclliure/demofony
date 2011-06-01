@@ -258,7 +258,7 @@
       </trans-unit>
       <trans-unit id="63">
         <source>Maximum registered users archieved.</source>
-        <target>Màxim nombre d'usuaris registrats assolit.</target>
+        <target>Màxim nombre de participants assolit.</target>
       </trans-unit>
       <trans-unit id="64">
         <source>Add your</source>
@@ -438,11 +438,15 @@
       </trans-unit>
       <trans-unit id="108">
         <source>Answered</source>
-        <target>Respost</target>
+        <target>Respostes</target>
       </trans-unit>
       <trans-unit id="109">
         <source>Not answered</source>
         <target>Sense resposta</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Selected opinions</source>
+        <target>Opinions seleccionades</target>
       </trans-unit>
       <trans-unit id="110">
         <source>Answers start date</source>
@@ -474,11 +478,23 @@
       </trans-unit>
       <trans-unit id="117">
         <source>Archived</source>
-        <target>Arxivat</target>
+        <target>Arxivades</target>
       </trans-unit>
       <trans-unit id="118">
         <source>Not archived</source>
-        <target>No arxivats</target>
+        <target>No arxivades</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Interview with</source>
+        <target>Entrevista amb</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Interview</source>
+        <target>Entrevista</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Price</source>
+        <target>Preu</target>
       </trans-unit>
       <trans-unit id="119">
         <source>Logout</source>
@@ -726,7 +742,11 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Closed</source>
-        <target>Tancat</target>
+        <target>Tancada</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Goverment response</source>
+        <target>Resposta del gobern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>You have already opinated</source>
@@ -873,8 +893,12 @@
         <target>Inscriu-te</target>
       </trans-unit>
       <trans-unit id="154">
-        <source>Enrolled in this</source>
-        <target>Inscrits a aquest/a</target>
+        <source>Enrolled in</source>
+        <target>Inscrits a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>opined</source>
+        <target>opina</target>
       </trans-unit>
       <trans-unit id="154">
         <source>users enrolled in</source>

@@ -1437,6 +1437,79 @@ cambiar tus suscripciones.</target>
         <source>Goverment consultation List</source>
         <target>Listado consultas</target>
       </trans-unit>
-    </body>
+      <trans-unit id="154">
+        <source>Review pending contents</source>
+        <target>Revisa los contenidos pendientes</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Pending marked as innapropiate comments</source>
+        <target>Comentarios marcados como inapropiados pendientes</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Pending marked as innapropiate opinions</source>
+        <target>Opiniones marcadas como inapropiadas pendientes</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Administrative pending tasks summary</source>
+        <target>Resumen de tareas administración pendientes</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Administer pending opinions</source>
+        <target>Administrar opiniones pendientes</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Administer pending comments</source>
+        <target>Administrar comentarios pendientes</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Opinion possibility group</source>
+        <target>Grupo opiniones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create or edit possibility groups</source>
+        <target>Crear o editar grupos opiniones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Goverment consultation</source>
+        <target>Editar consulta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit consultation "%title%"</source>
+        <target>Editar consulta "%title%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New Goverment consultation</source>
+        <target>Nueva consulta</target>
+      </trans-unit> 
+      <trans-unit id="154">
+        <source>New consultation</source>
+        <target>Nueva consulta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create consultation</source>
+        <target>Nueva consulta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Actions</source>
+        <target>Acciones</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Goverment proposal List</source>
+        <target>Listado iniciativas de gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List goverment proposal</source>
+        <target>Listado iniciativas de gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New Goverment proposal</source>
+        <target>Nueva iniciativa de gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create goverment proposal</source>
+        <target>Nueva iniciativa de gobierno</target>
+      </trans-unit>      
+      
+    </body> 
   </file>
 </xliff>
