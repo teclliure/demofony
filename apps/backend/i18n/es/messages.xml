@@ -1393,6 +1393,50 @@ cambiar tus suscripciones.</target>
         <source>New Goverment new</source>
         <target>Crear noticia</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>List virtual meetings</source>
+        <target>Listado entrevistas</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Virtual meeting List</source>
+        <target>Listado entrevistas</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Interviewed</source>
+        <target>Entrevistado</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit virtual meeting "%title%"</source>
+        <target>Editar entrevista "%title%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Virtual meeting</source>
+        <target>Editar entrevista</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create virtual meeting</source>
+        <target>Crear entrevista</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New Virtual meeting</source>
+        <target>Crear entrevista</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Start date</source>
+        <target>Fecha de inicio</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>End date</source>
+        <target>Fecha final</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>List consultations</source>
+        <target>Listado consultas</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Goverment consultation List</source>
+        <target>Listado consultas</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

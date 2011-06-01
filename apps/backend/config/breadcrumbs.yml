@@ -191,7 +191,7 @@ sf_orm_breadcrumbs:
   virtual_meeting:
     index:
       - { name: Summary, route: homepage }
-      - { name: List virtual meeting }
+      - { name: List virtual meetings }
     filter:
       - { name: Summary, route: homepage }
       - { name: Filtered virtual meeting }

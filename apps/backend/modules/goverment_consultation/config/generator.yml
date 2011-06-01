@@ -17,7 +17,7 @@ generator:
       fields:
         sfGuardUser: { label: Author }
       list:
-        display: [=title, sfGuardUser, start_date, end_date, created_at, updated_at, active, views]
+        display: [=title, sfGuardUser, start_date, end_date, created_at, active, views]
       filter:  ~
       form:    ~
       edit:    ~

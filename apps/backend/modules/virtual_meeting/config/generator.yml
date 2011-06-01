@@ -16,6 +16,7 @@ generator:
       actions: ~
       fields:
         sfGuardUser: { label: Interviewed }
+        user_id: { label: Interviewed }
       list:
         display: [=title,sfGuardUser,answers_start_date,answers_end_date]
       filter:  ~
