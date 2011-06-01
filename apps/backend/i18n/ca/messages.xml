@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="ca" datatype="plaintext" original="messages" date="2011-05-27T07:50:25Z" product-name="messages">
+  <file source-language="EN" target-language="ca" datatype="plaintext" original="messages" date="2011-06-01T19:09:20Z" product-name="messages">
     <header/>
     <body>
-      <trans-unit id="1">
+    <trans-unit id="1">
         <source>Last</source>
         <target>L'últim</target>
       </trans-unit>
@@ -923,87 +923,87 @@
       
       <trans-unit id="154">
         <source>Admin content</source>
-        <target>Contenido administrador</target>
+        <target>Contingut administrador</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Goverment news</source>
-        <target>Noticias</target>
+        <target>Notícies</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Goverment proposals</source>
-        <target>Iniciativas del gobierno</target>
+        <target>Iniciatives del govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Citizen proposals</source>
-        <target>Iniciativas ciudadanas</target>
+        <target>Iniciatives ciutadanes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Goverment consultations</source>
-        <target>Consultas</target>
+        <target>Consultes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Virtual meetings</source>
-        <target>Entrevistas</target>
+        <target>Entrevistes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Users content</source>
-        <target>Contenido usuarios</target>
+        <target>Contingut usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Workshops</source>
-        <target>Talleres</target>
+        <target>Tallers</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Citizen actions</source>
-        <target>Acciones ciudadanas</target>
+        <target>Accions ciutadanes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Comments and opinions</source>
-        <target>Comentarios y opiniones</target>
+        <target>Comentaris i opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage comments</source>
-        <target>Gestionar comentarios</target>
+        <target>Gestionar comentaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage comments reports</source>
-        <target>Gestionar informes comentarios</target>
+        <target>Gestionar informes comentaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage opinions</source>
-        <target>Gestionar opiniones</target>
+        <target>Gestionar opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage opinions reports</source>
-        <target>Gestionar informes opiniones</target>
+        <target>Gestionar informes opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage opinions groups</source>
-        <target>Gestionar grupos opiniones</target>
+        <target>Gestionar grups opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage neigborhoods</source>
-        <target>Gestionar barrios</target>
+        <target>Gestionar barris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage categories</source>
-        <target>Gestionar categorías</target>
+        <target>Gestionar categories</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Site admin</source>
-        <target>Administrar sitio</target>
+        <target>Administrar lloc</target>
       </trans-unit>
       <trans-unit id="154">
         <source>User Admin</source>
-        <target>Administrar usuarios</target>
+        <target>Administrar usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage users</source>
-        <target>Gestionar usuarios</target>
+        <target>Gestionar usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage groups</source>
-        <target>Gestionar grupos</target>
+        <target>Gestionar grups</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Manage permissions</source>
@@ -1011,7 +1011,7 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Sign out</source>
-        <target>Salir</target>
+        <target>Sortir</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Author</source>
@@ -1019,27 +1019,27 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Home</source>
-        <target>Inicio</target>
+        <target>Inici</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Summary</source>
-        <target>Resumen</target>
+        <target>Resum</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List opinions</source>
-        <target>Listado opiniones</target>
+        <target>Llistat opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>View %1% - %2% of %3%</source>
-        <target>Ver %1% - %2% de %3%</target>
+        <target>Veure %1% - %2% de %3%</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Opinion link</source>
-        <target>Enlace a la opinión</target>
+        <target>Enllaç a l'opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Opinion</source>
-        <target>Opinión</target>
+        <target>Opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Selected</source>
@@ -1055,15 +1055,15 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Updated at</source>
-        <target>Actualizada el</target>
+        <target>Actualitzada el</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Project developed by</source>
-        <target>Proyecto desarrollado por</target>
+        <target>Projecte desenvolupat per</target>
       </trans-unit>
       <trans-unit id="154">
         <source>using</source>
-        <target>usando</target>
+        <target>usant</target>
       </trans-unit>
       <trans-unit id="154">
         <source>User</source>
@@ -1071,7 +1071,7 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Filters</source>
-        <target>Filtros</target>
+        <target>Filtres</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Filter</source>
@@ -1091,31 +1091,31 @@
       </trans-unit>
       <trans-unit id="154">
         <source>from %from_date%&lt;br /&gt;to %to_date%</source>
-        <target>desde %from_date%&lt;br /&gt;hasta %to_date%</target>
+        <target>des de %from_date% &lt;br /&gt; fins a %to_date%</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Show origin content</source>
-        <target>Mostrar contenido origén</target>
+        <target>Mostra contingut origén</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit opinion</source>
-        <target>Editar opinión</target>
+        <target>Edita opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List comments</source>
-        <target>Listar comentarios</target>
+        <target>Llistar comentaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Comments list</source>
-        <target>Listado comentarios</target>
+        <target>Llistat comentaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Original content</source>
-        <target>Contenido original</target>
+        <target>Contingut original</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Show content</source>
-        <target>Mostrar contenido</target>
+        <target>Mostra contingut</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Disable</source>
@@ -1123,59 +1123,59 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Disabled</source>
-        <target>Deshabilitado</target>
+        <target>Deshabilitat</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Posted the</source>
-        <target>Publicado el</target>
+        <target>Publicat el</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit comment</source>
-        <target>Editar comentario</target>
+        <target>Edita comentari</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Reason</source>
-        <target>Razón</target>
+        <target>Raó</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Comments reports</source>
-        <target>Informes comentarios</target>
+        <target>Informes comentaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Link</source>
-        <target>Enlace</target>
+        <target>Enllaç</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Remove the report</source>
-        <target>Eliminar el informe</target>
+        <target>Eliminar l'informe</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit the comment</source>
-        <target>Editar el comentario</target>
+        <target>Edita el comentari</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Remove the comment</source>
-        <target>Eliminar el comentario</target>
+        <target>Eliminar el comentari</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Opinion possibility</source>
-        <target>Posibilidad escogida</target>
+        <target>Possibilitat escollida</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Set as spam</source>
-        <target>Marcar como inadecuada</target>
+        <target>Marcar com a inadequada</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Set as NO spam</source>
-        <target>Marcar como NO inadecuada</target>
+        <target>Marcar com a NO inadequada</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Opinions reports</source>
-        <target>Informes opiniones</target>
+        <target>Informes opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List opinions reports</source>
-        <target>Listado informes opiniones</target>
+        <target>Llistat informes opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Filter</source>
@@ -1187,67 +1187,67 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Show stats</source>
-        <target>Mostrar gráficos</target>
+        <target>Mostrar gràfics</target>
       </trans-unit>
       <trans-unit id="154">
         <source>OpinionPossibility</source>
-        <target>Posibilidades opinión</target>
+        <target>Possibilitats opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>New OpinionPossibility</source>
-        <target>Nueva posibilidad opinión</target>
+        <target>Nova possibilitat opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Gmap bubble image</source>
-        <target>Imagén para google maps</target>
+        <target>Imagén per google maps</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Image to show on map. If you want to choose a new image you should previously upload image to web/images/gmap_icons/ in png format.</source>
-        <target>Imagén que se mostrará sobre el mapa. Si quieres poder añadir nuevas imágenes subelas a web/images/gmap_icons/ en formato png.</target>
+        <target>Imatge que es mostrarà sobre el mapa. Si vols poder afegir noves imatges puja a web / images / gmap_icons / en format png.</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Opinion possibility group</source>
-        <target>Editar grupo de posibilidades opinión</target>
+        <target>Edita grup de possibilitats opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit opinion group "%name%"</source>
-        <target>Editar grupo de posibilidades opinión "%name%"</target>
+        <target>Edita grup de possibilitats opinió "% name%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create opinion group</source>
-        <target>Crear grupo posibilidades opinión</target>
+        <target>Crea un grup possibilitats opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List opinion groups</source>
-        <target>Listar grupos posibilidades opinión</target>
+        <target>Llistar grups possibilitats opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Must stats graphs be shown under opinions</source>
-        <target>Debe mostrarse un gráfico de las opciones seleccionadas debajo de la caja de opinión</target>
+        <target>S'ha de mostrar un gràfic de les opcions seleccionades sota la caixa d'opinió</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Regions admin</source>
-        <target>Administrar barrios</target>
+        <target>Administrar barris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Category List</source>
-        <target>Listado categorías</target>
+        <target>Llistat categories</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List categorys</source>
-        <target>Listado categorías</target>
+        <target>Llistat categories</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Category</source>
-        <target>Editar categoría</target>
+        <target>Edita categoria</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit category</source>
-        <target>Editar categoría</target>
+        <target>Edita categoria</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Description</source>
-        <target>Descripción</target>
+        <target>Descripció</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Category</source>
@@ -1255,51 +1255,51 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Last login</source>
-        <target>Último login</target>
+        <target>Últim login</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List Users</source>
-        <target>Listado usuarios</target>
+        <target>Llistat usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List users</source>
-        <target>Listado usuarios</target>
+        <target>Llistat usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit user "%username%"</source>
-        <target>Editar usuario "%username%"</target>
+        <target>Edita usuari "%username%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Editing User "%%username%%"</source>
-        <target>Editando usuario "%%username%%"</target>
+        <target>S'està editant usuari "%%username%%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Password (again)</source>
-        <target>Contraseña (repetir)</target>
+        <target>Contrasenya (repetir)</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Users list</source>
-        <target>Listado usuarios</target>
+        <target>Llistat usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Is active</source>
-        <target>Está activo</target>
+        <target>Està actiu</target>
       </trans-unit>
       <trans-unit id="154">
         <source>is empty</source>
-        <target>está vacio</target>
+        <target>està buit</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Permissions and groups</source>
-        <target>Grupos y permisos</target>
+        <target>Grups i permisos</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Is super admin</source>
-        <target>És superusuario</target>
+        <target>És superusuari</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Groups</source>
-        <target>Grupos</target>
+        <target>Grups</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Permissions</source>
@@ -1307,107 +1307,107 @@
       </trans-unit>
       <trans-unit id="154">
         <source>List permissions</source>
-        <target>Listado permisos</target>
+        <target>Llistat permisos</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Permission list</source>
-        <target>Listado permisos</target>
+        <target>Llistat permisos</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Users</source>
-        <target>Usuarios</target>
+        <target>Usuaris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Editing Permission "%%name%%"</source>
-        <target>Editar permiso "%%name%%"</target>
+        <target>Edita permís "%%name%%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit permission "%name%"</source>
-        <target>Editar permiso "%name%"</target>
+        <target>Edita permís "%name%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Editing Group "%%name%%"</source>
-        <target>Editar grupo "%%name%%"</target>
+        <target>Edita grup "%%name%%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit group "%name%"</source>
-        <target>Editar grupo "%name%"</target>
+        <target>Edita grup "%name%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List groups</source>
-        <target>Listado grupos</target>
+        <target>Llistat grups</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Group list</source>
-        <target>Listado grupos</target>
+        <target>Llistat grups</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Active</source>
-        <target>Activo/a</target>
+        <target>Actiu</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Views</source>
-        <target>Visualizaciones</target>
+        <target>Visualitzacions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List news</source>
-        <target>Listado notícias</target>
+        <target>Llistat notícies</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Goverment new List</source>
-        <target>Listado notícias</target>
+        <target>Llistat notícies</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Add goverment response</source>
-        <target>Añadir respuesta gobierno</target>
+        <target>Afegir resposta govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit goverment response</source>
-        <target>Editar respuesta gobierno</target>
+        <target>Edita resposta govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Categories</source>
-        <target>Categorías</target>
+        <target>Categories</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Regions</source>
-        <target>Barrios</target>
+        <target>Barris</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit new "%title%"</source>
-        <target>Editar noticia "%title%"</target>
+        <target>Edita notícia "%title%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit new "%%title%%"</source>
-        <target>Editar noticia "%%title%%"</target>
+        <target>Edita notícia "%%title%%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create new</source>
-        <target>Crear noticia</target>
+        <target>Crear notícia</target>
       </trans-unit>
       <trans-unit id="154">
         <source>New Goverment new</source>
-        <target>Crear noticia</target>
+        <target>Crear notícia</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List virtual meetings</source>
-        <target>Listado entrevistas</target>
+        <target>Llistat entrevistes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Virtual meeting List</source>
-        <target>Listado entrevistas</target>
+        <target>Llistat entrevistes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Interviewed</source>
-        <target>Entrevistado</target>
+        <target>Entrevistat</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit virtual meeting "%title%"</source>
-        <target>Editar entrevista "%title%"</target>
+        <target>Edita entrevista "%title%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Virtual meeting</source>
-        <target>Editar entrevista</target>
+        <target>Edita entrevista</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create virtual meeting</source>
@@ -1419,147 +1419,147 @@
       </trans-unit>
       <trans-unit id="154">
         <source>Start date</source>
-        <target>Fecha de inicio</target>
+        <target>Data d'inici</target>
       </trans-unit>
       <trans-unit id="154">
         <source>End date</source>
-        <target>Fecha final</target>
+        <target>Data final</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List consultations</source>
-        <target>Listado consultas</target>
+        <target>Llistat consultes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Goverment consultation List</source>
-        <target>Listado consultas</target>
+        <target>Llistat consultes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Review pending contents</source>
-        <target>Revisa los contenidos pendientes</target>
+        <target>Revisa els continguts pendents</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Pending marked as innapropiate comments</source>
-        <target>Comentarios marcados como inapropiados pendientes</target>
+        <target>Comentaris marcats com inadequats pendents</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Pending marked as innapropiate opinions</source>
-        <target>Opiniones marcadas como inapropiadas pendientes</target>
+        <target>Opinions marcades com inapropiades pendents</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Administrative pending tasks summary</source>
-        <target>Resumen de tareas administración pendientes</target>
+        <target>Resum de tasques administració pendents</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Administer pending opinions</source>
-        <target>Administrar opiniones pendientes</target>
+        <target>Administrar opinions pendents</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Administer pending comments</source>
-        <target>Administrar comentarios pendientes</target>
+        <target>Administrar comentaris pendents</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Opinion possibility group</source>
-        <target>Grupo opiniones</target>
+        <target>Grup opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create or edit possibility groups</source>
-        <target>Crear o editar grupos opiniones</target>
+        <target>Crear o editar grups opinions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Goverment consultation</source>
-        <target>Editar consulta</target>
+        <target>Edita consulta</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit consultation "%title%"</source>
-        <target>Editar consulta "%title%"</target>
+        <target>Edita consulta "%title%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>New Goverment consultation</source>
-        <target>Nueva consulta</target>
-      </trans-unit> 
+        <target>Nova consulta</target>
+      </trans-unit>
       <trans-unit id="154">
         <source>New consultation</source>
-        <target>Nueva consulta</target>
+        <target>Nova consulta</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create consultation</source>
-        <target>Nueva consulta</target>
+        <target>Nova consulta</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Actions</source>
-        <target>Acciones</target>
+        <target>Accions</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Goverment proposal List</source>
-        <target>Listado iniciativas de gobierno</target>
+        <target>Llistat iniciatives de govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>List goverment proposal</source>
-        <target>Listado iniciativas de gobierno</target>
+        <target>Llistat iniciatives de govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>New Goverment proposal</source>
-        <target>Nueva iniciativa de gobierno</target>
+        <target>Nova iniciativa de govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create goverment proposal</source>
-        <target>Nueva iniciativa de gobierno</target>
+        <target>Nova iniciativa de govern</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Goverment proposal</source>
-        <target>Editar iniciativa de gobierno</target>
-      </trans-unit>      
+        <target>Edita iniciativa de govern</target>
+      </trans-unit>
       <trans-unit id="154">
         <source>Edit goverment proposal "%title%"</source>
-        <target>Editar iniciativa de gobierno "%title%"</target>
-      </trans-unit>   
+        <target>Edita iniciativa de govern "%title%"</target>
+      </trans-unit>
       <trans-unit id="154">
         <source>List citizen proposal</source>
-        <target>Listado iniciativas ciudadanas</target>
-      </trans-unit>   
+        <target>Llistat iniciatives ciutadanes</target>
+      </trans-unit>
       <trans-unit id="154">
         <source>Citizen proposal List</source>
-        <target>Listado iniciativas ciudadanas</target>
+        <target>Llistat iniciatives ciutadanes</target>
       </trans-unit>
       <trans-unit id="154">
         <source>New Citizen proposal</source>
-        <target>Nueva iniciativa ciudadana</target>
+        <target>Nova iniciativa ciutadana</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Create citizen proposal</source>
-        <target>Nueva iniciativa ciudadana</target>
+        <target>Nova iniciativa ciutadana</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Citizen proposal</source>
-        <target>Editar iniciativa ciudadana</target>
+        <target>Edita iniciativa ciutadana</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit citizen proposal "%title%"</source>
-        <target>Editar iniciativa ciudadana "%title%"</target>
+        <target>Edita iniciativa ciutadana "%title%"</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Workshop List</source>
-        <target>Listado talleres</target>
-      </trans-unit>      
+        <target>Llistat tallers</target>
+      </trans-unit>
       <trans-unit id="154">
         <source>List workshops</source>
-        <target>Listado talleres</target>
+        <target>Llistat tallers</target>
       </trans-unit>
       <trans-unit id="154">
         <source>New Workshop</source>
-        <target>Nuevo taller</target>
-      </trans-unit>      
+        <target>Nou taller</target>
+      </trans-unit>
       <trans-unit id="154">
         <source>Create workshop</source>
-        <target>Nuevo taller</target>
+        <target>Nou taller</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit Workshop</source>
-        <target>Editar taller</target>
+        <target>Edita taller</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Edit workshop "%title%"</source>
-        <target>Editar taller "%title%"</target>
+        <target>Edita taller "%title%"</target>
       </trans-unit>
     </body>
   </file>
