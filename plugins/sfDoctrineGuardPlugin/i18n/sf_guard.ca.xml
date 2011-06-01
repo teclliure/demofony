@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext" date="2011-06-01T19:14:41Z">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Username</source>
+        <target>Usuari</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Password</source>
+        <target>Contrasenya</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Remember</source>
+        <target>Recordar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Signin</source>
+        <target>Connectar</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Forgot your password?</source>
+        <target>Heu oblidat la contrasenya?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You don't have the required permission to access this page.</source>
+        <target>No té els permisos requerits per accedir a aquesta pàgina.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

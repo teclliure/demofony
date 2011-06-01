@@ -1508,8 +1508,63 @@ cambiar tus suscripciones.</target>
       <trans-unit id="154">
         <source>Create goverment proposal</source>
         <target>Nueva iniciativa de gobierno</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Goverment proposal</source>
+        <target>Editar iniciativa de gobierno</target>
       </trans-unit>      
-      
+      <trans-unit id="154">
+        <source>Edit goverment proposal "%title%"</source>
+        <target>Editar iniciativa de gobierno "%title%"</target>
+      </trans-unit>   
+      <trans-unit id="154">
+        <source>List citizen proposal</source>
+        <target>Listado iniciativas ciudadanas</target>
+      </trans-unit>   
+      <trans-unit id="154">
+        <source>Citizen proposal List</source>
+        <target>Listado iniciativas ciudadanas</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New Citizen proposal</source>
+        <target>Nueva iniciativa ciudadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Create citizen proposal</source>
+        <target>Nueva iniciativa ciudadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Citizen proposal</source>
+        <target>Editar iniciativa ciudadana</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit citizen proposal "%title%"</source>
+        <target>Editar iniciativa ciudadana "%title%"</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Workshop List</source>
+        <target>Listado talleres</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>List workshops</source>
+        <target>Listado talleres</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>New Workshop</source>
+        <target>Nuevo taller</target>
+      </trans-unit>      
+      <trans-unit id="154">
+        <source>Create workshop</source>
+        <target>Nuevo taller</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit Workshop</source>
+        <target>Editar taller</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit workshop "%title%"</source>
+        <target>Editar taller "%title%"</target>
+      </trans-unit>
     </body> 
   </file>
 </xliff>

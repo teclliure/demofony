@@ -116,23 +116,23 @@ sf_orm_breadcrumbs:
       - { name: Filtered citizen proposal }
     new:
       - { name: Summary, route: homepage }
-      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: List citizen proposal, route: citizen_proposal }
       - { name: Create citizen proposal }
     create:
       - { name: Summary, route: homepage }
-      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: List citizen proposal, route: citizen_proposal }
       - { name: Create citizen proposal }
     edit:
       - { name: Summary, route: homepage }
-      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: List citizen proposal, route: citizen_proposal }
       - { name: Edit citizen proposal "%title%", model: true }
     update:
       - { name: Summary, route: homepage }
-      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: List citizen proposal, route: citizen_proposal }
       - { name: Edit citizen proposal "%title%" }
     show:
       - { name: Summary, route: homepage }
-      - { name: List citizen proposals, route: citizen_proposal }
+      - { name: List citizen proposal, route: citizen_proposal }
       - { name: Show citizen proposal "%title%" }
   goverment_proposal:
     index:
@@ -143,23 +143,23 @@ sf_orm_breadcrumbs:
       - { name: Filtered goverment proposal }
     new:
       - { name: Summary, route: homepage }
-      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: List goverment proposal, route: goverment_proposal }
       - { name: Create goverment proposal }
     create:
       - { name: Summary, route: homepage }
-      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: List goverment proposal, route: goverment_proposal }
       - { name: Create goverment proposal }
     edit:
       - { name: Summary, route: homepage }
-      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: List goverment proposal, route: goverment_proposal }
       - { name: Edit goverment proposal "%title%", model: true }
     update:
       - { name: Summary, route: homepage }
-      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: List goverment proposal, route: goverment_proposal }
       - { name: Edit goverment proposal "%title%" }
     show:
       - { name: Summary, route: homepage }
-      - { name: List goverment proposals, route: goverment_proposal }
+      - { name: List goverment proposal, route: goverment_proposal }
       - { name: Show goverment proposal "%title%" }
   virtual_meeting:
     index:
