@@ -475,6 +475,7 @@
 	div.modal_div{display:none; position:fixed; background-color:#fff; top:50%; left:50%; border:10px solid #194A96; border-radius:6px; padding:15px; z-index:1001; }
 	h1.modal-title{margin-bottom:15px; padding-bottom:5px; text-transform:uppercase; color:#194A96; border-bottom:1px solid #999; font-weight:bold; font-size:14px;}
 	a.dialog-close{position:absolute; right:-30px; top:-10px; font-weight:bold; background:#194A96; display:block; font-size:14px; color:#fff; padding:4px;}
+	#login_dialog a.dialog-close{right:-50px;}
 	a.dalog-close:hover{text-decotion:none;}
 	
 	/* --- JQUERY UI DIALOG --- */
