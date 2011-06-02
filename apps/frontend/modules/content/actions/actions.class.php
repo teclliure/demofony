@@ -132,7 +132,12 @@ class contentActions extends sfActions {
     if ($request->getParameter('q'))
     {
       $conn = Doctrine_Manager::connection();
-      $where .= ' AND title LIKE '.$conn->quote('%'.$request->getParameter('q').'%');
+      $searchString = $conn->quote('%'.$request->getParameter('q').'%');
+      $where .= ' AND (title LIKE '.$searchString
+                .' OR body LIKE '.$searchString
+                .' OR user_id IN (SELECT id from sf_guard_user where CONCAT(first_name,\' \',last_name) LIKE '.$searchString
+                .' OR username LIKE '.$searchString
+                .')) ';
       $this->title = 'SEARCH';
       $this->searchStr = $request->getParameter('q');
     }

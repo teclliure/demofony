@@ -952,6 +952,10 @@
         <source>Question</source>
         <target>Pregunta</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>I agree with</source>
+        <target>Estic d'acord amb</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
