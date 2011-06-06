@@ -5,6 +5,10 @@ class RegisterForm extends sfGuardRegisterForm {
   {
     unset($this['first_name'],$this['last_name'],$this['actions_list'],$this['opinions_list']);
     $this->getWidgetSchema()->setHelp('email_address','Enter your email address. This can be used as login name like username.');
+    $this->validatorSchema['password_again']->setOption('required', true);
+    
+    $this->setWidget('captcha', new sfWidgetFormReCaptcha(array('public_key'=>sfConfig::get('app_recaptcha_public_key')), array('required'=> false)));
+    $this->setValidator('captcha', new sfValidatorReCaptcha(array('required'=>false,'private_key' => sfConfig::get('app_recaptcha_private_key'))));
     
     $decorator = new sfWidgetFormSchemaFormatterFrontend($this->widgetSchema, $this->validatorSchema);
     $this->widgetSchema->addFormFormatter('custom', $decorator);

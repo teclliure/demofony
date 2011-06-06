@@ -15,9 +15,18 @@ class userActions extends sfActions {
     $form->setPersistanceStrategy(new psPageableFormSessionPersistanceStrategy($this->getUser()));
      
     $processOptions = array(
-        'formParameterName' => 'register' //parameter of $reqeust->getParameter() method
+        'formParameterName' => 'register' //parameter of $request->getParameter() method
     );
-     
+    
+    if ($request->getParameter('recaptcha_challenge_field')) {
+      $data = $request->getParameter('register');
+      $data['sf_guard_user']['captcha'] = array();
+      $data['sf_guard_user']['captcha']['recaptcha_challenge_field'] = $request->getParameter('recaptcha_challenge_field');
+      $data['sf_guard_user']['captcha']['recaptcha_response_field'] = $request->getParameter('recaptcha_response_field');
+      
+      $request->setParameter('register',$data);
+    }
+    
     //create and execute form processing
     $process = new psPageableFormProcess($form, $request, $processOptions);
      
