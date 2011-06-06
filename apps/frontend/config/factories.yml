@@ -9,7 +9,7 @@ prod:
       loggers: ~
   mailer:
     param:
-      delivery_strategy: spool
+      delivery_strategy: realtime
 test:
   storage:
     class: sfSessionTestStorage

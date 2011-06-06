@@ -564,14 +564,7 @@
         <source>Change</source>
         <target>Canviar</target>
       </trans-unit>
-      <trans-unit id="135">
-        <source>Do not worry, we can help you get back in to your account safely!</source>
-        <target>No es preocupi, nosaltres t'ajudem a tornar al seu compte de forma segura!</target>
-      </trans-unit>
-      <trans-unit id="136">
-        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
-        <target>Ompli el següent formulari per demanar un correu electrònic amb informació sobre com restablir la contrasenya.</target>
-      </trans-unit>
+      
       <trans-unit id="137">
         <source>Request</source>
         <target>Sol.licitud</target>
@@ -955,6 +948,34 @@
       <trans-unit id="154">
         <source>I agree with</source>
         <target>Estic d'acord amb</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Do not worry, we can help you get back in to your account safely!</source>
+        <target>No et preocupis, podem ajudarte a recuperar el teu compter de forma segura!</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
+        <target>Ompli el següent formulari per solicitar un missatge amb informació sobre com restablir la teva contrassenya.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Below you will see your username and new password:</source>
+        <target>A continuació podràs vore el teu nom de usuari i la nova contrassenya:</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>This e-mail is being sent because you requested information on how to reset your password.</source>
+        <target>Aquest correu ha sigut enviat perque has solicitat informació sobre com restablir la teua contrassenya.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
+        <target>Pots canviar la teua contrassenya fent clic al link de baix, aquest tan sols es vàlid durant 24 hores:</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Click to change password</source>
+        <target>Fes clic per canviar la contrassenya</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Hi %first_name%</source>
+        <target>Hola %first_name%</target>
       </trans-unit>
     </body>
   </file>

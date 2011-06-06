@@ -565,14 +565,6 @@ posibilidad de registrarse.</target>
         <source>Change</source>
         <target>Cambiar</target>
       </trans-unit>
-      <trans-unit id="135">
-        <source>Do not worry, we can help you get back in to your account safely!</source>
-        <target>No se preocupe, podemos ayudarle a volver a su cuenta de forma segura!</target>
-      </trans-unit>
-      <trans-unit id="136">
-        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
-        <target>Rellene el siguiente formulario para solicitar un e-mail con información sobre cómo restablecer la contraseña.</target>
-      </trans-unit>
       <trans-unit id="137">
         <source>Request</source>
         <target>Solicitud</target>
@@ -960,6 +952,34 @@ cambiar tus suscripciones.</target>
       <trans-unit id="154">
         <source>I agree with</source>
         <target>Estoy de acuerdo con</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Do not worry, we can help you get back in to your account safely!</source>
+        <target>No te preocupes, podemos ayudarte a recuperar tu cuenta de forma segura!</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
+        <target>Rellena el siguiente formulario para solicitar un e-mail con información sobre cómo restablecer la contraseña.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Below you will see your username and new password:</source>
+        <target>A continuación podrás ver tu nombre de usuario y la nueva contraseña:</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>This e-mail is being sent because you requested information on how to reset your password.</source>
+        <target>Este correo está siendo enviado ya que solicitaste información sobre cómo restablecer la contraseña.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
+        <target>Puedes cambiar tu contraseña haciendo clic en el link de abajo, este sólo es válido durante 24 horas:</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Click to change password</source>
+        <target>Haga clic para cambiar la contraseña</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Hi %first_name%</source>
+        <target>Hola %first_name%</target>
       </trans-unit>
     </body>
   </file>

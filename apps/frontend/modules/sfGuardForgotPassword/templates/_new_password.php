@@ -3,5 +3,5 @@
 
 <?php echo __('Below you will see your username and new password:') ?>
 
-<?php echo __('Username', null, 'sf_guard') ?>: <?php echo $user->getUsername() ?>
-<?php echo __('Password', null, 'sf_guard') ?>: <?php echo $password ?>
+<?php echo __('Username') ?>: <?php echo $user->getUsername() ?>
+<?php echo __('Password') ?>: <?php echo $password ?>
