@@ -3,6 +3,9 @@
 
 # default values
 all:
+  recaptcha:
+    public_key: 6LcQB8USAAAAAJhCiAjNyvxz6jTViaN_2azPzc2m
+    private_key: 6LcQB8USAAAAACGGSlYIwlrN2zeLlA8VRt3fekoN
   mail:
     admin: marc@teclliure.net
   cultures:
