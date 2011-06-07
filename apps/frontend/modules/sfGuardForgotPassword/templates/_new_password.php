@@ -1,5 +1,5 @@
 <?php use_helper('I18N') ?>
-<?php echo __('Hi %first_name%', array('%first_name%' => $user->getFirstName()), 'sf_guard') ?>,
+<?php echo __('Hi %first_name%', array('%first_name%' => $user->getFirstName())) ?>,
 
 <?php echo __('Below you will see your username and new password:') ?>
 

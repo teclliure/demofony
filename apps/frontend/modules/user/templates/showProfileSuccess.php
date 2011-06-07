@@ -50,7 +50,6 @@
                 <div class="opinions">
                    <?php include_partial('user/opinionsList',array('opinions'=>$userProfile->getOpinions()))?>
                 </div>
-                
                 <? endif; ?>
                 
                 <? if($section == 'initiatives'): ?>
@@ -60,7 +59,9 @@
                 <? endif; ?>
                 
                 <? if($section == 'actions'): ?>
+                <div class="actions">
                   <?php include_partial('content/actionsList',array('contents'=>$userProfile->getActions()))?>
+                </div>
                 <? endif; ?>
             </div>
         </div>
