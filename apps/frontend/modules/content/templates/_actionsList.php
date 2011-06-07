@@ -1,5 +1,5 @@
 <?php foreach ($contents as $i=>$action): ?>
-  <div class="trobada <?php if (!($i%2 != 0 && $i != 0)): ?>color<?php endif; ?>">
+  <div class="trobada <?php if(get_class($action->getRawValue()) == 'Workshop'): ?>taller<?php endif;?>  <?php if (!($i%2 != 0 && $i != 0)): ?>color<?php endif; ?>">
       <?php include_partial('content/actionDivSmall',array('action'=>$action))?>
   </div>
 <?php endforeach; ?>
