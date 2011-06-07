@@ -946,8 +946,8 @@
         <target>Pregunta</target>
       </trans-unit>
       <trans-unit id="154">
-        <source>I agree with</source>
-        <target>Estic d'acord amb</target>
+        <source>I agree</source>
+        <target>Estic d'acord</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Do not worry, we can help you get back in to your account safely!</source>

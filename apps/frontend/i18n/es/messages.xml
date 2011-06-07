@@ -950,8 +950,8 @@ cambiar tus suscripciones.</target>
         <target>Pregunta</target>
       </trans-unit>
       <trans-unit id="154">
-        <source>I agree with</source>
-        <target>Estoy de acuerdo con</target>
+        <source>I agree</source>
+        <target>Estoy de acuerdo</target>
       </trans-unit>
       <trans-unit id="154">
         <source>Do not worry, we can help you get back in to your account safely!</source>
