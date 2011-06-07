@@ -384,7 +384,8 @@
 	/* Pagina: FORM SIGNUP */
 	
 	#form-profile label{float:left; margin-right:15px ; text-align:center;}
-	#form-profile label span{text-align:left;}
+	#form-profile label span{text-align:left; }
+	#form-profile label small{width:180px;}
 	#form-profile label input[type=text], input[type=password], #form-signup label select{width:180px;}
 	#form-profile label textarea{width:600px;}
 	#form-profile label input.address{width:383px;}
