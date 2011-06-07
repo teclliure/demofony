@@ -172,7 +172,8 @@
 	.trobada div.col3 p strong, .result div.col2 p{font-weight:normal; color:#999 !important;}
 	.trobada div.col4, .result div.col3{float:left; padding-right:10px; height:50px;}
 	.trobada div.col4 a.enter, .result div.col3 a.enter{ border:none; margin:10px 0 0 0; display:block; font-size:14px;}
-	.accio-ciutadana div.col4 a.enter{background:#CE9B00 !important;}
+	
+	
 	
 	.iniciative{padding:10px; position:relative;}
 	.iniciative.color{background:#f3f3f3;}
@@ -598,6 +599,12 @@
 		background: linear-gradient(top, #7a868c 0%,#a8b6bf 50%,#9aa6af 51%,#697377 100%) !important; /* W3C */
 	}
 	
+	.accio-ciutadana div.col4 a.enter,
+	.trobada.taller .enter{background:#CE9B00 !important;}
+	
+	.gobern-response .box-title {height:20px;}
+	.gobern-response .box-title span{float:left; margin-left:-50px;}
+	.gobern-response{padding-left:60px !important;}
 	
 
 	
