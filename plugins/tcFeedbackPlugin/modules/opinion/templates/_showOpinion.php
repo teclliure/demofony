@@ -24,7 +24,7 @@
           </div>
           <div class="footer">
             <?php if ($sf_user->isAuthenticated() && !$object->hasOpinated($sf_user->getGuardUser())): ?>
-              <a href="#" class="opino button1" onClick="$('#opinions_list').load('<?php echo url_for('opinion/opinateLike?id='.$opinion->getId()) ?>'); return false;"><?php echo __('I agree with') ?> <?php echo $object->getSfGuardUser()->getName() ?></a>
+              <a href="#" class="opino button1" onClick="$('#opinions_list').load('<?php echo url_for('opinion/opinateLike?id='.$opinion->getId()) ?>'); return false;"><?php echo __('I agree with') ?> <?php //echo $object->getSfGuardUser()->getName() ?></a>
             <?php endif; ?>
             <div class="stats">
                 <strong><?php echo $opinion->countOpinionsLike() ?> <span class="inline icon-thumb-up"></span></strong>
