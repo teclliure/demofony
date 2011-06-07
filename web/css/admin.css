@@ -30,7 +30,7 @@ table {
   padding: 0;
 }
 
-body{background:#ecd48c; padding:20px; font-family:Arial, Verdana !important;}
+body{background:#e7e0cd; padding:20px; font-family:Arial, Verdana !important;}
 body > div.container{ background:#fff; padding:10px; box-shadow:0 0 10px rgba(0,0,0,.4); border-radius:5px;}
 #header{padding-bottom:5px; border-bottom:1px solid #666; margin-bottom:0;}
 #header h1{font-size:20px; padding-left:10px; text-transform:uppercase; margin-top:5px;}
