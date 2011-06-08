@@ -44,6 +44,7 @@ $(function() {
                 <div class="answer-own" id="ask_question">
                   <a href="#" onClick="$('#ask_question').fadeToggle('slow'); $('#form_question').fadeToggle('slow'); return false;" class="button1"><?php echo __('Ask your question') ?></a>
                 </div>
+                <center><a href="<?php echo url_for('virtualMeeting/index') ?>" class="view-all"><?php echo __('View all interviews') ?></a></center>
               <?php endif; ?>
               
           </div>
