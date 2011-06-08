@@ -1565,6 +1565,38 @@ cambiar tus suscripciones.</target>
         <source>Edit workshop "%title%"</source>
         <target>Editar taller "%title%"</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Save</source>
+        <target>Guardar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Delete</source>
+        <target>Borrar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Editing response</source>
+        <target>Editando respuesta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit response</source>
+        <target>Editar respuesta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Add response</source>
+        <target>Añadir respuesta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Adding response</source>
+        <target>Añadiendo respuesta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>to</source>
+        <target>a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Are you sure?</source>
+        <target>¿ Estás seguro ?</target>
+      </trans-unit>
     </body> 
   </file>
 </xliff>

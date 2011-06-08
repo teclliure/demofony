@@ -18,13 +18,17 @@ class responseActions extends sfActions
     $this->form->setDefault('content_id',$request->getParameter('id'));
     $this->form->setDefault('content_type',$request->getParameter('class'));
     if ($request->isMethod('post')) {
+      // print 'hola';
       $this->form->bind($request->getParameter($this->form->getName()),$request->getFiles($this->form->getName()));
       if ($this->form->isValid())
       {
+        // print 'valid';
         $object = $this->form->save();
         $this->getUser()->setFlash('notice', 'Response added correctly!');
         $this->redirect(array('sf_route' => sfInflector::underscore(get_class($this->content)).'_edit', 'sf_subject' => $this->content));
       }
+      // var_dump($this->form->getErrorSchema()->getErrors());
+      // print 'invalid';
     }
   }
   

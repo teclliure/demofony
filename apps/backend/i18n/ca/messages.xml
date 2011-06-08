@@ -1561,6 +1561,38 @@
         <source>Edit workshop "%title%"</source>
         <target>Edita taller "%title%"</target>
       </trans-unit>
+           <trans-unit id="154">
+        <source>Save</source>
+        <target>Guardar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Delete</source>
+        <target>Esborrar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Editing response</source>
+        <target>Editant resposta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Edit response</source>
+        <target>Editar resposta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Add response</source>
+        <target>Afegir resposta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Adding response</source>
+        <target>Afegir resposta</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>to</source>
+        <target>a</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Are you sure?</source>
+        <target>¿ Estás segur ?</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
