@@ -310,6 +310,8 @@
 	#qa #main ul li a{display:block; text-transform:uppercase; }
 	#qa div.answer-own{margin-top:20px; text-align:center; margin-bottom:20px;}
 	#qa div.answer-own a{font-size:16px;}
+	
+	#qa #form_question label span{color:#ccc;}
 
 	
 	/* Pagina: PERFIL */
@@ -605,6 +607,7 @@
 	.gobern-response .box-title {height:20px;}
 	.gobern-response .box-title span{float:left; margin-left:-50px;}
 	.gobern-response{padding-left:60px !important;}
+	
 	
 
 	
