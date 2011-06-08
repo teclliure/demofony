@@ -47,6 +47,9 @@ $(function() {
                 <center><a href="<?php echo url_for('virtualMeeting/index') ?>" class="view-all"><?php echo __('View all interviews') ?></a></center>
               <?php endif; ?>
               
+              <div class="clear"></div>
+              <center><a href="<?php echo url_for('virtualMeeting/index') ?>" class="view-all"><?php echo __('View all interviews') ?></a></center>
+              <div class="clear"></div>
           </div>
       </div>
     </div>

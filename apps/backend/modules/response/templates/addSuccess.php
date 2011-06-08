@@ -30,6 +30,7 @@
     </li>
   </ul>
   <div class="response" style="margin: 30px">
+    <?php // echo $form ?>
     <?php echo $form->renderGlobalErrors() ?>
     <div class="sf_admin_form_row sf_admin_text sf_admin_form_field_body">
       <div class="label ui-helper-clearfix">
