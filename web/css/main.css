@@ -127,7 +127,7 @@
 	.box ul.tabs li a b{display:block; float:left; text-align:center; border:0 solid red;}
 	.box ul.tabs li a span{display:block; float:left; margin-right:3px; margin-top:4px; border:0 solid red;}
 	.box ul.tabs li a:hover{opacity:.7;}
-	.box ul.tabs li.on a, .ui-state-active a{__background:#fff !important; cursor:default;}
+	.box ul.tabs li.on a, .ui-state-active a{background:#fff !important; cursor:default;}
 	.box ul.tabs li.on a:hover, .ui-state-active a:hover{opacity:1 !important;}
 	.box ul.tabs li.no-icon b{}
 	.box h1.hdr{position:absolute; left:10px; top:-20px; font:bold 26px "RNSBARUTABLACKRegular"; text-transform:uppercase; color:#fff; text-shadow:0 0 2px rgba(0,0,0,.7); }
