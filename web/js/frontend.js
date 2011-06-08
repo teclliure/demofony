@@ -20,6 +20,11 @@ $(function() {
     });
   }  
   
+  $(".toggler-next").live("click", function(){
+  	$(this).next().toggle().find("textarea,input").first().focus();
+  	return false;
+  })
+  
   /*
   $("#home div.crear a.button1").click(function(){
 		var dialog = $("#modal-accio").dialog({
