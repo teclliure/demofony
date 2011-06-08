@@ -11,6 +11,9 @@
 	.no-border{border:none !important;}
 	.hide{display:none;}
 	
+	.corp1{color:#194A96;}
+	.corp2{color:#ce9b00;}
+	
 	/* Iconos */
 	
 	.misc{background-image:url(../images/misc.png); vertical-align:middle;}
@@ -32,7 +35,7 @@
 	.icon-letter-c, 
 	.icon-letter-g, 
 	.icon-letter-q{font:normal 22px "RNSBARUTABLACKRegular"; border:0 solid #999; width:30px; height:30px; line-height:30px; text-align:center; color:#fff; border-radius:15px; text-shadow:1px 1px 1px rgba(0,0,0,.5);}
-	.icon-letter-c{background:#CE9B00;}
+	.icon-letter-c{background:#ce9b00;}
 	.icon-letter-g{background:#194A96;}
 	.icon-letter-q{background:#7a868c;}
 	
@@ -311,7 +314,7 @@
 	#qa div.answer-own{margin-top:20px; text-align:center; margin-bottom:20px;}
 	#qa div.answer-own a{font-size:16px;}
 	
-	#qa #form_question label span{color:#ccc;}
+	#qa #form_question label span{color:#ce9b00;}
 
 	
 	/* Pagina: PERFIL */
