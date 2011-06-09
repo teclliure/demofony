@@ -2,11 +2,11 @@
   <?php $results = $pager->getResults() ?>
   <?php if ($results): ?>
     <? foreach($results as $i=>$result): ?>
-      <? if(get_class($result->getRawValue()) == 'CitizenAction') $add_this_class = 'accio-color'; ?>
       <?php if (is_subclass_of($result->getRawValue(),'Action')): ?>
-      <?php $result->refresh(true) ?>
+      <? if(get_class($result->getRawValue()) == 'CitizenAction') $add_this_class = 'accio-color'; ?>
+      <?php // $result->refresh(true) ?>
       <?php // echo $result->getState() ?>
-      <div class="result <?= $i%2? '' : 'color' ?> <?=$add_this_class?>">
+      <div class="result <?= $i%2? '' : 'color' ?> <? if(get_class($result->getRawValue()) == 'CitizenAction'): ?>accio-color<?php endif; ?>">
         <div class="icon-pin_<?php echo $result->getColor() ?> letter "></div>
         <div class="img"></div>
         <h1><?php echo link_to ($result->getTitle(),$result->getRawValue()->getUrl())?></h1>
