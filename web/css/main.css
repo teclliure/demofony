@@ -605,7 +605,7 @@
 	}
 	
 	.accio-ciutadana div.col4 a.enter,
-	.trobada.accio .enter{background:#CE9B00 !important;}
+	.trobada.accio .enter, .accio-color .enter{background:#CE9B00 !important;}
 	
 	.gobern-response .box-title {height:20px;}
 	.gobern-response .box-title span{float:left; margin-left:-50px;}
