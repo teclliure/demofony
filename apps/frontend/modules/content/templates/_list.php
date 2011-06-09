@@ -2,11 +2,12 @@
   <?php $results = $pager->getResults() ?>
   <?php if ($results): ?>
     <? foreach($results as $i=>$result): ?>
+      <? if(get_class($result->getRawValue()) == 'CitizenAction') $add_this_class = 'accio-color'; ?>
       <?php if (is_subclass_of($result->getRawValue(),'Action')): ?>
       <?php $result->refresh(true) ?>
       <?php // echo $result->getState() ?>
-      <div class="result <?= $i%2? '' : 'color' ?>">
-        <div class="icon-pin_<?php echo $result->getColor() ?> letter"></div>
+      <div class="result <?= $i%2? '' : 'color' ?> <?=$add_this_class?>">
+        <div class="icon-pin_<?php echo $result->getColor() ?> letter "></div>
         <div class="img"></div>
         <h1><?php echo link_to ($result->getTitle(),$result->getRawValue()->getUrl())?></h1>
         <p class="author"><?php echo __('by')?> <?php echo link_to($result->getSfGuardUser(),'user/showProfile?username='.$result->getSfGuardUser()->getUsername()) ?>, <?php echo __('on')?> <?php echo format_date($result->getCreatedAt()) ?> <?php echo __('in')?> <?php include_partial ('content/categories',array('categories'=>$result->getCategories()))?></p>
