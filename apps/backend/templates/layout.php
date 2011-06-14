@@ -12,7 +12,7 @@
    <div class="container">
      <div id="header" class="span-24 last">
       <div id="lang_select" style="float: right"><?php include_component('language', 'language') ?></div>
-      <h1><?php echo link_to('Demofony','@homepage') ?></h1>
+      <h1><?php echo link_to('<img src="'.$sf_request->getRelativeUrlRoot().'/images/logo.png" />','@homepage') ?></h1>
      </div>
      <div id="top_menu" class="span-24 last"><?php include_component('home', 'menu'); ?></div>
      <div id="breadcrumbs" class="span-24 last"><?php include_component('sfDoctrineBreadcrumbs', 'breadcrumbs'); ?></div>

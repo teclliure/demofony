@@ -39,19 +39,19 @@ html { overflow: -moz-scrollbars-vertical !important; }
     .sf_admin_list table a { text-decoration: none; }
 
     /* table caption */
-    .sf_admin_list table caption { padding: 4px; }
+    .sf_admin_list table caption { padding: 10px 8px 10px 8px; }
       .sf_admin_list table caption .ui-icon { float: right; }
       .sf_admin_list table caption h1 span.ui-icon.ui-icon-triangle-1-s { float: left; margin-right: 6px; }
 
     /* table head */
-    .sf_admin_list table thead tr th { padding: 1px 5px; font-size: 1.1em; white-space: nowrap; }
+    .sf_admin_list table thead tr th { padding: 1px 5px; font-size: 1.1em; white-space: nowrap; font-weight:bold !important;}
     .sf_admin_list table thead a { display: block; padding: 5px 0; }
       .sf_admin_list table thead a .ui-icon { float: right; }
 
     /* table foot */
     .sf_admin_list table tfoot, 
     .sf_admin_list table tfoot tr, 
-    .sf_admin_list table tfoot tr th { border: 0; margin: 0; padding: 0; background: 0; }
+    .sf_admin_list table tfoot tr th { border: 0; margin: 0; padding: 0; background: 0;}
       .sf_admin_list table tfoot div { padding: 5px; margin: 0; text-align: right; }
 
     /* table content */
@@ -70,7 +70,7 @@ html { overflow: -moz-scrollbars-vertical !important; }
       }
 
       /* table actions */
-      .sf_admin_td_actions { list-style-type: none; white-space: nowrap; }
+      .sf_admin_td_actions { list-style-type: none; white-space: nowrap;}
         .sf_admin_td_actions li { display: block; float: left; }
 
 /* pagination */
@@ -106,7 +106,7 @@ html { overflow: -moz-scrollbars-vertical !important; }
 
   /* actions (save, delete, etc.) */
   .sf_admin_actions_form { float: right; margin-right: .2em !important; list-style-type: none; white-space: nowrap; }
-    .sf_admin_actions_form li { display: block; float: left; }
+    .sf_admin_actions_form li { display: block; float: left;}
       .sf_admin_actions_form li a,
       .sf_admin_actions_form li button { margin: 0; }
 

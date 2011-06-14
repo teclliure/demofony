@@ -16,7 +16,7 @@ default:
     - /blueprint/blueprint/screen.css: { media: 'screen,projection' }
     - /blueprint/blueprint/print.css: { media: print }
     - /blueprint/blueprint/ie.css { condition: IE 8 }
-    - /jquery/ui/css/pepper-grinder/jquery-ui-1.8.11.custom.css
+    - /jquery/ui/css/custom-theme/jquery-ui-1.8.13.custom.css
     - /jquery/superfish/css/superfish.css
     - admin_menu.css
     - jquery.Jcrop.css

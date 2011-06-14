@@ -13,7 +13,7 @@ button.ui-button { width: auto; overflow: visible; }
 .fg-button-icon-left { padding-left: 2.1em; }
 .fg-button-icon-right { padding-right: 2.1em; }
 .fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
-button.fg-button-icon-left .ui-icon { left: -20px; }
+button.fg-button-icon-left .ui-icon { ___left: -20px; }
 .fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
 
 .fg-button-icon-solo { display: block; width: 8px; text-indent: -9999px; }	 /* solo icon buttons must have block properties for the text-indent to work */

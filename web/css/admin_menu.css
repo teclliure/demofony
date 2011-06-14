@@ -65,6 +65,7 @@ button.fg-button {
 #breadcrumbs {
   margin-bottom: 10px;
 }
+#breadcrumbs a{text-decoration:none; color:#666;}
 
 #login_box {
 	width: 400px;
