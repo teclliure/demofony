@@ -16,6 +16,7 @@ generator:
       actions: ~
       fields:
         sfGuardUser: { label: Author }
+        action_date: { label: Workshop date }
       list:
         display: [=title, sfGuardUser, register_start_date, register_end_date, created_at, updated_at, active, views]
       filter:  ~

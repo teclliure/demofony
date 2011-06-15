@@ -12,5 +12,6 @@ class ContentFormFilter extends BaseContentFormFilter
 {
   public function configure()
   {
+    unset($this['slug'],$this['latitude'],$this['longitude'],$this['image'],$this['video'],$this['image_x1'],$this['image_y1'],$this['image_x2'],$this['image_y2'],$this['views'],$this['updated_at']);
   }
 }

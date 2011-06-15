@@ -20,6 +20,9 @@
   <form action="<?php if (!$content->getResponse()) echo url_for ('response/add?id='.$content->getId().'&class='.get_class($content->getRawValue())); else echo url_for ('response/edit?id='.$content->getId().'&class='.get_class($content->getRawValue())) ?>" class="form" method="post" >
   <br />
   <ul class="sf_admin_actions_form">
+    <li class="sf_admin_action_list">
+      <?php echo link_to('<span class="ui-icon ui-icon-arrowreturnthick-1-w"></span>'.__('Back'),sfInflector::underscore(get_class($content->getRawValue())).'_edit',array('sf_subject' => $content),array('class'=>'fg-button ui-state-default fg-button-icon-left')) ?>
+    </li>
     <?php if ($content->getResponse()): ?>
     <li class="sf_admin_action_delete">
       <a href="<?php echo url_for('response/delete?id='.$content->getId().'&class='.get_class($content->getRawValue())) ?>" onclick="if (confirm('<?php echo __('Are you sure?') ?>')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'post'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', 'sf_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_csrf_token'); m.setAttribute('value', '998c9c0942f5c3a32262a805479c1f2e'); f.appendChild(m);f.submit(); };return false;" class="fg-button ui-state-default fg-button-icon-left ui-priority-secondary"><span class="ui-icon ui-icon-trash"></span><?php echo __('Delete') ?></a>
@@ -42,6 +45,9 @@
     <?php echo $form->renderHiddenFields() ?>
   </div>
   <ul class="sf_admin_actions_form">
+    <li class="sf_admin_action_list">
+      <?php echo link_to('<span class="ui-icon ui-icon-arrowreturnthick-1-w"></span>'.__('Back'),sfInflector::underscore(get_class($content->getRawValue())).'_edit',array('sf_subject' => $content),array('class'=>'fg-button ui-state-default fg-button-icon-left')) ?>
+    </li>
     <?php if ($content->getResponse()): ?>
     <li class="sf_admin_action_delete">
       <a href="<?php echo url_for('response/delete?id='.$content->getId().'&class='.get_class($content->getRawValue())) ?>" onclick="if (confirm('<?php echo __('Are you sure?') ?>')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'post'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', 'sf_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_csrf_token'); m.setAttribute('value', '998c9c0942f5c3a32262a805479c1f2e'); f.appendChild(m);f.submit(); };return false;" class="fg-button ui-state-default fg-button-icon-left ui-priority-secondary"><span class="ui-icon ui-icon-trash"></span><?php echo __('Delete') ?></a>

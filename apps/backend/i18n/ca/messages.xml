@@ -1593,6 +1593,18 @@
         <source>Are you sure?</source>
         <target>¿ Estás segur ?</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Workshop date</source>
+        <target>Data del taller</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Back</source>
+        <target>Tornar</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Confirmed</source>
+        <target>Confirmat</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

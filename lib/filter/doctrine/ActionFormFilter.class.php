@@ -12,5 +12,6 @@ class ActionFormFilter extends BaseActionFormFilter
 {
   public function configure()
   {
+    parent::configure();
   }
 }

@@ -1597,6 +1597,18 @@ cambiar tus suscripciones.</target>
         <source>Are you sure?</source>
         <target>¿ Estás seguro ?</target>
       </trans-unit>
+      <trans-unit id="154">
+        <source>Workshop date</source>
+        <target>Fecha del taller</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Back</source>
+        <target>Volver</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Confirmed</source>
+        <target>Confirmado</target>
+      </trans-unit>
     </body> 
   </file>
 </xliff>
