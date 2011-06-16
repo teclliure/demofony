@@ -8,7 +8,11 @@
     <tfoot>
       <tr>
         <td colspan="2">
-          <center><input class="ui-button ui-state-default ui-corner-all" type="submit" value="<?php echo __('Signin', null, 'sf_guard') ?>" /></center>
+          <center>
+          	<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="submit">
+          		<span class="ui-button-text"><?php echo __('Signin', null, 'sf_guard') ?></span>
+          	</button>
+          </center>
           
           <?php $routes = $sf_context->getRouting()->getRoutes() ?>
           <?php if (isset($routes['sf_guard_forgot_password'])): ?>
