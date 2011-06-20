@@ -43,7 +43,7 @@ jQuery().ready(function(){
 		// modal window for filters
 		$('.sf_admin_filter').dialog({
 			autoOpen: false,
-			width: 600,
+			width: 800,
 			close: function(evt, ui){
 				$('#sf_admin_filter_button').removeClass('ui-state-active');
 			},
